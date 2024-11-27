@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+  <head>
+    <script>
+      // Set "enhanced" class for JS detection
+      document.documentElement.className += "enhanced";
+    </script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio Starter Kit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    data-bs-spy="scroll"
+    data-bs-target="#componentList"
+    data-bs-smooth-scroll="true"
+  >
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+    <symbol id="check2" viewBox="0 0 16 16">
+      <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"></path>
+    </symbol>
+    <symbol id="circle-half" viewBox="0 0 16 16">
+      <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
+    </symbol>
+    <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+      <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"></path>
+      <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"></path>
+    </symbol>
+    <symbol id="sun-fill" viewBox="0 0 16 16">
+      <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+    </symbol>
+    <symbol id="close-mark" viewBox="0 0 16 16">
+      <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" fill="currentColor" />
+    </symbol>
+  </svg>
+    <div class="app-layout flex-fill d-flex flex-column">
+      <header class="bg-light-subtle position-sticky top-0 z-1">
+        <div
+          class="container-fluid d-flex flex-row flex-wrap align-items-center gap-3 py-3 pe-4"
+        >
+          <div
+            class="brand d-flex flex-row align-items-center flex-grow-1 flex-shrink-1 gap-1"
+          >
+            <div class="dropdown d-flex flex-column gap-3 bd-mode-toggle">
+              <button
+                class="btn btn-text d-flex align-items-center justify-content-center me-1 py-0 px-1"
+                id="bd-theme"
+                type="button"
+                aria-expanded="false"
+                data-bs-toggle="dropdown"
+                aria-label="Toggle theme (light)"
+              >
+                <svg class="bi my-1 theme-icon-active" width="1em" height="1em">
+                  <use href="#sun-fill"></use>
+                </svg>
+                <span class="visually-hidden" id="bd-theme-text"
+                  >Toggle theme</span
+                >
+              </button>
+              <ul class="dropdown-menu shadow" aria-labelledby="bd-theme-text">
+                <li>
+                  <button
+                    type="button"
+                    class="dropdown-item d-flex align-items-center gap-2 active"
+                    data-bs-theme-value="auto"
+                    aria-pressed="false"
+                  >
+                    <svg class="opacity-50" width="1em" height="1em">
+                      <use href="#circle-half"></use>
+                    </svg>
+                    <span>Auto</span>
+                  </button>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    class="dropdown-item d-flex align-items-center gap-2"
+                    data-bs-theme-value="light"
+                    aria-pressed="true"
+                  >
+                    <svg class="opacity-50" width="1em" height="1em">
+                      <use href="#sun-fill"></use>
+                    </svg>
+                    <span>Light</span>
+                  </button>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    class="dropdown-item d-flex align-items-center gap-2"
+                    data-bs-theme-value="dark"
+                    aria-pressed="false"
+                  >
+                    <svg class="opacity-50" width="1em" height="1em">
+                      <use href="#moon-stars-fill"></use>
+                    </svg>
+                    <span>Dark</span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <div class="app-logo d-flex align-items-center me-2 py-1">
+              <a class="d-flex" href="#0"
+                ><img
+                  src="//assets.codepen.io/97621/logo-light-ethayer-no-mark.svg"
+                  class="w-100"
+                  alt="logo"
+              /></a>
+            </div>
+          </div>
+          <!--  Mobile Nav  -->
+          <nav class="d-flex align-items-center d-md-none mx-auto">
+            <button
+              class="navbar-toggle btn border d-flex align-items-center justify-content-center rounded rounded-2 fs-6 fw-medium py-1 px-2 text-uppercase"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasNavbar"
+              aria-controls="offcanvasNavbar"
+              aria-label="Toggle navigation"
+            >
+              <small class="p-1">Menu</small>
+            </button>
+            <div
+              class="offcanvas offcanvas-end"
+              tabindex="-1"
+              id="offcanvasNavbar"
+              aria-labelledby="offcanvasNavbarLabel"
+            >
+              <div class="offcanvas-header">
+                <button
+                  type="button"
+                  class="btn-close p-1 fs-4 bg-transparent"
+                  data-bs-dismiss="offcanvas"
+                  aria-label="Close"
+                >
+                  <svg width="1.5em" height="1.5em">
+                    <use href="#close-mark"></use>
+                  </svg>
+                </button>
+              </div>
+              <div class="offcanvas-body">
+                <ul
+                  class="navbar-nav justify-content-end flex-grow-1 px-3 fs-3 gap-4"
+                >
+                  <li class="nav-item">
+                    <a
+                      href="#about"
+                      class="nav-link link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
+                      aria-current="page"
+                      >About</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="#experience"
+                      class="nav-link link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
+                      >Experience</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="//docs.google.com/document/d/1CG5F0XGEuR3ZWTTyU3i7L-wGu6gGtFXgkrhgAyKZcfM/edit?usp=sharing"
+                      class="nav-link link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
+                      >Resume</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="mailto:ethayer.design@gmail.com?subject=Hi%20Eric.%20Let's%20talk%20about...%20&body=(answering%20these%20items%20will%20help%20me%20better%20understand%20your%20goals)%0A%0AContact%20information%20(company%2C%20name%2C%20role%2C%20phone%20number%2C%20etc)%3A%0A%0AWhat%20can%20I%20help%20you%20with?%20(project%20type%2C%20concept %2C%20outline%2C%20etc)%3A%0A%0ATimeline%20(start%20date%2C%20end%20date)%3A%0A%0AProject%20budget%20(greater%20than%20%2450%2C000%20range%20%7C%20%2430%2C000%E2%80%93%2420%2C000%20range%20%7C%20%2420%2C000%E2%80%93%2410%2C000%20range%20%7C%20less%20than%20%245%2C000)%3A%0A%0ASincerely%2C"
+                      class="nav-link link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
+                      >Contact</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <!-- Desktop -->
+          <nav class="navbar d-none d-md-flex">
+            <ul
+              class="d-flex flex-wrap column-gap-5 row-gap-2 list-unstyled m-0 p-0"
+            >
+              <li>
+                <a
+                  href="#about"
+                  class="link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#experience"
+                  class="link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
+                  >Experience</a
+                >
+              </li>
+              <li>
+                <a
+                  href="//docs.google.com/document/d/1CG5F0XGEuR3ZWTTyU3i7L-wGu6gGtFXgkrhgAyKZcfM/edit?usp=sharing"
+                  class="link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
+                  >Resume</a
+                >
+              </li>
+              <li>
+                <a
+                  href="mailto:ethayer.design@gmail.com?subject=Hi%20Eric.%20Let's%20talk%20about...%20&body=(answering%20these%20items%20will%20help%20me%20better%20understand%20your%20goals)%0A%0AContact%20information%20(company%2C%20name%2C%20role%2C%20phone%20number%2C%20etc)%3A%0A%0AWhat%20can%20I%20help%20you%20with?%20(project%20type%2C%20concept %2C%20outline%2C%20etc)%3A%0A%0ATimeline%20(start%20date%2C%20end%20date)%3A%0A%0AProject%20budget%20(greater%20than%20%2450%2C000%20range%20%7C%20%2430%2C000%E2%80%93%2420%2C000%20range%20%7C%20%2420%2C000%E2%80%93%2410%2C000%20range%20%7C%20less%20than%20%245%2C000)%3A%0A%0ASincerely%2C"
+                  class="link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <main id="main" class="flex-fill d-flex flex-column">
+        <div class="d-flex flex-column">
+          <section class="billboard bg-light-subtle py-xl-5">
+            <div class="container-fluid py-4 px-4 py-sm-5 p-md-5">
+              <div class="headline d-flex flex-column gap-4 py-4 py-sm-5">
+                <div class="copy mb-2">
+                  <h1 class="display-3">
+                    UX Engineer <small>&amp;</small> Systems Lead
+                  </h1>
+                  <p class="lead mb-0">
+                    I'm skilled in, design discovery, visual design,
+                    prototyping, and front-end development.<br
+                      class="d-none d-lg-block"
+                    />
+                    Please let me know how I can help your team or project
+                    succeed.
+                  </p>
+                </div>
+                <div class="actions d-flex flex-column gap-5 my-1">
+                  <div class="d-flex flex-wrap align-items-center gap-4">
+                    <button class="btn btn-primary align-self-start">
+                      View Portfolio
+                    </button>
+                    <button class="btn btn-secondary align-self-start">
+                      Download Resume
+                    </button>
+                  </div>
+                  <ul
+                    class="d-flex flex-wrap column-gap-5 row-gap-2 list-unstyled m-0 py-0 px-1"
+                  >
+                    <li>
+                      <a href="//www.linkedin.com/in/ethayerdesign/" class=""
+                        >Linkedin</a
+                      >
+                    </li>
+                    <li>
+                      <a href="//dribbble.com/ethayer/" class="">Dribbble</a>
+                    </li>
+                    <li>
+                      <a href="//github.com/ericthayer/" class="">GitHub</a>
+                    </li>
+                    <li>
+                      <a href="//codepen.io/ericthayer/" class="">CodePen</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section
+            id="about"
+            class="spotlight bg-dark-subtle d-flex flex-column py-5"
+          >
+            <div class="container-fluid p-4 px-sm-5 p-md-5">
+              <div class="d-flex flex-column gap-5">
+                <div class="headline py-3">
+                  <h2 class="text-uppercase h5 mb-0">Skilled Communicator</h2>
+                  <hr class="w-50 mb-5" />
+                  <p class="fs-4 mb-0">
+                    My ability to collaborate with cross-functional department
+                    team leaders, identify and resolve issues,<br
+                      class="d-none d-xl-block"
+                    />
+                    prioritize projects, and provide a high level of service is
+                    what makes me a valued contributor.
+                  </p>
+                </div>
+                <div class="callouts mt-4">
+                  <h2 class="h5 fw-regular mb-5 text-center">Core Strengths</h2>
+                  <div class="cards row g-5">
+                    <div class="col-12 col-md-6 col-lg-4 position-relative">
+                      <div
+                        class="bg-body-secondary rounded rounded-3 d-flex flex-column p-4"
+                      >
+                        <div class="copy m-1">
+                          <i class="d-block mb-4">
+                            <svg
+                              class="opacity-75"
+                              width="1.75em"
+                              height="1.75em"
+                            >
+                              <use href="#circle-half"></use>
+                            </svg>
+                          </i>
+                          <h3 class="fs-5">Design Sprints</h3>
+                          <p class="mb-4">
+                            Google Ventures' Sprint methodology is a five-day
+                            process for answering critical business questions
+                            through design, prototyping, and testing ideas with
+                            customers.
+                          </p>
+                          <a href="#0" class="stretched-link"
+                            ><span class="">View samples</span></a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 position-relative">
+                      <div
+                        class="bg-body-secondary rounded rounded-3 d-flex flex-column p-4"
+                      >
+                        <div class="copy m-1">
+                          <i class="d-block mb-4">
+                            <svg
+                              class="opacity-75"
+                              width="1.75em"
+                              height="1.75em"
+                            >
+                              <use href="#circle-half"></use>
+                            </svg>
+                          </i>
+                          <h3 class="fs-5">Design Sprints</h3>
+                          <p class="mb-4">
+                            Google Ventures' Sprint methodology is a five-day
+                            process for answering critical business questions
+                            through design, prototyping, and testing ideas with
+                            customers.
+                          </p>
+                          <a href="#0" class="stretched-link"
+                            ><span class="">View samples</span></a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-12 col-lg-4 position-relative">
+                      <div
+                        class="bg-body-secondary rounded rounded-3 d-flex flex-column p-4"
+                      >
+                        <div class="copy m-1">
+                          <i class="d-block mb-4">
+                            <svg
+                              class="opacity-75"
+                              width="1.75em"
+                              height="1.75em"
+                            >
+                              <use href="#circle-half"></use>
+                            </svg>
+                          </i>
+                          <h3 class="fs-5">Design Sprints</h3>
+                          <p class="mb-4">
+                            Google Ventures' Sprint methodology is a five-day
+                            process for answering critical business questions
+                            through design, prototyping, and testing ideas with
+                            customers.
+                          </p>
+                          <a href="#0" class="stretched-link"
+                            ><span class="">View samples</span></a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section
+            id="experience"
+            class="spotlight bg-body-secondary d-flex flex-column py-5"
+          >
+            <div class="headline py-3 pb-5 pb-lg-4">
+              <div class="container-fluid p-4 px-sm-5 p-md-5">
+                <h2 class="text-uppercase h5 mb-0">Smooth Operator</h2>
+                <hr class="w-50 mb-5" />
+                <p class="fs-4 mb-0">
+                  My ability to collaborate with cross-functional department
+                  team leaders, identify and resolve issues,<br
+                    class="d-none d-xl-block"
+                  />
+                  prioritize projects, and provide a high level of service is
+                  what makes me a valued contributor.
+                </p>
+              </div>
+            </div>
+            <div class="marquee d-flex gap-5 pt-3 pb-lg-5">
+              <div class="container-fluid p-0 px-lg-5">
+                <div
+                  class="work-sample row flex-column gx-0 gx-lg-5 flex-lg-row pb-lg-5 align-items-center"
+                >
+                  <div class="col col-lg-7 media d-flex">
+                    <a class="d-flex shadow" href="#0"
+                      ><img
+                        src="https://assets.codepen.io/97621/img-16x9-DPI-home-XL.jpg?format=avif&fit=cover"
+                        class="img-fluid object-fit-cover"
+                        alt=""
+                    /></a>
+                  </div>
+                  <div
+                    class="col col-lg-5 description d-flex flex-column align-items-start gap-3 p-4 pt-sm-5 px-sm-5 p-md-5 py-lg-2 flex-grow-1"
+                  >
+                    <div class="d-flex flex-column gap-3">
+                      <div class="d-flex flex-column">
+                        <h3 class="mt-2 mb-1 mt-lg-0">
+                          <a class="link" href="#0">Project name title</a>
+                        </h3>
+                        <time class="date"><small>Nov 10, 2024</small></time>
+                        <hr class="mt-2 mb-0 w-50" />
+                      </div>
+                      <div
+                        class="d-flex align-items-start justify-content-between"
+                      >
+                        <p class="">
+                          As a UX Design & Development team member at CoBank, my
+                          role is multi-faceted and essential to the
+                          organization's success. We are responsible for
+                          employing a user-centered design approach across all
+                          of the organization's software products.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="tags d-none gap-2">
+                      <a
+                        class="bg-body-secondary text-decoration-none lh-sm py-1 px-2 rounded fs-6 fw-semibold"
+                        href="#"
+                        title="User Interface Design"
+                        ><small>UI</small></a
+                      >
+                      <a
+                        class="bg-body-secondary text-decoration-none lh-sm py-1 px-2 rounded fs-6 fw-semibold"
+                        href="#"
+                        title="User Interface Design"
+                        ><small>UX</small></a
+                      ><a
+                        class="bg-body-secondary text-decoration-none lh-sm py-1 px-2 rounded fs-6 fw-semibold"
+                        href="#"
+                        title="User Interface Design"
+                        ><small>React</small></a
+                      >
+                    </div>
+                    <a
+                      href="#0"
+                      class="d-none align-items-end gap-2 text-decoration-none lh-sm"
+                    >
+                      <span class="text-decoration-underline">Preview</span>
+                      <i class="material-symbols-outlined fs-6">open_in_new</i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="callouts">
+              <div class="container-fluid py-3 px-4 px-sm-5 pb-lg-5">
+                <h2 class="h5 fw-regular mb-5 text-center">Related Work</h2>
+                <div class="cards row g-5">
+                  <div class="col-12 col-md-6 col-lg-4 position-relative">
+                    <div
+                      class="bg-body rounded rounded-3 shadow shadow-sm d-flex flex-column overflow-hidden"
+                    >
+                      <div class="media d-flex ratio ratio-16x9">
+                        <img
+                          src="https://assets.codepen.io/97621/RMP_DEMO_XD_view.gif"
+                          class="img-fluid object-fit-cover"
+                          alt=""
+                        />
+                      </div>
+                      <div class="copy m-1 p-4">
+                        <h3 class="fs-5">Design Systems</h3>
+                        <p class="mb-0">
+                          Google Ventures' Sprint methodology is a five-day
+                          process for answering critical business questions
+                          through design, prototyping, and testing ideas with
+                          customers.
+                        </p>
+                        <a href="#0" class="stretched-link"
+                          ><span class="visually-hidden">View samples</span></a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6 col-lg-4 position-relative">
+                    <div
+                      class="bg-body rounded rounded-3 shadow shadow-sm d-flex flex-column overflow-hidden"
+                    >
+                      <div class="media d-flex ratio ratio-16x9">
+                        <img
+                          src="https://assets.codepen.io/97621/cobank-design-tokens-demo-01.png?format=avif&fit=cover"
+                          class="img-fluid object-fit-cover"
+                          alt=""
+                        />
+                      </div>
+                      <div class="copy m-1 p-4">
+                        <h3 class="fs-5">Design Systems</h3>
+                        <p class="mb-0">
+                          Google Ventures' Sprint methodology is a five-day
+                          process for answering critical business questions
+                          through design, prototyping, and testing ideas with
+                          customers.
+                        </p>
+                        <a href="#0" class="stretched-link"
+                          ><span class="visually-hidden">View samples</span></a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="col-12 col-md-6 mx-md-auto col-lg-4 position-relative"
+                  >
+                    <div
+                      class="bg-body rounded rounded-3 shadow shadow-sm d-flex flex-column overflow-hidden"
+                    >
+                      <div class="media d-flex ratio ratio-16x9">
+                        <img
+                          src="https://assets.codepen.io/97621/SimCore-styleguide-demo-lores.gif"
+                          class="img-fluid object-fit-cover"
+                          alt=""
+                        />
+                      </div>
+                      <div class="copy m-1 p-4">
+                        <h3 class="fs-5">Design Systems</h3>
+                        <p class="mb-0">
+                          Google Ventures' Sprint methodology is a five-day
+                          process for answering critical business questions
+                          through design, prototyping, and testing ideas with
+                          customers.
+                        </p>
+                        <a href="#0" class="stretched-link"
+                          ><span class="visually-hidden">View samples</span></a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+      <footer class="text-bg-dark">
+        <div class="container-fluid pt-3 pb-2 px-3 px-lg-4">
+          <div
+            class="d-flex flex-column flex-md-row align-items-md-center justify-content-md-between gap-3 p-2"
+          >
+            <nav class="nav d-flex justify-content-center">
+              <ul
+                class="d-flex flex-wrap column-gap-5 row-gap-2 list-unstyled m-0 p-0"
+              >
+                <li>
+                  <a
+                    href="//www.linkedin.com/in/ethayerdesign/"
+                    class="text-light link-offset-1 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-100-hover"
+                    >Linkedin</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="//dribbble.com/ethayer/"
+                    class="text-light link-offset-1 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-100-hover"
+                    >Dribbble</a
+                  >
+                </li>
+                <li class="">
+                  <a
+                    href="//github.com/ericthayer/"
+                    class="text-light link-offset-1 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-100-hover"
+                    >GitHub</a
+                  >
+                </li>
+                <li class="">
+                  <a
+                    href="//codepen.io/ericthayer/"
+                    class="text-light link-offset-1 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-100-hover"
+                    >CodePen</a
+                  >
+                </li>
+              </ul>
+            </nav>
+            <div class="d-flex justify-content-center gap-1">
+              <button
+                type="button"
+                class="btn btn-text text-light d-flex align-items-center p-1"
+                data-bs-theme-value="auto"
+                aria-pressed="false"
+              >
+                <svg class="opacity-50" width="1em" height="1em">
+                  <use href="#circle-half"></use>
+                </svg>
+                <span class="d-none visually-hidden">Auto</span>
+              </button>
+              <button
+                type="button"
+                class="btn btn-text text-light d-flex align-items-center p-1"
+                data-bs-theme-value="light"
+                aria-pressed="true"
+              >
+                <svg class="opacity-50" width="1.25em" height="1.25em">
+                  <use href="#sun-fill"></use>
+                </svg>
+                <span class="d-none visually-hidden">Light</span>
+              </button>
+              <button
+                type="button"
+                class="btn btn-text text-light d-flex align-items-center p-1"
+                data-bs-theme-value="dark"
+                aria-pressed="false"
+              >
+                <svg class="opacity-50" width="1.125em" height="1.125em">
+                  <use href="#moon-stars-fill"></use>
+                </svg>
+                <span class="d-none visually-hidden">Dark</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+  <script type="module" src="./js/main.js"></script>
+  <script
+    async
+    src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+  ></script>
+</html>

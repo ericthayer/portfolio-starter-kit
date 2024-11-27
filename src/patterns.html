@@ -1,0 +1,2205 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  data-bs-theme="light"
+>
+  <head>
+    <script>
+      // Set "enhanced" class for JS detection
+      document.documentElement.className += "enhanced"
+    </script>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+    <title>CoBank Component Library</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+  </head>
+  <body
+    data-bs-spy="scroll"
+    data-bs-target="#componentList"
+    data-bs-smooth-scroll="true"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="d-none"
+    >
+      <symbol
+        id="check2"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"
+        ></path>
+      </symbol>
+      <symbol
+        id="circle-half"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+        ></path>
+      </symbol>
+      <symbol
+        id="moon-stars-fill"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"
+        ></path>
+        <path
+          d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"
+        ></path>
+      </symbol>
+      <symbol
+        id="sun-fill"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"
+        ></path>
+      </symbol>
+      <symbol
+        id="cobank-leaf-gray"
+        viewBox="0 0 46 46"
+      >
+      <path d="M0.5 0.200012V33.1C0.5 33.1 1.1 45.7 13.4 45.7H39.2L10.5 10.2L0.5 0.200012Z" fill="#9AA1A7"/>
+      <path d="M0.5 0.200012H33.4C33.4 0.200012 46 0.800013 46 13.1C46 25.4 46 38.9 46 38.9L10.5 10.2L0.5 0.200012Z" fill="#D6D6D6" />
+      </symbol>
+    </svg>
+    <div
+      class="app-header mb-lg-3 sticky-top"
+      role="Banner"
+      data-bs-theme="auto"
+    >
+      <nav
+        class="navbar navbar-expand-lg pt-lg-2 pb-0 sticky-top border-bottom"
+      >
+        <div class="container px-0">
+          <a
+            class="navbar-brand ms-2"
+            href="#"
+          >
+            <div class="cobank-logo d-flex">
+              <img
+                src="/images/cobank-logo.svg"
+                alt=""
+              />
+            </div>
+          </a>
+          <div
+            class="collapse navbar-collapse justify-content-lg-end pt-2 pb-4 px-3 p-lg-0"
+            id="navbarText"
+          >
+            <div class="d-flex gap-2 nav-links">
+              <a
+                href="https://getbootstrap.com/"
+                class="pb-2 pe-lg-3"
+                ><small>Bootstrap <code>5.3</code></small></a
+              >
+              <a
+                href="https://github.com/ericthayer/cobank-component-library"
+                class="pb-2"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  class="bi bi-github"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"
+                  /></svg
+              ></a>
+              <div class="dropdown pb-2 ps-2 pe-lg-3 bd-mode-toggle">
+                <button
+                  class="btn btn-text color-secondary dropdown-toggle d-flex align-items-center p-0"
+                  id="bd-theme"
+                  type="button"
+                  aria-expanded="false"
+                  data-bs-toggle="dropdown"
+                  aria-label="Toggle theme (light)"
+                >
+                  <svg
+                    class="bi my-1 theme-icon-active"
+                    width="1em"
+                    height="1em"
+                  >
+                    <use href="#sun-fill"></use>
+                  </svg>
+                  <span
+                    class="visually-hidden"
+                    id="bd-theme-text"
+                    >Toggle theme</span
+                  >
+                </button>
+                <ul
+                  class="dropdown-menu dropdown-menu-end shadow"
+                  aria-labelledby="bd-theme-text"
+                >
+                  <li>
+                    <button
+                      type="button"
+                      class="dropdown-item d-flex align-items-center active"
+                      data-bs-theme-value="auto"
+                      aria-pressed="false"
+                    >
+                      <svg
+                        class="bi me-2 opacity-50 theme-icon"
+                        width="1em"
+                        height="1em"
+                      >
+                        <use href="#circle-half"></use>
+                      </svg>
+                      Auto
+                      <svg
+                        class="bi ms-auto d-none"
+                        width="1em"
+                        height="1em"
+                      >
+                        <use href="#check2"></use>
+                      </svg>
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      type="button"
+                      class="dropdown-item d-flex align-items-center"
+                      data-bs-theme-value="light"
+                      aria-pressed="true"
+                    >
+                      <svg
+                        class="bi me-2 opacity-50 theme-icon"
+                        width="1em"
+                        height="1em"
+                      >
+                        <use href="#sun-fill"></use>
+                      </svg>
+                      Light
+                      <svg
+                        class="bi ms-auto d-none"
+                        width="1em"
+                        height="1em"
+                      >
+                        <use href="#check2"></use>
+                      </svg>
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      type="button"
+                      class="dropdown-item d-flex align-items-center"
+                      data-bs-theme-value="dark"
+                      aria-pressed="false"
+                    >
+                      <svg
+                        class="bi me-2 opacity-50 theme-icon"
+                        width="1em"
+                        height="1em"
+                      >
+                        <use href="#moon-stars-fill"></use>
+                      </svg>
+                      Dark
+                      <svg
+                        class="bi ms-auto d-none"
+                        width="1em"
+                        height="1em"
+                      >
+                        <use href="#check2"></use>
+                      </svg>
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      type="button"
+                      class="dropdown-item d-flex align-items-center"
+                      data-bs-theme-value="cobank"
+                      aria-pressed="false"
+                    >
+                      <svg
+                        class="bi me-2 theme-icon"
+                        width="1em"
+                        height="1em"
+                      >
+                        <use href="#cobank-leaf-gray"></use>
+                      </svg>
+                      CoBank
+                      <svg
+                        class="bi ms-auto d-none"
+                        width="1em"
+                        height="1em"
+                      >
+                        <use href="#check2"></use>
+                      </svg>
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <button
+            class="navbar-toggler mb-2 me-2 px-2 border-0"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
+            aria-label="Toggle navigation"
+          >
+            <span class="material-symbols-outlined">segment</span>
+          </button>
+        </div>
+      </nav>
+    </div>
+    <div class="container">
+      <div class="row">
+        <!-- Sidebar -->
+        <aside
+          id="componentList"
+          class="sidebar d-none d-lg-block col-lg-2 pt-2 pb-4 pe-4 sticky-top"
+        >
+          <div class="list-group list-group-flush">
+            <!-- Foundation -->
+            <a
+              class="list-group-item list-group-item-action mt-3 mb-0 pt-0 pb-1 ps-2 fw-semibold fs-6"
+              data-bs-toggle="collapse"
+              href="#collapseFoundation"
+              role="button"
+              aria-expanded="false"
+              aria-controls="collapseFoundation"
+              >Foundation</a
+            >
+            <div
+              class="collapse"
+              id="collapseFoundation"
+            >
+              <a
+                class="list-group-item list-group-item-action py-1 px-2"
+                href="#tokens"
+                >Tokens</a
+              >
+              <a
+                class="list-group-item list-group-item-action py-1 px-2"
+                href="#icon-system"
+                >Icon System</a
+              >
+              <a
+                class="list-group-item list-group-item-action py-1 px-2"
+                href="#typography"
+                >Typography</a
+              >
+            </div>
+            <!-- Actions -->
+            <a
+              class="list-group-item list-group-item-action mt-3 mb-0 pt-0 pb-1 ps-2 fw-semibold fs-6"
+              data-bs-toggle="collapse"
+              href="#collapseActions"
+              role="button"
+              aria-expanded="false"
+              aria-controls="collapseActions"
+              >Actions</a
+            >
+            <div
+              class="collapse show"
+              id="collapseActions"
+            >
+              <a
+                class="list-group-item list-group-item-action py-1 px-2"
+                href="#buttons"
+                >Buttons</a
+              >
+              <a
+                class="list-group-item list-group-item-action py-1 px-2"
+                href="#button-group"
+                >Button Group</a
+              >
+              <a
+                class="list-group-item list-group-item-action py-1 px-2"
+                href="#header-actions"
+                >Header Actions</a
+              >
+            </div>
+            <!-- Communication -->
+            <a
+              class="list-group-item list-group-item-action mt-3 mb-0 pt-0 pb-1 ps-2 fw-semibold fs-6"
+              data-bs-toggle="collapse"
+              href="#collapseCommunication"
+              role="button"
+              aria-expanded="false"
+              aria-controls="collapseCommunication"
+              >Communication</a
+            >
+            <div
+              class="collapse show"
+              id="collapseCommunication"
+            >
+              <a
+                class="list-group-item list-group-item-action py-1 px-2"
+                href="#icon"
+                >Icon</a
+              >
+              <a
+                class="list-group-item list-group-item-action py-1 px-2"
+                href="#spinners"
+                >Spinners</a
+              >
+              <a
+                class="list-group-item list-group-item-action py-1 px-2"
+                href="#banner"
+                >Banner</a
+              >
+              <a
+                class="list-group-item list-group-item-action py-1 px-2"
+                href="#alert"
+                >Alert</a
+              >
+              <a
+                class="list-group-item list-group-item-action py-1 px-2"
+                href="#badge"
+                >Badge</a
+              >
+              <a
+                class="list-group-item list-group-item-action py-1 px-2"
+                href="#modal"
+                >Modal</a
+              >
+              <a
+                class="list-group-item list-group-item-action py-1 px-2"
+                href="#tooltips"
+                >Tooltips</a
+              >
+              <a
+                class="list-group-item list-group-item-action py-1 px-2"
+                href="#toasts"
+                >Toasts</a
+              >
+            </div>
+            <!-- Input & Selection -->
+            <a
+              class="list-group-item list-group-item-action mt-3 mb-0 pt-0 pb-1 ps-2 fw-semibold fs-6"
+              data-bs-toggle="collapse"
+              href="#collapseInputAndSelection"
+              role="button"
+              aria-expanded="false"
+              aria-controls="collapseInputAndSelection"
+              >Input & Selection</a
+            >
+            <div
+              class="collapse show"
+              id="collapseInputAndSelection"
+            >
+              <a
+                class="list-group-item list-group-item-action py-1 px-2"
+                href="#autocomplete"
+                >Autocomplete</a
+              >
+              <a
+                class="list-group-item list-group-item-action py-1 px-2"
+                href="#date-picker"
+                >Date Picker</a
+              >
+              <a
+                class="list-group-item list-group-item-action py-1 px-2"
+                href="#filter"
+                >Filter</a
+              >
+              <a
+                class="list-group-item list-group-item-action py-1 px-2"
+                href="#toggle"
+                >Toggle</a
+              >
+              <a
+                class="list-group-item list-group-item-action py-1 px-2"
+                href="#tag"
+                >Tag</a
+              >
+            </div>
+            <!-- Layout & Structure -->
+            <a
+              class="list-group-item list-group-item-action mt-3 mb-0 pt-0 pb-1 ps-2 fw-semibold fs-6"
+              data-bs-toggle="collapse"
+              href="#collapseLayout"
+              role="button"
+              aria-expanded="false"
+              aria-controls="collapseLayout"
+              >Layout & Structure</a
+            >
+            <div
+              class="collapse show"
+              id="collapseLayout"
+            >
+              <a
+                class="list-group-item list-group-item-action py-1 px-2"
+                href="#card"
+                >Card</a
+              >
+              <a
+                class="list-group-item list-group-item-action py-1 px-2"
+                href="#media-card"
+                >Media Card</a
+              >
+              <a
+                class="list-group-item list-group-item-action py-1 px-2"
+                href="#page-layout"
+                >Page Layout</a
+              >
+              <a
+                class="list-group-item list-group-item-action py-1 px-2"
+                href="#form-layout"
+                >Form Layout</a
+              >
+              <a
+                class="list-group-item list-group-item-action py-1 px-2"
+                href="#grid"
+                >Grid</a
+              >
+            </div>
+            <!-- Navigation -->
+            <a
+              class="list-group-item list-group-item-action mt-3 mb-0 pt-0 pb-1 ps-2 fw-semibold fs-6"
+              data-bs-toggle="collapse"
+              href="#collapseNavigation"
+              role="button"
+              aria-expanded="false"
+              aria-controls="collapseNavigation"
+              >Navigation</a
+            >
+            <div
+              class="collapse show"
+              id="collapseNavigation"
+            >
+              <a
+                class="list-group-item list-group-item-action py-1 px-2"
+                href="#main-menu"
+                >Main Menu</a
+              >
+              <a
+                class="list-group-item list-group-item-action py-1 px-2"
+                href="#breadcrumbs"
+                >Breadcrumbs</a
+              >
+              <a
+                class="list-group-item list-group-item-action py-1 px-2"
+                href="#tabs"
+                >Tabs</a
+              >
+              <a
+                class="list-group-item list-group-item-action py-1 px-2"
+                href="#pagination"
+                >Pagination</a
+              >
+              <a
+                class="list-group-item list-group-item-action py-1 px-2"
+                href="#nav-drawer"
+                >Nav Drawer</a
+              >
+              <a
+                class="list-group-item list-group-item-action py-1 px-2"
+                href="#Toolbar"
+                >Toolbar</a
+              >
+            </div>
+            <!-- Lists -->
+            <a
+              class="list-group-item list-group-item-action mt-3 mb-0 pt-0 pb-1 ps-2 fw-semibold fs-6"
+              data-bs-toggle="collapse"
+              href="#collapseLists"
+              role="button"
+              aria-expanded="false"
+              aria-controls="collapseLists"
+              >Lists</a
+            >
+            <div
+              class="collapse show"
+              id="collapseLists"
+            >
+              <a
+                class="list-group-item list-group-item-action py-1 px-2"
+                href="#action-list"
+                >Action List</a
+              >
+              <a
+                class="list-group-item list-group-item-action py-1 px-2"
+                href="#select-list"
+                >Select List</a
+              >
+              <a
+                class="list-group-item list-group-item-action py-1 px-2"
+                href="#nav-list"
+                >Nav List</a
+              >
+              <a
+                class="list-group-item list-group-item-action py-1 px-2"
+                href="#accordion"
+                >Accordion</a
+              >
+            </div>
+            <!-- Tables -->
+            <a
+              class="list-group-item list-group-item-action mt-3 mb-0 pt-0 pb-1 ps-2 fw-semibold fs-6"
+              data-bs-toggle="collapse"
+              href="#collapseTables"
+              role="button"
+              aria-expanded="false"
+              aria-controls="collapseTables"
+              >Tables</a
+            >
+            <div
+              class="collapse show"
+              id="collapseTables"
+            >
+              <a
+                class="list-group-item list-group-item-action py-1 px-2"
+                href="#table"
+                >Table</a
+              >
+              <a
+                class="list-group-item list-group-item-action py-1 px-2"
+                href="#data-table"
+                >Data Table</a
+              >
+            </div>
+            <!-- Forms -->
+            <a
+              class="list-group-item list-group-item-action mt-3 mb-0 pt-0 pb-1 ps-2 fw-semibold fs-6"
+              data-bs-toggle="collapse"
+              href="#collapseForms"
+              role="button"
+              aria-expanded="false"
+              aria-controls="collapseForms"
+              >Forms</a
+            >
+            <div
+              class="collapse show"
+              id="collapseForms"
+            >
+              <a
+                class="list-group-item list-group-item-action py-1 px-2"
+                href="#form-control"
+                >Form control</a
+              >
+              <a
+                class="list-group-item list-group-item-action py-1 px-2"
+                href="#select"
+                >Select</a
+              >
+              <a
+                class="list-group-item list-group-item-action py-1 px-2"
+                href="#checks-and-radios"
+                >Checks / Radios</a
+              >
+              <a
+                class="list-group-item list-group-item-action py-1 px-2"
+                href="#range"
+                >Range</a
+              >
+              <a
+                class="list-group-item list-group-item-action py-1 px-2"
+                href="#input-group"
+                >Input Group</a
+              >
+              <a
+                class="list-group-item list-group-item-action py-1 px-2"
+                href="#floating-label"
+                >Floating Label</a
+              >
+              <a
+                class="list-group-item list-group-item-action py-1 px-2"
+                href="#validation"
+                >Validation</a
+              >
+            </div>
+            <!-- Media -->
+            <a
+              class="list-group-item list-group-item-action mt-3 mb-0 pt-0 pb-1 ps-2 fw-semibold fs-6"
+              data-bs-toggle="collapse"
+              href="#collapseMedia"
+              role="button"
+              aria-expanded="false"
+              aria-controls="collapseMedia"
+              >Media</a
+            >
+            <div
+              class="collapse show"
+              id="collapseMedia"
+            >
+              <a
+                class="list-group-item list-group-item-action py-1 px-2"
+                href="#figure"
+                >Figure</a
+              >
+              <a
+                class="list-group-item list-group-item-action py-1 px-2"
+                href="#embed"
+                >Embed</a
+              >
+              <a
+                class="list-group-item list-group-item-action py-1 px-2"
+                href="#avatar"
+                >Avatar</a
+              >
+            </div>
+            <!-- Patterns -->
+            <a
+              class="list-group-item list-group-item-action mt-3 mb-0 pt-0 pb-1 ps-2 fw-semibold fs-6"
+              data-bs-toggle="collapse"
+              href="#collapsePatterns"
+              role="button"
+              aria-expanded="false"
+              aria-controls="collapsePatterns"
+              >Patterns</a
+            >
+            <div
+              class="collapse"
+              id="collapsePatterns"
+            >
+              <a
+                class="list-group-item list-group-item-action py-1 px-2"
+                href="#app-header"
+                >App Header</a
+              >
+              <a
+                class="list-group-item list-group-item-action py-1 px-2"
+                href="#app-footer"
+                >App Footer</a
+              >
+              <a
+                class="list-group-item list-group-item-action py-1 px-2"
+                href="#dashboard"
+                >Dashboard</a
+              >
+              <a
+                class="list-group-item list-group-item-action py-1 px-2"
+                href="#login-and-signup"
+                >Login / Sign up</a
+              >
+              <a
+                class="list-group-item list-group-item-action py-1 px-2"
+                href="#dashboard"
+                >Dashboard</a
+              >
+            </div>
+          </div>
+        </aside>
+        <!-- Examples -->
+        <main
+          id="main"
+          class="main-content col-lg-10 py-4 px-4"
+          role="main"
+        >
+          <div tabindex="0">
+            <!-- Foundation -->
+            <div
+              id="foundation"
+              class="component-category"
+            >
+              <h2 class="h3">Foundation</h2>
+              <hr class="d-block mt-0" />
+              <article
+                id="tokens"
+                class="component-section"
+              >
+                <div
+                  class="d-flex align-items-baseline gap-2 justify-content-between"
+                >
+                  <h3 class="h5">Tokens</h3>
+                  <div class="d-flex gap-3">
+                    <a
+                      class="icon-link text-body-tertiary"
+                      href="https://www.youtube.com/watch?v=JyCmacSyDY4"
+                      title="Figma Design Tokens"
+                      target="_blank"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-link-45deg mt-1"
+                        viewBox="0 0 16 16"
+                        style="height: 1.5rem; width: 1.5rem"
+                      >
+                        <path
+                          d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"
+                        />
+                        <path
+                          d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"
+                        />
+                      </svg>
+                    </a>
+                    <a
+                      class="icon-link text-body-tertiary"
+                      href="https://www.figma.com/file/hxa8Z3VarEghTQWrhPPxPU/Design-Tokens-v1?type=design"
+                      title="Figma example"
+                      target="_blank"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16px"
+                        height="16px"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M8.537 24L8.537 24c-1.933 0-3.5-1.567-3.5-3.5l0 0c0-1.933 1.567-3.5 3.5-3.5h3.5v3.5C12.037 22.433 10.47 24 8.537 24zM16.5 8H13V1h3.5C18.433 1 20 2.567 20 4.5l0 0C20 6.433 18.433 8 16.5 8zM8.5 8H12V1H8.5C6.567 1 5 2.567 5 4.5l0 0C5 6.433 6.567 8 8.5 8zM8.5 16H12V9H8.5C6.567 9 5 10.567 5 12.5l0 0C5 14.433 6.567 16 8.5 16zM16 9A3 3 0 1016 15 3 3 0 1016 9z"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                <p>
+                  Tokens are variables that represent design decisions such as
+                  color, typography, and spacing, in a consistent and reusable
+                  way.
+                </p>
+                <div class="code-sample">
+                  <div class="d-flex">
+                    <figure class="figure mx-auto mb-0 flex-grow-1">
+                      <a
+                        href="https://fonts.google.com/icons"
+                        class=""
+                      >
+                        <img
+                          src="https://assets.codepen.io/97621/cobank-design-tokens-demo-02.png"
+                          class="figure-img img-fluid mb-0 rounded"
+                          alt="Design Tokens"
+                        />
+                      </a>
+                      <figcaption class="figure-caption mt-2 fs-6 d-none">
+                        <a href="https://fonts.google.com/icons"
+                          >Material Symbols</a
+                        >
+                      </figcaption>
+                    </figure>
+                  </div>
+                </div>
+              </article>
+              <!-- Icon System -->
+              <article
+                id="icon-system"
+                class="component-section"
+              >
+                <div
+                  class="d-flex align-items-baseline gap-2 justify-content-between"
+                >
+                  <h3 class="h5">Icon System</h3>
+                  <div class="d-flex gap-3">
+                    <a
+                      class="icon-link text-body-tertiary"
+                      href="https://fonts.google.com/icons"
+                      title="Material Symbols"
+                      target="_blank"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-link-45deg mt-1"
+                        viewBox="0 0 16 16"
+                        style="height: 1.5rem; width: 1.5rem"
+                      >
+                        <path
+                          d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"
+                        />
+                        <path
+                          d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"
+                        />
+                      </svg>
+                    </a>
+                    <a
+                      class="icon-link text-body-tertiary"
+                      href="https://www.figma.com/file/IrWs5zaj5RUhOxKs0Du9xW/Roots-v0.0.1?type=design&node-id=764-3060&mode=design&t=bXrA0vEZyKszP2Bd-4"
+                      title="Figma example"
+                      target="_blank"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16px"
+                        height="16px"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M8.537 24L8.537 24c-1.933 0-3.5-1.567-3.5-3.5l0 0c0-1.933 1.567-3.5 3.5-3.5h3.5v3.5C12.037 22.433 10.47 24 8.537 24zM16.5 8H13V1h3.5C18.433 1 20 2.567 20 4.5l0 0C20 6.433 18.433 8 16.5 8zM8.5 8H12V1H8.5C6.567 1 5 2.567 5 4.5l0 0C5 6.433 6.567 8 8.5 8zM8.5 16H12V9H8.5C6.567 9 5 10.567 5 12.5l0 0C5 14.433 6.567 16 8.5 16zM16 9A3 3 0 1016 15 3 3 0 1016 9z"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                <p>
+                  This is some placeholder content for the scrollspy page. Note
+                  that as you scroll down the page, the appropriate navigation
+                  link is highlighted. It's repeated throughout the component
+                  example. We keep adding some more example copy here to
+                  emphasize the scrolling and highlighting.
+                </p>
+                <div class="code-sample">
+                  <div class="d-flex">
+                    <figure class="figure mx-auto mb-0 flex-grow-1">
+                      <a
+                        href="https://fonts.google.com/icons"
+                        class="ratio ratio-16x9"
+                      >
+                        <img
+                          src="https://assets.codepen.io/97621/material-symbols-cover.png?width=1920&height=1080&format=avif"
+                          class="figure-img img-fluid mb-0 rounded"
+                          alt="Material Symbols"
+                          loading="lazy"
+                        />
+                      </a>
+                      <figcaption class="figure-caption mt-2 fs-6 d-none">
+                        <a href="https://fonts.google.com/icons"
+                          >Material Symbols</a
+                        >
+                      </figcaption>
+                    </figure>
+                  </div>
+                </div>
+              </article>
+              <!-- Typography -->
+              <article
+                id="typography"
+                class="component-section"
+              >
+                <div
+                  class="d-flex align-items-baseline gap-2 justify-content-between"
+                >
+                  <h3 class="h5">Typography</h3>
+                  <div class="d-flex gap-3">
+                    <a
+                      class="icon-link text-body-tertiary"
+                      href="https://getbootstrap.com/docs/5.3/components/button-group/"
+                      title="Bootstrap documentation"
+                      target="_blank"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-bootstrap-fill"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M6.375 7.125V4.658h1.78c.973 0 1.542.457 1.542 1.237 0 .802-.604 1.23-1.764 1.23zm0 3.762h1.898c1.184 0 1.81-.48 1.81-1.377 0-.885-.65-1.348-1.886-1.348H6.375z"
+                        />
+                        <path
+                          d="M4.002 0a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4zm1.06 12V3.545h3.399c1.587 0 2.543.809 2.543 2.11 0 .884-.65 1.675-1.483 1.816v.1c1.143.117 1.904.931 1.904 2.033 0 1.488-1.084 2.396-2.888 2.396z"
+                        />
+                      </svg>
+                    </a>
+                    <a
+                      class="icon-link text-body-tertiary"
+                      href="#0"
+                      title="Figma example"
+                      target="_blank"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16px"
+                        height="16px"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M8.537 24L8.537 24c-1.933 0-3.5-1.567-3.5-3.5l0 0c0-1.933 1.567-3.5 3.5-3.5h3.5v3.5C12.037 22.433 10.47 24 8.537 24zM16.5 8H13V1h3.5C18.433 1 20 2.567 20 4.5l0 0C20 6.433 18.433 8 16.5 8zM8.5 8H12V1H8.5C6.567 1 5 2.567 5 4.5l0 0C5 6.433 6.567 8 8.5 8zM8.5 16H12V9H8.5C6.567 9 5 10.567 5 12.5l0 0C5 14.433 6.567 16 8.5 16zM16 9A3 3 0 1016 15 3 3 0 1016 9z"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                <p>TBD</p>
+                <div
+                  class="d-flex flex-wrap gap-3 justify-content-center border border-secondary-subtle rounded-2 py-4 px-3"
+                >
+                  <div placeholder></div>
+                </div>
+              </article>
+            </div>
+            <!-- Actions -->
+            <div
+              id="actions"
+              class="component-category"
+            >
+              <h2 class="h3">Actions</h2>
+              <hr class="d-block my-0" />
+              <!-- Buttons -->
+              <article
+                id="buttons"
+                class="component-section"
+              >
+                <div
+                  class="d-flex align-items-baseline gap-2 justify-content-between"
+                >
+                  <h3 class="h5">Buttons</h3>
+                  <div class="d-flex gap-3">
+                    <a
+                      class="icon-link text-body-tertiary"
+                      href="https://getbootstrap.com/docs/5.3/components/buttons/"
+                      title="Bootstrap documentation"
+                      target="_blank"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-bootstrap-fill"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M6.375 7.125V4.658h1.78c.973 0 1.542.457 1.542 1.237 0 .802-.604 1.23-1.764 1.23zm0 3.762h1.898c1.184 0 1.81-.48 1.81-1.377 0-.885-.65-1.348-1.886-1.348H6.375z"
+                        />
+                        <path
+                          d="M4.002 0a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4zm1.06 12V3.545h3.399c1.587 0 2.543.809 2.543 2.11 0 .884-.65 1.675-1.483 1.816v.1c1.143.117 1.904.931 1.904 2.033 0 1.488-1.084 2.396-2.888 2.396z"
+                        />
+                      </svg>
+                    </a>
+                    <a
+                      class="icon-link text-body-tertiary"
+                      href="https://www.figma.com/file/IrWs5zaj5RUhOxKs0Du9xW/Roots-v0.0.1?type=design&node-id=764-3060&mode=design&t=bXrA0vEZyKszP2Bd-4"
+                      title="Figma example"
+                      target="_blank"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16px"
+                        height="16px"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M8.537 24L8.537 24c-1.933 0-3.5-1.567-3.5-3.5l0 0c0-1.933 1.567-3.5 3.5-3.5h3.5v3.5C12.037 22.433 10.47 24 8.537 24zM16.5 8H13V1h3.5C18.433 1 20 2.567 20 4.5l0 0C20 6.433 18.433 8 16.5 8zM8.5 8H12V1H8.5C6.567 1 5 2.567 5 4.5l0 0C5 6.433 6.567 8 8.5 8zM8.5 16H12V9H8.5C6.567 9 5 10.567 5 12.5l0 0C5 14.433 6.567 16 8.5 16zM16 9A3 3 0 1016 15 3 3 0 1016 9z"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                <p>
+                  Bootstrap has a base <code>.btn</code> class that sets up
+                  basic styles such as padding and content alignment. By
+                  default, <code>.btn</code> controls have a transparent border
+                  and background color, and lack any explicit focus and hover
+                  styles.
+                </p>
+                <div class="code-sample">
+                  <p
+                    class="codepen"
+                    data-height="300"
+                    data-token="f37b2a6d4555ffab8a0e4cb0432260fa"
+                    data-slug-hash="VwRXNdB"
+                    data-user="ericthayer"
+                  ></p>
+                </div>
+              </article>
+              <!-- Button Group -->
+              <article
+                id="button-group"
+                class="component-section"
+              >
+                <div
+                  class="d-flex align-items-baseline gap-2 justify-content-between"
+                >
+                  <h3 class="h5">Button Group</h3>
+                  <div class="d-flex gap-3">
+                    <a
+                      class="icon-link text-body-tertiary"
+                      href="https://getbootstrap.com/docs/5.3/components/button-group/"
+                      title="Bootstrap documentation"
+                      target="_blank"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-bootstrap-fill"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M6.375 7.125V4.658h1.78c.973 0 1.542.457 1.542 1.237 0 .802-.604 1.23-1.764 1.23zm0 3.762h1.898c1.184 0 1.81-.48 1.81-1.377 0-.885-.65-1.348-1.886-1.348H6.375z"
+                        />
+                        <path
+                          d="M4.002 0a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4zm1.06 12V3.545h3.399c1.587 0 2.543.809 2.543 2.11 0 .884-.65 1.675-1.483 1.816v.1c1.143.117 1.904.931 1.904 2.033 0 1.488-1.084 2.396-2.888 2.396z"
+                        />
+                      </svg>
+                    </a>
+                    <a
+                      class="icon-link text-body-tertiary"
+                      href="#0"
+                      title="Figma example"
+                      target="_blank"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16px"
+                        height="16px"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M8.537 24L8.537 24c-1.933 0-3.5-1.567-3.5-3.5l0 0c0-1.933 1.567-3.5 3.5-3.5h3.5v3.5C12.037 22.433 10.47 24 8.537 24zM16.5 8H13V1h3.5C18.433 1 20 2.567 20 4.5l0 0C20 6.433 18.433 8 16.5 8zM8.5 8H12V1H8.5C6.567 1 5 2.567 5 4.5l0 0C5 6.433 6.567 8 8.5 8zM8.5 16H12V9H8.5C6.567 9 5 10.567 5 12.5l0 0C5 14.433 6.567 16 8.5 16zM16 9A3 3 0 1016 15 3 3 0 1016 9z"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                <p>
+                  Group a series of buttons together on a single line or stack
+                  them in a vertical column.
+                </p>
+                <div class="code-sample">
+                  <p
+                    class="codepen"
+                    data-height="300"
+                    data-token="949320bf298ffd164c9bf5001d623e42"
+                    data-slug-hash="ExMLyqK"
+                    data-user="ericthayer"
+                  ></p>
+                </div>
+              </article>
+              <!-- Header Actions -->
+              <article
+                id="header-actions"
+                class="component-section"
+              >
+                <div
+                  class="d-flex align-items-baseline gap-2 justify-content-between"
+                >
+                  <h3 class="h5">Header Actions</h3>
+                  <div class="d-flex gap-3">
+                    <a
+                      class="icon-link text-body-tertiary"
+                      href="https://getbootstrap.com/docs/5.3/components/button-group/"
+                      title="Bootstrap documentation"
+                      target="_blank"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-bootstrap-fill"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M6.375 7.125V4.658h1.78c.973 0 1.542.457 1.542 1.237 0 .802-.604 1.23-1.764 1.23zm0 3.762h1.898c1.184 0 1.81-.48 1.81-1.377 0-.885-.65-1.348-1.886-1.348H6.375z"
+                        />
+                        <path
+                          d="M4.002 0a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4zm1.06 12V3.545h3.399c1.587 0 2.543.809 2.543 2.11 0 .884-.65 1.675-1.483 1.816v.1c1.143.117 1.904.931 1.904 2.033 0 1.488-1.084 2.396-2.888 2.396z"
+                        />
+                      </svg>
+                    </a>
+                    <a
+                      class="icon-link text-body-tertiary"
+                      href="#0"
+                      title="Figma example"
+                      target="_blank"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16px"
+                        height="16px"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M8.537 24L8.537 24c-1.933 0-3.5-1.567-3.5-3.5l0 0c0-1.933 1.567-3.5 3.5-3.5h3.5v3.5C12.037 22.433 10.47 24 8.537 24zM16.5 8H13V1h3.5C18.433 1 20 2.567 20 4.5l0 0C20 6.433 18.433 8 16.5 8zM8.5 8H12V1H8.5C6.567 1 5 2.567 5 4.5l0 0C5 6.433 6.567 8 8.5 8zM8.5 16H12V9H8.5C6.567 9 5 10.567 5 12.5l0 0C5 14.433 6.567 16 8.5 16zM16 9A3 3 0 1016 15 3 3 0 1016 9z"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                <p>TBD</p>
+                <div
+                  class="d-flex flex-wrap gap-3 justify-content-center border border-secondary-subtle rounded-2 py-4 px-3"
+                >
+                  <div placeholder></div>
+                </div>
+              </article>
+            </div>
+            <!-- Communication -->
+            <div
+              id="communication"
+              class="component-category"
+            >
+              <h2 class="h3">Communication</h2>
+              <hr class="d-block my-0" />
+              <!-- Icon -->
+              <article
+                id="icon"
+                class="component-section"
+              >
+                <div
+                  class="d-flex align-items-baseline gap-2 justify-content-between"
+                >
+                  <h3 class="h5">Icon</h3>
+                  <div class="d-flex gap-3">
+                    <a
+                      class="icon-link text-body-tertiary"
+                      href="https://fonts.google.com/icons"
+                      title="Material Symbols"
+                      target="_blank"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-link-45deg mt-1"
+                        viewBox="0 0 16 16"
+                        style="height: 1.5rem; width: 1.5rem"
+                      >
+                        <path
+                          d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"
+                        />
+                        <path
+                          d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"
+                        />
+                      </svg>
+                    </a>
+                    <a
+                      class="icon-link text-body-tertiary"
+                      href="https://www.figma.com/file/7AS7JFwqZ1CAZ498jEio8m/Material-Design-Icons?type=design&mode=design&t=QOfXjfd0XUWBRSLa-1"
+                      title="Figma example"
+                      target="_blank"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16px"
+                        height="16px"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M8.537 24L8.537 24c-1.933 0-3.5-1.567-3.5-3.5l0 0c0-1.933 1.567-3.5 3.5-3.5h3.5v3.5C12.037 22.433 10.47 24 8.537 24zM16.5 8H13V1h3.5C18.433 1 20 2.567 20 4.5l0 0C20 6.433 18.433 8 16.5 8zM8.5 8H12V1H8.5C6.567 1 5 2.567 5 4.5l0 0C5 6.433 6.567 8 8.5 8zM8.5 16H12V9H8.5C6.567 9 5 10.567 5 12.5l0 0C5 14.433 6.567 16 8.5 16zM16 9A3 3 0 1016 15 3 3 0 1016 9z"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                <p>
+                  Material Symbols are our newest icons consolidating over 3,209
+                  glyphs in a single font file with a wide range of design
+                  variants. Symbols are available in three styles and four
+                  adjustable variable font styles (fill, weight, grade, and
+                  optical size).
+                </p>
+                <div class="code-sample">
+                  <p
+                    class="codepen"
+                    data-height="300"
+                    data-token="bc4dac8c0e4e53568176d59133dba544"
+                    data-slug-hash="bGZMgym"
+                    data-user="ericthayer"
+                  ></p>
+                </div>
+              </article>
+              <!-- Spinners -->
+              <article
+                id="spinners"
+                class="component-section"
+              >
+                <div
+                  class="d-flex align-items-baseline gap-2 justify-content-between"
+                >
+                  <h3 class="h5">Spinners</h3>
+                  <div class="d-flex gap-3">
+                    <a
+                      class="icon-link text-body-tertiary"
+                      href="https://getbootstrap.com/docs/5.3/components/spinnerss/"
+                      title="Bootstrap documentation"
+                      target="_blank"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-bootstrap-fill"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M6.375 7.125V4.658h1.78c.973 0 1.542.457 1.542 1.237 0 .802-.604 1.23-1.764 1.23zm0 3.762h1.898c1.184 0 1.81-.48 1.81-1.377 0-.885-.65-1.348-1.886-1.348H6.375z"
+                        />
+                        <path
+                          d="M4.002 0a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4zm1.06 12V3.545h3.399c1.587 0 2.543.809 2.543 2.11 0 .884-.65 1.675-1.483 1.816v.1c1.143.117 1.904.931 1.904 2.033 0 1.488-1.084 2.396-2.888 2.396z"
+                        />
+                      </svg>
+                    </a>
+                    <a
+                      class="icon-link text-body-tertiary"
+                      href="https://www.figma.com/file/IrWs5zaj5RUhOxKs0Du9xW/Roots-v0.0.1?type=design&node-id=613-36&mode=design"
+                      title="Figma example"
+                      target="_blank"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16px"
+                        height="16px"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M8.537 24L8.537 24c-1.933 0-3.5-1.567-3.5-3.5l0 0c0-1.933 1.567-3.5 3.5-3.5h3.5v3.5C12.037 22.433 10.47 24 8.537 24zM16.5 8H13V1h3.5C18.433 1 20 2.567 20 4.5l0 0C20 6.433 18.433 8 16.5 8zM8.5 8H12V1H8.5C6.567 1 5 2.567 5 4.5l0 0C5 6.433 6.567 8 8.5 8zM8.5 16H12V9H8.5C6.567 9 5 10.567 5 12.5l0 0C5 14.433 6.567 16 8.5 16zM16 9A3 3 0 1016 15 3 3 0 1016 9z"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                <p>
+                  Indicate the loading state of a component or page with
+                  Bootstrap spinners, built entirely with HTML, CSS, and no
+                  JavaScript.
+                </p>
+                <div class="code-sample">
+                  <p
+                    class="codepen"
+                    data-height="400"
+                    data-slug-hash="BabPWZx"
+                    data-user="ericthayer"
+                    data-token="551c848564773e44b411feaf02a0876a"
+                  ></p>
+                </div>
+              </article>
+              <!-- Banner -->
+              <article
+                id="banner"
+                class="component-section"
+              >
+                <div
+                  class="d-flex align-items-baseline gap-2 justify-content-between"
+                >
+                  <h3 class="h5">Banner <small class="d-none ps-1"><code>jumbotron</code></small></h3>
+                  <div class="d-flex gap-3">
+                    <a
+                      class="icon-link text-body-tertiary"
+                      href="https://getbootstrap.com/docs/5.3/examples/jumbotron/"
+                      title="Bootstrap documentation"
+                      target="_blank"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-bootstrap-fill"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M6.375 7.125V4.658h1.78c.973 0 1.542.457 1.542 1.237 0 .802-.604 1.23-1.764 1.23zm0 3.762h1.898c1.184 0 1.81-.48 1.81-1.377 0-.885-.65-1.348-1.886-1.348H6.375z"
+                        />
+                        <path
+                          d="M4.002 0a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4zm1.06 12V3.545h3.399c1.587 0 2.543.809 2.543 2.11 0 .884-.65 1.675-1.483 1.816v.1c1.143.117 1.904.931 1.904 2.033 0 1.488-1.084 2.396-2.888 2.396z"
+                        />
+                      </svg>
+                    </a>
+                    <a
+                      class="icon-link text-body-tertiary"
+                      href="https://www.figma.com/file/IrWs5zaj5RUhOxKs0Du9xW/Roots-v0.0.1?type=design&node-id=764-3060&mode=design&t=bXrA0vEZyKszP2Bd-4"
+                      title="Figma example"
+                      target="_blank"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16px"
+                        height="16px"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M8.537 24L8.537 24c-1.933 0-3.5-1.567-3.5-3.5l0 0c0-1.933 1.567-3.5 3.5-3.5h3.5v3.5C12.037 22.433 10.47 24 8.537 24zM16.5 8H13V1h3.5C18.433 1 20 2.567 20 4.5l0 0C20 6.433 18.433 8 16.5 8zM8.5 8H12V1H8.5C6.567 1 5 2.567 5 4.5l0 0C5 6.433 6.567 8 8.5 8zM8.5 16H12V9H8.5C6.567 9 5 10.567 5 12.5l0 0C5 14.433 6.567 16 8.5 16zM16 9A3 3 0 1016 15 3 3 0 1016 9z"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                <p>
+                  Using a series of utilities, you can create this <code>jumbotron</code>, just like the one in previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it to your liking.
+
+Using `container queries` to create a card or dashboard type layout.
+                </p>
+                <div class="code-sample">
+                  <p
+                    class="codepen"
+                    data-height="600"
+                    data-slug-hash="ExMpMod"
+                    data-user="ericthayer" 
+                    data-token="f67117e8c5d1351f9a23ef5f57de85a1"
+                  ></p>
+                </div>
+              </article>
+              <!-- Alert -->
+              <article
+                id="alert"
+                class="component-section"
+              >
+                <div
+                  class="d-flex align-items-baseline gap-2 justify-content-between"
+                >
+                  <h3 class="h5">Alert</h3>
+                  <div class="d-flex gap-3">
+                    <a
+                      class="icon-link text-body-tertiary"
+                      href="https://getbootstrap.com/docs/5.3/components/alerts/"
+                      title="Bootstrap documentation"
+                      target="_blank"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-bootstrap-fill"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M6.375 7.125V4.658h1.78c.973 0 1.542.457 1.542 1.237 0 .802-.604 1.23-1.764 1.23zm0 3.762h1.898c1.184 0 1.81-.48 1.81-1.377 0-.885-.65-1.348-1.886-1.348H6.375z"
+                        />
+                        <path
+                          d="M4.002 0a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4zm1.06 12V3.545h3.399c1.587 0 2.543.809 2.543 2.11 0 .884-.65 1.675-1.483 1.816v.1c1.143.117 1.904.931 1.904 2.033 0 1.488-1.084 2.396-2.888 2.396z"
+                        />
+                      </svg>
+                    </a>
+                    <a
+                      class="icon-link text-body-tertiary"
+                      href="https://www.figma.com/file/IrWs5zaj5RUhOxKs0Du9xW/Roots-v0.0.1?type=design&node-id=764-3060&mode=design&t=bXrA0vEZyKszP2Bd-4"
+                      title="Figma example"
+                      target="_blank"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16px"
+                        height="16px"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M8.537 24L8.537 24c-1.933 0-3.5-1.567-3.5-3.5l0 0c0-1.933 1.567-3.5 3.5-3.5h3.5v3.5C12.037 22.433 10.47 24 8.537 24zM16.5 8H13V1h3.5C18.433 1 20 2.567 20 4.5l0 0C20 6.433 18.433 8 16.5 8zM8.5 8H12V1H8.5C6.567 1 5 2.567 5 4.5l0 0C5 6.433 6.567 8 8.5 8zM8.5 16H12V9H8.5C6.567 9 5 10.567 5 12.5l0 0C5 14.433 6.567 16 8.5 16zM16 9A3 3 0 1016 15 3 3 0 1016 9z"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                <p>
+                  Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+                </p>
+                <div class="code-sample">
+                  <p
+                    class="codepen"
+                    data-height="600"
+                    data-slug-hash="poYOPgM" 
+                    data-user="ericthayer" 
+                    data-token="8c420ebf072d85700c0af7a49d4abfab"
+                  ></p>
+                </div>
+              </article>
+              <!-- Badge -->
+              <article
+                id="badge"
+                class="component-section"
+              >
+                <div
+                  class="d-flex align-items-baseline gap-2 justify-content-between"
+                >
+                  <h3 class="h5">Badge</h3>
+                  <div class="d-flex gap-3">
+                    <a
+                      class="icon-link text-body-tertiary"
+                      href="https://getbootstrap.com/docs/5.3/components/badge/"
+                      title="Bootstrap documentation"
+                      target="_blank"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-bootstrap-fill"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M6.375 7.125V4.658h1.78c.973 0 1.542.457 1.542 1.237 0 .802-.604 1.23-1.764 1.23zm0 3.762h1.898c1.184 0 1.81-.48 1.81-1.377 0-.885-.65-1.348-1.886-1.348H6.375z"
+                        />
+                        <path
+                          d="M4.002 0a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4zm1.06 12V3.545h3.399c1.587 0 2.543.809 2.543 2.11 0 .884-.65 1.675-1.483 1.816v.1c1.143.117 1.904.931 1.904 2.033 0 1.488-1.084 2.396-2.888 2.396z"
+                        />
+                      </svg>
+                    </a>
+                    <a
+                      class="icon-link text-body-tertiary"
+                      href="https://www.figma.com/file/IrWs5zaj5RUhOxKs0Du9xW/Roots-v0.0.1?type=design&node-id=764-3060&mode=design&t=bXrA0vEZyKszP2Bd-4"
+                      title="Figma example"
+                      target="_blank"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16px"
+                        height="16px"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M8.537 24L8.537 24c-1.933 0-3.5-1.567-3.5-3.5l0 0c0-1.933 1.567-3.5 3.5-3.5h3.5v3.5C12.037 22.433 10.47 24 8.537 24zM16.5 8H13V1h3.5C18.433 1 20 2.567 20 4.5l0 0C20 6.433 18.433 8 16.5 8zM8.5 8H12V1H8.5C6.567 1 5 2.567 5 4.5l0 0C5 6.433 6.567 8 8.5 8zM8.5 16H12V9H8.5C6.567 9 5 10.567 5 12.5l0 0C5 14.433 6.567 16 8.5 16zM16 9A3 3 0 1016 15 3 3 0 1016 9z"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                <p>
+                  Documentation and examples for badges, our small count and labeling component.
+                </p>
+                <p>
+                  Badges scale to match the size of the immediate parent element by using relative font sizing and em units. As of v5, badges no longer have focus or hover styles for links.
+                </p>
+                <div class="code-sample">
+                  <p
+                    class="codepen"
+                    data-height="600"
+                    data-slug-hash="YzgJzpd" 
+                    data-user="ericthayer" 
+                    data-token="d546f8dceb0d3c0d5292374f58787890"
+                  ></p>
+                </div>
+              </article>
+              <!-- Modal -->
+              <article
+                id="modal"
+                class="component-section"
+              >
+                <div
+                  class="d-flex align-items-baseline gap-2 justify-content-between"
+                >
+                  <h3 class="h5">Modal</h3>
+                  <div class="d-flex gap-3">
+                    <a
+                      class="icon-link text-body-tertiary"
+                      href="https://getbootstrap.com/docs/5.3/components/modal/"
+                      title="Bootstrap documentation"
+                      target="_blank"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-bootstrap-fill"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M6.375 7.125V4.658h1.78c.973 0 1.542.457 1.542 1.237 0 .802-.604 1.23-1.764 1.23zm0 3.762h1.898c1.184 0 1.81-.48 1.81-1.377 0-.885-.65-1.348-1.886-1.348H6.375z"
+                        />
+                        <path
+                          d="M4.002 0a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4zm1.06 12V3.545h3.399c1.587 0 2.543.809 2.543 2.11 0 .884-.65 1.675-1.483 1.816v.1c1.143.117 1.904.931 1.904 2.033 0 1.488-1.084 2.396-2.888 2.396z"
+                        />
+                      </svg>
+                    </a>
+                    <a
+                      class="icon-link text-body-tertiary"
+                      href="https://www.figma.com/file/IrWs5zaj5RUhOxKs0Du9xW/Roots-v0.0.1?type=design&node-id=764-3060&mode=design&t=bXrA0vEZyKszP2Bd-4"
+                      title="Figma example"
+                      target="_blank"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16px"
+                        height="16px"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M8.537 24L8.537 24c-1.933 0-3.5-1.567-3.5-3.5l0 0c0-1.933 1.567-3.5 3.5-3.5h3.5v3.5C12.037 22.433 10.47 24 8.537 24zM16.5 8H13V1h3.5C18.433 1 20 2.567 20 4.5l0 0C20 6.433 18.433 8 16.5 8zM8.5 8H12V1H8.5C6.567 1 5 2.567 5 4.5l0 0C5 6.433 6.567 8 8.5 8zM8.5 16H12V9H8.5C6.567 9 5 10.567 5 12.5l0 0C5 14.433 6.567 16 8.5 16zM16 9A3 3 0 1016 15 3 3 0 1016 9z"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                <p>
+                  Use Bootstrap's JavaScript modal plugin to add dialogs to your
+                  site for lightboxes, user notifications, or completely custom
+                  content.
+                </p>
+                <p>
+                  Below is a <em>static</em> modal example (meaning its
+                  <code>position</code> and <code>display</code> have been
+                  overridden). Included are the modal header, modal body
+                  (required for <code>padding</code>), and modal footer
+                  (optional). We ask that you include modal headers with dismiss
+                  actions whenever possible, or provide another explicit dismiss
+                  action.
+                </p>
+                <div class="code-sample">
+                  <p
+                    class="codepen"
+                    data-height="400"
+                    data-token="de3fd00043345b9d7ed180caec1d05c4"
+                    data-slug-hash="oNVqRWV"
+                    data-user="ericthayer"
+                  ></p>
+                </div>
+              </article>
+              <!-- Tooltips -->
+              <article
+                id="tooltips"
+                class="component-section"
+              >
+                <div
+                  class="d-flex align-items-baseline gap-2 justify-content-between"
+                >
+                  <h3 class="h5">Tooltips</h3>
+                  <div class="d-flex gap-3">
+                    <a
+                      class="icon-link text-body-tertiary"
+                      href="https://getbootstrap.com/docs/5.3/components/tooltips/"
+                      title="Bootstrap documentation"
+                      target="_blank"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-bootstrap-fill"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M6.375 7.125V4.658h1.78c.973 0 1.542.457 1.542 1.237 0 .802-.604 1.23-1.764 1.23zm0 3.762h1.898c1.184 0 1.81-.48 1.81-1.377 0-.885-.65-1.348-1.886-1.348H6.375z"
+                        />
+                        <path
+                          d="M4.002 0a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4zm1.06 12V3.545h3.399c1.587 0 2.543.809 2.543 2.11 0 .884-.65 1.675-1.483 1.816v.1c1.143.117 1.904.931 1.904 2.033 0 1.488-1.084 2.396-2.888 2.396z"
+                        />
+                      </svg>
+                    </a>
+                    <a
+                      class="icon-link text-body-tertiary"
+                      href="https://www.figma.com/file/IrWs5zaj5RUhOxKs0Du9xW/Roots-v0.0.1?type=design&node-id=764-3060&mode=design&t=bXrA0vEZyKszP2Bd-4"
+                      title="Figma example"
+                      target="_blank"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16px"
+                        height="16px"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M8.537 24L8.537 24c-1.933 0-3.5-1.567-3.5-3.5l0 0c0-1.933 1.567-3.5 3.5-3.5h3.5v3.5C12.037 22.433 10.47 24 8.537 24zM16.5 8H13V1h3.5C18.433 1 20 2.567 20 4.5l0 0C20 6.433 18.433 8 16.5 8zM8.5 8H12V1H8.5C6.567 1 5 2.567 5 4.5l0 0C5 6.433 6.567 8 8.5 8zM8.5 16H12V9H8.5C6.567 9 5 10.567 5 12.5l0 0C5 14.433 6.567 16 8.5 16zM16 9A3 3 0 1016 15 3 3 0 1016 9z"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                <p>
+                  As mentioned above, you must initialize tooltips before they
+                  can be used. One way to initialize all tooltips on a page
+                  would be to select them by their data-bs-toggle attribute.
+                </p>
+                <div class="code-sample">
+                  <p
+                    class="codepen"
+                    data-height="300"
+                    data-slug-hash="OJqZWQz"
+                    data-token="7192d993b87f18c2699864720e00cef2"
+                    data-user="ericthayer"
+                  ></p>
+                </div>
+              </article>
+              <!-- Toasts -->
+              <article
+                id="toasts"
+                class="component-section"
+              >
+                <div
+                  class="d-flex align-items-baseline gap-2 justify-content-between"
+                >
+                  <h3 class="h5">Toasts</h3>
+                  <div class="d-flex gap-3">
+                    <a
+                      class="icon-link text-body-tertiary"
+                      href="https://getbootstrap.com/docs/5.3/components/toasts/"
+                      title="Bootstrap documentation"
+                      target="_blank"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-bootstrap-fill"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M6.375 7.125V4.658h1.78c.973 0 1.542.457 1.542 1.237 0 .802-.604 1.23-1.764 1.23zm0 3.762h1.898c1.184 0 1.81-.48 1.81-1.377 0-.885-.65-1.348-1.886-1.348H6.375z"
+                        />
+                        <path
+                          d="M4.002 0a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4zm1.06 12V3.545h3.399c1.587 0 2.543.809 2.543 2.11 0 .884-.65 1.675-1.483 1.816v.1c1.143.117 1.904.931 1.904 2.033 0 1.488-1.084 2.396-2.888 2.396z"
+                        />
+                      </svg>
+                    </a>
+                    <a
+                      class="icon-link text-body-tertiary"
+                      href="https://www.figma.com/file/IrWs5zaj5RUhOxKs0Du9xW/Roots-v0.0.1?type=design&node-id=764-3060&mode=design&t=bXrA0vEZyKszP2Bd-4"
+                      title="Figma example"
+                      target="_blank"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16px"
+                        height="16px"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M8.537 24L8.537 24c-1.933 0-3.5-1.567-3.5-3.5l0 0c0-1.933 1.567-3.5 3.5-3.5h3.5v3.5C12.037 22.433 10.47 24 8.537 24zM16.5 8H13V1h3.5C18.433 1 20 2.567 20 4.5l0 0C20 6.433 18.433 8 16.5 8zM8.5 8H12V1H8.5C6.567 1 5 2.567 5 4.5l0 0C5 6.433 6.567 8 8.5 8zM8.5 16H12V9H8.5C6.567 9 5 10.567 5 12.5l0 0C5 14.433 6.567 16 8.5 16zM16 9A3 3 0 1016 15 3 3 0 1016 9z"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                <p>
+                  Push notifications to your visitors with a toast, a lightweight and easily customizable alert message. Toasts are lightweight notifications designed to mimic the push notifications that have been popularized by mobile and desktop operating systems. They're built with flexbox, so they're easy to align and position.
+                </p>
+                <div class="code-sample">
+                  <p
+                    class="codepen"
+                    data-height="500"
+                    data-slug-hash="MWxzyex" 
+                    data-user="ericthayer" 
+                    data-token="49bf5e2a1db29bab87f71362f0f6b216"
+                  ></p>
+                </div>
+              </article>
+            </div>
+            <!-- Lists -->
+            <div class="component-category">
+              <h2
+                id="lists"
+                class="h3"
+              >
+                Lists
+              </h2>
+              <hr class="d-block my-0" />
+              <!-- Accordion -->
+              <article
+                id="accordion"
+                class="component-section"
+              >
+                <div
+                  class="d-flex align-items-baseline gap-2 justify-content-between"
+                >
+                  <h3 class="h5">Accordion</h3>
+                  <div class="d-flex gap-3">
+                    <a
+                      class="icon-link text-body-tertiary"
+                      href="https://getbootstrap.com/docs/5.3/components/accordion/"
+                      title="Bootstrap documentation"
+                      target="_blank"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-bootstrap-fill"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M6.375 7.125V4.658h1.78c.973 0 1.542.457 1.542 1.237 0 .802-.604 1.23-1.764 1.23zm0 3.762h1.898c1.184 0 1.81-.48 1.81-1.377 0-.885-.65-1.348-1.886-1.348H6.375z"
+                        />
+                        <path
+                          d="M4.002 0a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4zm1.06 12V3.545h3.399c1.587 0 2.543.809 2.543 2.11 0 .884-.65 1.675-1.483 1.816v.1c1.143.117 1.904.931 1.904 2.033 0 1.488-1.084 2.396-2.888 2.396z"
+                        />
+                      </svg>
+                    </a>
+                    <a
+                      class="icon-link text-body-tertiary"
+                      href="https://www.figma.com/file/IrWs5zaj5RUhOxKs0Du9xW/Roots-v0.0.1?type=design&node-id=764-3060&mode=design&t=bXrA0vEZyKszP2Bd-4"
+                      title="Figma example"
+                      target="_blank"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16px"
+                        height="16px"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M8.537 24L8.537 24c-1.933 0-3.5-1.567-3.5-3.5l0 0c0-1.933 1.567-3.5 3.5-3.5h3.5v3.5C12.037 22.433 10.47 24 8.537 24zM16.5 8H13V1h3.5C18.433 1 20 2.567 20 4.5l0 0C20 6.433 18.433 8 16.5 8zM8.5 8H12V1H8.5C6.567 1 5 2.567 5 4.5l0 0C5 6.433 6.567 8 8.5 8zM8.5 16H12V9H8.5C6.567 9 5 10.567 5 12.5l0 0C5 14.433 6.567 16 8.5 16zM16 9A3 3 0 1016 15 3 3 0 1016 9z"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                <p>
+                  The accordion uses
+                  <a href="/docs/5.3/components/collapse/">collapse</a>
+                  internally to make it collapsible. To render an accordion
+                  that's expanded, add the <code>.open</code> class on the
+                  <code>.accordion</code>.
+                </p>
+                <div class="code-sample">
+                  <p
+                    class="codepen"
+                    data-height="500"
+                    data-token="4a63eed31b632fe09e3bc73bdb59f349"
+                    data-slug-hash="ZEPxZjL"
+                    data-user="ericthayer"
+                  ></p>
+                </div>
+              </article>
+              <!-- Pagination -->
+              <article
+                id="pagination"
+                class="component-section"
+              >
+                <div
+                  class="d-flex align-items-baseline gap-2 justify-content-between"
+                >
+                  <h3 class="h5">Pagination</h3>
+                  <div class="d-flex gap-3">
+                    <a
+                      class="icon-link text-body-tertiary"
+                      href="https://getbootstrap.com/docs/5.3/components/pagination/"
+                      title="Bootstrap documentation"
+                      target="_blank"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-bootstrap-fill"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M6.375 7.125V4.658h1.78c.973 0 1.542.457 1.542 1.237 0 .802-.604 1.23-1.764 1.23zm0 3.762h1.898c1.184 0 1.81-.48 1.81-1.377 0-.885-.65-1.348-1.886-1.348H6.375z"
+                        />
+                        <path
+                          d="M4.002 0a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4zm1.06 12V3.545h3.399c1.587 0 2.543.809 2.543 2.11 0 .884-.65 1.675-1.483 1.816v.1c1.143.117 1.904.931 1.904 2.033 0 1.488-1.084 2.396-2.888 2.396z"
+                        />
+                      </svg>
+                    </a>
+                    <a
+                      class="icon-link text-body-tertiary"
+                      href="https://www.figma.com/file/IrWs5zaj5RUhOxKs0Du9xW/Roots-v0.0.1?type=design&node-id=764-3060&mode=design&t=bXrA0vEZyKszP2Bd-4"
+                      title="Figma example"
+                      target="_blank"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16px"
+                        height="16px"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M8.537 24L8.537 24c-1.933 0-3.5-1.567-3.5-3.5l0 0c0-1.933 1.567-3.5 3.5-3.5h3.5v3.5C12.037 22.433 10.47 24 8.537 24zM16.5 8H13V1h3.5C18.433 1 20 2.567 20 4.5l0 0C20 6.433 18.433 8 16.5 8zM8.5 8H12V1H8.5C6.567 1 5 2.567 5 4.5l0 0C5 6.433 6.567 8 8.5 8zM8.5 16H12V9H8.5C6.567 9 5 10.567 5 12.5l0 0C5 14.433 6.567 16 8.5 16zM16 9A3 3 0 1016 15 3 3 0 1016 9z"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                <p>
+                  Used for showing pagination to indicate a series of related
+                  content exists across multiple pages. We use a large block of
+                  connected links for our pagination, making links hard to miss
+                  and easily scalable—all while providing large hit areas.
+                  Pagination is built with list HTML elements so screen readers
+                  can announce the number of available links. Use a wrapping
+                  <code>nav</code> element to identify it as a navigation
+                  section to screen readers and other assistive technologies.
+                </p>
+                <div class="code-sample">
+                  <p
+                    class="codepen"
+                    data-height="300"
+                    data-token="499a45620c2ba6263da1417825d3a01c"
+                    data-slug-hash="QWomRmg"
+                    data-user="ericthayer"
+                  ></p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <footer
+      class="app-footer"
+      role="conent-info"
+    ></footer>
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="offcanvasNavbar"
+      aria-labelledby="offcanvasNavbarLabel"
+    >
+      <div class="offcanvas-header justify-content-end">
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body pt-0">
+        <div class="list-group list-group-flush">
+          <!-- Foundation -->
+          <a
+            class="list-group-item list-group-item-action mb-0 pt-0 pb-1 ps-2 fw-semibold fs-6"
+            data-bs-toggle="collapse"
+            href="#collapseMobileFoundation"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapseMobileFoundation"
+            >Foundation</a
+          >
+          <div
+            class="collapse show"
+            id="collapseMobileFoundation"
+          >
+            <a
+              class="list-group-item list-group-item-action py-1 px-2"
+              href="#tokens"
+              ><span data-bs-dismiss="offcanvas">Tokens</span></a
+            >
+            <a
+              class="list-group-item list-group-item-action py-1 px-2"
+              href="#icon-system"
+              ><span data-bs-dismiss="offcanvas">Icon System</span></a
+            >
+            <a
+              class="list-group-item list-group-item-action py-1 px-2"
+              href="#typography"
+              ><span data-bs-dismiss="offcanvas">Typography</span></a
+            >
+          </div>
+          <!-- Actions -->
+          <a
+            class="list-group-item list-group-item-action mt-3 mb-0 pt-0 pb-1 ps-2 fw-semibold fs-6"
+            data-bs-toggle="collapse"
+            href="#collapseActions"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapseActions"
+            >Actions</a
+          >
+          <div
+            class="collapse show"
+            id="collapseActions"
+          >
+            <a
+              class="list-group-item list-group-item-action py-1 px-2"
+              href="#buttons"
+              ><span data-bs-dismiss="offcanvas">Buttons</span></a
+            >
+            <a
+              class="list-group-item list-group-item-action py-1 px-2"
+              href="#button-group"
+              ><span data-bs-dismiss="offcanvas">Button Group</span></a
+            >
+            <a
+              class="list-group-item list-group-item-action py-1 px-2"
+              href="#header-actions"
+              ><span data-bs-dismiss="offcanvas">Header Actions</span></a
+            >
+          </div>
+          <!-- Communication -->
+          <a
+            class="list-group-item list-group-item-action mt-3 mb-0 pt-0 pb-1 ps-2 fw-semibold fs-6"
+            href="#communication"
+            >Communication</a
+          >
+          <a
+            class="list-group-item list-group-item-action py-1 px-2"
+            href="#icon"
+            ><span data-bs-dismiss="offcanvas">Icon</span></a
+          >
+          <a
+            class="list-group-item list-group-item-action py-1 px-2"
+            href="#spinners"
+            ><span data-bs-dismiss="offcanvas">Spinners</span></a
+          >
+          <a
+            class="list-group-item list-group-item-action py-1 px-2"
+            href="#banner"
+            ><span data-bs-dismiss="offcanvas">Banner</span></a
+          >
+          <a
+            class="list-group-item list-group-item-action py-1 px-2"
+            href="#alert"
+            ><span data-bs-dismiss="offcanvas">Alert</span></a
+          >
+          <a
+            class="list-group-item list-group-item-action py-1 px-2"
+            href="#badge"
+            ><span data-bs-dismiss="offcanvas">Badge</span></a
+          >
+          <a
+            class="list-group-item list-group-item-action py-1 px-2"
+            href="#modal"
+            ><span data-bs-dismiss="offcanvas">Modal</span></a
+          >
+          <a
+            class="list-group-item list-group-item-action py-1 px-2"
+            href="#tooltips"
+            ><span data-bs-dismiss="offcanvas">Tooltips</span></a
+          >
+          <a
+            class="list-group-item list-group-item-action py-1 px-2"
+            href="#toasts"
+            ><span data-bs-dismiss="offcanvas">Toasts</span></a
+          >
+          <!-- Input & Selection -->
+          <a
+            class="list-group-item list-group-item-action mt-3 mb-0 pt-0 pb-1 ps-2 fw-semibold fs-6"
+            href="#input-and-selection"
+            >Input & Selection</a
+          >
+          <a
+            class="list-group-item list-group-item-action py-1 px-2"
+            href="#autocomplete"
+            >Autocomplete</a
+          >
+          <a
+            class="list-group-item list-group-item-action py-1 px-2"
+            href="#date-picker"
+            >Date Picker</a
+          >
+          <a
+            class="list-group-item list-group-item-action py-1 px-2"
+            href="#filter"
+            >Filter</a
+          >
+          <a
+            class="list-group-item list-group-item-action py-1 px-2"
+            href="#toggle"
+            >Toggle</a
+          >
+          <a
+            class="list-group-item list-group-item-action py-1 px-2"
+            href="#tag"
+            >Tag</a
+          >
+          <!-- Layout & Structure -->
+          <a
+            class="list-group-item list-group-item-action mt-3 mb-0 pt-0 pb-1 ps-2 fw-semibold fs-6"
+            href="#layout-and-structure"
+            >Layout & Structure</a
+          >
+          <a
+            class="list-group-item list-group-item-action py-1 px-2"
+            href="#card"
+            >Card</a
+          >
+          <a
+            class="list-group-item list-group-item-action py-1 px-2"
+            href="#media-card"
+            >Media Card</a
+          >
+          <a
+            class="list-group-item list-group-item-action py-1 px-2"
+            href="#page-layout"
+            >Page Layout</a
+          >
+          <a
+            class="list-group-item list-group-item-action py-1 px-2"
+            href="#form-layout"
+            >Form Layout</a
+          >
+          <a
+            class="list-group-item list-group-item-action py-1 px-2"
+            href="#grid"
+            >Grid</a
+          >
+          <!-- Navigation -->
+          <a
+            class="list-group-item list-group-item-action mt-3 mb-0 pt-0 pb-1 ps-2 fw-semibold fs-6"
+            href="#navigation"
+            >Navigation</a
+          >
+          <a
+            class="list-group-item list-group-item-action py-1 px-2"
+            href="#main-menu"
+            >Main Menu</a
+          >
+          <a
+            class="list-group-item list-group-item-action py-1 px-2"
+            href="#breadcrumbs"
+            >Breadcrumbs</a
+          >
+          <a
+            class="list-group-item list-group-item-action py-1 px-2"
+            href="#tabs"
+            >Tabs</a
+          >
+          <a
+            class="list-group-item list-group-item-action py-1 px-2"
+            href="#pagination"
+            >Pagination</a
+          >
+          <a
+            class="list-group-item list-group-item-action py-1 px-2"
+            href="#nav-drawer"
+            >Nav Drawer</a
+          >
+          <a
+            class="list-group-item list-group-item-action py-1 px-2"
+            href="#Toolbar"
+            >Toolbar</a
+          >
+          <!-- Lists -->
+          <a
+            class="list-group-item list-group-item-action mt-3 mb-0 pt-0 pb-1 ps-2 fw-semibold fs-6"
+            href="#lists"
+            >Lists</a
+          >
+          <a
+            class="list-group-item list-group-item-action py-1 px-2"
+            href="#action-list"
+            >Action List</a
+          >
+          <a
+            class="list-group-item list-group-item-action py-1 px-2"
+            href="#select-list"
+            >Select List</a
+          >
+          <a
+            class="list-group-item list-group-item-action py-1 px-2"
+            href="#nav-list"
+            >Nav List</a
+          >
+          <a
+            class="list-group-item list-group-item-action py-1 px-2"
+            href="#accordion"
+            >Accordion</a
+          >
+          <!-- Tables -->
+          <a
+            class="list-group-item list-group-item-action mt-3 mb-0 pt-0 pb-1 ps-2 fw-semibold fs-6"
+            href="#tables"
+            >Tables</a
+          >
+          <a
+            class="list-group-item list-group-item-action py-1 px-2"
+            href="#table"
+            >Table</a
+          >
+          <a
+            class="list-group-item list-group-item-action py-1 px-2"
+            href="#data-table"
+            >Data Table</a
+          >
+          <!-- Forms -->
+          <a
+            class="list-group-item list-group-item-action mt-3 mb-0 pt-0 pb-1 ps-2 fw-semibold fs-6"
+            href="#forms"
+            >Forms</a
+          >
+          <a
+            class="list-group-item list-group-item-action py-1 px-2"
+            href="#form-control"
+            >Form control</a
+          >
+          <a
+            class="list-group-item list-group-item-action py-1 px-2"
+            href="#select"
+            >Select</a
+          >
+          <a
+            class="list-group-item list-group-item-action py-1 px-2"
+            href="#checks-and-radios"
+            >Checks / Radios</a
+          >
+          <a
+            class="list-group-item list-group-item-action py-1 px-2"
+            href="#range"
+            >Range</a
+          >
+          <a
+            class="list-group-item list-group-item-action py-1 px-2"
+            href="#input-group"
+            >Input Group</a
+          >
+          <a
+            class="list-group-item list-group-item-action py-1 px-2"
+            href="#floating-label"
+            >Floating Label</a
+          >
+          <a
+            class="list-group-item list-group-item-action py-1 px-2"
+            href="#validation"
+            >Validation</a
+          >
+          <!-- Media -->
+          <a
+            class="list-group-item list-group-item-action mt-3 mb-0 pt-0 pb-1 ps-2 fw-semibold fs-6"
+            href="#media"
+            >Media</a
+          >
+          <a
+            class="list-group-item list-group-item-action py-1 px-2"
+            href="#figure"
+            >Figure</a
+          >
+          <a
+            class="list-group-item list-group-item-action py-1 px-2"
+            href="#embed"
+            >Embed</a
+          >
+          <a
+            class="list-group-item list-group-item-action py-1 px-2"
+            href="#avatar"
+            >Avatar</a
+          >
+          <!-- Patterns -->
+          <a
+            class="list-group-item list-group-item-action mt-3 mb-0 pt-0 pb-1 ps-2 fw-semibold fs-6"
+            href="#patterns"
+            >Patterns</a
+          >
+          <a
+            class="list-group-item list-group-item-action py-1 px-2"
+            href="#app-header"
+            >App Header</a
+          >
+          <a
+            class="list-group-item list-group-item-action py-1 px-2"
+            href="#app-footer"
+            >App Footer</a
+          >
+          <a
+            class="list-group-item list-group-item-action py-1 px-2"
+            href="#dashboard"
+            >Dashboard</a
+          >
+          <a
+            class="list-group-item list-group-item-action py-1 px-2"
+            href="#login-and-signup"
+            >Login / Sign up</a
+          >
+          <a
+            class="list-group-item list-group-item-action py-1 px-2"
+            href="#dashboard"
+            >Dashboard</a
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+  <script
+    type="module"
+    src="./js/main.js"
+  ></script>
+  <script
+    async
+    src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+  ></script>
+</html>
