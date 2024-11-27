@@ -891,23 +891,23 @@ $headings-line-height: 1.2;
 $headings-color: inherit;
 
 // display-headings - typescale 1.250
-$display-font-sizes: (
-  1: 4.375rem,
-  2: 3.5rem,
-  3: 2.8125rem,
-  4: 2.25rem,
-  5: 1.875rem,
-  6: 1.5rem,
-);
+// $display-font-sizes: (
+//   1: 4.375rem,
+//   2: 3.5rem,
+//   3: 2.8125rem,
+//   4: 2.25rem,
+//   5: 1.875rem,
+//   6: 1.5rem,
+// );
 
 $display-font-family: null;
 $display-font-style: null;
-$display-font-weight: 300;
+$display-font-weight: 700;
 $display-line-height: $headings-line-height;
 
 // type-variables
 $lead-font-size: $font-size-base * 1.25;
-$lead-font-weight: 300;
+$lead-font-weight: 400;
 
 $small-font-size: 0.875em;
 

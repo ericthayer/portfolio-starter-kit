@@ -4,7 +4,7 @@
 // Define custom Bootstrap variable overrides - https://getbootstrap.com/docs/5.3/customize/sass/#variable-defaults
 
 // Custom variables
-@import "./variables/bootstrap-overrides";
+@import "./theme/theme-map";
 
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/variables-dark";
@@ -54,7 +54,7 @@
 
 // Component theme overrides. These set the base styles for our components.
 // ex: @import '../components/buttons';
-@import './variables/base';
+@import './theme/theme-overrides';
 
 // Helper classes go last to override
 @import "../node_modules/bootstrap/scss/helpers";
