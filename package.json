@@ -6,7 +6,9 @@
   "scripts": {
     "start": "vite",
     "build": "vite build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "repository": {
     "type": "git",
@@ -20,7 +22,16 @@
   },
   "homepage": "https://github.com/ericthayer/portfolio-starter-template#readme",
   "devDependencies": {
+    "@chromatic-com/storybook": "^3.2.2",
+    "@storybook/addon-essentials": "^8.4.5",
+    "@storybook/addon-interactions": "^8.4.5",
+    "@storybook/blocks": "^8.4.5",
+    "@storybook/builder-vite": "^8.4.5",
+    "@storybook/html": "^8.4.5",
+    "@storybook/html-vite": "^8.4.5",
+    "@storybook/test": "^8.4.5",
     "sass": "^1.70.0",
+    "storybook": "^8.4.5",
     "vite": "^5.0.12"
   },
   "dependencies": {
