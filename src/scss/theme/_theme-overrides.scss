@@ -69,6 +69,17 @@ html {
       text-decoration-color: currentColor !important;
     }
   }
+
+  .carousel-item.active, .carousel-item-next, .carousel-item-prev {
+    display: grid;
+    
+    & > * {
+      grid-column: 1;
+      grid-row: 1;
+    }
+  }
+
+  // Light/Dark mode
   
   [data-bs-theme=auto],
   [data-bs-theme=light] {
