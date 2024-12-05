@@ -305,7 +305,7 @@
                     class="dropdown-item d-flex align-items-center gap-2"
                     data-bs-theme-value="light"
                     aria-pressed="true"
-                    aria-label="Set light mode"
+                    aria-label="Set to light mode"
                   >
                     <svg
                       class="opacity-50"
@@ -323,7 +323,7 @@
                     class="dropdown-item d-flex align-items-center gap-2"
                     data-bs-theme-value="dark"
                     aria-pressed="false"
-                    aria-label="Set dark mode"
+                    aria-label="Set to dark mode"
                   >
                     <svg
                       class="opacity-50"
@@ -646,7 +646,7 @@
             </div>
           </section>
           <!-- Testimonials -->
-          <section class="testimonials">
+          <section class="testimonials d-none">
             <div class="container-fluid p-3">
               <h2 class="h5 fw-regular my-2 text-center">Word on the Street</h2>
               <!-- Carousel -->
@@ -788,14 +788,16 @@
                 >
                   <div class="col col-lg-7 media d-flex">
                     <a
-                      class="d-flex shadow"
+                      class="d-flex shadow ratio ratio-16x9"
                       href="#0"
                       title="Project title"
                       aria-label="Project title"
                       ><img
-                        src="https://assets.codepen.io/97621/img-16x9-DPI-home-XL.jpg?format=avif&fit=cover"
+                        src="https://assets.codepen.io/97621/SimCore-styleguide-demo-lores.gif"
                         class="img-fluid object-fit-cover"
-                        alt=""
+                        alt="Project title"
+                        width="2500"
+                        height="1407"
                     /></a>
                   </div>
                   <div
@@ -873,19 +875,19 @@
                     </div>
                     <div class="d-flex flex-column gap-2">
                       <!-- <small class="flex-fill fw-medium">Tools used</small> -->
-                      <div class="tags d-none gap-3 fs-6 fw-semibold">
+                      <div class="tags d-flex gap-3 fs-6 fw-semibold">
                         <span
-                          class="badge bg-secondary text-decoration-none lh-sm py-1 px-2 rounded"
+                          class="badge text-bg-secondary text-decoration-none lh-sm py-1 px-2 rounded"
                           title="User Interface Design"
                           >UI</span
                         >
                         <span
-                          class="badge bg-secondary text-decoration-none lh-sm py-1 px-2 rounded"
+                          class="badge text-bg-secondary text-decoration-none lh-sm py-1 px-2 rounded"
                           title="User Experience Design"
                           ><small>UX</small></span
                         >
                         <span
-                          class="badge bg-secondary text-decoration-none lh-sm py-1 px-2 rounded"
+                          class="badge text-bg-secondary text-decoration-none lh-sm py-1 px-2 rounded"
                           title="React JS"
                           ><small>React</small></span
                         >
@@ -961,7 +963,7 @@
                     >
                       <div class="media d-flex ratio ratio-16x9">
                         <img
-                          src="https://assets.codepen.io/97621/SimCore-styleguide-demo-lores.gif"
+                          src="https://assets.codepen.io/97621/img-16x9-DPI-process-XL.jpg?format=avif&fit=cover"
                           class="img-fluid object-fit-cover"
                           alt=""
                         />
@@ -986,7 +988,7 @@
               </div>
             </div>
             <!-- Work Categories -->
-            <div class="tabs categories container-fluid px-4 px-sm-5">
+            <div class="tabs d-none categories container-fluid px-4 px-sm-5">
               <!-- Tab nav -->
               <ul
                 class="nav nav-tabs"
@@ -1105,7 +1107,7 @@
           </section>
         </div>
       </main>
-      <footer class="text-bg-dark">
+      <footer class="text-bg-dark" role="contentinfo">
         <div class="container-fluid pt-3 pb-2 px-3 px-lg-4">
           <div
             class="d-flex flex-column flex-md-row align-items-md-center justify-content-md-between gap-3 p-2"
@@ -1150,6 +1152,7 @@
                 class="btn btn-text text-light d-flex align-items-center p-1"
                 data-bs-theme-value="auto"
                 aria-pressed="false"
+                aria-label="Set to system color mode"
               >
                 <svg
                   class="opacity-50"
@@ -1165,6 +1168,7 @@
                 class="btn btn-text text-light d-flex align-items-center p-1"
                 data-bs-theme-value="light"
                 aria-pressed="true"
+                aria-label="Set to light mode"
               >
                 <svg
                   class="opacity-50"
@@ -1180,6 +1184,7 @@
                 class="btn btn-text text-light d-flex align-items-center p-1"
                 data-bs-theme-value="dark"
                 aria-pressed="false"
+                aria-label="Set to dark mode"
               >
                 <svg
                   class="opacity-50"
