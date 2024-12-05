@@ -13,6 +13,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1"
     />
+    <meta name="description" content="Kickstart your professional online presence with our lightweight, modern portfolio template. Built with Bootstrap 5.3 and Vite, this open-source solution offers a perfect balance of simplicity and customization for developers and creatives.">
     <title>Portfolio Starter Kit</title>
     <link
       rel="preconnect"
@@ -256,12 +257,12 @@
           >
             <div class="dropdown d-flex flex-column gap-3 bd-mode-toggle">
               <button
-                class="btn btn-text d-flex align-items-center justify-content-center me-1 py-0 px-1"
                 id="bd-theme"
-                type="button"
                 aria-expanded="false"
-                data-bs-toggle="dropdown"
                 aria-label="Toggle theme (light)"
+                class="btn btn-text d-flex align-items-center justify-content-center me-1 py-0 px-1"
+                data-bs-toggle="dropdown"
+                type="button"
               >
                 <svg
                   class="bi my-1 theme-icon-active"
@@ -286,6 +287,7 @@
                     class="dropdown-item d-flex align-items-center gap-2 active"
                     data-bs-theme-value="auto"
                     aria-pressed="false"
+                    aria-label="Set to system color mode"
                   >
                     <svg
                       class="opacity-50"
@@ -303,6 +305,7 @@
                     class="dropdown-item d-flex align-items-center gap-2"
                     data-bs-theme-value="light"
                     aria-pressed="true"
+                    aria-label="Set light mode"
                   >
                     <svg
                       class="opacity-50"
@@ -320,6 +323,7 @@
                     class="dropdown-item d-flex align-items-center gap-2"
                     data-bs-theme-value="dark"
                     aria-pressed="false"
+                    aria-label="Set dark mode"
                   >
                     <svg
                       class="opacity-50"
@@ -786,6 +790,8 @@
                     <a
                       class="d-flex shadow"
                       href="#0"
+                      title="Project title"
+                      aria-label="Project title"
                       ><img
                         src="https://assets.codepen.io/97621/img-16x9-DPI-home-XL.jpg?format=avif&fit=cover"
                         class="img-fluid object-fit-cover"
