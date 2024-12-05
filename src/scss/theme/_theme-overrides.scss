@@ -151,5 +151,9 @@ button {
 
   .navbar a {
     color: var(--bs-light);
+
+    &:not(:hover) {
+      text-decoration-color: rgba(var(--bs-rgb-light), var(--bs-link-underline-opacity, 1)) !important;
+    }
   }
 }

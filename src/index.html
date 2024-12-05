@@ -13,7 +13,10 @@
       name="viewport"
       content="width=device-width, initial-scale=1"
     />
-    <meta name="description" content="Kickstart your professional online presence with our lightweight, modern portfolio template. Built with Bootstrap 5.3 and Vite, this open-source solution offers a perfect balance of simplicity and customization for developers and creatives.">
+    <meta
+      name="description"
+      content="Kickstart your professional online presence with our lightweight, modern portfolio template. Built with Bootstrap 5.3 and Vite, this open-source solution offers a perfect balance of simplicity and customization for developers and creatives."
+    />
     <title>Portfolio Starter Kit</title>
     <link
       rel="preconnect"
@@ -426,28 +429,28 @@
               <li>
                 <a
                   href="#about"
-                  class="link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
+                  class="link-offset-1 link-offset-1-hover link-underline"
                   >About</a
                 >
               </li>
               <li>
                 <a
                   href="#experience"
-                  class="link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
+                  class="link-offset-1 link-offset-1-hover link-underline"
                   >Experience</a
                 >
               </li>
               <li>
                 <a
-                  href="//docs.google.com/document/d/1CG5F0XGEuR3ZWTTyU3i7L-wGu6gGtFXgkrhgAyKZcfM/edit?usp=sharing"
-                  class="link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
+                  href="https://docs.google.com/document/d/1CG5F0XGEuR3ZWTTyU3i7L-wGu6gGtFXgkrhgAyKZcfM/edit?usp=sharing"
+                  class="link-offset-1 link-offset-1-hover link-underline"
                   >Resume</a
                 >
               </li>
               <li>
                 <a
                   href="mailto:ethayer.design@gmail.com?subject=Hi%20Eric.%20Let's%20talk%20about...%20&body=(answering%20these%20items%20will%20help%20me%20better%20understand%20your%20goals)%0A%0AContact%20information%20(company%2C%20name%2C%20role%2C%20phone%20number%2C%20etc)%3A%0A%0AWhat%20can%20I%20help%20you%20with?%20(project%20type%2C%20concept %2C%20outline%2C%20etc)%3A%0A%0ATimeline%20(start%20date%2C%20end%20date)%3A%0A%0AProject%20budget%20(greater%20than%20%2450%2C000%20range%20%7C%20%2430%2C000%E2%80%93%2420%2C000%20range%20%7C%20%2420%2C000%E2%80%93%2410%2C000%20range%20%7C%20less%20than%20%245%2C000)%3A%0A%0ASincerely%2C"
-                  class="link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
+                  class="link-offset-1 link-offset-1-hover link-underline"
                   >Contact</a
                 >
               </li>
@@ -469,7 +472,8 @@
                     UX Engineer <small>&amp;</small> Systems Lead
                   </h1>
                   <p class="lead mb-0">
-                    I'm a skilled&mdash;Creative Strategist, Interaction Designer, and Front-end Developer.<br
+                    I'm a skilled&mdash;Creative Strategist, Interaction
+                    Designer, and Front-end Developer.<br
                       class="d-none d-lg-block"
                     />
                     Please let me know how I can help your team or project
@@ -824,7 +828,7 @@
                               </svg>
                             </a>
                           </h3>
-
+                          <!-- Project Details -->
                           <div
                             class="offcanvas offcanvas-end w-100"
                             tabindex="-1"
@@ -1107,12 +1111,17 @@
           </section>
         </div>
       </main>
-      <footer class="text-bg-dark" role="contentinfo">
+      <footer
+        class="text-bg-dark"
+        role="contentinfo"
+      >
         <div class="container-fluid pt-3 pb-2 px-3 px-lg-4">
           <div
             class="d-flex flex-column flex-md-row align-items-md-center justify-content-md-between gap-3 p-2"
           >
-            <nav class="nav d-flex justify-content-center">
+            <nav
+              class="nav d-flex justify-content-center justify-content-md-start flex-grow-1"
+            >
               <ul
                 class="d-flex flex-wrap column-gap-5 row-gap-2 list-unstyled m-0 p-0"
               >
@@ -1146,7 +1155,7 @@
                 </li>
               </ul>
             </nav>
-            <div class="d-flex justify-content-center gap-1">
+            <div class="d-none justify-content-center gap-1">
               <button
                 type="button"
                 class="btn btn-text text-light d-flex align-items-center p-1"
@@ -1196,9 +1205,83 @@
                 <span class="d-none visually-hidden">Dark</span>
               </button>
             </div>
+            <div class="d-flex justify-content-center">
+              <a
+                class="d-flex mx-auto"
+                href="lighthouse-audit.html"
+                title="lighthouse audit"
+                data-bs-toggle="modal"
+                data-bs-target="#lighthouseModal"
+              >
+                <img
+                  src="./images/img-lighthouse-score.png"
+                  alt=""
+                  class="img-fluid object-fit-cover"
+                  style="max-width: 15rem; mix-blend-mode: lighten"
+                />
+              </a>
+            </div>
           </div>
         </div>
       </footer>
+    </div>
+    <!-- Lighthouse Audit -->
+    <div
+      class="modal fade"
+      id="lighthouseModal"
+      tabindex="-1"
+      aria-labelledby="lighthouseModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl modal-fullscreen-md-down">
+        <div class="modal-content">
+          <div class="modal-header border border-0">
+            <h2
+              class="modal-title fs-5"
+              id="lighthouseModalLabel"
+            >
+              Current Lighthouse audit
+            </h2>
+            <button
+              type="button"
+              class="btn-close p-1 fs-4 bg-transparent"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <svg
+                width="1.5em"
+                height="1.5em"
+              >
+                <use href="#close-mark"></use>
+              </svg>
+            </button>
+          </div>
+          <div class="modal-body d-flex flex-column pt-0">
+            <div class="ratio ratio-1x1 h-100">
+              <iframe
+                src="lighthouse-audit.html"
+                class="embed-responsive-item object-fit-cover w-100 h-100"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+          <div class="modal-footer border border-0">
+            <button
+              type="button"
+              class="btn btn-secondary d-none"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary d-none"
+            >
+              Save changes
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
   <script
