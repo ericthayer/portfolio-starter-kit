@@ -6,7 +6,3 @@ import * as bootstrap from "bootstrap"
 
 // BS color picker
 import "./bs-color-picker.js"
-
-if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("./service-worker.js")
-  }
