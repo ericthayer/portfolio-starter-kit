@@ -1,12 +1,14 @@
 # Customize the theme using SCSS
 
-<img width="240" alt="scss-config" src="https://github.com/user-attachments/assets/3bdc9142-4910-4bab-8f90-af47b136be8a" />
+Customize the Bootstrap variables to fit your theme. You can find a list of Bootstrap variables in the [Bootstrap documentation](https://getbootstrap.com/docs/5.3/customize/sass/).
 
 ## Current Import Configuration
 
 By organizing your SCSS files in this way, you can easily manage and override Bootstrap's default styles to create a custom theme that fits your project's design requirements
 
-Here is a summary of the relevant parts of your `styles.scss` file:
+<img width="240" alt="scss-config" src="https://github.com/user-attachments/assets/3bdc9142-4910-4bab-8f90-af47b136be8a" />
+
+### Example of `styles.scss`
 
 ```scss
 // Include functions and variables first
