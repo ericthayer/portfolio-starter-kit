@@ -25,15 +25,15 @@ Built with Bootstrap and Vite, this open-source solution offers a perfect balanc
 
 ## Roadmap
 
-### v1.0.0-alpha (Q1 2025)
+### v1.0.0-alpha - [Released](https://github.com/ericthayer/portfolio-starter-kit/tree/1.0.0-alpha)
 
-- [✔︎] **Landing Page:** responsive layout, core functionality
-- [✔︎] **Styled Theme:** SCSS mapping & theme system
-- [✔︎] **Lighthouse:** monitring performance and accessibility
-- [✔︎] **PWA:** passing Progressive Web App standards
-- [✔︎] **Deploy Pipeline:** auto-deployed and hosted on Netlify
+- **Landing Page:** responsive layout, core functionality
+- **Styled Theme:** SCSS mapping & theme system
+- **Lighthouse:** monitring performance and accessibility
+- **PWA:** passing Progressive Web App standards
+- **Deploy Pipeline:** auto-deployed and hosted on Netlify
 
-### v1.0 (Q2 2025)
+### v2.0.0-alpha (Q2 2025)
 
 - **Admin Panel:** access app configs (view-only)
     - **Application:** view application metadata
@@ -41,14 +41,14 @@ Built with Bootstrap and Vite, this open-source solution offers a perfect balanc
     - **Export Site:** export site via .zip
 - **Onboarding:** documentation and supporting media
 
-### v2.0 (Q3 2025)
+### v1.0.0-beta (Q3 2025)
 
 - **App Config:** update metadata & deploy build
 - **CMS:** update & manage content types
 - **Theme Builder:** update look & feel via UI
 
-### v3.0 (Q4 2025)
+### v1.0.0 (Q4 2025)
 
 - **Mulit-page Support:** create & deploy multiple templates
-- **Vue/React Support:** optional SPA support
+<!-- - **Vue/React Support:** optional SPA support -->
 <!-- - **Visual Testing:** Chromatic integration -->
