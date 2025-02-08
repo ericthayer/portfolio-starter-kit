@@ -551,9 +551,7 @@
                   </p>
                 </div>
                 <div class="callouts mt-4">
-                  <h2
-                    class="h5 fw-regular mt-1 mb-4 text-center"
-                  >
+                  <h2 class="h5 fw-regular mt-1 mb-4 text-center">
                     Core Strengths
                   </h2>
                   <div class="cards row g-5">
@@ -662,7 +660,11 @@
                 </h2>
                 <hr class="w-50 mb-5" />
                 <p class="fs-4 mb-0">
-                  I can effectively communicate and work alongside designers, developers, project managers, and stakeholders. My ability to understand and integrate different perspectives allows me to contribute meaningfully to any team, fostering a productive and innovative work environment.
+                  I can effectively communicate and work alongside designers,
+                  developers, project managers, and stakeholders. My ability to
+                  understand and integrate different perspectives allows me to
+                  contribute meaningfully to any team, fostering a productive
+                  and innovative work environment.
                 </p>
               </div>
             </div>
@@ -687,7 +689,7 @@
                     /></a>
                   </div>
                   <div
-                    class="col col-lg-5 description d-flex flex-column align-items-start gap-3 p-4 pt-sm-5 px-sm-5 p-md-5 py-lg-2 flex-grow-1"
+                    class="col col-lg-5 description d-flex flex-column align-items-start gap- p-4 pt-sm-5 px-sm-5 p-md-5 py-lg-2 flex-grow-1"
                   >
                     <div class="d-flex flex-column gap-3">
                       <div class="d-flex flex-column">
@@ -744,13 +746,13 @@
                             </div>
                           </div>
                         </div>
-                        <time class="date">Nov 10, 2024</time>
+                        <time class="date pt-1 fw-medium">Nov 10, 2024</time>
                         <hr class="mt-2 mb-0 w-50" />
                       </div>
                       <div
                         class="d-flex align-items-start justify-content-between"
                       >
-                        <p class="">
+                        <p class="mb-0">
                           As a UX Design & Development team member at CoBank, my
                           role is multi-faceted and essential to the
                           organization's success. We are responsible for
@@ -761,7 +763,7 @@
                     </div>
                     <div class="d-flex flex-column gap-2">
                       <!-- <small class="flex-fill fw-medium">Tools used</small> -->
-                      <div class="tags d-flex gap-3 fs-6 fw-semibold">
+                      <div class="tags d-flex d-none gap-3 fs-6 fw-semibold">
                         <span
                           class="badge text-bg-secondary text-decoration-none lh-sm py-1 px-2 rounded"
                           title="User Interface Design"
@@ -784,9 +786,11 @@
               </div>
             </div>
             <!-- Related Work -->
-            <div class="callouts">
+            <div class="callouts d-none">
               <div class="container-fluid py-3 px-4 px-sm-5 pb-lg-5">
-                <h2 class="h5 fw-regular mt-1 mb-4 text-center">Related Work</h2>
+                <h2 class="h5 fw-regular mt-1 mb-4 text-center">
+                  Related Work
+                </h2>
                 <div class="cards row g-5">
                   <div class="col-12 col-md-6 col-lg-4 position-relative">
                     <div
@@ -875,82 +879,91 @@
               </div>
             </div>
             <!-- Work Categories -->
-            <div class="tabs d-none categories container-fluid px-4 px-sm-5">
-              <!-- Tab nav -->
-              <ul
-                class="nav nav-tabs"
-                id="myTab"
-                role="tablist"
+            <div class="tabs categories container-fluid mt-4 px-4 px-sm-5">
+              <div
+                class="d-flex flex-column justify-content-center flex-md-row align-items-md-center justify-content-md-between border-bottom pb-3 gap-3"
               >
-                <li
-                  class="nav-item"
-                  role="presentation"
+                <h2
+                  class="h5 fw-regular mt-1 mb-0 mb-md-0 text-center text-md-left"
                 >
-                  <button
-                    class="nav-link active"
-                    id="ui-work-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#ui-work"
-                    type="button"
-                    role="tab"
-                    aria-controls="ui-work"
-                    aria-selected="true"
-                  >
-                    UI
-                  </button>
-                </li>
-                <li
-                  class="nav-item"
-                  role="presentation"
+                  Related Work
+                </h2>
+                <!-- Tab nav -->
+                <ul
+                  class="nav nav-pills p-0 justify-content-center justify-content-md-between"
+                  id="myTab"
+                  role="tablist"
                 >
-                  <button
-                    class="nav-link"
-                    id="ux-work-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#ux-work"
-                    type="button"
-                    role="tab"
-                    aria-controls="ux-work"
-                    aria-selected="false"
+                  <li
+                    class="nav-item"
+                    role="presentation"
                   >
-                    UX
-                  </button>
-                </li>
-                <li
-                  class="nav-item"
-                  role="presentation"
-                >
-                  <button
-                    class="nav-link"
-                    id="react-work-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#react-work"
-                    type="button"
-                    role="tab"
-                    aria-controls="react-work"
-                    aria-selected="false"
+                    <button
+                      class="nav-link active"
+                      id="ui-work-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#ui-work"
+                      type="button"
+                      role="tab"
+                      aria-controls="ui-work"
+                      aria-selected="true"
+                    >
+                      UI
+                    </button>
+                  </li>
+                  <li
+                    class="nav-item"
+                    role="presentation"
                   >
-                    React
-                  </button>
-                </li>
-                <li
-                  class="nav-item"
-                  role="presentation"
-                >
-                  <button
-                    class="nav-link"
-                    id="storybook-work-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#storybook-work"
-                    type="button"
-                    role="tab"
-                    aria-controls="storybook-work"
-                    aria-selected="false"
+                    <button
+                      class="nav-link"
+                      id="ux-work-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#ux-work"
+                      type="button"
+                      role="tab"
+                      aria-controls="ux-work"
+                      aria-selected="false"
+                    >
+                      UX
+                    </button>
+                  </li>
+                  <li
+                    class="nav-item"
+                    role="presentation"
                   >
-                    Storybook
-                  </button>
-                </li>
-              </ul>
+                    <button
+                      class="nav-link"
+                      id="front-end-work-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#front-end-work"
+                      type="button"
+                      role="tab"
+                      aria-controls="front-end-work"
+                      aria-selected="false"
+                    >
+                      Front-end
+                    </button>
+                  </li>
+                  <li
+                    class="nav-item"
+                    role="presentation"
+                  >
+                    <button
+                      class="nav-link"
+                      id="design-system-work-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#design-system-work"
+                      type="button"
+                      role="tab"
+                      aria-controls="design-system-work"
+                      aria-selected="false"
+                    >
+                      Design System
+                    </button>
+                  </li>
+                </ul>
+              </div>
               <!-- Tab content -->
               <div class="tab-content">
                 <div
@@ -960,7 +973,107 @@
                   aria-labelledby="ui-work-tab"
                   tabindex="0"
                 >
-                  UI
+                  <!-- Related UI Work -->
+                  <div class="callouts py-5">
+                    <div class="container-fluid px-0 pt-md-3">
+                      <h3
+                        class="h6 d-none d-md-block fw-regular mb-4 mt-md-1 text-center"
+                      >
+                        User Interface Design
+                      </h3>
+                      <div class="cards row g-5 pt-2">
+                        <div class="col-12 col-md-6 col-lg-4 position-relative">
+                          <div
+                            class="bg-body rounded rounded-3 shadow shadow-sm d-flex flex-column overflow-hidden"
+                          >
+                            <div class="media d-flex ratio ratio-16x9">
+                              <img
+                                src="https://assets.codepen.io/97621/RMP_DEMO_XD_view.gif"
+                                class="img-fluid object-fit-cover"
+                                alt=""
+                              />
+                            </div>
+                            <div class="copy m-1 p-4">
+                              <h3 class="h6">Product Design</h3>
+                              <p class="mb-0">
+                                Google Ventures' Sprint methodology is a
+                                five-day process for answering critical business
+                                questions through design, prototyping, and
+                                testing ideas with customers.
+                              </p>
+                              <a
+                                href="#0"
+                                class="stretched-link"
+                                ><span class="visually-hidden"
+                                  >View samples</span
+                                ></a
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 position-relative">
+                          <div
+                            class="bg-body rounded rounded-3 shadow shadow-sm d-flex flex-column overflow-hidden"
+                          >
+                            <div class="media d-flex ratio ratio-16x9">
+                              <img
+                                src="https://assets.codepen.io/97621/cobank-design-tokens-demo-01.png?format=avif&fit=cover"
+                                class="img-fluid object-fit-cover"
+                                alt=""
+                              />
+                            </div>
+                            <div class="copy m-1 p-4">
+                              <h3 class="h6">Design Systems</h3>
+                              <p class="mb-0">
+                                Google Ventures' Sprint methodology is a
+                                five-day process for answering critical business
+                                questions through design, prototyping, and
+                                testing ideas with customers.
+                              </p>
+                              <a
+                                href="#0"
+                                class="stretched-link"
+                                ><span class="visually-hidden"
+                                  >View samples</span
+                                ></a
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="col-12 col-md-6 mx-md-auto col-lg-4 position-relative"
+                        >
+                          <div
+                            class="bg-body rounded rounded-3 shadow shadow-sm d-flex flex-column overflow-hidden"
+                          >
+                            <div class="media d-flex ratio ratio-16x9">
+                              <img
+                                src="https://assets.codepen.io/97621/img-16x9-DPI-process-XL.jpg?format=avif&fit=cover"
+                                class="img-fluid object-fit-cover"
+                                alt=""
+                              />
+                            </div>
+                            <div class="copy m-1 p-4">
+                              <h3 class="h6">Front-end Development</h3>
+                              <p class="mb-0">
+                                Google Ventures' Sprint methodology is a
+                                five-day process for answering critical business
+                                questions through design, prototyping, and
+                                testing ideas with customers.
+                              </p>
+                              <a
+                                href="#0"
+                                class="stretched-link"
+                                ><span class="visually-hidden"
+                                  >View samples</span
+                                ></a
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <div
                   class="tab-pane"
@@ -969,31 +1082,331 @@
                   aria-labelledby="ux-work-tab"
                   tabindex="0"
                 >
-                  UX
+                  <!-- Related UX Work -->
+                  <div class="callouts py-5">
+                    <div class="container-fluid px-0 pt-md-3">
+                      <h3
+                        class="h6 fw-regular d-none d-md-block mb-4 mt-md-1 text-center"
+                      >
+                        User Experience Design
+                      </h3>
+                      <div class="cards row g-5 pt-2">
+                        <div class="col-12 col-md-6 col-lg-4 position-relative">
+                          <div
+                            class="bg-body rounded rounded-3 shadow shadow-sm d-flex flex-column overflow-hidden"
+                          >
+                            <div class="media d-flex ratio ratio-16x9">
+                              <img
+                                src="https://assets.codepen.io/97621/RMP_DEMO_XD_view.gif"
+                                class="img-fluid object-fit-cover"
+                                alt=""
+                              />
+                            </div>
+                            <div class="copy m-1 p-4">
+                              <h3 class="h6">Product Design</h3>
+                              <p class="mb-0">
+                                Google Ventures' Sprint methodology is a
+                                five-day process for answering critical business
+                                questions through design, prototyping, and
+                                testing ideas with customers.
+                              </p>
+                              <a
+                                href="#0"
+                                class="stretched-link"
+                                ><span class="visually-hidden"
+                                  >View samples</span
+                                ></a
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 position-relative">
+                          <div
+                            class="bg-body rounded rounded-3 shadow shadow-sm d-flex flex-column overflow-hidden"
+                          >
+                            <div class="media d-flex ratio ratio-16x9">
+                              <img
+                                src="https://assets.codepen.io/97621/img-16x9-DPI-process-XL.jpg?format=avif&fit=cover"
+                                class="img-fluid object-fit-cover"
+                                alt=""
+                              />
+                            </div>
+                            <div class="copy m-1 p-4">
+                              <h3 class="h6">Front-end Development</h3>
+                              <p class="mb-0">
+                                Google Ventures' Sprint methodology is a
+                                five-day process for answering critical business
+                                questions through design, prototyping, and
+                                testing ideas with customers.
+                              </p>
+                              <a
+                                href="#0"
+                                class="stretched-link"
+                                ><span class="visually-hidden"
+                                  >View samples</span
+                                ></a
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="col-12 col-md-6 mx-md-auto col-lg-4 position-relative"
+                        >
+                          <div
+                            class="bg-body rounded rounded-3 shadow shadow-sm d-flex flex-column overflow-hidden"
+                          >
+                            <div class="media d-flex ratio ratio-16x9">
+                              <img
+                                src="https://assets.codepen.io/97621/cobank-design-tokens-demo-01.png?format=avif&fit=cover"
+                                class="img-fluid object-fit-cover"
+                                alt=""
+                              />
+                            </div>
+                            <div class="copy m-1 p-4">
+                              <h3 class="h6">Design Systems</h3>
+                              <p class="mb-0">
+                                Google Ventures' Sprint methodology is a
+                                five-day process for answering critical business
+                                questions through design, prototyping, and
+                                testing ideas with customers.
+                              </p>
+                              <a
+                                href="#0"
+                                class="stretched-link"
+                                ><span class="visually-hidden"
+                                  >View samples</span
+                                ></a
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <div
                   class="tab-pane"
-                  id="react-work"
+                  id="front-end-work"
                   role="tabpanel"
-                  aria-labelledby="react-work-tab"
+                  aria-labelledby="front-end-work-tab"
                   tabindex="0"
                 >
-                  React
+                  <!-- Related Front-end Work -->
+                  <div class="callouts py-5">
+                    <div class="container-fluid px-0 pt-md-3">
+                      <h3
+                        class="h6 fw-regular d-none d-md-block mb-4 mt-md-1 text-center"
+                      >
+                        Front-end Development
+                      </h3>
+                      <div class="cards row g-5 pt-2">
+                        <div class="col-12 col-md-6 col-lg-4 position-relative">
+                          <div
+                            class="bg-body rounded rounded-3 shadow shadow-sm d-flex flex-column overflow-hidden"
+                          >
+                            <div class="media d-flex ratio ratio-16x9">
+                              <img
+                                src="https://assets.codepen.io/97621/img-16x9-DPI-process-XL.jpg?format=avif&fit=cover"
+                                class="img-fluid object-fit-cover"
+                                alt=""
+                              />
+                            </div>
+                            <div class="copy m-1 p-4">
+                              <h3 class="h6">Front-end Development</h3>
+                              <p class="mb-0">
+                                Google Ventures' Sprint methodology is a
+                                five-day process for answering critical business
+                                questions through design, prototyping, and
+                                testing ideas with customers.
+                              </p>
+                              <a
+                                href="#0"
+                                class="stretched-link"
+                                ><span class="visually-hidden"
+                                  >View samples</span
+                                ></a
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 position-relative">
+                          <div
+                            class="bg-body rounded rounded-3 shadow shadow-sm d-flex flex-column overflow-hidden"
+                          >
+                            <div class="media d-flex ratio ratio-16x9">
+                              <img
+                                src="https://assets.codepen.io/97621/RMP_DEMO_XD_view.gif"
+                                class="img-fluid object-fit-cover"
+                                alt=""
+                              />
+                            </div>
+                            <div class="copy m-1 p-4">
+                              <h3 class="h6">Product Design</h3>
+                              <p class="mb-0">
+                                Google Ventures' Sprint methodology is a
+                                five-day process for answering critical business
+                                questions through design, prototyping, and
+                                testing ideas with customers.
+                              </p>
+                              <a
+                                href="#0"
+                                class="stretched-link"
+                                ><span class="visually-hidden"
+                                  >View samples</span
+                                ></a
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="col-12 col-md-6 mx-md-auto col-lg-4 position-relative"
+                        >
+                          <div
+                            class="bg-body rounded rounded-3 shadow shadow-sm d-flex flex-column overflow-hidden"
+                          >
+                            <div class="media d-flex ratio ratio-16x9">
+                              <img
+                                src="https://assets.codepen.io/97621/cobank-design-tokens-demo-01.png?format=avif&fit=cover"
+                                class="img-fluid object-fit-cover"
+                                alt=""
+                              />
+                            </div>
+                            <div class="copy m-1 p-4">
+                              <h3 class="h6">Design Systems</h3>
+                              <p class="mb-0">
+                                Google Ventures' Sprint methodology is a
+                                five-day process for answering critical business
+                                questions through design, prototyping, and
+                                testing ideas with customers.
+                              </p>
+                              <a
+                                href="#0"
+                                class="stretched-link"
+                                ><span class="visually-hidden"
+                                  >View samples</span
+                                ></a
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <div
                   class="tab-pane"
-                  id="storybook-work"
+                  id="design-system-work"
                   role="tabpanel"
-                  aria-labelledby="storybook-work-tab"
+                  aria-labelledby="design-system-work-tab"
                   tabindex="0"
                 >
-                  Storybook
+                  <!-- Related Design System Work -->
+                  <div class="callouts py-5">
+                    <div class="container-fluid px-0 pt-md-3">
+                      <h3
+                        class="h6 fw-regular d-none d-md-block mb-4 mt-md-1 text-center"
+                      >
+                        System Design & Development
+                      </h3>
+                      <div class="cards row g-5 pt-2">
+                        <div class="col-12 col-md-6 col-lg-4 position-relative">
+                          <div
+                            class="bg-body rounded rounded-3 shadow shadow-sm d-flex flex-column overflow-hidden"
+                          >
+                            <div class="media d-flex ratio ratio-16x9">
+                              <img
+                                src="https://assets.codepen.io/97621/RMP_DEMO_XD_view.gif"
+                                class="img-fluid object-fit-cover"
+                                alt=""
+                              />
+                            </div>
+                            <div class="copy m-1 p-4">
+                              <h3 class="h6">Product Design</h3>
+                              <p class="mb-0">
+                                Google Ventures' Sprint methodology is a
+                                five-day process for answering critical business
+                                questions through design, prototyping, and
+                                testing ideas with customers.
+                              </p>
+                              <a
+                                href="#0"
+                                class="stretched-link"
+                                ><span class="visually-hidden"
+                                  >View samples</span
+                                ></a
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 position-relative">
+                          <div
+                            class="bg-body rounded rounded-3 shadow shadow-sm d-flex flex-column overflow-hidden"
+                          >
+                            <div class="media d-flex ratio ratio-16x9">
+                              <img
+                                src="https://assets.codepen.io/97621/cobank-design-tokens-demo-01.png?format=avif&fit=cover"
+                                class="img-fluid object-fit-cover"
+                                alt=""
+                              />
+                            </div>
+                            <div class="copy m-1 p-4">
+                              <h3 class="h6">Design Systems</h3>
+                              <p class="mb-0">
+                                Google Ventures' Sprint methodology is a
+                                five-day process for answering critical business
+                                questions through design, prototyping, and
+                                testing ideas with customers.
+                              </p>
+                              <a
+                                href="#0"
+                                class="stretched-link"
+                                ><span class="visually-hidden"
+                                  >View samples</span
+                                ></a
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="col-12 col-md-6 mx-md-auto col-lg-4 position-relative"
+                        >
+                          <div
+                            class="bg-body rounded rounded-3 shadow shadow-sm d-flex flex-column overflow-hidden"
+                          >
+                            <div class="media d-flex ratio ratio-16x9">
+                              <img
+                                src="https://assets.codepen.io/97621/img-16x9-DPI-process-XL.jpg?format=avif&fit=cover"
+                                class="img-fluid object-fit-cover"
+                                alt=""
+                              />
+                            </div>
+                            <div class="copy m-1 p-4">
+                              <h3 class="h6">Front-end Development</h3>
+                              <p class="mb-0">
+                                Google Ventures' Sprint methodology is a
+                                five-day process for answering critical business
+                                questions through design, prototyping, and
+                                testing ideas with customers.
+                              </p>
+                              <a
+                                href="#0"
+                                class="stretched-link"
+                                ><span class="visually-hidden"
+                                  >View samples</span
+                                ></a
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </section>
           <!-- Testimonials -->
-          <section class="testimonials py-4 pb-5">
+          <section class="testimonials pt-4 pb-0">
             <div class="headline py-3">
               <div class="container-fluid p-4 px-sm-5 p-md-5">
                 <h2 class="text-uppercase h5 fw-semibold mb-0">
@@ -1001,11 +1414,14 @@
                 </h2>
                 <hr class="w-50 mb-5" />
                 <p class="fs-4 mb-0">
-                  I have had the privilege of working with a diverse group of professionals across various industries.  Together, we have successfully delivered projects that meet and exceed client expectations.
+                  I have had the privilege of working with a diverse group of
+                  professionals across various industries. Together, we have
+                  successfully delivered projects that meet and exceed client
+                  expectations.
                 </p>
               </div>
             </div>
-            <div class="container-fluid p-4 p-lg-5">
+            <div class="container-fluid px-0 pt-4">
               <!-- <h2 class="h4 fw-regular my-4 my-lg-5 text-center">Word on the Street</h2> -->
               <!-- Carousel -->
               <div
@@ -1044,7 +1460,7 @@
                       />
                     </div>
                     <div
-                      class="carousel-caption d-none d-md-flex flex-column justify-content-end position-static mb-5"
+                      class="carousel-caption d-none d-sm-flex flex-column justify-content-end position-static mb-5"
                     >
                       <h5>First slide label</h5>
                       <p class="mw-100">
@@ -1119,20 +1535,37 @@
           </section>
           <!-- Trivia -->
           <section
-            id="contact"
-            class="bg-body-secondary d-flex flex-column py-5"
+            id="trivia"
+            class="d-flex flex-column py-5"
           >
-          <div class="headline py-3">
-            <div class="container-fluid p-4 px-sm-5 p-md-5">
-              <h2 class="text-uppercase h5 fw-semibold mb-0">
-                Personal Trivia
-              </h2>
-              <hr class="w-50 mb-5" />
-              <p class="fs-4 mb-0">
-                I have had the privilege of working with a diverse group of professionals across various industries.  Together, we have successfully delivered projects that meet and exceed client expectations.
-              </p>
+            <div class="headline py-3">
+              <div class="container-fluid p-4 px-sm-5 p-md-5">
+                <h2 class="text-uppercase h5 fw-semibold mb-0">
+                  Let's Play a Game
+                </h2>
+                <hr class="w-50 mb-5" />
+                <!-- <p class="fs-4 mb-0">
+                  In my free time, I enjoy exploring new hobbies and interests.
+                  Whether it's hiking in nature, experimenting with new recipes
+                  in the kitchen, or diving into a good book, I always find ways
+                  to stay curious and engaged. These activities not only provide
+                  relaxation but also inspire creativity and fresh perspectives
+                  in my professional work.
+                </p> -->
+                <p class="fs-4 mb-0">
+                  Below are three statements about my journey in tech and design
+                  - two are absolutely true, and one is
+                  <u
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    data-bs-title="Do I need this?"
+                    >made up</u
+                  >. Can you spot the lie? This little game offers a glimpse
+                  into my background while hopefully providing some
+                  entertainment.
+                </p>
+              </div>
             </div>
-          </div>
           </section>
           <!-- Contact -->
           <section
@@ -1141,9 +1574,11 @@
           >
             <div class="container-fluid p-4 p-lg-5">
               <div class="py-3 pt-lg-4 pb-lg-5">
-                <h2 class="h2 fw-regular my-4 text-center">Get in touch</h2>
+                <h2 class="h2 fw-regular my-4 text-center">Connect with Me</h2>
                 <div class="actions d-flex flex-column gap-5 my-1">
-                  <div class="d-flex flex-wrap align-items-center justify-content-center gap-4">
+                  <div
+                    class="d-flex flex-wrap align-items-center justify-content-center gap-4"
+                  >
                     <button
                       class="btn btn-lg btn-primary flex-fill flex-sm-grow-0"
                     >
