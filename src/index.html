@@ -251,7 +251,7 @@
       </symbol>
     </svg>
     <div class="app-layout flex-fill d-flex flex-column">
-      <header class="bg-body-secondary position-sticky top-0 z-3">
+      <header class="app-header bg-body-secondary position-sticky top-0 z-3">
         <div
           class="container-fluid d-flex flex-row flex-wrap align-items-center gap-3 py-3 pe-4"
         >
@@ -905,7 +905,8 @@
             <!-- Work Categories -->
             <div class="tabs categories container-fluid mt-4 px-4 px-sm-5">
               <div
-                class="d-flex flex-column justify-content-center flex-md-row align-items-md-center justify-content-md-between border-bottom pb-3 gap-3"
+                class="d-flex flex-column justify-content-center flex-md-row align-items-md-center justify-content-md-between border-bottom pb-3 gap-3 position-sticky bg-body-secondary z-1"
+                style="top: var(--app-header-height);"
               >
                 <h2
                   class="h5 fw-regular mt-1 mb-0 mb-md-0 text-center text-md-left"

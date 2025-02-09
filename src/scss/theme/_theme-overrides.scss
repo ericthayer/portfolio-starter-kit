@@ -1,5 +1,12 @@
 // Base styles
 
+:root {
+  --app-header-height: 110px;
+  @media screen and (width > 340px) {
+    --app-header-height: 70px;   
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -114,6 +121,10 @@ button {
   //   text-decoration: underline;
   //   text-decoration-skip-ink: auto;
   // }
+}
+
+.app-header {
+  height: var(--app-header-height);
 }
 
 // Light/Dark mode
