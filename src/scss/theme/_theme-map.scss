@@ -1400,8 +1400,6 @@ $navbar-padding-x: null;
 $navbar-nav-link-padding-x: 0.5rem;
 
 $navbar-brand-font-size: $font-size-lg;
-// Compute the navbar-brand padding-y so the navbar-brand will have the same height as navbar-text
-// and nav-link
 $nav-link-height: $font-size-base * $line-height-base + $nav-link-padding-y * 2;
 $navbar-brand-height: $navbar-brand-font-size * $line-height-base;
 $navbar-brand-padding-y: ($nav-link-height - $navbar-brand-height) * 0.5;
@@ -1861,9 +1859,9 @@ $carousel-transition-duration: 0.6s;
 $carousel-transition: transform $carousel-transition-duration ease-in-out;
 
 // carousel-dark-variables
-$carousel-dark-indicator-active-bg: $white;
-$carousel-dark-caption-color: $white;
-$carousel-dark-control-icon-filter: invert(1) grayscale(100);
+$carousel-dark-indicator-active-bg: $black;
+$carousel-dark-caption-color: $black;
+$carousel-dark-control-icon-filter: none;
 
 // Spinners
 

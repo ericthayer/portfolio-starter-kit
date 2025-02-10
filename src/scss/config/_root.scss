@@ -196,8 +196,6 @@
 @if $enable-dark-mode {
   @include color-mode(dark, true) {
     color-scheme: dark;
-
-    // CoBank dark mode variables
     --#{$prefix}headline-color: #{$light};
     --#{$prefix}label-color: #{$theme-neutral-100};
 
@@ -206,8 +204,7 @@
     --#{$prefix}grayscale-medium: #{$theme-neutral-600};
     --#{$prefix}grayscale-dark: #{$theme-neutral-200};
     --#{$prefix}grayscale-darker: #{$theme-neutral-100};
-
-    // Bootstrap dark mode variables
+    
     --#{$prefix}body-color: #{$body-color-dark};
     --#{$prefix}body-color-rgb: #{to-rgb($body-color-dark)};
     --#{$prefix}body-bg: #{$body-bg-dark};

@@ -251,7 +251,7 @@
       </symbol>
     </svg>
     <div class="app-layout flex-fill d-flex flex-column">
-      <header class="bg-body-secondary position-sticky top-0 z-3">
+      <header class="app-header bg-body-secondary position-sticky top-0 z-3">
         <div
           class="container-fluid d-flex flex-row flex-wrap align-items-center gap-3 py-3 pe-4"
         >
@@ -393,28 +393,41 @@
                       href="#about"
                       class="nav-link link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
                       aria-current="page"
-                      >About</a
+                    >
+                      <span data-bs-dismiss="offcanvas">About</span></a
                     >
                   </li>
                   <li class="nav-item">
                     <a
                       href="#experience"
                       class="nav-link link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
-                      >Experience</a
+                    >
+                      <span data-bs-dismiss="offcanvas">Experience</span></a
                     >
                   </li>
                   <li class="nav-item">
                     <a
-                      href="//docs.google.com/document/d/1CG5F0XGEuR3ZWTTyU3i7L-wGu6gGtFXgkrhgAyKZcfM/edit?usp=sharing"
+                      href="#0"
                       class="nav-link link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
-                      >Resume</a
+                      data-bs-toggle="modal"
+                      data-bs-target="#resumeModal"
+                      ><span data-bs-dismiss="offcanvas">Resume</span></a
                     >
+                    <!-- <button
+                      type="button"
+                      data-bs-toggle="modal"
+                      data-bs-target="#resumeModal"
+                      class="nav-link link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
+                    >
+                      Resume
+                    </button> -->
                   </li>
                   <li class="nav-item">
                     <a
-                      href="mailto:ethayer.design@gmail.com?subject=Hi%20Eric.%20Let's%20talk%20about...%20&body=(answering%20these%20items%20will%20help%20me%20better%20understand%20your%20goals)%0A%0AContact%20information%20(company%2C%20name%2C%20role%2C%20phone%20number%2C%20etc)%3A%0A%0AWhat%20can%20I%20help%20you%20with?%20(project%20type%2C%20concept %2C%20outline%2C%20etc)%3A%0A%0ATimeline%20(start%20date%2C%20end%20date)%3A%0A%0AProject%20budget%20(greater%20than%20%2450%2C000%20range%20%7C%20%2430%2C000%E2%80%93%2420%2C000%20range%20%7C%20%2420%2C000%E2%80%93%2410%2C000%20range%20%7C%20less%20than%20%245%2C000)%3A%0A%0ASincerely%2C"
+                      href="mailto:ethayer.design@gmail.com?subject=Hi%20Eric.%20Let's%20talk%20about...%20&amp;body=Contact%20information%20(company%2C%20name%2C%20role%2C%20phone%20number%2C%20etc)%3A%0A%0AWhat%20can%20I%20help%20you%20with?%20(project%20type%2C%20concept %2C%20outline%2C%20etc)%3A%0A%0ATimeline%20(start%20date%2C%20end%20date)%3A%0A%0AProject%20budget%20(greater%20than%20%2450%2C000%20range%20%7C%20%2430%2C000%E2%80%93%2420%2C000%20range%20%7C%20%2420%2C000%E2%80%93%2410%2C000%20range%20%7C%20less%20than%20%245%2C000)%3A%0A%0A%0A(answering%20these%20items%20will%20help%20me%20better%20understand%20your%20goals)"
                       class="nav-link link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
-                      >Contact</a
+                      data-bs-dismiss="offcanvas"
+                      ><span data-bs-dismiss="offcanvas">Contact</span></a
                     >
                   </li>
                 </ul>
@@ -442,7 +455,9 @@
               </li>
               <li>
                 <a
-                  href="https://docs.google.com/document/d/1CG5F0XGEuR3ZWTTyU3i7L-wGu6gGtFXgkrhgAyKZcfM/edit?usp=sharing"
+                  href="#0"
+                  data-bs-toggle="modal"
+                  data-bs-target="#resumeModal"
                   class="link-offset-1 link-offset-1-hover link-underline"
                   >Resume</a
                 >
@@ -493,7 +508,124 @@
                       <div class="fs-5">Download Resume</div>
                     </button>
                   </div>
-                  <ul
+                  <nav
+                    class="nav d-flex justify-content-center justify-content-sm-start flex-grow-1"
+                  >
+                    <ul
+                      class="d-flex flex-wrap justify-content-center align-items-sm-center justify-content-sm-start column-gap-5 row-gap-2 list-unstyled m-0 p-0 flex-grow-1"
+                    >
+                      <li class="">
+                        <a
+                          href="https://www.linkedin.com/in/ethayerdesign/"
+                          class="fs-2 text-body-secondary d-flex align-items-center"
+                          title="LinkedIn Profile"
+                        >
+                          <svg
+                            width="0.9em"
+                            height="0.9em"
+                            viewBox="0 0 48 48"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M40.6731 40.6992H33.7093V29.7913C33.7093 27.1907 33.6623 23.8419 30.0864 23.8419C26.4596 23.8419 25.9034 26.6776 25.9034 29.5994V40.6992H18.9396V18.2685H25.6254V21.3353H25.7194C27.0824 19.0088 29.6203 17.6144 32.315 17.7124C39.3728 17.7124 40.6771 22.3536 40.6771 28.397L40.6731 40.6953V40.6992ZM11.0828 15.2018C10.0131 15.1967 8.98857 14.7697 8.23177 14.0136C7.47498 13.2576 7.04702 12.2335 7.04084 11.1637C7.04084 8.9469 8.866 7.12174 11.0828 7.12174C13.2997 7.12174 15.1209 8.9469 15.1248 11.1637C15.1248 13.3805 13.2997 15.2018 11.0828 15.2018ZM14.5647 40.6992H7.59309V18.2685H14.5647V40.6992ZM44.1394 0.651425H4.0916C3.18353 0.646151 2.31006 0.999458 1.66102 1.63457C1.01197 2.26968 0.639798 3.13527 0.625366 4.04325V44.2594C0.639798 45.1674 1.01197 46.033 1.66102 46.6681C2.31006 47.3032 3.18353 47.6565 4.0916 47.6513H44.1433C45.0535 47.6586 45.9298 47.3065 46.5817 46.6714C47.2337 46.0363 47.6087 45.1695 47.6252 44.2594V4.03933C47.6087 3.12999 47.2335 2.26402 46.5813 1.63015C45.9291 0.996282 45.0527 0.645891 44.1433 0.655342L44.1394 0.651425Z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                          <span class="visually-hidden">Linkedin</span>
+                        </a>
+                      </li>
+                      <li class="">
+                        <a
+                          href="https://github.com/ericthayer/"
+                          class="fs-2 text-body-secondary d-flex align-items-center"
+                          title="GitHub Profile"
+                        >
+                          <svg
+                            width="1em"
+                            height="1em"
+                            viewBox="0 0 50 49"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M25.0962 0.786552C19.2391 0.76446 13.5663 2.83329 9.09855 6.62082C4.63079 10.4084 1.66131 15.666 0.724373 21.4477C-0.212564 27.2294 0.944545 33.1557 3.98752 38.1604C7.0305 43.1651 11.7596 46.9195 17.3239 48.7483C18.5537 48.945 18.9472 48.1826 18.9472 47.5185V43.3618C12.1342 44.8376 10.6831 40.1398 10.6831 40.1398C10.2237 38.6122 9.22797 37.302 7.87914 36.4504C5.64093 34.9255 8.05131 34.9747 8.05131 34.9747C8.82337 35.0745 9.56287 35.3476 10.2145 35.7735C10.8662 36.1995 11.4131 36.7672 11.8145 37.4342C12.4977 38.6491 13.6329 39.545 14.9732 39.9273C16.3135 40.3096 17.7506 40.1473 18.9718 39.4757C19.0839 38.2288 19.6327 37.0616 20.5214 36.1798C15.2579 35.6387 9.40408 33.5235 9.40408 24.1525C9.33294 21.6965 10.2143 19.3082 11.8637 17.4871C11.1148 15.3704 11.2028 13.0477 12.1096 10.9938C12.1096 10.9938 14.1757 10.3297 18.8734 13.4534C22.9012 12.3706 27.1435 12.3706 31.1713 13.4534C35.8691 10.2805 37.9352 10.9938 37.9352 10.9938C38.842 13.0477 38.93 15.3704 38.1811 17.4871C39.8305 19.3082 40.7118 21.6965 40.6407 24.1525C40.6407 33.5481 34.8853 35.6141 29.4004 36.229C29.9911 36.8228 30.4481 37.536 30.7408 38.3207C31.0335 39.1054 31.1551 39.9437 31.0975 40.7793V47.5185C31.0975 48.1826 31.4911 48.9696 32.7455 48.7483C38.2996 46.9227 43.0219 43.1784 46.0655 38.1866C49.1091 33.1948 50.2751 27.2821 49.3543 21.5085C48.4335 15.735 45.4862 10.4783 41.0408 6.6809C36.5954 2.88352 30.9427 0.793846 25.0962 0.786552Z"
+                              fill="currentColor"
+                            />
+                          </svg>
+
+                          <span class="visually-hidden">GitHub</span>
+                        </a>
+                      </li>
+                      <li class="">
+                        <a
+                          href="https://codepen.io/ericthayer/"
+                          class="fs-2 text-body-secondary d-flex align-items-center"
+                          title="CodePen Profile"
+                        >
+                          <svg
+                            width="0.9em"
+                            height="1em"
+                            viewBox="0 0 49 51"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M23.2842 1.04647C24.0369 0.519668 25.0384 0.519668 25.7911 1.04647L47.6476 16.346C48.2318 16.755 48.5798 17.4234 48.5798 18.1366V33.4361C48.5798 34.1493 48.2318 34.8177 47.6476 35.2266L25.7911 50.5261C25.0384 51.0531 24.0369 51.0531 23.2842 50.5261L1.42775 35.2266C0.843461 34.8177 0.495483 34.1493 0.495483 33.4361V18.1366C0.495483 17.4234 0.843461 16.755 1.42775 16.346L23.2842 1.04647ZM4.86678 22.3345V29.2381L9.79807 25.7863L4.86678 22.3345ZM13.6094 28.4544L6.49245 33.4361L22.352 44.5377V34.5742L13.6094 28.4544ZM26.7233 34.5742V44.5377L42.5828 33.4361L35.4659 28.4544L26.7233 34.5742ZM39.2772 25.7863L44.2085 29.2381V22.3345L39.2772 25.7863ZM42.5828 18.1366L35.4659 23.1183L26.7233 16.9986V7.03491L42.5828 18.1366ZM22.352 7.03491V16.9986L13.6094 23.1183L6.49245 18.1366L22.352 7.03491ZM24.5376 20.8046L17.4207 25.7863L24.5376 30.7681L31.6545 25.7863L24.5376 20.8046Z"
+                              fill="currentColor"
+                            />
+                          </svg>
+
+                          <span class="visually-hidden">CodePen</span>
+                        </a>
+                      </li>
+                      <li class="">
+                        <a
+                          href="https://dribbble.com/ethayer/"
+                          class="fs-2 text-body-secondary d-flex align-items-center"
+                          title="Dribbble Profile"
+                        >
+                          <svg
+                            width="0.9em"
+                            height="0.9em"
+                            viewBox="0 0 49 49"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M23.0775 17.7364C20.3775 12.6364 17.5275 7.83638 14.5275 3.03638C7.17751 6.18638 1.77751 13.0864 0.577515 21.3364C7.77751 21.4864 15.2775 20.2864 23.0775 17.7364Z"
+                              fill="currentColor"
+                            />
+                            <path
+                              d="M25.9276 16.6864C31.3276 14.5864 36.5776 11.8864 41.9776 8.58638C37.4776 3.78638 31.3276 0.786377 24.2776 0.786377C21.8776 0.786377 19.4776 1.08638 17.3776 1.83638C20.3776 6.63638 23.2276 11.5864 25.9276 16.6864Z"
+                              fill="currentColor"
+                            />
+                            <path
+                              d="M30.1275 25.5359C34.4775 24.3359 39.1275 23.5859 43.7775 23.5859C45.2775 23.5859 46.6275 23.5859 48.1275 23.7359C47.9775 18.9359 46.3275 14.4359 43.7775 10.8359C38.2275 14.4359 32.6775 17.2859 27.2775 19.3859C28.1775 21.4859 29.2275 23.4359 30.1275 25.5359Z"
+                              fill="currentColor"
+                            />
+                            <path
+                              d="M27.2775 26.4364C26.3775 24.3364 25.3275 22.3864 24.2775 20.2864C16.7775 22.8364 9.42747 24.1864 2.37747 24.1864C1.62747 24.1864 1.02747 24.1864 0.277466 24.1864C0.277466 24.3364 0.277466 24.4864 0.277466 24.7864C0.277466 30.7864 2.52747 36.1864 6.12747 40.3864C12.1275 33.9364 19.3275 29.2864 27.2775 26.4364Z"
+                              fill="currentColor"
+                            />
+                            <path
+                              d="M43.9274 26.7364C39.7274 26.7364 35.5274 27.3364 31.4774 28.3864C33.8774 33.6364 35.8274 39.1864 37.7774 44.7364C43.6274 40.8364 47.5274 34.3864 48.2774 27.0364C46.7774 26.7364 45.2774 26.7364 43.9274 26.7364Z"
+                              fill="currentColor"
+                            />
+                            <path
+                              d="M28.6274 29.2864C20.9774 31.8364 14.0774 36.3364 8.22742 42.6364C12.4274 46.3864 18.1274 48.7864 24.2774 48.7864C28.1774 48.7864 31.7774 47.8864 35.0774 46.2364C33.1274 40.3864 31.0274 34.8364 28.6274 29.2864Z"
+                              fill="currentColor"
+                            />
+                          </svg>
+
+                          <span class="visually-hidden">Dribbble</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                  <!-- <ul
                     class="row gap-4 gap-xl-5 g-0 list-unstyled m-0 py-0 px-1"
                   >
                     <li class="col-6 col-sm-auto p-0">
@@ -524,7 +656,7 @@
                         >CodePen</a
                       >
                     </li>
-                  </ul>
+                  </ul> -->
                 </div>
               </div>
             </div>
@@ -555,7 +687,7 @@
                     Core Strengths
                   </h2>
                   <div class="cards row g-5">
-                    <div class="col-12 col-md-6 col-lg-4 position-relative">
+                    <div class="col-12 col-md-6 col-xl-4 position-relative">
                       <div
                         class="bg-body-secondary rounded rounded-3 d-flex flex-column p-4"
                       >
@@ -584,7 +716,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="col-12 col-md-6 col-lg-4 position-relative">
+                    <div class="col-12 col-md-6 col-xl-4 position-relative">
                       <div
                         class="bg-body-secondary rounded rounded-3 d-flex flex-column p-4"
                       >
@@ -613,7 +745,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="col-12 col-md-12 col-lg-4 position-relative">
+                    <div class="col-12 col-md-12 col-xl-4 position-relative">
                       <div
                         class="bg-body-secondary rounded rounded-3 d-flex flex-column p-4"
                       >
@@ -785,99 +917,6 @@
                 </div>
               </div>
             </div>
-            <!-- Related Work -->
-            <div class="callouts d-none">
-              <div class="container-fluid py-3 px-4 px-sm-5 pb-lg-5">
-                <h2 class="h5 fw-regular mt-1 mb-4 text-center">
-                  Related Work
-                </h2>
-                <div class="cards row g-5">
-                  <div class="col-12 col-md-6 col-lg-4 position-relative">
-                    <div
-                      class="bg-body rounded rounded-3 shadow shadow-sm d-flex flex-column overflow-hidden"
-                    >
-                      <div class="media d-flex ratio ratio-16x9">
-                        <img
-                          src="https://assets.codepen.io/97621/RMP_DEMO_XD_view.gif"
-                          class="img-fluid object-fit-cover"
-                          alt=""
-                        />
-                      </div>
-                      <div class="copy m-1 p-4">
-                        <h3 class="h6">Product Design</h3>
-                        <p class="mb-0">
-                          Google Ventures' Sprint methodology is a five-day
-                          process for answering critical business questions
-                          through design, prototyping, and testing ideas with
-                          customers.
-                        </p>
-                        <a
-                          href="#0"
-                          class="stretched-link"
-                          ><span class="visually-hidden">View samples</span></a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-12 col-md-6 col-lg-4 position-relative">
-                    <div
-                      class="bg-body rounded rounded-3 shadow shadow-sm d-flex flex-column overflow-hidden"
-                    >
-                      <div class="media d-flex ratio ratio-16x9">
-                        <img
-                          src="https://assets.codepen.io/97621/cobank-design-tokens-demo-01.png?format=avif&fit=cover"
-                          class="img-fluid object-fit-cover"
-                          alt=""
-                        />
-                      </div>
-                      <div class="copy m-1 p-4">
-                        <h3 class="h6">Design Systems</h3>
-                        <p class="mb-0">
-                          Google Ventures' Sprint methodology is a five-day
-                          process for answering critical business questions
-                          through design, prototyping, and testing ideas with
-                          customers.
-                        </p>
-                        <a
-                          href="#0"
-                          class="stretched-link"
-                          ><span class="visually-hidden">View samples</span></a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="col-12 col-md-6 mx-md-auto col-lg-4 position-relative"
-                  >
-                    <div
-                      class="bg-body rounded rounded-3 shadow shadow-sm d-flex flex-column overflow-hidden"
-                    >
-                      <div class="media d-flex ratio ratio-16x9">
-                        <img
-                          src="https://assets.codepen.io/97621/img-16x9-DPI-process-XL.jpg?format=avif&fit=cover"
-                          class="img-fluid object-fit-cover"
-                          alt=""
-                        />
-                      </div>
-                      <div class="copy m-1 p-4">
-                        <h3 class="h6">Front-end Development</h3>
-                        <p class="mb-0">
-                          Google Ventures' Sprint methodology is a five-day
-                          process for answering critical business questions
-                          through design, prototyping, and testing ideas with
-                          customers.
-                        </p>
-                        <a
-                          href="#0"
-                          class="stretched-link"
-                          ><span class="visually-hidden">View samples</span></a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
             <!-- Work Categories -->
             <div class="tabs categories container-fluid mt-4 px-4 px-sm-5">
               <div
@@ -982,13 +1021,13 @@
                         User Interface Design
                       </h3>
                       <div class="cards row g-5 pt-2">
-                        <div class="col-12 col-md-6 col-lg-4 position-relative">
+                        <div class="col-12 col-md-6 col-xl-4 position-relative">
                           <div
                             class="bg-body rounded rounded-3 shadow shadow-sm d-flex flex-column overflow-hidden"
                           >
                             <div class="media d-flex ratio ratio-16x9">
                               <img
-                                src="https://assets.codepen.io/97621/RMP_DEMO_XD_view.gif"
+                                src="https://assets.codepen.io/97621/cobank-design-tokens-demo-01.png"
                                 class="img-fluid object-fit-cover"
                                 alt=""
                               />
@@ -1011,13 +1050,13 @@
                             </div>
                           </div>
                         </div>
-                        <div class="col-12 col-md-6 col-lg-4 position-relative">
+                        <div class="col-12 col-md-6 col-xl-4 position-relative">
                           <div
                             class="bg-body rounded rounded-3 shadow shadow-sm d-flex flex-column overflow-hidden"
                           >
                             <div class="media d-flex ratio ratio-16x9">
                               <img
-                                src="https://assets.codepen.io/97621/cobank-design-tokens-demo-01.png?format=avif&fit=cover"
+                                src="https://assets.codepen.io/97621/cobank-design-tokens-demo-01.png"
                                 class="img-fluid object-fit-cover"
                                 alt=""
                               />
@@ -1041,7 +1080,7 @@
                           </div>
                         </div>
                         <div
-                          class="col-12 col-md-6 mx-md-auto col-lg-4 position-relative"
+                          class="col-12 col-md-6 mx-md-auto col-xl-4 position-relative"
                         >
                           <div
                             class="bg-body rounded rounded-3 shadow shadow-sm d-flex flex-column overflow-hidden"
@@ -1091,13 +1130,13 @@
                         User Experience Design
                       </h3>
                       <div class="cards row g-5 pt-2">
-                        <div class="col-12 col-md-6 col-lg-4 position-relative">
+                        <div class="col-12 col-md-6 col-xl-4 position-relative">
                           <div
                             class="bg-body rounded rounded-3 shadow shadow-sm d-flex flex-column overflow-hidden"
                           >
                             <div class="media d-flex ratio ratio-16x9">
                               <img
-                                src="https://assets.codepen.io/97621/RMP_DEMO_XD_view.gif"
+                                src="https://assets.codepen.io/97621/cobank-design-tokens-demo-01.png"
                                 class="img-fluid object-fit-cover"
                                 alt=""
                               />
@@ -1120,7 +1159,7 @@
                             </div>
                           </div>
                         </div>
-                        <div class="col-12 col-md-6 col-lg-4 position-relative">
+                        <div class="col-12 col-md-6 col-xl-4 position-relative">
                           <div
                             class="bg-body rounded rounded-3 shadow shadow-sm d-flex flex-column overflow-hidden"
                           >
@@ -1150,7 +1189,7 @@
                           </div>
                         </div>
                         <div
-                          class="col-12 col-md-6 mx-md-auto col-lg-4 position-relative"
+                          class="col-12 col-md-6 mx-md-auto col-xl-4 position-relative"
                         >
                           <div
                             class="bg-body rounded rounded-3 shadow shadow-sm d-flex flex-column overflow-hidden"
@@ -1200,7 +1239,7 @@
                         Front-end Development
                       </h3>
                       <div class="cards row g-5 pt-2">
-                        <div class="col-12 col-md-6 col-lg-4 position-relative">
+                        <div class="col-12 col-md-6 col-xl-4 position-relative">
                           <div
                             class="bg-body rounded rounded-3 shadow shadow-sm d-flex flex-column overflow-hidden"
                           >
@@ -1229,13 +1268,13 @@
                             </div>
                           </div>
                         </div>
-                        <div class="col-12 col-md-6 col-lg-4 position-relative">
+                        <div class="col-12 col-md-6 col-xl-4 position-relative">
                           <div
                             class="bg-body rounded rounded-3 shadow shadow-sm d-flex flex-column overflow-hidden"
                           >
                             <div class="media d-flex ratio ratio-16x9">
                               <img
-                                src="https://assets.codepen.io/97621/RMP_DEMO_XD_view.gif"
+                                src="https://assets.codepen.io/97621/cobank-design-tokens-demo-01.png"
                                 class="img-fluid object-fit-cover"
                                 alt=""
                               />
@@ -1259,7 +1298,7 @@
                           </div>
                         </div>
                         <div
-                          class="col-12 col-md-6 mx-md-auto col-lg-4 position-relative"
+                          class="col-12 col-md-6 mx-md-auto col-xl-4 position-relative"
                         >
                           <div
                             class="bg-body rounded rounded-3 shadow shadow-sm d-flex flex-column overflow-hidden"
@@ -1309,13 +1348,13 @@
                         System Design & Development
                       </h3>
                       <div class="cards row g-5 pt-2">
-                        <div class="col-12 col-md-6 col-lg-4 position-relative">
+                        <div class="col-12 col-md-6 col-xl-4 position-relative">
                           <div
                             class="bg-body rounded rounded-3 shadow shadow-sm d-flex flex-column overflow-hidden"
                           >
                             <div class="media d-flex ratio ratio-16x9">
                               <img
-                                src="https://assets.codepen.io/97621/RMP_DEMO_XD_view.gif"
+                                src="https://assets.codepen.io/97621/cobank-design-tokens-demo-01.png"
                                 class="img-fluid object-fit-cover"
                                 alt=""
                               />
@@ -1338,7 +1377,7 @@
                             </div>
                           </div>
                         </div>
-                        <div class="col-12 col-md-6 col-lg-4 position-relative">
+                        <div class="col-12 col-md-6 col-xl-4 position-relative">
                           <div
                             class="bg-body rounded rounded-3 shadow shadow-sm d-flex flex-column overflow-hidden"
                           >
@@ -1368,7 +1407,7 @@
                           </div>
                         </div>
                         <div
-                          class="col-12 col-md-6 mx-md-auto col-lg-4 position-relative"
+                          class="col-12 col-md-6 mx-md-auto col-xl-4 position-relative"
                         >
                           <div
                             class="bg-body rounded rounded-3 shadow shadow-sm d-flex flex-column overflow-hidden"
@@ -1415,18 +1454,17 @@
                 <hr class="w-50 mb-5" />
                 <p class="fs-4 mb-0">
                   I have had the privilege of working with a diverse group of
-                  professionals across various industries. Together, we have
-                  successfully delivered projects that meet and exceed client
-                  expectations.
+                  professionals across various industries.
+                  <br class="d-none d-lg-block" />Together, we have successfully
+                  delivered projects that meet and exceed client expectations.
                 </p>
               </div>
             </div>
             <div class="container-fluid px-0 pt-4">
-              <!-- <h2 class="h4 fw-regular my-4 my-lg-5 text-center">Word on the Street</h2> -->
               <!-- Carousel -->
               <div
                 id="carouselExampleCaptions"
-                class="carousel slide"
+                class="carousel slide carousel-fade"
               >
                 <div class="carousel-indicators">
                   <button
@@ -1453,14 +1491,16 @@
                 <div class="carousel-inner">
                   <div class="carousel-item active">
                     <div class="ratio ratio-16x9">
-                      <img
-                        src="https://picsum.photos/id/10/1600/700?grayscale"
-                        class="d-block object-fit-cover opacity-25 w-100"
-                        alt="..."
-                      />
+                      <a href="https://www.linkedin.com/in/ethayerdesign/">
+                        <img
+                          src="./images/slide-testimonial-01@2x.png"
+                          class="d-block object-fit-cover w-100"
+                          alt="..."
+                        />
+                      </a>
                     </div>
                     <div
-                      class="carousel-caption d-none d-sm-flex flex-column justify-content-end position-static mb-5"
+                      class="carousel-caption d-none d-sm-fle flex-column justify-content-end position-static mb-5"
                     >
                       <h5>First slide label</h5>
                       <p class="mw-100">
@@ -1471,14 +1511,16 @@
                   </div>
                   <div class="carousel-item">
                     <div class="ratio ratio-16x9">
-                      <img
-                        src="https://picsum.photos/id/20/1600/700?grayscale"
-                        class="d-block object-fit-cover opacity-25 w-100"
-                        alt="..."
-                      />
+                      <a href="#0">
+                        <img
+                          src="./images/slide-testimonial-02@2x.png"
+                          class="d-block object-fit-cover w-100"
+                          alt="..."
+                        />
+                      </a>
                     </div>
                     <div
-                      class="carousel-caption d-none d-md-flex flex-column justify-content-end position-static mb-5"
+                      class="carousel-caption d-none d-md-fle flex-column justify-content-end position-static mb-5"
                     >
                       <h5>Second slide label</h5>
                       <p class="mw-100">
@@ -1489,14 +1531,16 @@
                   </div>
                   <div class="carousel-item">
                     <div class="ratio ratio-16x9">
-                      <img
-                        src="https://picsum.photos/id/30/1600/700?grayscale"
-                        class="d-block object-fit-cover opacity-25 w-100"
-                        alt="..."
-                      />
+                      <a href="#0">
+                        <img
+                          src="./images/slide-testimonial-03@2x.png"
+                          class="d-block object-fit-cover w-100"
+                          alt="..."
+                        />
+                      </a>
                     </div>
                     <div
-                      class="carousel-caption d-none d-md-flex flex-column justify-content-end position-static mb-5"
+                      class="carousel-caption d-none d-md-fle flex-column justify-content-end position-static mb-5"
                     >
                       <h5>Third slide label</h5>
                       <p class="mw-100">
@@ -1536,7 +1580,7 @@
           <!-- Trivia -->
           <section
             id="trivia"
-            class="d-flex flex-column py-5"
+            class="d-flex bg-body-secondary flex-column py-5"
           >
             <div class="headline py-3">
               <div class="container-fluid p-4 px-sm-5 p-md-5">
@@ -1559,11 +1603,108 @@
                     data-bs-toggle="tooltip"
                     data-bs-placement="top"
                     data-bs-title="Do I need this?"
-                    >made up</u
-                  >. Can you spot the lie? This little game offers a glimpse
-                  into my background while hopefully providing some
-                  entertainment.
+                    >an exaggeration.</u
+                  >
+                  <br class="d-none d-xl-block" />Can you spot the fib? This
+                  little game offers a glimpse into my background while
+                  hopefully providing some entertainment.
                 </p>
+              </div>
+            </div>
+            <div class="callouts">
+              <div class="container-fluid p-4 px-sm-5 pt-sm-2 pb-sm-5">
+                <!-- <h2 class="h5 fw-regular mt-1 mb-4 text-center">
+                  Core Strengths
+                </h2> -->
+                <div class="cards row g-5">
+                  <div class="col-12 col-md-6 col-xl-4 position-relative">
+                    <div
+                      class="bg-body rounded rounded-3 d-flex flex-column p-4"
+                    >
+                      <div class="copy m-1">
+                        <i class="d-block mb-4">
+                          <svg
+                            class="opacity-75"
+                            width="1.75em"
+                            height="1.75em"
+                          >
+                            <use href="#circle-half"></use>
+                          </svg>
+                        </i>
+                        <h3 class="h6">Design Sprints</h3>
+                        <p class="mb-4">
+                          Google Ventures' Sprint methodology is a five-day
+                          process for answering critical business questions
+                          through design, prototyping, and testing ideas with
+                          customers.
+                        </p>
+                        <a
+                          href="#0"
+                          class="stretched-link"
+                          ><span class="">View samples</span></a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6 col-xl-4 position-relative">
+                    <div
+                      class="bg-body rounded rounded-3 d-flex flex-column p-4"
+                    >
+                      <div class="copy m-1">
+                        <i class="d-block mb-4">
+                          <svg
+                            class="opacity-75"
+                            width="1.75em"
+                            height="1.75em"
+                          >
+                            <use href="#circle-half"></use>
+                          </svg>
+                        </i>
+                        <h3 class="h6">Design Sprints</h3>
+                        <p class="mb-4">
+                          Google Ventures' Sprint methodology is a five-day
+                          process for answering critical business questions
+                          through design, prototyping, and testing ideas with
+                          customers.
+                        </p>
+                        <a
+                          href="#0"
+                          class="stretched-link"
+                          ><span class="">View samples</span></a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-12 col-xl-4 position-relative">
+                    <div
+                      class="bg-body rounded rounded-3 d-flex flex-column p-4"
+                    >
+                      <div class="copy m-1">
+                        <i class="d-block mb-4">
+                          <svg
+                            class="opacity-75"
+                            width="1.75em"
+                            height="1.75em"
+                          >
+                            <use href="#circle-half"></use>
+                          </svg>
+                        </i>
+                        <h3 class="h6">Design Sprints</h3>
+                        <p class="mb-4">
+                          Google Ventures' Sprint methodology is a five-day
+                          process for answering critical business questions
+                          through design, prototyping, and testing ideas with
+                          customers.
+                        </p>
+                        <a
+                          href="#0"
+                          class="stretched-link"
+                          ><span class="">View samples</span></a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </section>
@@ -1579,11 +1720,12 @@
                   <div
                     class="d-flex flex-wrap align-items-center justify-content-center gap-4"
                   >
-                    <button
+                    <a
+                      href="mailto:ethayer.design@gmail.com?subject=Hi%20Eric.%20Let's%20talk%20about...%20&amp;body=Contact%20information%20(company%2C%20name%2C%20role%2C%20phone%20number%2C%20etc)%3A%0A%0AWhat%20can%20I%20help%20you%20with?%20(project%20type%2C%20concept %2C%20outline%2C%20etc)%3A%0A%0ATimeline%20(start%20date%2C%20end%20date)%3A%0A%0AProject%20budget%20(greater%20than%20%2450%2C000%20range%20%7C%20%2430%2C000%E2%80%93%2420%2C000%20range%20%7C%20%2420%2C000%E2%80%93%2410%2C000%20range%20%7C%20less%20than%20%245%2C000)%3A%0A%0A%0A(answering%20these%20items%20will%20help%20me%20better%20understand%20your%20goals)"
                       class="btn btn-lg btn-primary flex-fill flex-sm-grow-0"
                     >
-                      <div class="fs-5">Contact me</div>
-                    </button>
+                      <div class="fs-5">Send a Message</div>
+                    </a>
                     <!-- <button
                       class="btn btn-lg btn-secondary flex-fill flex-sm-grow-0"
                     >
@@ -1608,88 +1750,119 @@
               class="nav d-flex justify-content-center justify-content-md-start flex-grow-1"
             >
               <ul
-                class="d-flex flex-wrap column-gap-5 row-gap-2 list-unstyled m-0 p-0"
+                class="d-flex flex-wrap justify-content-center align-items-md-center justify-content-md-start column-gap-5 row-gap-2 list-unstyled m-0 p-0 flex-grow-1"
               >
-                <li>
+                <li class="">
                   <a
-                    href="//www.linkedin.com/in/ethayerdesign/"
-                    class="text-light link-offset-1 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-100-hover"
-                    >Linkedin</a
+                    href="https://www.linkedin.com/in/ethayerdesign/"
+                    class="fs-2 text-light d-flex align-items-center"
+                    title="LinkedIn Profile"
                   >
-                </li>
-                <li>
-                  <a
-                    href="//dribbble.com/ethayer/"
-                    class="text-light link-offset-1 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-100-hover"
-                    >Dribbble</a
-                  >
+                    <svg
+                      width="0.9em"
+                      height="0.9em"
+                      viewBox="0 0 48 48"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M40.6731 40.6992H33.7093V29.7913C33.7093 27.1907 33.6623 23.8419 30.0864 23.8419C26.4596 23.8419 25.9034 26.6776 25.9034 29.5994V40.6992H18.9396V18.2685H25.6254V21.3353H25.7194C27.0824 19.0088 29.6203 17.6144 32.315 17.7124C39.3728 17.7124 40.6771 22.3536 40.6771 28.397L40.6731 40.6953V40.6992ZM11.0828 15.2018C10.0131 15.1967 8.98857 14.7697 8.23177 14.0136C7.47498 13.2576 7.04702 12.2335 7.04084 11.1637C7.04084 8.9469 8.866 7.12174 11.0828 7.12174C13.2997 7.12174 15.1209 8.9469 15.1248 11.1637C15.1248 13.3805 13.2997 15.2018 11.0828 15.2018ZM14.5647 40.6992H7.59309V18.2685H14.5647V40.6992ZM44.1394 0.651425H4.0916C3.18353 0.646151 2.31006 0.999458 1.66102 1.63457C1.01197 2.26968 0.639798 3.13527 0.625366 4.04325V44.2594C0.639798 45.1674 1.01197 46.033 1.66102 46.6681C2.31006 47.3032 3.18353 47.6565 4.0916 47.6513H44.1433C45.0535 47.6586 45.9298 47.3065 46.5817 46.6714C47.2337 46.0363 47.6087 45.1695 47.6252 44.2594V4.03933C47.6087 3.12999 47.2335 2.26402 46.5813 1.63015C45.9291 0.996282 45.0527 0.645891 44.1433 0.655342L44.1394 0.651425Z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                    <span class="visually-hidden">Linkedin</span>
+                  </a>
                 </li>
                 <li class="">
                   <a
-                    href="//github.com/ericthayer/"
-                    class="text-light link-offset-1 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-100-hover"
-                    >GitHub</a
+                    href="https://github.com/ericthayer/"
+                    class="fs-2 text-light d-flex align-items-center"
+                    title="GitHub Profile"
                   >
+                    <svg
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 50 49"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M25.0962 0.786552C19.2391 0.76446 13.5663 2.83329 9.09855 6.62082C4.63079 10.4084 1.66131 15.666 0.724373 21.4477C-0.212564 27.2294 0.944545 33.1557 3.98752 38.1604C7.0305 43.1651 11.7596 46.9195 17.3239 48.7483C18.5537 48.945 18.9472 48.1826 18.9472 47.5185V43.3618C12.1342 44.8376 10.6831 40.1398 10.6831 40.1398C10.2237 38.6122 9.22797 37.302 7.87914 36.4504C5.64093 34.9255 8.05131 34.9747 8.05131 34.9747C8.82337 35.0745 9.56287 35.3476 10.2145 35.7735C10.8662 36.1995 11.4131 36.7672 11.8145 37.4342C12.4977 38.6491 13.6329 39.545 14.9732 39.9273C16.3135 40.3096 17.7506 40.1473 18.9718 39.4757C19.0839 38.2288 19.6327 37.0616 20.5214 36.1798C15.2579 35.6387 9.40408 33.5235 9.40408 24.1525C9.33294 21.6965 10.2143 19.3082 11.8637 17.4871C11.1148 15.3704 11.2028 13.0477 12.1096 10.9938C12.1096 10.9938 14.1757 10.3297 18.8734 13.4534C22.9012 12.3706 27.1435 12.3706 31.1713 13.4534C35.8691 10.2805 37.9352 10.9938 37.9352 10.9938C38.842 13.0477 38.93 15.3704 38.1811 17.4871C39.8305 19.3082 40.7118 21.6965 40.6407 24.1525C40.6407 33.5481 34.8853 35.6141 29.4004 36.229C29.9911 36.8228 30.4481 37.536 30.7408 38.3207C31.0335 39.1054 31.1551 39.9437 31.0975 40.7793V47.5185C31.0975 48.1826 31.4911 48.9696 32.7455 48.7483C38.2996 46.9227 43.0219 43.1784 46.0655 38.1866C49.1091 33.1948 50.2751 27.2821 49.3543 21.5085C48.4335 15.735 45.4862 10.4783 41.0408 6.6809C36.5954 2.88352 30.9427 0.793846 25.0962 0.786552Z"
+                        fill="currentColor"
+                      />
+                    </svg>
+
+                    <span class="visually-hidden">GitHub</span>
+                  </a>
                 </li>
                 <li class="">
                   <a
-                    href="//codepen.io/ericthayer/"
-                    class="text-light link-offset-1 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-100-hover"
-                    >CodePen</a
+                    href="https://codepen.io/ericthayer/"
+                    class="fs-2 text-light d-flex align-items-center"
+                    title="CodePen Profile"
                   >
+                    <svg
+                      width="0.9em"
+                      height="1em"
+                      viewBox="0 0 49 51"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M23.2842 1.04647C24.0369 0.519668 25.0384 0.519668 25.7911 1.04647L47.6476 16.346C48.2318 16.755 48.5798 17.4234 48.5798 18.1366V33.4361C48.5798 34.1493 48.2318 34.8177 47.6476 35.2266L25.7911 50.5261C25.0384 51.0531 24.0369 51.0531 23.2842 50.5261L1.42775 35.2266C0.843461 34.8177 0.495483 34.1493 0.495483 33.4361V18.1366C0.495483 17.4234 0.843461 16.755 1.42775 16.346L23.2842 1.04647ZM4.86678 22.3345V29.2381L9.79807 25.7863L4.86678 22.3345ZM13.6094 28.4544L6.49245 33.4361L22.352 44.5377V34.5742L13.6094 28.4544ZM26.7233 34.5742V44.5377L42.5828 33.4361L35.4659 28.4544L26.7233 34.5742ZM39.2772 25.7863L44.2085 29.2381V22.3345L39.2772 25.7863ZM42.5828 18.1366L35.4659 23.1183L26.7233 16.9986V7.03491L42.5828 18.1366ZM22.352 7.03491V16.9986L13.6094 23.1183L6.49245 18.1366L22.352 7.03491ZM24.5376 20.8046L17.4207 25.7863L24.5376 30.7681L31.6545 25.7863L24.5376 20.8046Z"
+                        fill="currentColor"
+                      />
+                    </svg>
+
+                    <span class="visually-hidden">CodePen</span>
+                  </a>
+                </li>
+                <li class="">
+                  <a
+                    href="https://dribbble.com/ethayer/"
+                    class="fs-2 text-light d-flex align-items-center"
+                    title="Dribbble Profile"
+                  >
+                    <svg
+                      width="0.9em"
+                      height="0.9em"
+                      viewBox="0 0 49 49"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M23.0775 17.7364C20.3775 12.6364 17.5275 7.83638 14.5275 3.03638C7.17751 6.18638 1.77751 13.0864 0.577515 21.3364C7.77751 21.4864 15.2775 20.2864 23.0775 17.7364Z"
+                        fill="currentColor"
+                      />
+                      <path
+                        d="M25.9276 16.6864C31.3276 14.5864 36.5776 11.8864 41.9776 8.58638C37.4776 3.78638 31.3276 0.786377 24.2776 0.786377C21.8776 0.786377 19.4776 1.08638 17.3776 1.83638C20.3776 6.63638 23.2276 11.5864 25.9276 16.6864Z"
+                        fill="currentColor"
+                      />
+                      <path
+                        d="M30.1275 25.5359C34.4775 24.3359 39.1275 23.5859 43.7775 23.5859C45.2775 23.5859 46.6275 23.5859 48.1275 23.7359C47.9775 18.9359 46.3275 14.4359 43.7775 10.8359C38.2275 14.4359 32.6775 17.2859 27.2775 19.3859C28.1775 21.4859 29.2275 23.4359 30.1275 25.5359Z"
+                        fill="currentColor"
+                      />
+                      <path
+                        d="M27.2775 26.4364C26.3775 24.3364 25.3275 22.3864 24.2775 20.2864C16.7775 22.8364 9.42747 24.1864 2.37747 24.1864C1.62747 24.1864 1.02747 24.1864 0.277466 24.1864C0.277466 24.3364 0.277466 24.4864 0.277466 24.7864C0.277466 30.7864 2.52747 36.1864 6.12747 40.3864C12.1275 33.9364 19.3275 29.2864 27.2775 26.4364Z"
+                        fill="currentColor"
+                      />
+                      <path
+                        d="M43.9274 26.7364C39.7274 26.7364 35.5274 27.3364 31.4774 28.3864C33.8774 33.6364 35.8274 39.1864 37.7774 44.7364C43.6274 40.8364 47.5274 34.3864 48.2774 27.0364C46.7774 26.7364 45.2774 26.7364 43.9274 26.7364Z"
+                        fill="currentColor"
+                      />
+                      <path
+                        d="M28.6274 29.2864C20.9774 31.8364 14.0774 36.3364 8.22742 42.6364C12.4274 46.3864 18.1274 48.7864 24.2774 48.7864C28.1774 48.7864 31.7774 47.8864 35.0774 46.2364C33.1274 40.3864 31.0274 34.8364 28.6274 29.2864Z"
+                        fill="currentColor"
+                      />
+                    </svg>
+
+                    <span class="visually-hidden">Dribbble</span>
+                  </a>
                 </li>
               </ul>
             </nav>
-            <div class="d-none justify-content-center gap-1">
-              <button
-                type="button"
-                class="btn btn-text text-light d-flex align-items-center p-1"
-                data-bs-theme-value="auto"
-                aria-pressed="false"
-                aria-label="Set to system color mode"
-              >
-                <svg
-                  class="opacity-50"
-                  width="1em"
-                  height="1em"
-                >
-                  <use href="#circle-half"></use>
-                </svg>
-                <span class="d-none visually-hidden">Auto</span>
-              </button>
-              <button
-                type="button"
-                class="btn btn-text text-light d-flex align-items-center p-1"
-                data-bs-theme-value="light"
-                aria-pressed="true"
-                aria-label="Set to light mode"
-              >
-                <svg
-                  class="opacity-50"
-                  width="1.25em"
-                  height="1.25em"
-                >
-                  <use href="#sun-fill"></use>
-                </svg>
-                <span class="d-none visually-hidden">Light</span>
-              </button>
-              <button
-                type="button"
-                class="btn btn-text text-light d-flex align-items-center p-1"
-                data-bs-theme-value="dark"
-                aria-pressed="false"
-                aria-label="Set to dark mode"
-              >
-                <svg
-                  class="opacity-50"
-                  width="1.125em"
-                  height="1.125em"
-                >
-                  <use href="#moon-stars-fill"></use>
-                </svg>
-                <span class="d-none visually-hidden">Dark</span>
-              </button>
-            </div>
             <div class="d-flex justify-content-center">
               <a
                 class="d-flex mx-auto"
@@ -1766,6 +1939,206 @@
             >
               Save changes
             </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Resume Modal -->
+    <div
+      class="modal fade"
+      id="resumeModal"
+      tabindex="-1"
+      aria-labelledby="resumeModalLabel"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-fullscreen-lg-down modal-xl"
+      >
+        <div class="modal-content">
+          <div
+            class="modal-header gap-4 align-items-start align-items-sm-center px-4 bg-body-secondary border-0"
+          >
+            <div
+              class="d-flex flex-column flex-sm-row gap-1 gap-sm-3 align-items-sm-center justify-content-sm-between w-100"
+            >
+              <h1
+                class="modal-title fs-2 mb-0 flex-grow-1 d-flex align-items-center gap-3"
+                id="resumeModalLabel"
+              >
+                <span
+                  >Eric Thayer<span class="visually-hidden"
+                    >'s Resume</span
+                  ></span
+                >
+
+                <a
+                  href="https://www.linkedin.com/in/ethayerdesign/"
+                  class="fs-4"
+                  ><svg
+                    width="0.9em"
+                    height="0.9em"
+                    viewBox="0 0 48 48"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M40.6731 40.6992H33.7093V29.7913C33.7093 27.1907 33.6623 23.8419 30.0864 23.8419C26.4596 23.8419 25.9034 26.6776 25.9034 29.5994V40.6992H18.9396V18.2685H25.6254V21.3353H25.7194C27.0824 19.0088 29.6203 17.6144 32.315 17.7124C39.3728 17.7124 40.6771 22.3536 40.6771 28.397L40.6731 40.6953V40.6992ZM11.0828 15.2018C10.0131 15.1967 8.98857 14.7697 8.23177 14.0136C7.47498 13.2576 7.04702 12.2335 7.04084 11.1637C7.04084 8.9469 8.866 7.12174 11.0828 7.12174C13.2997 7.12174 15.1209 8.9469 15.1248 11.1637C15.1248 13.3805 13.2997 15.2018 11.0828 15.2018ZM14.5647 40.6992H7.59309V18.2685H14.5647V40.6992ZM44.1394 0.651425H4.0916C3.18353 0.646151 2.31006 0.999458 1.66102 1.63457C1.01197 2.26968 0.639798 3.13527 0.625366 4.04325V44.2594C0.639798 45.1674 1.01197 46.033 1.66102 46.6681C2.31006 47.3032 3.18353 47.6565 4.0916 47.6513H44.1433C45.0535 47.6586 45.9298 47.3065 46.5817 46.6714C47.2337 46.0363 47.6087 45.1695 47.6252 44.2594V4.03933C47.6087 3.12999 47.2335 2.26402 46.5813 1.63015C45.9291 0.996282 45.0527 0.645891 44.1433 0.655342L44.1394 0.651425Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  <span class="visually-hidden">Linkedin</span></a
+                >
+              </h1>
+              <address class="d-flex gap-3 mb-0 align-items-center">
+                <a href="mailto:ethayer.design@gmail.com"
+                  >ethayer.design@gmail.com</a
+                >
+                <a href="tel:6199525081">619•952•5081</a>
+              </address>
+            </div>
+            <button
+              type="button"
+              class="btn-close p-1 fs-4 bg-transparent"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <svg
+                width="1.5em"
+                height="1.5em"
+              >
+                <use href="#close-mark"></use>
+              </svg>
+            </button>
+          </div>
+          <div class="modal-body p-4">
+            <article class="resume">
+              <header>
+                <h2 class="h5">UX Engineer & Systems Lead</h2>
+                <p class="fs-5 fw-regular">
+                  Team-focused UI/UX creative with professional experience in
+                  providing design and development services to support an
+                  organization's daily operations. Skilled in, design discovery,
+                  visual design, prototyping, and front-end development. Ability
+                  to collaborate with cross-functional department team leaders,
+                  identify and resolve issues, prioritize projects, and provide
+                  a high level of service.
+                </p>
+                <!-- <p>
+                  Team-focused UI/UX creative with professional experience in
+                  providing design and development services to support an
+                  organization's daily operations. Skilled in, design discovery,
+                  visual design, prototyping, and front-end development. Ability
+                  to collaborate with cross-functional department team leaders,
+                  identify and resolve issues, prioritize projects, and provide
+                  a high level of service.
+                </p> -->
+              </header>
+              <section>
+                <h2>Professional Experience</h2>
+                <div>
+                  <h3>UX Design & Development Team Member</h3>
+                  <p>CoBank, Nov 2024 - Present</p>
+                  <ul>
+                    <li>
+                      Employ user-centered design approach across all software
+                      products.
+                    </li>
+                    <li>
+                      Collaborate with cross-functional teams to deliver
+                      high-quality solutions.
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>Creative Strategist</h3>
+                  <p>Freelance, Jan 2020 - Oct 2024</p>
+                  <ul>
+                    <li>
+                      Developed creative strategies for various clients to
+                      enhance their brand presence.
+                    </li>
+                    <li>
+                      Designed and implemented user-friendly interfaces for web
+                      and mobile applications.
+                    </li>
+                  </ul>
+                </div>
+              </section>
+              <section>
+                <h2>Education</h2>
+                <div>
+                  <h3>Bachelor of Science in Computer Science</h3>
+                  <p>University of Colorado, 2016 - 2020</p>
+                </div>
+              </section>
+              <section>
+                <h2>Skills</h2>
+                <ul>
+                  <li>UX/UI Design</li>
+                  <li>Front-end Development</li>
+                  <li>Design Systems</li>
+                  <li>Prototyping</li>
+                </ul>
+              </section>
+              <section>
+                <h2>Certifications</h2>
+                <ul>
+                  <li>Certified UX Designer</li>
+                  <li>Certified Front-end Developer</li>
+                </ul>
+              </section>
+            </article>
+          </div>
+          <div class="modal-footer bg-body-secondary border-0">
+            <button
+              type="button"
+              class="btn btn-secondary border-0"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <!-- Download Resume -->
+            <div class="btn-group dropup">
+              <button
+                type="button"
+                class="btn btn-primary border-0"
+              >
+                Download
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary dropdown-toggle dropdown-toggle-split px-2 border-0"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                style="background-color: var(--bs-primary-700)"
+              >
+                <span class="visually-hidden">Toggle Dropdown</span>
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                    >MS Word</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                    >PDF</a
+                  >
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                    >Save as</a
+                  >
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
