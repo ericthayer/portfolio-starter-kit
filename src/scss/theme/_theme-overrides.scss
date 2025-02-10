@@ -1,12 +1,5 @@
 // Base styles
 
-:root {
-  --app-header-height: 110px;
-  @media screen and (width > 340px) {
-    --app-header-height: 70px;   
-  }
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -60,8 +53,12 @@ button {
   }
 }
 
+.app-header {
+  container-type: inline-size;
+}
+
 .brand {
-  @media (width < 375px) {
+  @container (width < 333px) {
     justify-content: center;
   }
 }
@@ -117,14 +114,11 @@ button {
     margin-right: .125rem;
     margin-left: .125rem;
   }
-  // .nav-link:not(.active) {
-  //   text-decoration: underline;
-  //   text-decoration-skip-ink: auto;
-  // }
-}
 
-.app-header {
-  height: var(--app-header-height);
+  .nav-link:not(.active) {
+    text-decoration: underline;
+    text-decoration-skip-ink: auto;
+  }
 }
 
 // Light/Dark mode
@@ -203,5 +197,9 @@ button {
       background-color: var(--bs-body-bg) !important;
     }
     
+  }
+
+  .carousel-item img {
+    filter: grayscale(1);
   }
 }

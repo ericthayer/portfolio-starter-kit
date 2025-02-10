@@ -393,28 +393,41 @@
                       href="#about"
                       class="nav-link link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
                       aria-current="page"
-                      >About</a
+                    >
+                      <span data-bs-dismiss="offcanvas">About</span></a
                     >
                   </li>
                   <li class="nav-item">
                     <a
                       href="#experience"
                       class="nav-link link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
-                      >Experience</a
+                    >
+                      <span data-bs-dismiss="offcanvas">Experience</span></a
                     >
                   </li>
                   <li class="nav-item">
                     <a
-                      href="//docs.google.com/document/d/1CG5F0XGEuR3ZWTTyU3i7L-wGu6gGtFXgkrhgAyKZcfM/edit?usp=sharing"
+                      href="#0"
                       class="nav-link link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
-                      >Resume</a
+                      data-bs-toggle="modal"
+                      data-bs-target="#resumeModal"
+                      ><span data-bs-dismiss="offcanvas">Resume</span></a
                     >
+                    <!-- <button
+                      type="button"
+                      data-bs-toggle="modal"
+                      data-bs-target="#resumeModal"
+                      class="nav-link link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
+                    >
+                      Resume
+                    </button> -->
                   </li>
                   <li class="nav-item">
                     <a
                       href="mailto:ethayer.design@gmail.com?subject=Hi%20Eric.%20Let's%20talk%20about...%20&amp;body=Contact%20information%20(company%2C%20name%2C%20role%2C%20phone%20number%2C%20etc)%3A%0A%0AWhat%20can%20I%20help%20you%20with?%20(project%20type%2C%20concept %2C%20outline%2C%20etc)%3A%0A%0ATimeline%20(start%20date%2C%20end%20date)%3A%0A%0AProject%20budget%20(greater%20than%20%2450%2C000%20range%20%7C%20%2430%2C000%E2%80%93%2420%2C000%20range%20%7C%20%2420%2C000%E2%80%93%2410%2C000%20range%20%7C%20less%20than%20%245%2C000)%3A%0A%0A%0A(answering%20these%20items%20will%20help%20me%20better%20understand%20your%20goals)"
                       class="nav-link link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
-                      >Contact</a
+                      data-bs-dismiss="offcanvas"
+                      ><span data-bs-dismiss="offcanvas">Contact</span></a
                     >
                   </li>
                 </ul>
@@ -442,7 +455,9 @@
               </li>
               <li>
                 <a
-                  href="https://docs.google.com/document/d/1CG5F0XGEuR3ZWTTyU3i7L-wGu6gGtFXgkrhgAyKZcfM/edit?usp=sharing"
+                  href="#0"
+                  data-bs-toggle="modal"
+                  data-bs-target="#resumeModal"
                   class="link-offset-1 link-offset-1-hover link-underline"
                   >Resume</a
                 >
@@ -905,8 +920,7 @@
             <!-- Work Categories -->
             <div class="tabs categories container-fluid mt-4 px-4 px-sm-5">
               <div
-                class="d-flex flex-column justify-content-center flex-md-row align-items-md-center justify-content-md-between border-bottom pb-3 gap-3 position-sticky bg-body-secondary z-1"
-                style="top: var(--app-header-height);"
+                class="d-flex flex-column justify-content-center flex-md-row align-items-md-center justify-content-md-between border-bottom pb-3 gap-3"
               >
                 <h2
                   class="h5 fw-regular mt-1 mb-0 mb-md-0 text-center text-md-left"
@@ -1066,7 +1080,7 @@
                           </div>
                         </div>
                         <div
-                          class="col-12 col-md-6 mx-md-auto col-lg-4 position-relative"
+                          class="col-12 col-md-4 mx-md-auto col-lg-4 position-relative"
                         >
                           <div
                             class="bg-body rounded rounded-3 shadow shadow-sm d-flex flex-column overflow-hidden"
@@ -1447,11 +1461,10 @@
               </div>
             </div>
             <div class="container-fluid px-0 pt-4">
-              <!-- <h2 class="h4 fw-regular my-4 my-lg-5 text-center">Word on the Street</h2> -->
               <!-- Carousel -->
               <div
                 id="carouselExampleCaptions"
-                class="carousel slide"
+                class="carousel slide carousel-fade"
               >
                 <div class="carousel-indicators">
                   <button
@@ -1478,14 +1491,16 @@
                 <div class="carousel-inner">
                   <div class="carousel-item active">
                     <div class="ratio ratio-16x9">
-                      <img
-                        src="https://picsum.photos/id/10/1600/700?grayscale"
-                        class="d-block object-fit-cover opacity-25 w-100"
-                        alt="..."
-                      />
+                      <a href="https://www.linkedin.com/in/ethayerdesign/">
+                        <img
+                          src="./images/slide-testimonial-01@2x.png"
+                          class="d-block object-fit-cover w-100"
+                          alt="..."
+                        />
+                      </a>
                     </div>
                     <div
-                      class="carousel-caption d-none d-sm-flex flex-column justify-content-end position-static mb-5"
+                      class="carousel-caption d-none d-sm-fle flex-column justify-content-end position-static mb-5"
                     >
                       <h5>First slide label</h5>
                       <p class="mw-100">
@@ -1496,14 +1511,16 @@
                   </div>
                   <div class="carousel-item">
                     <div class="ratio ratio-16x9">
-                      <img
-                        src="https://picsum.photos/id/20/1600/700?grayscale"
-                        class="d-block object-fit-cover opacity-25 w-100"
-                        alt="..."
-                      />
+                      <a href="#0">
+                        <img
+                          src="./images/slide-testimonial-02@2x.png"
+                          class="d-block object-fit-cover w-100"
+                          alt="..."
+                        />
+                      </a>
                     </div>
                     <div
-                      class="carousel-caption d-none d-md-flex flex-column justify-content-end position-static mb-5"
+                      class="carousel-caption d-none d-md-fle flex-column justify-content-end position-static mb-5"
                     >
                       <h5>Second slide label</h5>
                       <p class="mw-100">
@@ -1514,14 +1531,16 @@
                   </div>
                   <div class="carousel-item">
                     <div class="ratio ratio-16x9">
-                      <img
-                        src="https://picsum.photos/id/30/1600/700?grayscale"
-                        class="d-block object-fit-cover opacity-25 w-100"
-                        alt="..."
-                      />
+                      <a href="#0">
+                        <img
+                          src="./images/slide-testimonial-03@2x.png"
+                          class="d-block object-fit-cover w-100"
+                          alt="..."
+                        />
+                      </a>
                     </div>
                     <div
-                      class="carousel-caption d-none d-md-flex flex-column justify-content-end position-static mb-5"
+                      class="carousel-caption d-none d-md-fle flex-column justify-content-end position-static mb-5"
                     >
                       <h5>Third slide label</h5>
                       <p class="mw-100">
@@ -1561,7 +1580,7 @@
           <!-- Trivia -->
           <section
             id="trivia"
-            class="d-flex flex-column py-5"
+            class="d-flex bg-body-secondary flex-column py-5"
           >
             <div class="headline py-3">
               <div class="container-fluid p-4 px-sm-5 p-md-5">
@@ -1600,7 +1619,7 @@
                 <div class="cards row g-5">
                   <div class="col-12 col-md-6 col-lg-4 position-relative">
                     <div
-                      class="bg-body-secondary rounded rounded-3 d-flex flex-column p-4"
+                      class="bg-body rounded rounded-3 d-flex flex-column p-4"
                     >
                       <div class="copy m-1">
                         <i class="d-block mb-4">
@@ -1629,7 +1648,7 @@
                   </div>
                   <div class="col-12 col-md-6 col-lg-4 position-relative">
                     <div
-                      class="bg-body-secondary rounded rounded-3 d-flex flex-column p-4"
+                      class="bg-body rounded rounded-3 d-flex flex-column p-4"
                     >
                       <div class="copy m-1">
                         <i class="d-block mb-4">
@@ -1658,7 +1677,7 @@
                   </div>
                   <div class="col-12 col-md-12 col-lg-4 position-relative">
                     <div
-                      class="bg-body-secondary rounded rounded-3 d-flex flex-column p-4"
+                      class="bg-body rounded rounded-3 d-flex flex-column p-4"
                     >
                       <div class="copy m-1">
                         <i class="d-block mb-4">
@@ -1920,6 +1939,206 @@
             >
               Save changes
             </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Resume Modal -->
+    <div
+      class="modal fade"
+      id="resumeModal"
+      tabindex="-1"
+      aria-labelledby="resumeModalLabel"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-fullscreen-lg-down modal-xl"
+      >
+        <div class="modal-content">
+          <div
+            class="modal-header gap-4 align-items-start align-items-sm-center px-4 bg-body-secondary border-0"
+          >
+            <div
+              class="d-flex flex-column flex-sm-row gap-1 gap-sm-3 align-items-sm-center justify-content-sm-between w-100"
+            >
+              <h1
+                class="modal-title fs-2 mb-0 flex-grow-1 d-flex align-items-center gap-3"
+                id="resumeModalLabel"
+              >
+                <span
+                  >Eric Thayer<span class="visually-hidden"
+                    >'s Resume</span
+                  ></span
+                >
+
+                <a
+                  href="https://www.linkedin.com/in/ethayerdesign/"
+                  class="fs-4"
+                  ><svg
+                    width="0.9em"
+                    height="0.9em"
+                    viewBox="0 0 48 48"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M40.6731 40.6992H33.7093V29.7913C33.7093 27.1907 33.6623 23.8419 30.0864 23.8419C26.4596 23.8419 25.9034 26.6776 25.9034 29.5994V40.6992H18.9396V18.2685H25.6254V21.3353H25.7194C27.0824 19.0088 29.6203 17.6144 32.315 17.7124C39.3728 17.7124 40.6771 22.3536 40.6771 28.397L40.6731 40.6953V40.6992ZM11.0828 15.2018C10.0131 15.1967 8.98857 14.7697 8.23177 14.0136C7.47498 13.2576 7.04702 12.2335 7.04084 11.1637C7.04084 8.9469 8.866 7.12174 11.0828 7.12174C13.2997 7.12174 15.1209 8.9469 15.1248 11.1637C15.1248 13.3805 13.2997 15.2018 11.0828 15.2018ZM14.5647 40.6992H7.59309V18.2685H14.5647V40.6992ZM44.1394 0.651425H4.0916C3.18353 0.646151 2.31006 0.999458 1.66102 1.63457C1.01197 2.26968 0.639798 3.13527 0.625366 4.04325V44.2594C0.639798 45.1674 1.01197 46.033 1.66102 46.6681C2.31006 47.3032 3.18353 47.6565 4.0916 47.6513H44.1433C45.0535 47.6586 45.9298 47.3065 46.5817 46.6714C47.2337 46.0363 47.6087 45.1695 47.6252 44.2594V4.03933C47.6087 3.12999 47.2335 2.26402 46.5813 1.63015C45.9291 0.996282 45.0527 0.645891 44.1433 0.655342L44.1394 0.651425Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  <span class="visually-hidden">Linkedin</span></a
+                >
+              </h1>
+              <address class="d-flex gap-3 mb-0 align-items-center">
+                <a href="mailto:ethayer.design@gmail.com"
+                  >ethayer.design@gmail.com</a
+                >
+                <a href="tel:6199525081">619•952•5081</a>
+              </address>
+            </div>
+            <button
+              type="button"
+              class="btn-close p-1 fs-4 bg-transparent"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <svg
+                width="1.5em"
+                height="1.5em"
+              >
+                <use href="#close-mark"></use>
+              </svg>
+            </button>
+          </div>
+          <div class="modal-body p-4">
+            <article class="resume">
+              <header>
+                <h2 class="h5">UX Engineer & Systems Lead</h2>
+                <p class="fs-5 fw-regular">
+                  Team-focused UI/UX creative with professional experience in
+                  providing design and development services to support an
+                  organization's daily operations. Skilled in, design discovery,
+                  visual design, prototyping, and front-end development. Ability
+                  to collaborate with cross-functional department team leaders,
+                  identify and resolve issues, prioritize projects, and provide
+                  a high level of service.
+                </p>
+                <!-- <p>
+                  Team-focused UI/UX creative with professional experience in
+                  providing design and development services to support an
+                  organization's daily operations. Skilled in, design discovery,
+                  visual design, prototyping, and front-end development. Ability
+                  to collaborate with cross-functional department team leaders,
+                  identify and resolve issues, prioritize projects, and provide
+                  a high level of service.
+                </p> -->
+              </header>
+              <section>
+                <h2>Professional Experience</h2>
+                <div>
+                  <h3>UX Design & Development Team Member</h3>
+                  <p>CoBank, Nov 2024 - Present</p>
+                  <ul>
+                    <li>
+                      Employ user-centered design approach across all software
+                      products.
+                    </li>
+                    <li>
+                      Collaborate with cross-functional teams to deliver
+                      high-quality solutions.
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>Creative Strategist</h3>
+                  <p>Freelance, Jan 2020 - Oct 2024</p>
+                  <ul>
+                    <li>
+                      Developed creative strategies for various clients to
+                      enhance their brand presence.
+                    </li>
+                    <li>
+                      Designed and implemented user-friendly interfaces for web
+                      and mobile applications.
+                    </li>
+                  </ul>
+                </div>
+              </section>
+              <section>
+                <h2>Education</h2>
+                <div>
+                  <h3>Bachelor of Science in Computer Science</h3>
+                  <p>University of Colorado, 2016 - 2020</p>
+                </div>
+              </section>
+              <section>
+                <h2>Skills</h2>
+                <ul>
+                  <li>UX/UI Design</li>
+                  <li>Front-end Development</li>
+                  <li>Design Systems</li>
+                  <li>Prototyping</li>
+                </ul>
+              </section>
+              <section>
+                <h2>Certifications</h2>
+                <ul>
+                  <li>Certified UX Designer</li>
+                  <li>Certified Front-end Developer</li>
+                </ul>
+              </section>
+            </article>
+          </div>
+          <div class="modal-footer bg-body-secondary border-0">
+            <button
+              type="button"
+              class="btn btn-secondary border-0"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <!-- Download Resume -->
+            <div class="btn-group dropup">
+              <button
+                type="button"
+                class="btn btn-primary border-0"
+              >
+                Download
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary dropdown-toggle dropdown-toggle-split px-2 border-0"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                style="background-color: var(--bs-primary-700)"
+              >
+                <span class="visually-hidden">Toggle Dropdown</span>
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                    >MS Word</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                    >PDF</a
+                  >
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                    >Save as</a
+                  >
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
