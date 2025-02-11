@@ -357,7 +357,7 @@ $grayscale-colors: (
 
 $primary: $theme-primary;
 $primary-dark: $theme-primary-900;
-$secondary: $theme-blue-gray-light;
+$secondary: $theme-neutral-300;
 $success: $theme-secondary;
 $info: $theme-state-info;
 $warning: $theme-state-warning;
@@ -698,7 +698,8 @@ $paragraph-margin-bottom: 1rem;
 
 // grid-breakpoints
 $grid-breakpoints: (
-  xs: 0,
+  xxs: 0,
+  xs: 325px,
   sm: 576px,
   md: 768px,
   lg: 992px,
