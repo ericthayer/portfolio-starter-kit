@@ -35,14 +35,10 @@ li a {
   }
 }
 
-button {
-  -webkit-appearance: none;
-  // border-radius: 0.25rem;
-  box-shadow: none;
+button,
+.btn {
   border: none;
-  letter-spacing: 0.03em;
-  // padding: 0.5rem 1.125rem;
-  // transition: 0.3s ease;
+  letter-spacing: 0.025em;
 
   & > svg {
     fill: currentcolor;
@@ -60,7 +56,7 @@ section {
   }
 }
 
-// Bootstrap 
+// Bootstrap
 
 .text-bg-primary,
 .text-bg-dark,

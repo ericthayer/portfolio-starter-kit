@@ -349,9 +349,11 @@
                 href="#app"
                 ><img
                   loading="lazy"
-                  src="//assets.codepen.io/97621/logo-light-ethayer-no-mark.svg"
+                  src="./images/logo-light-ethayer-no-mark.svg"
                   class="w-100"
                   alt="logo"
+                  height="15.2"
+                  width="176"
               /></a>
             </div>
           </div>
@@ -429,17 +431,19 @@
                 </div>
                 <div class="actions d-flex flex-column gap-5 my-1">
                   <div class="d-flex flex-wrap align-items-center gap-4">
-                    <button
-                      type="button"
-                      class="btn btn-lg btn-primary flex-fill flex-sm-grow-0"
+                    <a
+                      role="button"
+                      class="btn btn-lg btn-primary flex-fill flex-sm-grow-0 text-decoration-none"
+                      href="#experience"
+                      ><span class="fs-5">View Portfolio</span></a
                     >
-                      <div class="fs-5">View Portfolio</div>
-                    </button>
                     <button
                       type="button"
                       class="btn btn-lg btn-secondary flex-fill flex-sm-grow-0"
+                      data-bs-toggle="modal"
+                      data-bs-target="#resumeModal"
                     >
-                      <div class="fs-5">Download Resume</div>
+                      <span class="fs-5">Download Resume</span>
                     </button>
                   </div>
                   <nav
@@ -617,7 +621,7 @@
                   </p>
                 </div>
                 <div class="callouts mt-4">
-                  <h2 class="h5 fw-regular mt-1 mb-4 text-center">
+                  <h2 class="h5 fw-medium mt-1 mb-4 text-center">
                     Core Strengths
                   </h2>
                   <div class="cards row g-5">
@@ -858,7 +862,7 @@
                 class="d-flex flex-column justify-content-center flex-md-row align-items-md-center justify-content-md-between border-bottom pb-3 gap-3"
               >
                 <h2
-                  class="h5 fw-regular mt-1 mb-0 mb-md-0 text-center text-md-left"
+                  class="h4 fw-medium mt-1 mb-0 mb-md-0 text-center text-md-left"
                 >
                   Related Work
                 </h2>
@@ -940,6 +944,7 @@
               </div>
               <!-- Tab content -->
               <div class="tab-content">
+                <!-- Related UI Work -->
                 <div
                   class="tab-pane active"
                   id="ui-work"
@@ -947,12 +952,9 @@
                   aria-labelledby="ui-work-tab"
                   tabindex="0"
                 >
-                  <!-- Related UI Work -->
                   <div class="callouts py-5">
                     <div class="container-fluid px-0 pt-md-3">
-                      <h3
-                        class="h6 d-none d-md-block fw-regular mb-4 mt-md-1 text-center"
-                      >
+                      <h3 class="h5 fw-medium d-block mb-4 mt-md-1 text-center">
                         User Interface Design
                       </h3>
                       <div class="cards row g-5 pt-2">
@@ -1052,6 +1054,7 @@
                     </div>
                   </div>
                 </div>
+                <!-- Related UX Work -->
                 <div
                   class="tab-pane"
                   id="ux-work"
@@ -1059,12 +1062,9 @@
                   aria-labelledby="ux-work-tab"
                   tabindex="0"
                 >
-                  <!-- Related UX Work -->
                   <div class="callouts py-5">
                     <div class="container-fluid px-0 pt-md-3">
-                      <h3
-                        class="h6 fw-regular d-none d-md-block mb-4 mt-md-1 text-center"
-                      >
+                      <h3 class="h5 fw-medium d-block mb-4 mt-md-1 text-center">
                         User Experience Design
                       </h3>
                       <div class="cards row g-5 pt-2">
@@ -1164,6 +1164,7 @@
                     </div>
                   </div>
                 </div>
+                <!-- Related Front-end Work -->
                 <div
                   class="tab-pane"
                   id="front-end-work"
@@ -1171,12 +1172,9 @@
                   aria-labelledby="front-end-work-tab"
                   tabindex="0"
                 >
-                  <!-- Related Front-end Work -->
                   <div class="callouts py-5">
                     <div class="container-fluid px-0 pt-md-3">
-                      <h3
-                        class="h6 fw-regular d-none d-md-block mb-4 mt-md-1 text-center"
-                      >
+                      <h3 class="h5 fw-medium d-block mb-4 mt-md-1 text-center">
                         Front-end Development
                       </h3>
                       <div class="cards row g-5 pt-2">
@@ -1276,6 +1274,7 @@
                     </div>
                   </div>
                 </div>
+                <!-- Related Design System Work -->
                 <div
                   class="tab-pane"
                   id="design-system-work"
@@ -1283,12 +1282,9 @@
                   aria-labelledby="design-system-work-tab"
                   tabindex="0"
                 >
-                  <!-- Related Design System Work -->
                   <div class="callouts py-5">
                     <div class="container-fluid px-0 pt-md-3">
-                      <h3
-                        class="h6 fw-regular d-none d-md-block mb-4 mt-md-1 text-center"
-                      >
+                      <h3 class="h5 fw-medium d-block mb-4 mt-md-1 text-center">
                         System Design & Development
                       </h3>
                       <div class="cards row g-5 pt-2">
@@ -1442,8 +1438,9 @@
                         <img
                           loading="lazy"
                           src="./images/slide-testimonial-01@2x.webp"
-                          class="d-block object-fit-cover w-100"
+                          class="d-block object-fit-cover mw-100"
                           alt="..."
+                          width="1280"
                         />
                       </a>
                     </div>
@@ -1463,8 +1460,9 @@
                         <img
                           loading="lazy"
                           src="./images/slide-testimonial-02@2x.webp"
-                          class="d-block object-fit-cover w-100"
+                          class="d-block object-fit-cover mw-100"
                           alt="..."
+                          width="1280"
                         />
                       </a>
                     </div>
@@ -1484,8 +1482,9 @@
                         <img
                           loading="lazy"
                           src="./images/slide-testimonial-03@2x.webp"
-                          class="d-block object-fit-cover w-100"
+                          class="d-block object-fit-cover mw-100"
                           alt="..."
+                          width="1280"
                         />
                       </a>
                     </div>
@@ -1563,7 +1562,7 @@
             </div>
             <div class="callouts">
               <div class="container-fluid p-4 px-sm-5 pt-sm-2 pb-sm-5">
-                <!-- <h2 class="h5 fw-regular mt-1 mb-4 text-center">
+                <!-- <h2 class="h5 fw-medium mt-1 mb-4 text-center">
                   Core Strengths
                 </h2> -->
                 <div class="cards row g-5">
@@ -1665,22 +1664,17 @@
           >
             <div class="container-fluid p-4 p-lg-5">
               <div class="py-3 pt-lg-4 pb-lg-5">
-                <h2 class="h2 fw-regular my-4 text-center">Connect with Me</h2>
+                <h2 class="h2 fw-medium my-4 text-center">Connect with Me</h2>
                 <div class="actions d-flex flex-column gap-5 my-1">
                   <div
                     class="d-flex flex-wrap align-items-center justify-content-center gap-4"
                   >
                     <a
                       href="mailto:ethayer.design@gmail.com?subject=Hi%20Eric.%20Let's%20talk%20about...%20&amp;body=Contact%20information%20(company%2C%20name%2C%20role%2C%20phone%20number%2C%20etc)%3A%0A%0AWhat%20can%20I%20help%20you%20with?%20(project%20type%2C%20concept %2C%20outline%2C%20etc)%3A%0A%0ATimeline%20(start%20date%2C%20end%20date)%3A%0A%0AProject%20budget%20(greater%20than%20%2450%2C000%20range%20%7C%20%2430%2C000%E2%80%93%2420%2C000%20range%20%7C%20%2420%2C000%E2%80%93%2410%2C000%20range%20%7C%20less%20than%20%245%2C000)%3A%0A%0A%0A(answering%20these%20items%20will%20help%20me%20better%20understand%20your%20goals)"
-                      class="btn btn-lg btn-primary flex-sm-grow-0"
+                      class="btn btn-lg btn-primary flex-sm-grow-0 text-decoration-none"
                     >
-                      <div class="fs-5">Send a Message</div>
+                      <span class="fs-5">Send a Message</span>
                     </a>
-                    <!-- <button
-                      class="btn btn-lg btn-secondary flex-fill flex-sm-grow-0"
-                    >
-                      <div class="fs-5">Download Resume</div>
-                    </button> -->
                   </div>
                 </div>
               </div>
@@ -1815,10 +1809,7 @@
               </ul>
             </nav>
             <p class="fs-7 my-0 mx-auto text-center flex-grow-1">
-              &copy; 2010-
-              <script>
-                document.write(new Date().getFullYear())
-              </script>
+              &copy; 2010-2025
               <span class="d-none d-md-inline-block">•</span>&nbsp;Eric Thayer
             </p>
             <div class="d-flex justify-content-center">
@@ -1833,7 +1824,10 @@
                   src="./images/img-lighthouse-score.png"
                   alt=""
                   class="img-fluid object-fit-cover"
-                  style="max-width: 12rem; mix-blend-mode: lighten"
+                  height="25.48"
+                  width="192"
+                  aspect-ratio="16/3"
+                  style="mix-blend-mode: lighten;"
                 />
               </a>
             </div>
@@ -1871,7 +1865,11 @@
               class="nav-link link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
               aria-current="page"
             >
-              <span class="d-block" data-bs-dismiss="offcanvas">About</span></a
+              <span
+                class="d-block"
+                data-bs-dismiss="offcanvas"
+                >About</span
+              ></a
             >
           </li>
           <li class="nav-item">
@@ -1879,7 +1877,11 @@
               href="#experience"
               class="nav-link link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
             >
-              <span class="d-block" data-bs-dismiss="offcanvas">Experience</span></a
+              <span
+                class="d-block"
+                data-bs-dismiss="offcanvas"
+                >Experience</span
+              ></a
             >
           </li>
           <li class="nav-item">
@@ -1888,7 +1890,11 @@
               class="nav-link link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
               data-bs-toggle="modal"
               data-bs-target="#resumeModal"
-              ><span class="d-block" data-bs-dismiss="offcanvas">Resume</span></a
+              ><span
+                class="d-block"
+                data-bs-dismiss="offcanvas"
+                >Resume</span
+              ></a
             >
           </li>
           <li class="nav-item">
@@ -1896,7 +1902,11 @@
               href="mailto:ethayer.design@gmail.com?subject=Hi%20Eric.%20Let's%20talk%20about...%20&amp;body=Contact%20information%20(company%2C%20name%2C%20role%2C%20phone%20number%2C%20etc)%3A%0A%0AWhat%20can%20I%20help%20you%20with?%20(project%20type%2C%20concept %2C%20outline%2C%20etc)%3A%0A%0ATimeline%20(start%20date%2C%20end%20date)%3A%0A%0AProject%20budget%20(greater%20than%20%2450%2C000%20range%20%7C%20%2430%2C000%E2%80%93%2420%2C000%20range%20%7C%20%2420%2C000%E2%80%93%2410%2C000%20range%20%7C%20less%20than%20%245%2C000)%3A%0A%0A%0A(answering%20these%20items%20will%20help%20me%20better%20understand%20your%20goals)"
               class="nav-link link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
               data-bs-dismiss="offcanvas"
-              ><span class="d-block" data-bs-dismiss="offcanvas">Contact</span></a
+              ><span
+                class="d-block"
+                data-bs-dismiss="offcanvas"
+                >Contact</span
+              ></a
             >
           </li>
         </ul>
@@ -2036,7 +2046,7 @@
             <article class="resume">
               <header>
                 <h2 class="h5">UX Engineer & Systems Lead</h2>
-                <p class="fs-5 fw-regular">
+                <p class="fs-5 fw-medium">
                   Team-focused UI/UX creative with professional experience in
                   providing design and development services to support an
                   organization's daily operations. Skilled in, design discovery,
