@@ -1676,18 +1676,19 @@
       >
         <div class="container-fluid pt-3 pb-2 px-3 px-lg-4">
           <div
-            class="d-flex flex-column flex-md-row align-items-md-center justify-content-md-between gap-3 p-2"
+            class="d-flex flex-column flex-sm-row align-items-sm-center justify-content-sm-between gap-3 py-2"
           >
             <nav
-              class="nav d-flex justify-content-center justify-content-md-start"
+              class="nav d-flex justify-content-center justify-content-sm-start"
+              style="min-width: 12rem;"
             >
               <ul
-                class="d-flex flex-wrap justify-content-center align-items-md-center justify-content-md-start column-gap-5 row-gap-2 list-unstyled m-0 p-0 flex-grow-1"
+                class="d-flex flex-wrap justify-content-center align-items-sm-center justify-content-sm-start column-gap-4 row-gap-2 list-unstyled m-0 p-0 flex-grow-1"
               >
-                <li>
+                <li class="me-2">
                   <a
                     href="https://www.linkedin.com/in/ethayerdesign/"
-                    class="fs-2 text-light d-flex align-items-center"
+                    class="fs-3 text-light d-flex align-items-center"
                     title="LinkedIn Profile"
                   >
                     <svg
@@ -1705,10 +1706,10 @@
                     <span class="visually-hidden">Linkedin</span>
                   </a>
                 </li>
-                <li>
+                <li class="me-2">
                   <a
                     href="https://github.com/ericthayer/"
-                    class="fs-2 text-light d-flex align-items-center"
+                    class="fs-3 text-light d-flex align-items-center"
                     title="GitHub Profile"
                   >
                     <svg
@@ -1727,10 +1728,10 @@
                     <span class="visually-hidden">GitHub</span>
                   </a>
                 </li>
-                <li>
+                <li class="me-2">
                   <a
                     href="https://codepen.io/ericthayer/"
-                    class="fs-2 text-light d-flex align-items-center"
+                    class="fs-3 text-light d-flex align-items-center"
                     title="CodePen Profile"
                   >
                     <svg
@@ -1754,7 +1755,7 @@
                 <li>
                   <a
                     href="https://dribbble.com/ethayer/"
-                    class="fs-2 text-light d-flex align-items-center"
+                    class="fs-3 text-light d-flex align-items-center"
                     title="Dribbble Profile"
                   >
                     <svg
@@ -1796,11 +1797,9 @@
               </ul>
             </nav>
             <p class="fs-7 my-0 mx-auto text-center flex-grow-1">
-              &copy; 2010-
-              <script>
+              &copy; 2010-<script>
                 document.write(new Date().getFullYear())
-              </script>
-              Eric Thayer
+              </script> <span class="d-none d-md-inline-block">•</span>&nbsp;Eric Thayer
             </p>
             <div class="d-flex justify-content-center">
               <a
@@ -1814,7 +1813,7 @@
                   src="./images/img-lighthouse-score.png"
                   alt=""
                   class="img-fluid object-fit-cover"
-                  style="max-width: 15rem; mix-blend-mode: lighten"
+                  style="max-width: 12rem; mix-blend-mode: lighten;"
                 />
               </a>
             </div>
@@ -1871,14 +1870,6 @@
               data-bs-target="#resumeModal"
               ><span data-bs-dismiss="offcanvas">Resume</span></a
             >
-            <!-- <button
-            type="button"
-            data-bs-toggle="modal"
-            data-bs-target="#resumeModal"
-            class="nav-link link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
-          >
-            Resume
-          </button> -->
           </li>
           <li class="nav-item">
             <a
@@ -1941,12 +1932,6 @@
             >
               Close
             </button>
-            <button
-              type="button"
-              class="btn btn-primary d-none"
-            >
-              Save changes
-            </button>
           </div>
         </div>
       </div>
@@ -1970,7 +1955,7 @@
               class="d-flex flex-column flex-sm-row row-gap-1 column-gap-sm-3 align-items-sm-center justify-content-sm-between flex-grow-1"
             >
               <h1
-                class="modal-title fs-1 mb-0 flex-grow-1 d-flex flex-wrap align-items-center gap-3"
+                class="modal-title fs-2 mb-0 flex-grow-1 d-flex flex-wrap align-items-center gap-3"
                 id="resumeModalLabel"
               >
                 <span
@@ -1981,7 +1966,7 @@
 
                 <a
                   href="https://www.linkedin.com/in/ethayerdesign/"
-                  class="fs-4 text-body pb-1"
+                  class="fs-4 text-body"
                   ><svg
                     width="0.9em"
                     height="0.9em"
