@@ -77,10 +77,11 @@ section {
 }
 
 .carousel-indicators [data-bs-target] {
-  width: 2.5rem;
-  height: 0.5rem;
+  background-color: var(--bs-primary-800);
   border-top: 14px solid transparent;
   border-bottom: 14px solid transparent;
+  height: 0.5rem;
+  width: 2.5rem;
 }
 
 
