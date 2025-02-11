@@ -2,7 +2,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-snap-type: y mandatory
+  scroll-snap-type: y mandatory;
 }
 
 body {
@@ -54,38 +54,14 @@ button {
   }
 }
 
-.app-layout {
-  container-type: inline-size;
-}
-
-.brand {
-  @container (width < 333px) {
-    justify-content: center;
-  }
-}
-
-.app-logo {
-  max-width: 11rem;
-}
-
-.main {
-  scroll-snap-type: y mandatory;
-}
-
 section {
-  
   @container (width < 575.99px) {
     scroll-snap-align: start;
     scroll-margin-block-start: 5rem;
   }
 }
 
-.billboard {
-  
-  @container (width < 575.99px) {
-  }
-}
-
+// Bootstrap 
 
 .text-bg-primary,
 .text-bg-dark,
@@ -131,8 +107,8 @@ section {
   }
 
   .nav-link {
-    margin-right: .125rem;
-    margin-left: .125rem;
+    margin-right: 0.125rem;
+    margin-left: 0.125rem;
   }
 
   .nav-link:not(.active) {
@@ -141,7 +117,7 @@ section {
   }
 }
 
-// Light/Dark mode
+// Bootstrap light/dark mode
 
 [data-bs-theme="auto"],
 [data-bs-theme="light"] {
@@ -212,14 +188,41 @@ section {
   }
 
   .nav-pills {
-  
     &.bg-dark-subtle {
       background-color: var(--bs-body-bg) !important;
     }
-    
   }
 
   .carousel-item img {
     filter: grayscale(1);
   }
+}
+
+// Custom styles
+
+.app-layout {
+  container-type: inline-size;
+}
+
+.brand {
+  @container (width < 333px) {
+    justify-content: center;
+  }
+}
+
+.app-logo {
+  max-width: 11rem;
+}
+
+.main {
+  scroll-snap-type: y mandatory;
+}
+
+.billboard {
+  @container (width < 575.99px) {
+  }
+}
+
+.lh-root + .lh-root {
+  display: none;
 }
