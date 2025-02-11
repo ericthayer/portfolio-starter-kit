@@ -435,7 +435,7 @@
                       role="button"
                       class="btn btn-lg btn-primary flex-fill flex-sm-grow-0 text-decoration-none"
                       href="#experience"
-                      ><span class="fs-5">View Portfolio</span></a
+                      ><span class="fs-5">Work Samples</span></a
                     >
                     <button
                       type="button"
@@ -800,13 +800,13 @@
 
                               <button
                                 type="button"
-                                class="btn-close p-1 fs-4 bg-transparent"
+                                class="btn-close d-flex align-items-center justify-content-center p-0 fs-2 bg-transparent"
                                 data-bs-dismiss="offcanvas"
                                 aria-label="Close"
                               >
                                 <svg
-                                  width="1.5em"
-                                  height="1.5em"
+                                  width="1em"
+                                  height="1em"
                                 >
                                   <use href="#close-mark"></use>
                                 </svg>
@@ -814,11 +814,13 @@
                             </div>
                             <div class="offcanvas-body">
                               <div class="">Project details here</div>
+                              <time class="date pt-1 fw-medium"
+                                >Nov 10, 2024</time
+                              >
+                              <hr class="mt-2 mb-0 w-50" />
                             </div>
                           </div>
                         </div>
-                        <time class="date pt-1 fw-medium">Nov 10, 2024</time>
-                        <hr class="mt-2 mb-0 w-50" />
                       </div>
                       <div
                         class="d-flex align-items-start justify-content-between"
@@ -1406,27 +1408,29 @@
             <div class="container-fluid px-0 pt-4 px-wide-5">
               <!-- Carousel -->
               <div
-                id="carouselExampleCaptions"
+                id="testimonialsCaptions"
                 class="carousel slide carousel-fade"
               >
-                <div class="carousel-indicators">
+                <div class="carousel-indicators gap-3">
                   <button
                     type="button"
-                    data-bs-target="#carouselExampleCaptions"
+                    data-bs-target="#testimonialsCaptions"
                     data-bs-slide-to="0"
-                    class="active"
+                    class="rounded rounded-sm p-1 active"
                     aria-current="true"
                     aria-label="Slide 1"
                   ></button>
                   <button
                     type="button"
-                    data-bs-target="#carouselExampleCaptions"
+                    class="rounded rounded-sm p-1"
+                    data-bs-target="#testimonialsCaptions"
                     data-bs-slide-to="1"
                     aria-label="Slide 2"
                   ></button>
                   <button
                     type="button"
-                    data-bs-target="#carouselExampleCaptions"
+                    class="rounded rounded-sm p-1"
+                    data-bs-target="#testimonialsCaptions"
                     data-bs-slide-to="2"
                     aria-label="Slide 3"
                   ></button>
@@ -1502,7 +1506,7 @@
                 <button
                   class="carousel-control-prev"
                   type="button"
-                  data-bs-target="#carouselExampleCaptions"
+                  data-bs-target="#testimonialsCaptions"
                   data-bs-slide="prev"
                 >
                   <span
@@ -1514,7 +1518,7 @@
                 <button
                   class="carousel-control-next"
                   type="button"
-                  data-bs-target="#carouselExampleCaptions"
+                  data-bs-target="#testimonialsCaptions"
                   data-bs-slide="next"
                 >
                   <span
@@ -1824,10 +1828,9 @@
                   src="./images/img-lighthouse-score.png"
                   alt=""
                   class="img-fluid object-fit-cover"
-                  height="25.48"
+                  height="25"
                   width="192"
-                  aspect-ratio="16/3"
-                  style="mix-blend-mode: lighten;"
+                  style="mix-blend-mode: lighten"
                 />
               </a>
             </div>
@@ -1845,13 +1848,13 @@
       <div class="offcanvas-header">
         <button
           type="button"
-          class="btn-close p-1 fs-4 bg-transparent"
+          class="btn-close d-flex align-items-center justify-content-center p-0 fs-2 bg-transparent"
           data-bs-dismiss="offcanvas"
           aria-label="Close"
         >
           <svg
-            width="1.5em"
-            height="1.5em"
+            width="1em"
+            height="1em"
           >
             <use href="#close-mark"></use>
           </svg>
@@ -1921,10 +1924,10 @@
       aria-hidden="true"
     >
       <div
-        class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl modal-fullscreen-md-down"
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-fullscreen-lg-down modal-xl"
       >
-        <div class="modal-content">
-          <div class="modal-header border border-0">
+        <div class="modal-content border-0 shadow-lg">
+          <!-- <div class="modal-header border border-0">
             <h2
               class="modal-title fs-5"
               id="lighthouseModalLabel"
@@ -1933,13 +1936,40 @@
             </h2>
             <button
               type="button"
-              class="btn-close p-1 fs-4 bg-transparent"
+              class="btn-close d-flex align-items-center justify-content-center p-0 fs-2 bg-transparent"
               data-bs-dismiss="modal"
               aria-label="Close"
             >
               <svg
-                width="1.5em"
-                height="1.5em"
+                width="1em"
+                height="1em"
+              >
+                <use href="#close-mark"></use>
+              </svg>
+            </button>
+          </div> -->
+          <div
+            class="modal-header gap-4 align-items-start align-items-sm-center px-sm-4 bg-body-secondary border-0"
+          >
+            <div
+              class="d-flex flex-column flex-sm-row row-gap-1 column-gap-sm-3 align-items-sm-center justify-content-sm-between flex-grow-1 pe-sm-2"
+            >
+              <h2
+                class="modal-title fs-5 mb-0 flex-grow-1 d-flex flex-wrap align-items-center gap-3"
+                id="lighthouseModalLabel"
+              >
+                <span>Lighthouse Audit</span>
+              </h2>
+            </div>
+            <button
+              type="button"
+              class="btn-close d-flex align-items-center justify-content-center p-0 fs-2 bg-transparent"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <svg
+                width="1em"
+                height="1em"
               >
                 <use href="#close-mark"></use>
               </svg>
@@ -1978,14 +2008,14 @@
       <div
         class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-fullscreen-lg-down modal-xl"
       >
-        <div class="modal-content">
+        <div class="modal-content border-0 shadow-lg">
           <div
             class="modal-header gap-4 align-items-start align-items-sm-center py-sm-2 px-sm-4 bg-body-secondary border-0"
           >
             <div
-              class="d-flex flex-column flex-sm-row row-gap-1 column-gap-sm-3 align-items-sm-center justify-content-sm-between flex-grow-1"
+              class="d-flex flex-column flex-sm-row row-gap-1 column-gap-sm-3 align-items-sm-center justify-content-sm-between flex-grow-1 pe-sm-2"
             >
-              <h1
+              <h2
                 class="modal-title fs-2 mb-0 flex-grow-1 d-flex flex-wrap align-items-center gap-3"
                 id="resumeModalLabel"
               >
@@ -2012,7 +2042,7 @@
                   </svg>
                   <span class="visually-hidden">Linkedin</span></a
                 >
-              </h1>
+              </h2>
               <address
                 class="d-flex flex-wrap row-gap-1 column-gap-3 mb-0 align-items-center"
               >
@@ -2030,13 +2060,13 @@
             </div>
             <button
               type="button"
-              class="btn-close p-1 fs-4 bg-transparent"
+              class="btn-close d-flex align-items-center justify-content-center p-0 fs-2 bg-transparent"
               data-bs-dismiss="modal"
               aria-label="Close"
             >
               <svg
-                width="1.5em"
-                height="1.5em"
+                width="1em"
+                height="1em"
               >
                 <use href="#close-mark"></use>
               </svg>
@@ -2115,27 +2145,26 @@
           <div class="modal-footer bg-body-secondary border-0 gap-2">
             <button
               type="button"
-              class="btn btn-secondary border-0"
+              class="btn btn-outline-secondary"
               data-bs-dismiss="modal"
             >
               Close
             </button>
             <!-- Download Resume -->
-            <div class="btn-group dropup">
-              <button
+            <div class="dropup-right dropup">
+              <!-- <button
                 type="button"
                 class="btn btn-primary border-0"
               >
                 Download
-              </button>
+              </button> -->
               <button
                 type="button"
-                class="btn btn-sm btn-primary dropdown-toggle dropdown-toggle-split px-2 border border-top-0 border-bottom-0 border-end-0 border-primary-subtle"
+                class="btn btn-primary dropdown-toggle"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
-                style="width: 2rem"
               >
-                <span class="visually-hidden">Toggle Dropdown</span>
+                Download
               </button>
               <ul class="dropdown-menu">
                 <li>

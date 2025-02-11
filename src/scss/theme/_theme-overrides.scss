@@ -35,18 +35,8 @@ li a {
   }
 }
 
-button,
-.btn {
+button {
   border: none;
-  letter-spacing: 0.025em;
-
-  & > svg {
-    fill: currentcolor;
-  }
-
-  &:focus-visible {
-    outline: 1px solid currentColor !important;
-  }
 }
 
 section {
@@ -57,6 +47,13 @@ section {
 }
 
 // Bootstrap
+
+
+.container-fluid {
+  @media (width > 1800px) {
+    max-width: 1800px;
+  }
+}
 
 .text-bg-primary,
 .text-bg-dark,
@@ -79,11 +76,13 @@ section {
   }
 }
 
-.container-fluid {
-  @media (width > 1800px) {
-    max-width: 1800px;
-  }
+.carousel-indicators [data-bs-target] {
+  width: 2.5rem;
+  height: 0.5rem;
+  border-top: 14px solid transparent;
+  border-bottom: 14px solid transparent;
 }
+
 
 .nav-pills {
   --bs-nav-link-padding-x: 0.7rem;
@@ -110,6 +109,12 @@ section {
     text-decoration: underline;
     text-decoration-skip-ink: auto;
   }
+}
+
+.btn-outline-secondary {
+  --bs-btn-bg: var(--bs-gray-100);
+  --bs-btn-color: var(--bs-gray-700);
+  --bs-btn-border-color: var(--bs-gray-700);
 }
 
 // Bootstrap light/dark mode
