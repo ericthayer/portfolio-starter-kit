@@ -250,10 +250,10 @@
         />
       </symbol>
     </svg>
-    <div class="app-layout flex-fill d-flex flex-column">
+    <div id="app" class="app-layout flex-fill d-flex flex-column">
       <header class="app-header bg-body-secondary position-sticky top-0 z-3">
         <div
-          class="container-fluid d-flex flex-row flex-wrap align-items-center gap-3 py-3 pe-4"
+          class="container-fluid d-flex flex-row flex-wrap align-items-center gap-3 py-3 px-3 pe-lg-4"
         >
           <div
             class="brand d-flex flex-row align-items-center flex-grow-1 flex-shrink-1 gap-1"
@@ -343,7 +343,7 @@
             <div class="app-logo d-flex align-items-center me-2 py-1">
               <a
                 class="d-flex"
-                href="#0"
+                href="#app"
                 ><img
                   src="//assets.codepen.io/97621/logo-light-ethayer-no-mark.svg"
                   class="w-100"
@@ -363,76 +363,6 @@
             >
               <small class="p-1">Menu</small>
             </button>
-            <div
-              class="offcanvas offcanvas-end"
-              tabindex="-1"
-              id="offcanvasNavbar"
-              aria-labelledby="offcanvasNavbarLabel"
-            >
-              <div class="offcanvas-header">
-                <button
-                  type="button"
-                  class="btn-close p-1 fs-4 bg-transparent"
-                  data-bs-dismiss="offcanvas"
-                  aria-label="Close"
-                >
-                  <svg
-                    width="1.5em"
-                    height="1.5em"
-                  >
-                    <use href="#close-mark"></use>
-                  </svg>
-                </button>
-              </div>
-              <div class="offcanvas-body">
-                <ul
-                  class="navbar-nav justify-content-end flex-grow-1 px-3 fs-3 gap-4"
-                >
-                  <li class="nav-item">
-                    <a
-                      href="#about"
-                      class="nav-link link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
-                      aria-current="page"
-                    >
-                      <span data-bs-dismiss="offcanvas">About</span></a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a
-                      href="#experience"
-                      class="nav-link link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
-                    >
-                      <span data-bs-dismiss="offcanvas">Experience</span></a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a
-                      href="#0"
-                      class="nav-link link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
-                      data-bs-toggle="modal"
-                      data-bs-target="#resumeModal"
-                      ><span data-bs-dismiss="offcanvas">Resume</span></a
-                    >
-                    <!-- <button
-                      type="button"
-                      data-bs-toggle="modal"
-                      data-bs-target="#resumeModal"
-                      class="nav-link link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
-                    >
-                      Resume
-                    </button> -->
-                  </li>
-                  <li class="nav-item">
-                    <a
-                      href="mailto:ethayer.design@gmail.com?subject=Hi%20Eric.%20Let's%20talk%20about...%20&amp;body=Contact%20information%20(company%2C%20name%2C%20role%2C%20phone%20number%2C%20etc)%3A%0A%0AWhat%20can%20I%20help%20you%20with?%20(project%20type%2C%20concept %2C%20outline%2C%20etc)%3A%0A%0ATimeline%20(start%20date%2C%20end%20date)%3A%0A%0AProject%20budget%20(greater%20than%20%2450%2C000%20range%20%7C%20%2430%2C000%E2%80%93%2420%2C000%20range%20%7C%20%2420%2C000%E2%80%93%2410%2C000%20range%20%7C%20less%20than%20%245%2C000)%3A%0A%0A%0A(answering%20these%20items%20will%20help%20me%20better%20understand%20your%20goals)"
-                      class="nav-link link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
-                      data-bs-dismiss="offcanvas"
-                      ><span data-bs-dismiss="offcanvas">Contact</span></a
-                    >
-                  </li>
-                </ul>
-              </div>
-            </div>
           </nav>
           <!-- Desktop -->
           <nav class="navbar d-none d-lg-flex">
@@ -475,7 +405,7 @@
       </header>
       <main
         id="main"
-        class="flex-fill d-flex flex-column"
+        class="main flex-fill d-flex flex-column"
       >
         <div class="d-flex flex-column">
           <!-- Hero -->
@@ -498,11 +428,13 @@
                 <div class="actions d-flex flex-column gap-5 my-1">
                   <div class="d-flex flex-wrap align-items-center gap-4">
                     <button
+                      type="button"
                       class="btn btn-lg btn-primary flex-fill flex-sm-grow-0"
                     >
                       <div class="fs-5">View Portfolio</div>
                     </button>
                     <button
+                      type="button"
                       class="btn btn-lg btn-secondary flex-fill flex-sm-grow-0"
                     >
                       <div class="fs-5">Download Resume</div>
@@ -512,7 +444,7 @@
                     class="nav d-flex justify-content-center justify-content-sm-start flex-grow-1"
                   >
                     <ul
-                      class="d-flex flex-wrap justify-content-center align-items-sm-center justify-content-sm-start gap-4 gap-sm-5 list-unstyled m-0 p-0 flex-grow-1"
+                      class="d-flex flex-wrap justify-content-center align-items-sm-center justify-content-sm-start row-gap-4 column-gap-5 list-unstyled m-0 p-0 flex-grow-1"
                     >
                       <li>
                         <a
@@ -1863,7 +1795,13 @@
                 </li>
               </ul>
             </nav>
-            <p class="fs-7 my-0 mx-auto text-center flex-grow-1">&copy; 2010-<script>document.write(new Date().getFullYear())</script> Eric Thayer</p>
+            <p class="fs-7 my-0 mx-auto text-center flex-grow-1">
+              &copy; 2010-
+              <script>
+                document.write(new Date().getFullYear())
+              </script>
+              Eric Thayer
+            </p>
             <div class="d-flex justify-content-center">
               <a
                 class="d-flex mx-auto"
@@ -1883,6 +1821,75 @@
           </div>
         </div>
       </footer>
+    </div>
+    <!-- Offcanvas Nav -->
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="offcanvasNavbar"
+      aria-labelledby="offcanvasNavbarLabel"
+    >
+      <div class="offcanvas-header">
+        <button
+          type="button"
+          class="btn-close p-1 fs-4 bg-transparent"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        >
+          <svg
+            width="1.5em"
+            height="1.5em"
+          >
+            <use href="#close-mark"></use>
+          </svg>
+        </button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 px-3 fs-3 gap-4">
+          <li class="nav-item">
+            <a
+              href="#about"
+              class="nav-link link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
+              aria-current="page"
+            >
+              <span data-bs-dismiss="offcanvas">About</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              href="#experience"
+              class="nav-link link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
+            >
+              <span data-bs-dismiss="offcanvas">Experience</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              href="#0"
+              class="nav-link link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
+              data-bs-toggle="modal"
+              data-bs-target="#resumeModal"
+              ><span data-bs-dismiss="offcanvas">Resume</span></a
+            >
+            <!-- <button
+            type="button"
+            data-bs-toggle="modal"
+            data-bs-target="#resumeModal"
+            class="nav-link link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
+          >
+            Resume
+          </button> -->
+          </li>
+          <li class="nav-item">
+            <a
+              href="mailto:ethayer.design@gmail.com?subject=Hi%20Eric.%20Let's%20talk%20about...%20&amp;body=Contact%20information%20(company%2C%20name%2C%20role%2C%20phone%20number%2C%20etc)%3A%0A%0AWhat%20can%20I%20help%20you%20with?%20(project%20type%2C%20concept %2C%20outline%2C%20etc)%3A%0A%0ATimeline%20(start%20date%2C%20end%20date)%3A%0A%0AProject%20budget%20(greater%20than%20%2450%2C000%20range%20%7C%20%2430%2C000%E2%80%93%2420%2C000%20range%20%7C%20%2420%2C000%E2%80%93%2410%2C000%20range%20%7C%20less%20than%20%245%2C000)%3A%0A%0A%0A(answering%20these%20items%20will%20help%20me%20better%20understand%20your%20goals)"
+              class="nav-link link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
+              data-bs-dismiss="offcanvas"
+              ><span data-bs-dismiss="offcanvas">Contact</span></a
+            >
+          </li>
+        </ul>
+      </div>
     </div>
     <!-- Lighthouse Audit -->
     <div
@@ -1957,13 +1964,13 @@
       >
         <div class="modal-content">
           <div
-            class="modal-header gap-4 align-items-start align-items-sm-center px-4 bg-body-secondary border-0"
+            class="modal-header gap-4 align-items-start align-items-sm-center py-sm-2 px-sm-4 bg-body-secondary border-0"
           >
             <div
-              class="d-flex flex-column flex-sm-row gap-1 gap-sm-3 align-items-sm-center justify-content-sm-between w-100"
+              class="d-flex flex-column flex-sm-row row-gap-1 column-gap-sm-3 align-items-sm-center justify-content-sm-between flex-grow-1"
             >
               <h1
-                class="modal-title fs-2 mb-0 flex-grow-1 d-flex align-items-center gap-3"
+                class="modal-title fs-1 mb-0 flex-grow-1 d-flex flex-wrap align-items-center gap-3"
                 id="resumeModalLabel"
               >
                 <span
@@ -1974,7 +1981,7 @@
 
                 <a
                   href="https://www.linkedin.com/in/ethayerdesign/"
-                  class="fs-4"
+                  class="fs-4 text-body pb-1"
                   ><svg
                     width="0.9em"
                     height="0.9em"
@@ -1990,11 +1997,19 @@
                   <span class="visually-hidden">Linkedin</span></a
                 >
               </h1>
-              <address class="d-flex gap-3 mb-0 align-items-center">
-                <a href="mailto:ethayer.design@gmail.com"
-                  >ethayer.design@gmail.com</a
+              <address
+                class="d-flex flex-wrap row-gap-1 column-gap-3 mb-0 align-items-center"
+              >
+                <a
+                  href="mailto:ethayer.design@gmail.com"
+                  class="fs-6"
+                  >ethayer.design@gmail</a
                 >
-                <a href="tel:6199525081">619•952•5081</a>
+                <a
+                  href="tel:6199525081"
+                  class="fs-6"
+                  >(619) 952-5081</a
+                >
               </address>
             </div>
             <button
@@ -2081,7 +2096,7 @@
               </section>
             </article>
           </div>
-          <div class="modal-footer bg-body-secondary border-0">
+          <div class="modal-footer bg-body-secondary border-0 gap-2">
             <button
               type="button"
               class="btn btn-secondary border-0"
@@ -2099,10 +2114,10 @@
               </button>
               <button
                 type="button"
-                class="btn btn-primary dropdown-toggle dropdown-toggle-split px-2 border-0"
+                class="btn btn-sm btn-primary dropdown-toggle dropdown-toggle-split px-2 border-0"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
-                style="background-color: var(--bs-primary-700)"
+                style="background-color: var(--bs-primary-700); width: 32px;"
               >
                 <span class="visually-hidden">Toggle Dropdown</span>
               </button>
@@ -2119,14 +2134,6 @@
                     class="dropdown-item"
                     href="#"
                     >PDF</a
-                  >
-                </li>
-                <li><hr class="dropdown-divider" /></li>
-                <li>
-                  <a
-                    class="dropdown-item"
-                    href="#"
-                    >Save as</a
                   >
                 </li>
               </ul>
