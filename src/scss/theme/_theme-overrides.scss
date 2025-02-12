@@ -120,7 +120,7 @@ section {
 
 .btn-outline-secondary {
   --bs-btn-bg: var(--bs-gray-100);
-  --bs-btn-color: var(--bs-gray-700);
+  --bs-btn-color: var(--bs-gray-800);
   --bs-btn-border-color: var(--bs-gray-700);
 }
 
@@ -130,6 +130,33 @@ section {
   &:hover {
     box-shadow: var(--bs-box-shadow);
   }
+}
+
+.dropdown-toggle:not(.collapsed) {
+  abbr {
+    display: none;
+  }
+
+  &:after {
+    border-top: 0;
+    border-right: .3em solid transparent;
+    border-bottom: .3em solid;
+    border-left: .3em solid transparent;
+    // transform: rotateY(180deg);
+  }
+}
+
+.modal-footer::after {
+  content: "";
+  height: 4rem;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.modal-footer::after {
+  background: linear-gradient(180deg, rgba(252,252,252,0) 0%, rgba(252,252,252,1) 100%);
+  top: -4rem;
 }
 
 // Bootstrap light/dark mode
