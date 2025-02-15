@@ -25,7 +25,7 @@ Built with Bootstrap and Vite, this open-source solution offers a perfect balanc
 
 ## Roadmap
 
-### v1.0.0-alpha - [Released](https://github.com/ericthayer/portfolio-starter-kit/tree/1.0.0-alpha)
+### Q4 2024
 
 - **Landing Page:** responsive layout, core functionality
 - **Styled Theme:** SCSS mapping & theme system
@@ -33,7 +33,8 @@ Built with Bootstrap and Vite, this open-source solution offers a perfect balanc
 - **PWA:** passing Progressive Web App standards
 - **Deploy Pipeline:** auto-deployed and hosted on Netlify
 
-### v1.1.0-alpha (Q1 2025)
+### Q1 2025
+
 - **Resume Templates:** HTML, Word/PDF
 - **Example Templates:** demo templates
     - **Case Study:** featured project article (in-depth, media-heavy)
@@ -41,7 +42,7 @@ Built with Bootstrap and Vite, this open-source solution offers a perfect balanc
     - **Coverletter:** audience specific callout or engagement (brief and engaging)
     - **Postcard:** insights highlighting examples of expertise (compact-form, links to work)
 
-### v2.0.0-alpha (Q2 2025)
+### Q2 2025
 
 - **Admin Panel:** access app configs (view-only)
     - **Application:** view application metadata
@@ -49,14 +50,14 @@ Built with Bootstrap and Vite, this open-source solution offers a perfect balanc
     - **Export Site:** export site via .zip
 - **Onboarding:** documentation and supporting media
 
-### v1.0.0-beta (Q3 2025)
+### Q3 2025
 
 - **App Config:** update metadata & deploy build
 - **CMS:** update & manage content types
 - **Theme Builder:** update look & feel via UI
 
-### v1.0.0 (Q4 2025)
+### Q4 2025 (v1.0.0-beta)
 
-- **Mulit-page Support:** create & deploy multiple templates
+- **Multi-page Support:** create & deploy multiple templates
 <!-- - **Vue/React Support:** optional SPA support -->
 <!-- - **Visual Testing:** Chromatic integration -->
