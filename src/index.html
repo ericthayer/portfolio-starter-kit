@@ -250,7 +250,10 @@
         />
       </symbol>
     </svg>
-    <div id="app" class="app-layout flex-fill d-flex flex-column">
+    <div
+      id="app"
+      class="app-layout flex-fill d-flex flex-column"
+    >
       <header class="app-header bg-body-secondary position-sticky top-0 z-3">
         <div
           class="container-fluid d-flex flex-row flex-wrap align-items-center gap-3 py-3 px-3 pe-lg-4"
@@ -345,9 +348,12 @@
                 class="d-flex"
                 href="#app"
                 ><img
-                  src="//assets.codepen.io/97621/logo-light-ethayer-no-mark.svg"
+                  loading="lazy"
+                  src="./images/logo-light-ethayer-no-mark.svg"
                   class="w-100"
                   alt="logo"
+                  height="15.2"
+                  width="176"
               /></a>
             </div>
           </div>
@@ -372,14 +378,14 @@
               <li>
                 <a
                   href="#about"
-                  class="link-offset-1 link-offset-1-hover link-underline"
+                  class="link link-offset-1 link-offset-1-hover link-underline"
                   >About</a
                 >
               </li>
               <li>
                 <a
                   href="#experience"
-                  class="link-offset-1 link-offset-1-hover link-underline"
+                  class="link link-offset-1 link-offset-1-hover link-underline"
                   >Experience</a
                 >
               </li>
@@ -388,14 +394,14 @@
                   href="#0"
                   data-bs-toggle="modal"
                   data-bs-target="#resumeModal"
-                  class="link-offset-1 link-offset-1-hover link-underline"
+                  class="link link-offset-1 link-offset-1-hover link-underline"
                   >Resume</a
                 >
               </li>
               <li>
                 <a
                   href="mailto:ethayer.design@gmail.com?subject=Hi%20Eric.%20Let's%20talk%20about...%20&body=(answering%20these%20items%20will%20help%20me%20better%20understand%20your%20goals)%0A%0AContact%20information%20(company%2C%20name%2C%20role%2C%20phone%20number%2C%20etc)%3A%0A%0AWhat%20can%20I%20help%20you%20with?%20(project%20type%2C%20concept %2C%20outline%2C%20etc)%3A%0A%0ATimeline%20(start%20date%2C%20end%20date)%3A%0A%0AProject%20budget%20(greater%20than%20%2450%2C000%20range%20%7C%20%2430%2C000%E2%80%93%2420%2C000%20range%20%7C%20%2420%2C000%E2%80%93%2410%2C000%20range%20%7C%20less%20than%20%245%2C000)%3A%0A%0ASincerely%2C"
-                  class="link-offset-1 link-offset-1-hover link-underline"
+                  class="link link-offset-1 link-offset-1-hover link-underline"
                   >Contact</a
                 >
               </li>
@@ -417,27 +423,27 @@
                     UX Engineer <small>&amp;</small> Systems Lead
                   </h1>
                   <p class="lead mb-0">
-                    I'm a skilled&mdash;Creative Strategist, Interaction
-                    Designer, and Front-end Developer.<br
-                      class="d-none d-lg-block"
-                    />
+                    I'm a skilled&mdash;Creative Strategist, Product Designer,
+                    and Front-end Developer.<br class="d-none d-lg-block" />
                     Please let me know how I can help your team or project
                     succeed.
                   </p>
                 </div>
                 <div class="actions d-flex flex-column gap-5 my-1">
                   <div class="d-flex flex-wrap align-items-center gap-4">
-                    <button
-                      type="button"
-                      class="btn btn-lg btn-primary flex-fill flex-sm-grow-0"
+                    <a
+                      role="button"
+                      class="btn btn-lg btn-primary flex-fill flex-sm-grow-0 text-decoration-none"
+                      href="#experience"
+                      ><span class="fs-5">View Portfolio</span></a
                     >
-                      <div class="fs-5">View Portfolio</div>
-                    </button>
                     <button
                       type="button"
                       class="btn btn-lg btn-secondary flex-fill flex-sm-grow-0"
+                      data-bs-toggle="modal"
+                      data-bs-target="#resumeModal"
                     >
-                      <div class="fs-5">Download Resume</div>
+                      <span class="fs-5">Download Resume</span>
                     </button>
                   </div>
                   <nav
@@ -615,13 +621,13 @@
                   </p>
                 </div>
                 <div class="callouts mt-4">
-                  <h2 class="h5 fw-regular mt-1 mb-4 text-center">
+                  <h2 class="h5 fw-medium mt-1 mb-4 text-center">
                     Core Strengths
                   </h2>
                   <div class="cards row g-5">
                     <div class="col-12 col-md-6 col-xl-4 position-relative">
                       <div
-                        class="bg-body-secondary rounded rounded-3 d-flex flex-column p-4"
+                        class="card bg-body-secondary rounded rounded-3 d-flex flex-column p-4"
                       >
                         <div class="copy m-1">
                           <i class="d-block mb-4">
@@ -643,14 +649,14 @@
                           <a
                             href="#0"
                             class="stretched-link"
-                            ><span class="">View samples</span></a
+                            ><span class="">View Details</span></a
                           >
                         </div>
                       </div>
                     </div>
                     <div class="col-12 col-md-6 col-xl-4 position-relative">
                       <div
-                        class="bg-body-secondary rounded rounded-3 d-flex flex-column p-4"
+                        class="card bg-body-secondary rounded rounded-3 d-flex flex-column p-4"
                       >
                         <div class="copy m-1">
                           <i class="d-block mb-4">
@@ -672,14 +678,14 @@
                           <a
                             href="#0"
                             class="stretched-link"
-                            ><span class="">View samples</span></a
+                            ><span class="">View Details</span></a
                           >
                         </div>
                       </div>
                     </div>
-                    <div class="col-12 col-md-12 col-xl-4 position-relative">
+                    <div class="col-12 col-xl-4 position-relative">
                       <div
-                        class="bg-body-secondary rounded rounded-3 d-flex flex-column p-4"
+                        class="card bg-body-secondary rounded rounded-3 d-flex flex-column p-4"
                       >
                         <div class="copy m-1">
                           <i class="d-block mb-4">
@@ -701,7 +707,7 @@
                           <a
                             href="#0"
                             class="stretched-link"
-                            ><span class="">View samples</span></a
+                            ><span class="">View Details</span></a
                           >
                         </div>
                       </div>
@@ -740,12 +746,16 @@
                 >
                   <div class="col col-lg-7 media d-flex">
                     <a
-                      class="d-flex shadow ratio ratio-16x9"
+                      class="d-flex ratio ratio-16x9 card"
                       href="#0"
                       title="Project title"
+                      data-bs-toggle="offcanvas"
+                      data-bs-target="#offcanvasRight"
+                      aria-controls="offcanvasRight"
                       aria-label="Project title"
                       ><img
-                        src="https://assets.codepen.io/97621/SimCore-styleguide-demo-lores.gif"
+                        loading="lazy"
+                        src="./images/img-healthscholars-styleguide-demo-lores.webp"
                         class="img-fluid object-fit-cover"
                         alt="Project title"
                         width="2500"
@@ -768,7 +778,7 @@
                             >
                               Project name title
                               <svg
-                                class="fs-3"
+                                class="d-none fs-3"
                                 width="1em"
                                 height="1em"
                               >
@@ -776,39 +786,6 @@
                               </svg>
                             </a>
                           </h3>
-                          <!-- Project Details -->
-                          <div
-                            class="offcanvas offcanvas-end w-100"
-                            tabindex="-1"
-                            id="offcanvasRight"
-                            aria-labelledby="offcanvasRightLabel"
-                          >
-                            <div class="offcanvas-header bg-body-secondary">
-                              <h5
-                                class="offcanvas-title"
-                                id="offcanvasRightLabel"
-                              >
-                                Project title
-                              </h5>
-
-                              <button
-                                type="button"
-                                class="btn-close p-1 fs-4 bg-transparent"
-                                data-bs-dismiss="offcanvas"
-                                aria-label="Close"
-                              >
-                                <svg
-                                  width="1.5em"
-                                  height="1.5em"
-                                >
-                                  <use href="#close-mark"></use>
-                                </svg>
-                              </button>
-                            </div>
-                            <div class="offcanvas-body">
-                              <div class="">Project details here</div>
-                            </div>
-                          </div>
                         </div>
                         <time class="date pt-1 fw-medium">Nov 10, 2024</time>
                         <hr class="mt-2 mb-0 w-50" />
@@ -855,7 +832,7 @@
                 class="d-flex flex-column justify-content-center flex-md-row align-items-md-center justify-content-md-between border-bottom pb-3 gap-3"
               >
                 <h2
-                  class="h5 fw-regular mt-1 mb-0 mb-md-0 text-center text-md-left"
+                  class="h4 fw-medium mt-1 mb-0 mb-md-0 text-center text-md-left"
                 >
                   Related Work
                 </h2>
@@ -937,6 +914,7 @@
               </div>
               <!-- Tab content -->
               <div class="tab-content">
+                <!-- Related UI Work -->
                 <div
                   class="tab-pane active"
                   id="ui-work"
@@ -944,21 +922,21 @@
                   aria-labelledby="ui-work-tab"
                   tabindex="0"
                 >
-                  <!-- Related UI Work -->
                   <div class="callouts py-5">
                     <div class="container-fluid px-0 pt-md-3">
-                      <h3
-                        class="h6 d-none d-md-block fw-regular mb-4 mt-md-1 text-center"
-                      >
+                      <h3 class="h5 fw-medium d-block mb-4 mt-md-1 text-center">
                         User Interface Design
                       </h3>
                       <div class="cards row g-5 pt-2">
-                        <div class="col-12 col-md-6 col-xl-4 position-relative">
+                        <div
+                          class="col-12 col-sm-10 col-md-6 col-xl-4 mx-auto mx-md-0 position-relative"
+                        >
                           <div
-                            class="bg-body rounded rounded-3 shadow shadow-sm d-flex flex-column overflow-hidden"
+                            class="card bg-body rounded rounded-3 d-flex flex-column overflow-hidden"
                           >
                             <div class="media d-flex ratio ratio-16x9">
                               <img
+                                loading="lazy"
                                 src="https://assets.codepen.io/97621/cobank-design-tokens-demo-01.png"
                                 class="img-fluid object-fit-cover"
                                 alt=""
@@ -976,18 +954,21 @@
                                 href="#0"
                                 class="stretched-link"
                                 ><span class="visually-hidden"
-                                  >View samples</span
+                                  >View Details</span
                                 ></a
                               >
                             </div>
                           </div>
                         </div>
-                        <div class="col-12 col-md-6 col-xl-4 position-relative">
+                        <div
+                          class="col-12 col-sm-10 col-md-6 col-xl-4 mx-auto mx-md-0 position-relative"
+                        >
                           <div
-                            class="bg-body rounded rounded-3 shadow shadow-sm d-flex flex-column overflow-hidden"
+                            class="card bg-body rounded rounded-3 d-flex flex-column overflow-hidden"
                           >
                             <div class="media d-flex ratio ratio-16x9">
                               <img
+                                loading="lazy"
                                 src="https://assets.codepen.io/97621/cobank-design-tokens-demo-01.png"
                                 class="img-fluid object-fit-cover"
                                 alt=""
@@ -1005,20 +986,21 @@
                                 href="#0"
                                 class="stretched-link"
                                 ><span class="visually-hidden"
-                                  >View samples</span
+                                  >View Details</span
                                 ></a
                               >
                             </div>
                           </div>
                         </div>
                         <div
-                          class="col-12 col-md-6 mx-md-auto col-xl-4 position-relative"
+                          class="col-12 col-sm-10 col-md-6 mx-md-auto col-xl-4 mx-auto mx-md-0 position-relative"
                         >
                           <div
-                            class="bg-body rounded rounded-3 shadow shadow-sm d-flex flex-column overflow-hidden"
+                            class="card bg-body rounded rounded-3 d-flex flex-column overflow-hidden"
                           >
                             <div class="media d-flex ratio ratio-16x9">
                               <img
+                                loading="lazy"
                                 src="https://assets.codepen.io/97621/img-16x9-DPI-process-XL.jpg?format=avif&fit=cover"
                                 class="img-fluid object-fit-cover"
                                 alt=""
@@ -1036,7 +1018,7 @@
                                 href="#0"
                                 class="stretched-link"
                                 ><span class="visually-hidden"
-                                  >View samples</span
+                                  >View Details</span
                                 ></a
                               >
                             </div>
@@ -1046,6 +1028,7 @@
                     </div>
                   </div>
                 </div>
+                <!-- Related UX Work -->
                 <div
                   class="tab-pane"
                   id="ux-work"
@@ -1053,21 +1036,21 @@
                   aria-labelledby="ux-work-tab"
                   tabindex="0"
                 >
-                  <!-- Related UX Work -->
                   <div class="callouts py-5">
                     <div class="container-fluid px-0 pt-md-3">
-                      <h3
-                        class="h6 fw-regular d-none d-md-block mb-4 mt-md-1 text-center"
-                      >
+                      <h3 class="h5 fw-medium d-block mb-4 mt-md-1 text-center">
                         User Experience Design
                       </h3>
                       <div class="cards row g-5 pt-2">
-                        <div class="col-12 col-md-6 col-xl-4 position-relative">
+                        <div
+                          class="col-12 col-sm-10 col-md-6 col-xl-4 mx-auto mx-md-0 position-relative"
+                        >
                           <div
-                            class="bg-body rounded rounded-3 shadow shadow-sm d-flex flex-column overflow-hidden"
+                            class="card bg-body rounded rounded-3 d-flex flex-column overflow-hidden"
                           >
                             <div class="media d-flex ratio ratio-16x9">
                               <img
+                                loading="lazy"
                                 src="https://assets.codepen.io/97621/cobank-design-tokens-demo-01.png"
                                 class="img-fluid object-fit-cover"
                                 alt=""
@@ -1085,18 +1068,21 @@
                                 href="#0"
                                 class="stretched-link"
                                 ><span class="visually-hidden"
-                                  >View samples</span
+                                  >View Details</span
                                 ></a
                               >
                             </div>
                           </div>
                         </div>
-                        <div class="col-12 col-md-6 col-xl-4 position-relative">
+                        <div
+                          class="col-12 col-sm-10 col-md-6 col-xl-4 mx-auto mx-md-0 position-relative"
+                        >
                           <div
-                            class="bg-body rounded rounded-3 shadow shadow-sm d-flex flex-column overflow-hidden"
+                            class="card bg-body rounded rounded-3 d-flex flex-column overflow-hidden"
                           >
                             <div class="media d-flex ratio ratio-16x9">
                               <img
+                                loading="lazy"
                                 src="https://assets.codepen.io/97621/img-16x9-DPI-process-XL.jpg?format=avif&fit=cover"
                                 class="img-fluid object-fit-cover"
                                 alt=""
@@ -1114,20 +1100,21 @@
                                 href="#0"
                                 class="stretched-link"
                                 ><span class="visually-hidden"
-                                  >View samples</span
+                                  >View Details</span
                                 ></a
                               >
                             </div>
                           </div>
                         </div>
                         <div
-                          class="col-12 col-md-6 mx-md-auto col-xl-4 position-relative"
+                          class="col-12 col-sm-10 col-md-6 mx-md-auto col-xl-4 mx-auto mx-md-0 position-relative"
                         >
                           <div
-                            class="bg-body rounded rounded-3 shadow shadow-sm d-flex flex-column overflow-hidden"
+                            class="card bg-body rounded rounded-3 d-flex flex-column overflow-hidden"
                           >
                             <div class="media d-flex ratio ratio-16x9">
                               <img
+                                loading="lazy"
                                 src="https://assets.codepen.io/97621/cobank-design-tokens-demo-01.png?format=avif&fit=cover"
                                 class="img-fluid object-fit-cover"
                                 alt=""
@@ -1145,7 +1132,7 @@
                                 href="#0"
                                 class="stretched-link"
                                 ><span class="visually-hidden"
-                                  >View samples</span
+                                  >View Details</span
                                 ></a
                               >
                             </div>
@@ -1155,6 +1142,7 @@
                     </div>
                   </div>
                 </div>
+                <!-- Related Front-end Work -->
                 <div
                   class="tab-pane"
                   id="front-end-work"
@@ -1162,21 +1150,21 @@
                   aria-labelledby="front-end-work-tab"
                   tabindex="0"
                 >
-                  <!-- Related Front-end Work -->
                   <div class="callouts py-5">
                     <div class="container-fluid px-0 pt-md-3">
-                      <h3
-                        class="h6 fw-regular d-none d-md-block mb-4 mt-md-1 text-center"
-                      >
+                      <h3 class="h5 fw-medium d-block mb-4 mt-md-1 text-center">
                         Front-end Development
                       </h3>
                       <div class="cards row g-5 pt-2">
-                        <div class="col-12 col-md-6 col-xl-4 position-relative">
+                        <div
+                          class="col-12 col-sm-10 col-md-6 col-xl-4 mx-auto mx-md-0 position-relative"
+                        >
                           <div
-                            class="bg-body rounded rounded-3 shadow shadow-sm d-flex flex-column overflow-hidden"
+                            class="card bg-body rounded rounded-3 d-flex flex-column overflow-hidden"
                           >
                             <div class="media d-flex ratio ratio-16x9">
                               <img
+                                loading="lazy"
                                 src="https://assets.codepen.io/97621/img-16x9-DPI-process-XL.jpg?format=avif&fit=cover"
                                 class="img-fluid object-fit-cover"
                                 alt=""
@@ -1194,18 +1182,21 @@
                                 href="#0"
                                 class="stretched-link"
                                 ><span class="visually-hidden"
-                                  >View samples</span
+                                  >View Details</span
                                 ></a
                               >
                             </div>
                           </div>
                         </div>
-                        <div class="col-12 col-md-6 col-xl-4 position-relative">
+                        <div
+                          class="col-12 col-sm-10 col-md-6 col-xl-4 mx-auto mx-md-0 position-relative"
+                        >
                           <div
-                            class="bg-body rounded rounded-3 shadow shadow-sm d-flex flex-column overflow-hidden"
+                            class="card bg-body rounded rounded-3 d-flex flex-column overflow-hidden"
                           >
                             <div class="media d-flex ratio ratio-16x9">
                               <img
+                                loading="lazy"
                                 src="https://assets.codepen.io/97621/cobank-design-tokens-demo-01.png"
                                 class="img-fluid object-fit-cover"
                                 alt=""
@@ -1223,20 +1214,21 @@
                                 href="#0"
                                 class="stretched-link"
                                 ><span class="visually-hidden"
-                                  >View samples</span
+                                  >View Details</span
                                 ></a
                               >
                             </div>
                           </div>
                         </div>
                         <div
-                          class="col-12 col-md-6 mx-md-auto col-xl-4 position-relative"
+                          class="col-12 col-sm-10 col-md-6 mx-md-auto col-xl-4 mx-auto mx-md-0 position-relative"
                         >
                           <div
-                            class="bg-body rounded rounded-3 shadow shadow-sm d-flex flex-column overflow-hidden"
+                            class="card bg-body rounded rounded-3 d-flex flex-column overflow-hidden"
                           >
                             <div class="media d-flex ratio ratio-16x9">
                               <img
+                                loading="lazy"
                                 src="https://assets.codepen.io/97621/cobank-design-tokens-demo-01.png?format=avif&fit=cover"
                                 class="img-fluid object-fit-cover"
                                 alt=""
@@ -1254,7 +1246,7 @@
                                 href="#0"
                                 class="stretched-link"
                                 ><span class="visually-hidden"
-                                  >View samples</span
+                                  >View Details</span
                                 ></a
                               >
                             </div>
@@ -1264,6 +1256,7 @@
                     </div>
                   </div>
                 </div>
+                <!-- Related Design System Work -->
                 <div
                   class="tab-pane"
                   id="design-system-work"
@@ -1271,21 +1264,19 @@
                   aria-labelledby="design-system-work-tab"
                   tabindex="0"
                 >
-                  <!-- Related Design System Work -->
                   <div class="callouts py-5">
                     <div class="container-fluid px-0 pt-md-3">
-                      <h3
-                        class="h6 fw-regular d-none d-md-block mb-4 mt-md-1 text-center"
-                      >
+                      <h3 class="h5 fw-medium d-block mb-4 mt-md-1 text-center">
                         System Design & Development
                       </h3>
                       <div class="cards row g-5 pt-2">
                         <div class="col-12 col-md-6 col-xl-4 position-relative">
                           <div
-                            class="bg-body rounded rounded-3 shadow shadow-sm d-flex flex-column overflow-hidden"
+                            class="card bg-body rounded rounded-3 d-flex flex-column overflow-hidden"
                           >
                             <div class="media d-flex ratio ratio-16x9">
                               <img
+                                loading="lazy"
                                 src="https://assets.codepen.io/97621/cobank-design-tokens-demo-01.png"
                                 class="img-fluid object-fit-cover"
                                 alt=""
@@ -1303,7 +1294,7 @@
                                 href="#0"
                                 class="stretched-link"
                                 ><span class="visually-hidden"
-                                  >View samples</span
+                                  >View Details</span
                                 ></a
                               >
                             </div>
@@ -1311,10 +1302,11 @@
                         </div>
                         <div class="col-12 col-md-6 col-xl-4 position-relative">
                           <div
-                            class="bg-body rounded rounded-3 shadow shadow-sm d-flex flex-column overflow-hidden"
+                            class="card bg-body rounded rounded-3 d-flex flex-column overflow-hidden"
                           >
                             <div class="media d-flex ratio ratio-16x9">
                               <img
+                                loading="lazy"
                                 src="https://assets.codepen.io/97621/cobank-design-tokens-demo-01.png?format=avif&fit=cover"
                                 class="img-fluid object-fit-cover"
                                 alt=""
@@ -1332,20 +1324,21 @@
                                 href="#0"
                                 class="stretched-link"
                                 ><span class="visually-hidden"
-                                  >View samples</span
+                                  >View Details</span
                                 ></a
                               >
                             </div>
                           </div>
                         </div>
                         <div
-                          class="col-12 col-md-6 mx-md-auto col-xl-4 position-relative"
+                          class="col-12 col-sm-10 col-md-6 mx-md-auto col-xl-4 mx-auto mx-md-0 position-relative"
                         >
                           <div
-                            class="bg-body rounded rounded-3 shadow shadow-sm d-flex flex-column overflow-hidden"
+                            class="card bg-body rounded rounded-3 d-flex flex-column overflow-hidden"
                           >
                             <div class="media d-flex ratio ratio-16x9">
                               <img
+                                loading="lazy"
                                 src="https://assets.codepen.io/97621/img-16x9-DPI-process-XL.jpg?format=avif&fit=cover"
                                 class="img-fluid object-fit-cover"
                                 alt=""
@@ -1363,7 +1356,7 @@
                                 href="#0"
                                 class="stretched-link"
                                 ><span class="visually-hidden"
-                                  >View samples</span
+                                  >View Details</span
                                 ></a
                               >
                             </div>
@@ -1377,7 +1370,7 @@
             </div>
           </section>
           <!-- Testimonials -->
-          <section class="testimonials pt-4 pb-0">
+          <section class="testimonials pt-4 pb-0 overflow-hidden">
             <div class="headline py-3">
               <div class="container-fluid p-4 px-sm-5 p-md-5">
                 <h2 class="text-uppercase h5 fw-semibold mb-0">
@@ -1392,42 +1385,46 @@
                 </p>
               </div>
             </div>
-            <div class="container-fluid px-0 pt-4 px-wide-5">
+            <div class="container-fluid px-0 pt-4">
               <!-- Carousel -->
               <div
-                id="carouselExampleCaptions"
+                id="testimonialsCaptions"
                 class="carousel slide carousel-fade"
               >
-                <div class="carousel-indicators">
+                <div class="carousel-indicators gap-3 d-none d-md-flex">
                   <button
                     type="button"
-                    data-bs-target="#carouselExampleCaptions"
+                    data-bs-target="#testimonialsCaptions"
                     data-bs-slide-to="0"
-                    class="active"
+                    class="rounded rounded-sm p-1 active"
                     aria-current="true"
                     aria-label="Slide 1"
                   ></button>
                   <button
                     type="button"
-                    data-bs-target="#carouselExampleCaptions"
+                    class="rounded rounded-sm p-1"
+                    data-bs-target="#testimonialsCaptions"
                     data-bs-slide-to="1"
                     aria-label="Slide 2"
                   ></button>
                   <button
                     type="button"
-                    data-bs-target="#carouselExampleCaptions"
+                    class="rounded rounded-sm p-1"
+                    data-bs-target="#testimonialsCaptions"
                     data-bs-slide-to="2"
                     aria-label="Slide 3"
                   ></button>
                 </div>
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
+                <div class="carousel-inner overflow-visible">
+                  <div class="carousel-item shadow shadow-lg active">
                     <div class="ratio ratio-16x9">
                       <a href="https://www.linkedin.com/in/ethayerdesign/">
                         <img
+                          loading="lazy"
                           src="./images/slide-testimonial-01@2x.webp"
                           class="d-block object-fit-cover w-100"
                           alt="..."
+                          width="1280"
                         />
                       </a>
                     </div>
@@ -1441,13 +1438,15 @@
                       </p>
                     </div>
                   </div>
-                  <div class="carousel-item">
+                  <div class="carousel-item shadow shadow-lg">
                     <div class="ratio ratio-16x9">
                       <a href="#0">
                         <img
+                          loading="lazy"
                           src="./images/slide-testimonial-02@2x.webp"
                           class="d-block object-fit-cover w-100"
                           alt="..."
+                          width="1280"
                         />
                       </a>
                     </div>
@@ -1461,13 +1460,15 @@
                       </p>
                     </div>
                   </div>
-                  <div class="carousel-item">
+                  <div class="carousel-item shadow shadow-lg">
                     <div class="ratio ratio-16x9">
                       <a href="#0">
                         <img
+                          loading="lazy"
                           src="./images/slide-testimonial-03@2x.webp"
                           class="d-block object-fit-cover w-100"
                           alt="..."
+                          width="1280"
                         />
                       </a>
                     </div>
@@ -1483,9 +1484,9 @@
                   </div>
                 </div>
                 <button
-                  class="carousel-control-prev"
+                  class="d-none d-xs-block carousel-control-prev"
                   type="button"
-                  data-bs-target="#carouselExampleCaptions"
+                  data-bs-target="#testimonialsCaptions"
                   data-bs-slide="prev"
                 >
                   <span
@@ -1495,9 +1496,9 @@
                   <span class="visually-hidden">Previous</span>
                 </button>
                 <button
-                  class="carousel-control-next"
+                  class="d-none d-xs-block carousel-control-next"
                   type="button"
-                  data-bs-target="#carouselExampleCaptions"
+                  data-bs-target="#testimonialsCaptions"
                   data-bs-slide="next"
                 >
                   <span
@@ -1545,13 +1546,10 @@
             </div>
             <div class="callouts">
               <div class="container-fluid p-4 px-sm-5 pt-sm-2 pb-sm-5">
-                <!-- <h2 class="h5 fw-regular mt-1 mb-4 text-center">
-                  Core Strengths
-                </h2> -->
                 <div class="cards row g-5">
                   <div class="col-12 col-md-6 col-xl-4 position-relative">
                     <div
-                      class="bg-body rounded rounded-3 d-flex flex-column p-4"
+                      class="card bg-body rounded rounded-3 d-flex flex-column p-4"
                     >
                       <div class="copy m-1">
                         <i class="d-block mb-4">
@@ -1573,14 +1571,14 @@
                         <a
                           href="#0"
                           class="stretched-link"
-                          ><span class="">View samples</span></a
+                          ><span class="">View Details</span></a
                         >
                       </div>
                     </div>
                   </div>
                   <div class="col-12 col-md-6 col-xl-4 position-relative">
                     <div
-                      class="bg-body rounded rounded-3 d-flex flex-column p-4"
+                      class="card bg-body rounded rounded-3 d-flex flex-column p-4"
                     >
                       <div class="copy m-1">
                         <i class="d-block mb-4">
@@ -1602,14 +1600,14 @@
                         <a
                           href="#0"
                           class="stretched-link"
-                          ><span class="">View samples</span></a
+                          ><span class="">View Details</span></a
                         >
                       </div>
                     </div>
                   </div>
-                  <div class="col-12 col-md-12 col-xl-4 position-relative">
+                  <div class="col-12 col-xl-4 position-relative">
                     <div
-                      class="bg-body rounded rounded-3 d-flex flex-column p-4"
+                      class="card bg-body rounded rounded-3 d-flex flex-column p-4"
                     >
                       <div class="copy m-1">
                         <i class="d-block mb-4">
@@ -1631,7 +1629,7 @@
                         <a
                           href="#0"
                           class="stretched-link"
-                          ><span class="">View samples</span></a
+                          ><span class="">View Details</span></a
                         >
                       </div>
                     </div>
@@ -1647,22 +1645,17 @@
           >
             <div class="container-fluid p-4 p-lg-5">
               <div class="py-3 pt-lg-4 pb-lg-5">
-                <h2 class="h2 fw-regular my-4 text-center">Connect with Me</h2>
+                <h2 class="h2 fw-medium my-4 text-center">Connect with Me</h2>
                 <div class="actions d-flex flex-column gap-5 my-1">
                   <div
                     class="d-flex flex-wrap align-items-center justify-content-center gap-4"
                   >
                     <a
                       href="mailto:ethayer.design@gmail.com?subject=Hi%20Eric.%20Let's%20talk%20about...%20&amp;body=Contact%20information%20(company%2C%20name%2C%20role%2C%20phone%20number%2C%20etc)%3A%0A%0AWhat%20can%20I%20help%20you%20with?%20(project%20type%2C%20concept %2C%20outline%2C%20etc)%3A%0A%0ATimeline%20(start%20date%2C%20end%20date)%3A%0A%0AProject%20budget%20(greater%20than%20%2450%2C000%20range%20%7C%20%2430%2C000%E2%80%93%2420%2C000%20range%20%7C%20%2420%2C000%E2%80%93%2410%2C000%20range%20%7C%20less%20than%20%245%2C000)%3A%0A%0A%0A(answering%20these%20items%20will%20help%20me%20better%20understand%20your%20goals)"
-                      class="btn btn-lg btn-primary flex-sm-grow-0"
+                      class="btn btn-lg btn-primary flex-sm-grow-0 text-decoration-none"
                     >
-                      <div class="fs-5">Send a Message</div>
+                      <span class="fs-5">Send a Message</span>
                     </a>
-                    <!-- <button
-                      class="btn btn-lg btn-secondary flex-fill flex-sm-grow-0"
-                    >
-                      <div class="fs-5">Download Resume</div>
-                    </button> -->
                   </div>
                 </div>
               </div>
@@ -1680,7 +1673,7 @@
           >
             <nav
               class="nav d-flex justify-content-center justify-content-sm-start"
-              style="min-width: 12rem;"
+              style="min-width: 12rem"
             >
               <ul
                 class="d-flex flex-wrap justify-content-center align-items-sm-center justify-content-sm-start column-gap-4 row-gap-2 list-unstyled m-0 p-0 flex-grow-1"
@@ -1797,9 +1790,8 @@
               </ul>
             </nav>
             <p class="fs-7 my-0 mx-auto text-center flex-grow-1">
-              &copy; 2010-<script>
-                document.write(new Date().getFullYear())
-              </script> <span class="d-none d-md-inline-block">•</span>&nbsp;Eric Thayer
+              &copy; 2010-2025
+              <span class="d-none d-md-inline-block">•</span>&nbsp;Eric Thayer
             </p>
             <div class="d-flex justify-content-center">
               <a
@@ -1813,7 +1805,9 @@
                   src="./images/img-lighthouse-score.png"
                   alt=""
                   class="img-fluid object-fit-cover"
-                  style="max-width: 12rem; mix-blend-mode: lighten;"
+                  height="25"
+                  width="192"
+                  style="mix-blend-mode: lighten"
                 />
               </a>
             </div>
@@ -1831,13 +1825,13 @@
       <div class="offcanvas-header">
         <button
           type="button"
-          class="btn-close p-1 fs-4 bg-transparent"
+          class="btn-close d-flex align-items-center justify-content-center p-0 fs-2 bg-transparent"
           data-bs-dismiss="offcanvas"
           aria-label="Close"
         >
           <svg
-            width="1.5em"
-            height="1.5em"
+            width="1em"
+            height="1em"
           >
             <use href="#close-mark"></use>
           </svg>
@@ -1851,7 +1845,11 @@
               class="nav-link link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
               aria-current="page"
             >
-              <span data-bs-dismiss="offcanvas">About</span></a
+              <span
+                class="d-block"
+                data-bs-dismiss="offcanvas"
+                >About</span
+              ></a
             >
           </li>
           <li class="nav-item">
@@ -1859,7 +1857,11 @@
               href="#experience"
               class="nav-link link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
             >
-              <span data-bs-dismiss="offcanvas">Experience</span></a
+              <span
+                class="d-block"
+                data-bs-dismiss="offcanvas"
+                >Experience</span
+              ></a
             >
           </li>
           <li class="nav-item">
@@ -1868,7 +1870,11 @@
               class="nav-link link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
               data-bs-toggle="modal"
               data-bs-target="#resumeModal"
-              ><span data-bs-dismiss="offcanvas">Resume</span></a
+              ><span
+                class="d-block"
+                data-bs-dismiss="offcanvas"
+                >Resume</span
+              ></a
             >
           </li>
           <li class="nav-item">
@@ -1876,10 +1882,49 @@
               href="mailto:ethayer.design@gmail.com?subject=Hi%20Eric.%20Let's%20talk%20about...%20&amp;body=Contact%20information%20(company%2C%20name%2C%20role%2C%20phone%20number%2C%20etc)%3A%0A%0AWhat%20can%20I%20help%20you%20with?%20(project%20type%2C%20concept %2C%20outline%2C%20etc)%3A%0A%0ATimeline%20(start%20date%2C%20end%20date)%3A%0A%0AProject%20budget%20(greater%20than%20%2450%2C000%20range%20%7C%20%2430%2C000%E2%80%93%2420%2C000%20range%20%7C%20%2420%2C000%E2%80%93%2410%2C000%20range%20%7C%20less%20than%20%245%2C000)%3A%0A%0A%0A(answering%20these%20items%20will%20help%20me%20better%20understand%20your%20goals)"
               class="nav-link link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
               data-bs-dismiss="offcanvas"
-              ><span data-bs-dismiss="offcanvas">Contact</span></a
+              ><span
+                class="d-block"
+                data-bs-dismiss="offcanvas"
+                >Contact</span
+              ></a
             >
           </li>
         </ul>
+      </div>
+    </div>
+    <!-- Project Details -->
+    <div
+      class="offcanvas offcanvas-end w-100"
+      tabindex="-1"
+      id="offcanvasRight"
+      aria-labelledby="offcanvasRightLabel"
+    >
+      <div class="offcanvas-header bg-body-secondary">
+        <h5
+          class="offcanvas-title"
+          id="offcanvasRightLabel"
+        >
+          Project title
+        </h5>
+
+        <button
+          type="button"
+          class="btn-close d-flex align-items-center justify-content-center p-0 fs-2 bg-transparent"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        >
+          <svg
+            width="1em"
+            height="1em"
+          >
+            <use href="#close-mark"></use>
+          </svg>
+        </button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="">Project details here</div>
+        <time class="date pt-1 fw-medium">Nov 10, 2024</time>
+        <hr class="mt-2 mb-0 w-50" />
       </div>
     </div>
     <!-- Lighthouse Audit -->
@@ -1891,25 +1936,52 @@
       aria-hidden="true"
     >
       <div
-        class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl modal-fullscreen-md-down"
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-fullscreen-lg-down modal-xl"
       >
-        <div class="modal-content">
-          <div class="modal-header border border-0">
+        <div class="modal-content border-0 shadow-lg">
+          <!-- <div class="modal-header border border-0">
             <h2
               class="modal-title fs-5"
               id="lighthouseModalLabel"
             >
-              Current Lighthouse audit
+              Lighthouse Audit
             </h2>
             <button
               type="button"
-              class="btn-close p-1 fs-4 bg-transparent"
+              class="btn-close d-flex align-items-center justify-content-center p-0 fs-2 bg-transparent"
               data-bs-dismiss="modal"
               aria-label="Close"
             >
               <svg
-                width="1.5em"
-                height="1.5em"
+                width="1em"
+                height="1em"
+              >
+                <use href="#close-mark"></use>
+              </svg>
+            </button>
+          </div> -->
+          <div
+            class="modal-header gap-4 align-items-start align-items-sm-center px-sm-4 bg-body-secondary border-0"
+          >
+            <div
+              class="d-flex flex-column flex-sm-row row-gap-1 column-gap-sm-3 align-items-sm-center justify-content-sm-between flex-grow-1 pe-sm-2"
+            >
+              <h2
+                class="modal-title fs-5 mb-0 flex-grow-1 d-flex flex-wrap align-items-center gap-3"
+                id="lighthouseModalLabel"
+              >
+                <span>Lighthouse Audit</span>
+              </h2>
+            </div>
+            <button
+              type="button"
+              class="btn-close d-flex align-items-center justify-content-center p-0 fs-2 bg-transparent"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <svg
+                width="1em"
+                height="1em"
               >
                 <use href="#close-mark"></use>
               </svg>
@@ -1918,6 +1990,7 @@
           <div class="modal-body d-flex flex-column pt-0">
             <div class="ratio ratio-1x1 h-100">
               <iframe
+                loading="lazy"
                 src="./lighthouse/index.html"
                 class="embed-responsive-item object-fit-cover w-100 h-100"
                 allowfullscreen
@@ -1947,14 +2020,15 @@
       <div
         class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-fullscreen-lg-down modal-xl"
       >
-        <div class="modal-content">
+        <div class="modal-content border-0 shadow-lg">
+          <!-- Modal Header -->
           <div
             class="modal-header gap-4 align-items-start align-items-sm-center py-sm-2 px-sm-4 bg-body-secondary border-0"
           >
             <div
-              class="d-flex flex-column flex-sm-row row-gap-1 column-gap-sm-3 align-items-sm-center justify-content-sm-between flex-grow-1"
+              class="d-flex flex-column flex-sm-row row-gap-1 column-gap-sm-3 align-items-sm-center justify-content-sm-between flex-grow-1 pe-sm-2"
             >
-              <h1
+              <h2
                 class="modal-title fs-2 mb-0 flex-grow-1 d-flex flex-wrap align-items-center gap-3"
                 id="resumeModalLabel"
               >
@@ -1981,143 +2055,196 @@
                   </svg>
                   <span class="visually-hidden">Linkedin</span></a
                 >
-              </h1>
+              </h2>
               <address
                 class="d-flex flex-wrap row-gap-1 column-gap-3 mb-0 align-items-center"
               >
                 <a
                   href="mailto:ethayer.design@gmail.com"
-                  class="fs-6"
+                  class="fs-6 link link-offset-1 link-offset-1-hover link-underline"
                   >ethayer.design@gmail</a
                 >
                 <a
                   href="tel:6199525081"
-                  class="fs-6"
+                  class="fs-6 link link-offset-1 link-offset-1-hover link-underline"
                   >(619) 952-5081</a
                 >
               </address>
             </div>
             <button
               type="button"
-              class="btn-close p-1 fs-4 bg-transparent"
+              class="btn-close d-flex align-items-center justify-content-center p-0 fs-2 bg-transparent"
               data-bs-dismiss="modal"
               aria-label="Close"
             >
               <svg
-                width="1.5em"
-                height="1.5em"
+                width="1em"
+                height="1em"
               >
                 <use href="#close-mark"></use>
               </svg>
             </button>
           </div>
-          <div class="modal-body p-4">
-            <article class="resume">
-              <header>
-                <h2 class="h5">UX Engineer & Systems Lead</h2>
-                <p class="fs-5 fw-regular">
-                  Team-focused UI/UX creative with professional experience in
-                  providing design and development services to support an
-                  organization's daily operations. Skilled in, design discovery,
-                  visual design, prototyping, and front-end development. Ability
-                  to collaborate with cross-functional department team leaders,
-                  identify and resolve issues, prioritize projects, and provide
-                  a high level of service.
-                </p>
-              </header>
-              <section>
-                <h2>Professional Experience</h2>
-                <div>
-                  <h3>UX Design & Development Team Member</h3>
-                  <p>CoBank, Nov 2024 - Present</p>
-                  <ul>
-                    <li>
-                      Employ user-centered design approach across all software
-                      products.
-                    </li>
-                    <li>
-                      Collaborate with cross-functional teams to deliver
-                      high-quality solutions.
-                    </li>
-                  </ul>
+          <!-- Modal Body -->
+          <div class="modal-body pt-4 px-4 pb-4">
+            <article class="resume position-relative">
+             
+              <div class="row gy-4 flex-md-row-reverse">
+                <div class="d-none d-md-fle position-sticky top-0 end-0 justify-content-end z-1 px-0 mt-0" style="height: 0;">
+                  <button
+                    class="btn btn-text mt-n3 p-2 bg-body"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseExample"
+                    aria-expanded="false"
+                    aria-controls="collapseExample"
+                  >
+                    <!-- <abbr title="table of contents">TOC</abbr> -->
+                    <svg width="1em" height=".79em" viewBox="0 0 46 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0.192383 2.93973C0.192383 1.75625 1.15178 0.796875 2.33524 0.796875H43.0495C44.233 0.796875 45.1924 1.75625 45.1924 2.93973C45.1924 4.12321 44.233 5.08259 43.0495 5.08259H2.33524C1.15178 5.08259 0.192383 4.12321 0.192383 2.93973Z" fill="black"/>
+                      <path d="M0.192383 17.9393C0.192383 16.7558 1.15178 15.7962 2.33524 15.7962L25.9067 15.7969C27.0902 15.7969 28.0495 16.7562 28.0495 17.9397C28.0495 19.1232 27.0902 20.0826 25.9067 20.0826L2.33524 20.0822C1.15178 20.0822 0.192383 19.1226 0.192383 17.9393Z" fill="black"/>
+                      <path d="M2.33524 30.7964C1.15178 30.7964 0.192383 31.7558 0.192383 32.9393C0.192383 34.1226 1.15178 35.0819 2.33524 35.0819H38.7638C39.9473 35.0819 40.9067 34.1226 40.9067 32.9393C40.9067 31.7558 39.9473 30.7964 38.7638 30.7964H2.33524Z" fill="currentColor"/>
+                      </svg>
+                      
+                  </button>
                 </div>
-                <div>
-                  <h3>Creative Strategist</h3>
-                  <p>Freelance, Jan 2020 - Oct 2024</p>
-                  <ul>
-                    <li>
-                      Developed creative strategies for various clients to
-                      enhance their brand presence.
-                    </li>
-                    <li>
-                      Designed and implemented user-friendly interfaces for web
-                      and mobile applications.
-                    </li>
-                  </ul>
-                </div>
-              </section>
-              <section>
-                <h2>Education</h2>
-                <div>
-                  <h3>Bachelor of Science in Computer Science</h3>
-                  <p>University of Colorado, 2016 - 2020</p>
-                </div>
-              </section>
-              <section>
-                <h2>Skills</h2>
-                <ul>
-                  <li>UX/UI Design</li>
-                  <li>Front-end Development</li>
-                  <li>Design Systems</li>
-                  <li>Prototyping</li>
-                </ul>
-              </section>
-              <section>
-                <h2>Certifications</h2>
-                <ul>
-                  <li>Certified UX Designer</li>
-                  <li>Certified Front-end Developer</li>
-                </ul>
-              </section>
+                <!-- Table of Contents -->
+                <aside
+                  class="collapse py-2 col-12 col-md-3 bg-body position-sticky top-0 h-100 mt-n4"
+                  id="collapseExample"
+                >
+                  <!-- <h2 class="h6 fs-5">Table of Contents</h2> -->
+                  <nav class="bg-body position-sticky top-0">
+                    <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
+                      <li>
+                        <a href="#professional-experience"
+                          >Professional Experience</a
+                        >
+                      </li>
+                      <li>
+                        <a href="#education">Education</a>
+                      </li>
+                      <li>
+                        <a href="#skills">Skills</a>
+                      </li>
+                      <li>
+                        <a href="#certifications">Certifications</a>
+                      </li>
+                    </ul>
+                  </nav>
+                </aside>
+                <!-- Content -->
+                <main
+                  class="col-12 col-md-9 d-flex flex-column gap-3 flex-grow-1"
+                >
+                  <!-- Summary -->
+                  <header>
+                    <h2 class="h5">UX Engineer & Systems Lead</h2>
+                    <p class="fs-5 fw-normal">
+                      Team-focused UI/UX creative with professional experience
+                      in providing design and development services to support an
+                      organization's daily operations. Skilled in, design
+                      discovery, visual design, prototyping, and front-end
+                      development. Ability to collaborate with cross-functional
+                      department team leaders, identify and resolve issues,
+                      prioritize projects, and provide a high level of service.
+                    </p>
+                  </header>
+                  <!-- Experience -->
+                  <section>
+                    <h2 id="professional-experience" class="pt-2">
+                      Professional Experience
+                    </h2>
+                    <div>
+                      <h3>UX Design & Development Team Member</h3>
+                      <p>CoBank, Nov 2024 - Present</p>
+                      <ul>
+                        <li>
+                          Employ user-centered design approach across all
+                          software products.
+                        </li>
+                        <li>
+                          Collaborate with cross-functional teams to deliver
+                          high-quality solutions.
+                        </li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h3>Creative Strategist</h3>
+                      <p>Freelance, Jan 2020 - Oct 2024</p>
+                      <ul>
+                        <li>
+                          Developed creative strategies for various clients to
+                          enhance their brand presence.
+                        </li>
+                        <li>
+                          Designed and implemented user-friendly interfaces for
+                          web and mobile applications.
+                        </li>
+                      </ul>
+                    </div>
+                  </section>
+                  <!-- Education -->
+                  <section>
+                    <h2 id="education" class="pt-2">Education</h2>
+                    <div>
+                      <h3>Bachelor of Science in Computer Science</h3>
+                      <p>University of Colorado, 2016 - 2020</p>
+                    </div>
+                  </section>
+                  <!-- Skills -->
+                  <section>
+                    <h2 id="skills" class="pt-2">Skills</h2>
+                    <ul>
+                      <li>UX/UI Design</li>
+                      <li>Front-end Development</li>
+                      <li>Design Systems</li>
+                      <li>Prototyping</li>
+                    </ul>
+                  </section>
+                  <!-- Certifications -->
+                  <section>
+                    <h2 id="certifications" class="pt-2">Certifications</h2>
+                    <ul>
+                      <li>Certified UX Designer</li>
+                      <li>Certified Front-end Developer</li>
+                    </ul>
+                  </section>
+                </main>
+              </div>
             </article>
           </div>
-          <div class="modal-footer bg-body-secondary border-0 gap-2">
+          <!-- Modal Footer -->
+          <div class="modal-footer bg-body-secondary border-0 gap-2 position-relative z-1">
             <button
               type="button"
-              class="btn btn-secondary border-0"
+              class="btn btn-outline-secondary"
               data-bs-dismiss="modal"
             >
               Close
             </button>
             <!-- Download Resume -->
-            <div class="btn-group dropup">
+            <div class="dropup-right dropup">
               <button
                 type="button"
-                class="btn btn-primary border-0"
-              >
-                Download
-              </button>
-              <button
-                type="button"
-                class="btn btn-sm btn-primary dropdown-toggle dropdown-toggle-split px-2 border-0"
+                class="btn btn-primary dropdown-toggl"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
-                style="background-color: var(--bs-primary-700); width: 32px;"
               >
-                <span class="visually-hidden">Toggle Dropdown</span>
+                Download
               </button>
               <ul class="dropdown-menu">
                 <li>
                   <a
                     class="dropdown-item"
-                    href="#"
+                    href="./Eric-Thayer-Resume-UX-Engineer.docx"
                     >MS Word</a
                   >
                 </li>
                 <li>
                   <a
                     class="dropdown-item"
-                    href="#"
+                    href="./Eric-Thayer-Resume-UX-Engineer.pdf#page=1" target="_blank" rel="noopener"
                     >PDF</a
                   >
                 </li>
