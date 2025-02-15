@@ -33,6 +33,14 @@ Built with Bootstrap and Vite, this open-source solution offers a perfect balanc
 - **PWA:** passing Progressive Web App standards
 - **Deploy Pipeline:** auto-deployed and hosted on Netlify
 
+### v1.1.0-alpha (Q1 2025)
+- **Resume Templates:** HTML, Word/PDF
+- **Example Templates:** demo templates
+    - **Case Study:** featured project article (in-depth, media-heavy)
+    - **Broshure:** related work/skills example (consise and informative)
+    - **Coverletter:** audience specific callout or engagement (brief and engaging)
+    - **Postcard:** insights highlighting examples of expertise (compact-form, links to work)
+
 ### v2.0.0-alpha (Q2 2025)
 
 - **Admin Panel:** access app configs (view-only)
