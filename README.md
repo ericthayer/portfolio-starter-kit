@@ -25,7 +25,7 @@ Built with Bootstrap and Vite, this open-source solution offers a perfect balanc
 
 ## Roadmap
 
-### Q4 2024
+### Q4 2024 ([release](https://github.com/ericthayer/portfolio-starter-kit/releases/tag/0.40.0))
 
 - **Landing Page:** responsive layout, core functionality
 - **Styled Theme:** SCSS mapping & theme system
