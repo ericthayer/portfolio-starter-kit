@@ -155,7 +155,7 @@ section {
 }
 
 .modal-footer::after {
-  background: linear-gradient(180deg, rgba(252,252,252,0) 0%, rgba(252,252,252,1) 100%);
+  background: linear-gradient(180deg, rgba(var(--bs-light-rgb),0) 0%, var(--bs-light) 100%);
   top: -4rem;
 }
 
@@ -218,7 +218,7 @@ section {
     --bs-btn-border-color: var(--bs-gray-200);
   }
 
-  .navbar a {
+.link {
     color: var(--bs-light);
 
     &:not(:hover) {
@@ -238,6 +238,12 @@ section {
   .carousel-item img {
     filter: grayscale(1);
   }
+
+  .modal-footer::after {
+    background: linear-gradient(180deg, rgba(var(--bs-body-bg-rgb),0) 0%, var(--bs-gray-900) 100%);
+  }
+
+  // END Bootstrap light/dark mode
 }
 
 // Custom styles
