@@ -159,6 +159,12 @@ section {
   top: -4rem;
 }
 
+.bd-mode-toggle {
+  svg {
+    fill: currentcolor;
+  }
+}
+
 // Bootstrap light/dark mode
 
 [data-bs-theme="auto"],
@@ -171,7 +177,7 @@ section {
     img {
       filter: invert(0.875);
     }
-  }
+  }  
 }
 
 [data-bs-theme="dark"] {
