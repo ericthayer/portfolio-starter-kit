@@ -35,7 +35,6 @@ li a {
   }
 }
 
-// .btn:not([class*="-outline-"])
 button {
   border: none;
 }
@@ -48,7 +47,6 @@ section {
 }
 
 // Bootstrap
-
 
 .container-fluid {
   @media (width > 1800px) {
@@ -85,7 +83,6 @@ section {
   width: 2.5rem;
 }
 
-
 .nav-pills {
   --bs-nav-link-padding-x: 0.7rem;
   --bs-nav-link-padding-y: 0.25rem;
@@ -113,7 +110,8 @@ section {
   }
 }
 
-.btn-lg, .btn-group-lg > .btn {
+.btn-lg,
+.btn-group-lg > .btn {
   padding-top: 0.5rem;
   padding-bottom: 0.7rem;
 }
@@ -139,9 +137,9 @@ section {
 
   &:after {
     border-top: 0;
-    border-right: .3em solid transparent;
-    border-bottom: .3em solid;
-    border-left: .3em solid transparent;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0.3em solid;
+    border-left: 0.3em solid transparent;
     // transform: rotateY(180deg);
   }
 }
@@ -155,7 +153,11 @@ section {
 }
 
 .modal-footer::after {
-  background: linear-gradient(180deg, rgba(var(--bs-light-rgb),0) 0%, var(--bs-light) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(var(--bs-light-rgb), 0) 0%,
+    var(--bs-light) 100%
+  );
   top: -4rem;
 }
 
@@ -177,7 +179,7 @@ section {
     img {
       filter: invert(0.875);
     }
-  }  
+  }
 }
 
 [data-bs-theme="dark"] {
@@ -224,7 +226,7 @@ section {
     --bs-btn-border-color: var(--bs-gray-200);
   }
 
-.link {
+  .link {
     color: var(--bs-light);
 
     &:not(:hover) {
@@ -246,7 +248,11 @@ section {
   }
 
   .modal-footer::after {
-    background: linear-gradient(180deg, rgba(var(--bs-body-bg-rgb),0) 0%, var(--bs-gray-900) 100%);
+    background: linear-gradient(
+      180deg,
+      rgba(var(--bs-body-bg-rgb), 0) 0%,
+      var(--bs-gray-900) 100%
+    );
   }
 
   // END Bootstrap light/dark mode
@@ -270,9 +276,4 @@ section {
 
 .main {
   scroll-snap-type: y mandatory;
-}
-
-.billboard {
-  @container (width < 575.99px) {
-  }
 }
