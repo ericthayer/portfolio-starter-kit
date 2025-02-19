@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html
   lang="en"
-  data-bs-theme="light"
+  data-bs-theme=""
 >
   <head>
     <script>
       // Set "enhanced" class for JS detection
       document.documentElement.className += "enhanced"
     </script>
+    <style>
+      :root:not(.show) {
+        opacity: 0;
+      }
+    </style>
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -256,10 +261,10 @@
     >
       <header class="app-header bg-body-secondary position-sticky top-0 z-3">
         <div
-          class="container-fluid d-flex flex-row flex-wrap align-items-center gap-3 py-3 px-3 pe-lg-4"
+          class="container-fluid d-flex flex-wrap align-items-center gap-3 py-3 px-3 pe-lg-4"
         >
           <div
-            class="brand d-flex flex-row align-items-center flex-grow-1 flex-shrink-1 gap-1"
+            class="brand d-flex align-items-center flex-grow-1 flex-shrink-1 gap-1"
           >
             <div class="dropdown d-flex flex-column gap-3 bd-mode-toggle">
               <button
@@ -287,7 +292,7 @@
                 class="dropdown-menu shadow"
                 aria-labelledby="bd-theme-text"
               >
-                <li>
+                <li class="d-none">
                   <button
                     type="button"
                     class="dropdown-item d-flex align-items-center gap-2 active"
@@ -2016,6 +2021,7 @@
       tabindex="-1"
       aria-labelledby="resumeModalLabel"
       aria-hidden="true"
+      data-bs-backdrop="static"
     >
       <div
         class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-fullscreen-lg-down modal-xl"
@@ -2023,13 +2029,13 @@
         <div class="modal-content border-0 shadow-lg">
           <!-- Modal Header -->
           <div
-            class="modal-header gap-4 align-items-start align-items-sm-center py-sm-2 px-sm-4 bg-body-secondary border-0"
+            class="modal-header d-flex gap-4 align-items-start align-items-sm-center py-sm-2 px-sm-4 bg-body-secondary"
           >
             <div
               class="d-flex flex-column flex-sm-row row-gap-1 column-gap-sm-3 align-items-sm-center justify-content-sm-between flex-grow-1 pe-sm-2"
             >
               <h2
-                class="modal-title fs-2 mb-0 flex-grow-1 d-flex flex-wrap align-items-center gap-3"
+                class="modal-title fs-3 mb-0 flex-grow-1 d-flex flex-wrap align-items-center gap-3"
                 id="resumeModalLabel"
               >
                 <span
@@ -2038,7 +2044,28 @@
                   ></span
                 >
 
-                <a
+                <!-- <a
+                  href="https://www.linkedin.com/in/ethayerdesign/"
+                  class="fs-4 text-body"
+                  ><svg
+                    width="0.9em"
+                    height="0.9em"
+                    viewBox="0 0 48 48"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M40.6731 40.6992H33.7093V29.7913C33.7093 27.1907 33.6623 23.8419 30.0864 23.8419C26.4596 23.8419 25.9034 26.6776 25.9034 29.5994V40.6992H18.9396V18.2685H25.6254V21.3353H25.7194C27.0824 19.0088 29.6203 17.6144 32.315 17.7124C39.3728 17.7124 40.6771 22.3536 40.6771 28.397L40.6731 40.6953V40.6992ZM11.0828 15.2018C10.0131 15.1967 8.98857 14.7697 8.23177 14.0136C7.47498 13.2576 7.04702 12.2335 7.04084 11.1637C7.04084 8.9469 8.866 7.12174 11.0828 7.12174C13.2997 7.12174 15.1209 8.9469 15.1248 11.1637C15.1248 13.3805 13.2997 15.2018 11.0828 15.2018ZM14.5647 40.6992H7.59309V18.2685H14.5647V40.6992ZM44.1394 0.651425H4.0916C3.18353 0.646151 2.31006 0.999458 1.66102 1.63457C1.01197 2.26968 0.639798 3.13527 0.625366 4.04325V44.2594C0.639798 45.1674 1.01197 46.033 1.66102 46.6681C2.31006 47.3032 3.18353 47.6565 4.0916 47.6513H44.1433C45.0535 47.6586 45.9298 47.3065 46.5817 46.6714C47.2337 46.0363 47.6087 45.1695 47.6252 44.2594V4.03933C47.6087 3.12999 47.2335 2.26402 46.5813 1.63015C45.9291 0.996282 45.0527 0.645891 44.1433 0.655342L44.1394 0.651425Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  <span class="visually-hidden">Linkedin</span></a
+                > -->
+              </h2>
+              <address
+                class="d-flex flex-wrap row-gap-1 column-gap-4 mb-0 align-items-center"
+              >
+              <a
                   href="https://www.linkedin.com/in/ethayerdesign/"
                   class="fs-4 text-body"
                   ><svg
@@ -2055,13 +2082,9 @@
                   </svg>
                   <span class="visually-hidden">Linkedin</span></a
                 >
-              </h2>
-              <address
-                class="d-flex flex-wrap row-gap-1 column-gap-3 mb-0 align-items-center"
-              >
                 <a
                   href="mailto:ethayer.design@gmail.com"
-                  class="fs-6 link link-offset-1 link-offset-1-hover link-underline"
+                  class="fs-5 link link-offset-1 link-offset-1-hover link-underline"
                   >ethayer.design@gmail</a
                 >
                 <a
@@ -2086,11 +2109,13 @@
             </button>
           </div>
           <!-- Modal Body -->
-          <div class="modal-body pt-4 px-4 pb-4">
+          <div class="modal-body px-4 pt-0 pb-4">
             <article class="resume position-relative">
-             
               <div class="row gy-4 flex-md-row-reverse">
-                <div class="d-none d-md-fle position-sticky top-0 end-0 justify-content-end z-1 px-0 mt-0" style="height: 0;">
+                <div
+                  class="d-none d-md-fle position-sticky top-0 end-0 justify-content-end z-1 px-0 mt-0"
+                  style="height: 0"
+                >
                   <button
                     class="btn btn-text mt-n3 p-2 bg-body"
                     type="button"
@@ -2100,12 +2125,26 @@
                     aria-controls="collapseExample"
                   >
                     <!-- <abbr title="table of contents">TOC</abbr> -->
-                    <svg width="1em" height=".79em" viewBox="0 0 46 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M0.192383 2.93973C0.192383 1.75625 1.15178 0.796875 2.33524 0.796875H43.0495C44.233 0.796875 45.1924 1.75625 45.1924 2.93973C45.1924 4.12321 44.233 5.08259 43.0495 5.08259H2.33524C1.15178 5.08259 0.192383 4.12321 0.192383 2.93973Z" fill="black"/>
-                      <path d="M0.192383 17.9393C0.192383 16.7558 1.15178 15.7962 2.33524 15.7962L25.9067 15.7969C27.0902 15.7969 28.0495 16.7562 28.0495 17.9397C28.0495 19.1232 27.0902 20.0826 25.9067 20.0826L2.33524 20.0822C1.15178 20.0822 0.192383 19.1226 0.192383 17.9393Z" fill="black"/>
-                      <path d="M2.33524 30.7964C1.15178 30.7964 0.192383 31.7558 0.192383 32.9393C0.192383 34.1226 1.15178 35.0819 2.33524 35.0819H38.7638C39.9473 35.0819 40.9067 34.1226 40.9067 32.9393C40.9067 31.7558 39.9473 30.7964 38.7638 30.7964H2.33524Z" fill="currentColor"/>
-                      </svg>
-                      
+                    <svg
+                      width="1em"
+                      height=".79em"
+                      viewBox="0 0 46 36"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M0.192383 2.93973C0.192383 1.75625 1.15178 0.796875 2.33524 0.796875H43.0495C44.233 0.796875 45.1924 1.75625 45.1924 2.93973C45.1924 4.12321 44.233 5.08259 43.0495 5.08259H2.33524C1.15178 5.08259 0.192383 4.12321 0.192383 2.93973Z"
+                        fill="black"
+                      />
+                      <path
+                        d="M0.192383 17.9393C0.192383 16.7558 1.15178 15.7962 2.33524 15.7962L25.9067 15.7969C27.0902 15.7969 28.0495 16.7562 28.0495 17.9397C28.0495 19.1232 27.0902 20.0826 25.9067 20.0826L2.33524 20.0822C1.15178 20.0822 0.192383 19.1226 0.192383 17.9393Z"
+                        fill="black"
+                      />
+                      <path
+                        d="M2.33524 30.7964C1.15178 30.7964 0.192383 31.7558 0.192383 32.9393C0.192383 34.1226 1.15178 35.0819 2.33524 35.0819H38.7638C39.9473 35.0819 40.9067 34.1226 40.9067 32.9393C40.9067 31.7558 39.9473 30.7964 38.7638 30.7964H2.33524Z"
+                        fill="currentColor"
+                      />
+                    </svg>
                   </button>
                 </div>
                 <!-- Table of Contents -->
@@ -2138,8 +2177,8 @@
                   class="col-12 col-md-9 d-flex flex-column gap-3 flex-grow-1"
                 >
                   <!-- Summary -->
-                  <header>
-                    <h2 class="h5">UX Engineer & Systems Lead</h2>
+                  <section class="pt-4">
+                    <h2 class="h4">UX Engineer & Systems Lead</h2>
                     <p class="fs-5 fw-normal">
                       Team-focused UI/UX creative with professional experience
                       in providing design and development services to support an
@@ -2149,44 +2188,243 @@
                       department team leaders, identify and resolve issues,
                       prioritize projects, and provide a high level of service.
                     </p>
-                  </header>
+                  </section>
                   <!-- Experience -->
                   <section>
-                    <h2 id="professional-experience" class="pt-2">
-                      Professional Experience
-                    </h2>
-                    <div>
-                      <h3>UX Design & Development Team Member</h3>
-                      <p>CoBank, Nov 2024 - Present</p>
-                      <ul>
-                        <li>
-                          Employ user-centered design approach across all
-                          software products.
-                        </li>
-                        <li>
-                          Collaborate with cross-functional teams to deliver
-                          high-quality solutions.
-                        </li>
-                      </ul>
+                    <div
+                      class="title bg-body mt-n1 pt-3 position-sticky top-0 z-1"
+                    >
+                      <div class="container-fluid px-0">
+                        <h2
+                          id="professional-experience"
+                          class="text-uppercase fs-4 fw-semibold mb-0"
+                        >
+                          Professional Experience
+                        </h2>
+                        <hr class="w-50 mb-3" />
+                      </div>
                     </div>
-                    <div>
-                      <h3>Creative Strategist</h3>
-                      <p>Freelance, Jan 2020 - Oct 2024</p>
-                      <ul>
-                        <li>
-                          Developed creative strategies for various clients to
-                          enhance their brand presence.
-                        </li>
-                        <li>
-                          Designed and implemented user-friendly interfaces for
-                          web and mobile applications.
-                        </li>
-                      </ul>
+                    <!-- Positions -->
+                    <div
+                      class="accordion pt-3"
+                      id="accordionResume"
+                    >
+                      <!-- Position: CoBank -->
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button
+                            class="accordion-button d-flex align-items-center justify-content-between gap-3 bg-body"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#accordionResume-cobank"
+                            aria-expanded="true"
+                            aria-controls="accordionResume-cobank"
+                          >
+                            <div class="d-flex flex-column flex-grow-1">
+                              <span class="link h6 fw-medium mb-0"
+                                >Senior UX Engineer <span class="fs-5">- CoBank</span>
+                              </span>
+                              <a href="https://cobank.com" class="fs-5">cobank.com</a>
+                            </div>
+                            <span
+                              class="badge rounded-pill text-bg-secondary py-1 px-2 fs-6 fw-medium"
+                            >
+                              Current Role
+                            </span>
+                          </button>
+                        </h2>
+                        <div
+                          id="accordionResume-cobank"
+                          class="accordion-collapse collapse show"
+                        >
+                          <div class="accordion-body">
+                            <article class="mb-3">
+                              <div class="d-flex flex-wrap justify-content-between gap-2">
+                                <p class="fst-italic fs-5">
+                                  Nov 2024 - Present (hybrid)
+                                </p>
+                                <p class="fst-italic fs-5">
+                                  Greenwood Village, CO
+                                </p>
+                              </div>
+                              <p class="fs-6 bg-body-secondary p-3 rounded">
+                                Senior creative engineer, lead design system
+                                manager responsible for employing a
+                                user-centered design approach across all the
+                                organization's software products. Creating and
+                                maintaining a comprehensive design system,
+                                working on front-end component libraries, and
+                                providing both UI (User Interface) and UX (User
+                                Experience) design and development. This
+                                requires the design of the structure and layout
+                                of interactive elements, ensuring a smooth user
+                                journey within the digital product line.
+                              </p>
+                              <ul class="fs-6">
+                                <li>
+                                  Created Figma based design system consisting
+                                  of brand style guide, UI kit, design tokens,
+                                  component library, and documentation
+                                  standards.
+                                </li>
+                                <li>
+                                  Initial development of Storybook/React
+                                  component library and development pipeline
+                                  with Figma integration.
+                                </li>
+                                <li>
+                                  Established a web design tokens development
+                                  workflow that syncs Figma variables to JSON
+                                  based tokens.
+                                </li>
+                                <li>
+                                  Developed responsive prototyping templates and
+                                  front-end components for companywide used
+                                  product application development.
+                                </li>
+                              </ul>
+                            </article>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Position: Threecolts -->
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button
+                            class="accordion-button"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#accordionResume-threecolts"
+                            aria-expanded="true"
+                            aria-controls="accordionResume-threecolts"
+                          >
+                            UX Developer
+                          </button>
+                        </h2>
+                        <div
+                          id="accordionResume-threecolts"
+                          class="accordion-collapse collapse show"
+                        >
+                          <div class="accordion-body">
+                            <article class="mb-3">
+                              <!-- <h3 class="h5 fw-semibold mb-1">
+                        Design Engineer
+                      </h3> -->
+                              <p class="fst-italic fs-6">
+                                <a href="https://threecolts.com">Threecolts</a>,
+                                Jun 2023 - Nov 2024 (remote)
+                              </p>
+                              <p class="fs-6 bg-body-secondary p-3 rounded">
+                                Principle UI/UX creative for
+                                <a href="https://onsitesupport.io/"
+                                  >Onsite Support</a
+                                >, assisting Amazon Sellers through their
+                                onboarding life-cycle to create branded web
+                                design themes with Figma and implement with the
+                                front-end platform. Provide initial support
+                                needed so that their brand can continue to build
+                                out its own knowledge base by setting up the
+                                different needed features: live support, FAQS,
+                                articles, video media, etc.
+                              </p>
+                              <ul class="fs-6">
+                                <li>
+                                  Created CSS framework to help automate layout
+                                  and styling changes throughout the platform.
+                                </li>
+                                <li>
+                                  Refactored HTML framework used to create
+                                  support landing pages to modify content
+                                  easier.
+                                </li>
+                                <li>
+                                  Created mobile layout solutions and converted
+                                  over 200 non-responsive sites to mobile
+                                  friendly layouts.
+                                </li>
+                                <li>
+                                  Developed front-end grid system for multiple
+                                  landing pages and support articles.
+                                </li>
+                              </ul>
+                            </article>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Position: Health Scholars -->
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button
+                            class="accordion-button"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#accordionResume-healthscholars"
+                            aria-expanded="true"
+                            aria-controls="accordionResume-healthscholars"
+                          >
+                            UX Developer
+                          </button>
+                        </h2>
+                        <div
+                          id="accordionResume-healthscholars"
+                          class="accordion-collapse collapse show"
+                        >
+                          <div class="accordion-body">
+                            <article class="mb-3">
+                              <!-- <h3 class="h5 fw-semibold mb-1">
+                        Design Engineer
+                      </h3> -->
+                              <p class="fst-italic fs-6">
+                                <a href="https://threecolts.com">Threecolts</a>,
+                                Jun 2023 - Nov 2024 (remote)
+                              </p>
+                              <p class="fs-6 bg-body-secondary p-3 rounded">
+                                Principle UI/UX creative for
+                                <a href="https://onsitesupport.io/"
+                                  >Onsite Support</a
+                                >, assisting Amazon Sellers through their
+                                onboarding life-cycle to create branded web
+                                design themes with Figma and implement with the
+                                front-end platform. Provide initial support
+                                needed so that their brand can continue to build
+                                out its own knowledge base by setting up the
+                                different needed features: live support, FAQS,
+                                articles, video media, etc.
+                              </p>
+                              <ul class="fs-6">
+                                <li>
+                                  Created CSS framework to help automate layout
+                                  and styling changes throughout the platform.
+                                </li>
+                                <li>
+                                  Refactored HTML framework used to create
+                                  support landing pages to modify content
+                                  easier.
+                                </li>
+                                <li>
+                                  Created mobile layout solutions and converted
+                                  over 200 non-responsive sites to mobile
+                                  friendly layouts.
+                                </li>
+                                <li>
+                                  Developed front-end grid system for multiple
+                                  landing pages and support articles.
+                                </li>
+                              </ul>
+                            </article>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </section>
                   <!-- Education -->
                   <section>
-                    <h2 id="education" class="pt-2">Education</h2>
+                    <h2
+                      id="education"
+                      class="pt-2"
+                    >
+                      Education
+                    </h2>
                     <div>
                       <h3>Bachelor of Science in Computer Science</h3>
                       <p>University of Colorado, 2016 - 2020</p>
@@ -2194,7 +2432,12 @@
                   </section>
                   <!-- Skills -->
                   <section>
-                    <h2 id="skills" class="pt-2">Skills</h2>
+                    <h2
+                      id="skills"
+                      class="pt-2"
+                    >
+                      Skills
+                    </h2>
                     <ul>
                       <li>UX/UI Design</li>
                       <li>Front-end Development</li>
@@ -2204,7 +2447,12 @@
                   </section>
                   <!-- Certifications -->
                   <section>
-                    <h2 id="certifications" class="pt-2">Certifications</h2>
+                    <h2
+                      id="certifications"
+                      class="pt-2"
+                    >
+                      Certifications
+                    </h2>
                     <ul>
                       <li>Certified UX Designer</li>
                       <li>Certified Front-end Developer</li>
@@ -2215,7 +2463,9 @@
             </article>
           </div>
           <!-- Modal Footer -->
-          <div class="modal-footer bg-body-secondary border-0 gap-2 position-relative z-1">
+          <div
+            class="modal-footer bg-body-secondary border-0 gap-2 position-relative z-1"
+          >
             <button
               type="button"
               class="btn btn-outline-secondary"
@@ -2244,7 +2494,9 @@
                 <li>
                   <a
                     class="dropdown-item"
-                    href="./Eric-Thayer-Resume-UX-Engineer.pdf#page=1" target="_blank" rel="noopener"
+                    href="./Eric-Thayer-Resume-UX-Engineer.pdf#page=1"
+                    target="_blank"
+                    rel="noopener"
                     >PDF</a
                   >
                 </li>
