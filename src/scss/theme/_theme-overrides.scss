@@ -46,13 +46,15 @@ section {
   }
 }
 
-// Bootstrap
+// *** Bootstrap *** //
 
 .container-fluid {
   @media (width > 1800px) {
     max-width: 1800px;
   }
 }
+
+//  Theme overrides
 
 .text-bg-primary,
 .text-bg-dark,
@@ -63,6 +65,8 @@ section {
     text-decoration-color: currentColor !important;
   }
 }
+
+// Teestimonials
 
 .carousel-item.active,
 .carousel-item-next,
@@ -82,6 +86,8 @@ section {
   height: 0.5rem;
   width: 2.5rem;
 }
+
+// Tabs
 
 .nav-pills {
   --bs-nav-link-padding-x: 0.7rem;
@@ -110,6 +116,8 @@ section {
   }
 }
 
+// Button
+
 .btn-lg,
 .btn-group-lg > .btn {
   padding-top: 0.5rem;
@@ -122,6 +130,8 @@ section {
   --bs-btn-border-color: var(--bs-gray-700);
 }
 
+// Card
+
 .card {
   transition: box-shadow 0.3s ease;
 
@@ -129,6 +139,8 @@ section {
     box-shadow: var(--bs-box-shadow);
   }
 }
+
+// Dropdowns
 
 .dropdown-toggle:not(.collapsed) {
   abbr {
@@ -143,6 +155,8 @@ section {
     // transform: rotateY(180deg);
   }
 }
+
+// Modal
 
 .modal-footer::after {
   content: "";
@@ -161,21 +175,18 @@ section {
   top: -4rem;
 }
 
-.bd-mode-toggle {
-  svg {
-    fill: currentcolor;
-  }
+svg {
+  fill: currentcolor;
 }
+
+// .bd-mode-toggle {
+// }
 
 // Bootstrap light/dark mode
 
 [data-bs-theme="auto"],
 [data-bs-theme="light"] {
   .app-logo {
-    svg {
-      fill: currentcolor;
-    }
-
     img {
       filter: invert(0.875);
     }
@@ -258,13 +269,14 @@ section {
   // END Bootstrap light/dark mode
 }
 
-// Custom styles
+// Custom non-theme styles
 
 .app-layout {
   container-type: inline-size;
 }
 
 .brand {
+
   @container (width < 333px) {
     justify-content: center;
   }
