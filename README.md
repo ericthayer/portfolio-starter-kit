@@ -1,6 +1,6 @@
 ![Yofolio: an open-source portfolio starter kit](https://github.com/user-attachments/assets/7bba3591-afdb-46f0-8349-fef9a6e28ee8)
 
-# Yofolio: An Open-Source Portfolio Starter Kit!
+# Yofolio: An Open-Source Portfolio Starter Kit
 
 [yofolio.design](https://yofolio.design/)
 
