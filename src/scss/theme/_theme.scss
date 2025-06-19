@@ -20,13 +20,9 @@ $theme-gray-light: #f8f9fa;
 $theme-cream: #fff6dc;
 $theme-earth-brown: #f1c485;
 $theme-pink: #c9057e;
-$theme-purple: #c9057e;
+$theme-purple: #62009f;
 $theme-orange: #ffba31;
 $theme-yellow: #ffc131;
-
-// Link colors
-$theme-link-color: $theme-pink;
-$theme-link-color-rgb: rgb(20, 169, 228);
 
 // Color scale
 $theme-neutral-0: #ffffff;
@@ -85,6 +81,10 @@ $theme-secondary: $theme-neutral-300;
 $theme-secondary-rgb: rgb(220, 224, 229);
 
 $theme-accent: $theme-purple;
+
+// Link colors
+$theme-link-color: $theme-primary;
+$theme-link-color-rgb: $theme-primary-rgb;
 
 // Grayscale colors
 $theme-grayscale-light: $theme-neutral-100;
