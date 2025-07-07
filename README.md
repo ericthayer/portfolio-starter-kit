@@ -37,17 +37,17 @@ Built with Bootstrap and Vite, this open-source solution offers a perfect balanc
 
 - **Resume Templates:** HTML, Word/PDF
 - **Example Templates:** demo templates
-    - **Case Study:** featured project article (in-depth, media-heavy)
-    - **Broshure:** related work/skills example (consise and informative)
-    - **Coverletter:** audience specific callout or engagement (brief and engaging)
-    - **Postcard:** insights highlighting examples of expertise (compact-form, links to work)
+- **Case Study:** featured project article (in-depth, media-heavy)
+- **Broshure:** related work/skills example (consise and informative)
+- **Coverletter:** audience specific callout or engagement (brief and engaging)
+- **Postcard:** insights highlighting examples of expertise (compact-form, links to work)
 
 ### Q2 2025
 
 - **Admin Panel:** access app configs (view-only)
-    - **Application:** view application metadata
-    - **Theme Builder:** view theme information
-    - **Export Site:** export site via .zip
+- **Application:** view application metadata
+- **Theme Builder:** view theme information
+- **Export Site:** export site via .zip
 - **Onboarding:** documentation and supporting media
 
 ### Q3 2025
