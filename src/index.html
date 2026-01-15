@@ -283,88 +283,88 @@
             </div>
           </div>
            <!-- Color Mode Toggle -->
-          <div class="dropdown d-flex flex-column gap-3 bd-mode-toggle">
-              <button
-                id="bd-theme"
-                aria-expanded="false"
-                aria-label="Toggle theme (light)"
-                class="btn btn-text d-flex align-items-center justify-content-center me-1 py-0 px-1"
-                data-bs-toggle="dropdown"
-                type="button"
+           <div class="dropdown d-flex flex-column gap-3 bd-mode-toggle">
+             <button
+              id="bd-theme"
+              aria-expanded="false"
+              aria-label="Toggle theme (light)"
+              class="btn btn-text d-flex align-items-center justify-content-center me-1 py-0 px-1"
+              data-bs-toggle="dropdown"
+              type="button"
+            >
+              <svg
+                class="bi my-1 theme-icon-active"
+                width="1em"
+                height="1em"
               >
-                <svg
-                  class="bi my-1 theme-icon-active"
-                  width="1em"
-                  height="1em"
-                >
-                  <use href="#sun-fill"></use>
-                </svg>
-                <span
-                  class="visually-hidden"
-                  id="bd-theme-text"
-                  >Toggle theme</span
-                >
-              </button>
-              <ul
-                class="dropdown-menu shadow"
-                aria-labelledby="bd-theme-text"
+                <use href="#sun-fill"></use>
+              </svg>
+              <span
+                class="visually-hidden"
+                id="bd-theme-text"
+                >Toggle theme</span
               >
-                <li class="d-none">
-                  <button
-                    type="button"
-                    class="dropdown-item d-flex align-items-center gap-2 active"
-                    data-bs-theme-value="auto"
-                    aria-pressed="false"
-                    aria-label="Set to system color mode"
+            </button>
+            <ul
+              class="dropdown-menu shadow"
+              aria-labelledby="bd-theme-text"
+            >
+              <li class="d-none">
+                <button
+                  type="button"
+                  class="dropdown-item d-flex align-items-center gap-2 active"
+                  data-bs-theme-value="auto"
+                  aria-pressed="false"
+                  aria-label="Set to system color mode"
+                >
+                  <svg
+                    class="opacity-50"
+                    width="1em"
+                    height="1em"
                   >
-                    <svg
-                      class="opacity-50"
-                      width="1em"
-                      height="1em"
-                    >
-                      <use href="#circle-half"></use>
-                    </svg>
-                    <span>Auto</span>
-                  </button>
-                </li>
-                <li>
-                  <button
-                    type="button"
-                    class="dropdown-item d-flex align-items-center gap-2"
-                    data-bs-theme-value="light"
-                    aria-pressed="true"
-                    aria-label="Set to light mode"
+                    <use href="#circle-half"></use>
+                  </svg>
+                  <span>Auto</span>
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  class="dropdown-item d-flex align-items-center gap-2"
+                  data-bs-theme-value="light"
+                  aria-pressed="true"
+                  aria-label="Set to light mode"
+                >
+                  <svg
+                    class="opacity-50"
+                    width="1em"
+                    height="1em"
                   >
-                    <svg
-                      class="opacity-50"
-                      width="1em"
-                      height="1em"
-                    >
-                      <use href="#sun-fill"></use>
-                    </svg>
-                    <span>Light</span>
-                  </button>
-                </li>
-                <li>
-                  <button
-                    type="button"
-                    class="dropdown-item d-flex align-items-center gap-2"
-                    data-bs-theme-value="dark"
-                    aria-pressed="false"
-                    aria-label="Set to dark mode"
+                    <use href="#sun-fill"></use>
+                  </svg>
+                  <span>Light</span>
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  class="dropdown-item d-flex align-items-center gap-2"
+                  data-bs-theme-value="dark"
+                  aria-pressed="false"
+                  aria-label="Set to dark mode"
+                >
+                  <svg
+                    class="opacity-50"
+                    width="1em"
+                    height="1em"
                   >
-                    <svg
-                      class="opacity-50"
-                      width="1em"
-                      height="1em"
-                    >
-                      <use href="#moon-stars-fill"></use>
-                    </svg>
-                    <span>Dark</span>
-                  </button>
-                </li>
-              </ul>
-            </div>
+                    <use href="#moon-stars-fill"></use>
+                  </svg>
+                  <span>Dark</span>
+                </button>
+              </li>
+            </ul>
+          </div>
           <!--  Mobile Nav  -->
           <nav class="d-flex align-items-center d-lg-none mx-auto">
             <button
