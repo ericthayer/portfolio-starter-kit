@@ -9,6 +9,7 @@ import "bootstrap/js/dist/collapse.js"
 import "bootstrap/js/dist/dialog.js"
 import "bootstrap/js/dist/drawer.js"
 import "bootstrap/js/dist/menu.js"
+import "bootstrap/js/dist/scrollspy.js"
 import "bootstrap/js/dist/tab.js"
 import Tooltip from "bootstrap/js/dist/tooltip.js"
 
