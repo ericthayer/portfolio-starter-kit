@@ -51,7 +51,7 @@ The CSS grew because v6 compiles every component, where the v5 entry imported on
 | 2 Sass rewrite on token maps | `fbf3d3b`, `d96ba57` |
 | 3 `index.html` markup | `a2da689` |
 | 4 JS imports | `a02223a` |
-| 5 Other pages | skipped by decision: `patterns.html` and `lighthouse/index.html` are out of scope |
+| 5 Other pages | `patterns.html` migrated (`a2d333c` adds ScrollSpy to `main.js`, then the markup commit); `lighthouse/index.html` left as is, see below |
 | 6 Verify and docs | this commit |
 
 ### Verified in the in-app browser (dev server, light and dark)
@@ -64,7 +64,9 @@ The CSS grew because v6 compiles every component, where the v5 entry imported on
 
 ### Known follow-ups
 
-- `src/patterns.html` and `src/lighthouse/index.html` still use v5 markup. `lighthouse/index.html` is a Vite build input and is embedded in the Resume dialog; it logs two syntax errors in the console that come from its own inline scripts, not from Bootstrap.
+- `src/lighthouse/index.html` is a recorded Lighthouse audit (February 2025) with its own `lh-*` styles and no Bootstrap. The `lead` and `d-lg-none` strings in it are quoted snippets of the audited page, so it was not edited. It is a Vite build input and is embedded in the Resume dialog; it logs two console errors from its own inline scripts, unrelated to Bootstrap.
+- `src/patterns.html` is migrated, but it is not a Vite build input, so `vite build` does not include it. Its 12 CodePen embeds are external and still show v5 markup; they need re-saving on v6. Its pre-existing quirks were kept: duplicate `id="collapseActions"` (sidebar and drawer), sidebar triggers with `aria-expanded="false"` on blocks that start open, and sidebar anchors with no matching section.
+- If the ScrollSpy active link looks off on `patterns.html`, add `data-bs-top-margin="96px"` to its `<body>`.
 - Pre-existing typos kept so behaviour is unchanged: `d-sm-fle` / `d-md-fle` (the testimonial captions and the table-of-contents button stay hidden), `text-md-left`, the duplicate `id="lighthouseModalLabel"`, the `aria-labelledby` pointing at a missing `drawerNavbarLabel`, and the `#2005-2010` tab with no pane.
 - Accordion `<summary>` content keeps its `<div>`/`<a>` children and has no `<h2>` wrapper. Items are independent (no `name` attribute), as in v5.
 - `.carousel-fade` is kept: the alpha still ships it.
