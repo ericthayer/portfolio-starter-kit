@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/ericthayer/portfolio-starter-template#readme",
   "devDependencies": {
-    "sass": "^1.70.0",
+    "sass": "^1.105.1",
     "vite": "^5.0.12"
   },
   "dependencies": {
