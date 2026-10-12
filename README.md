@@ -6,11 +6,11 @@
 
 Kickstart your professional online presence with our lightweight, easy-to-build, portfolio starter kit. Perfect for creatives who want a clean, professional HTML-based portfolio without the complexity. Clone, customize, and deploy in minutes with Netlify.
 
-Built with Bootstrap and Vite, this open-source solution offers a perfect balance of simplicity and customization for developers and creatives.
+Built with Bootstrap 6 (alpha) and Vite, this open-source solution offers a perfect balance of simplicity and customization for developers and creatives.
 
 ## Features
 
-- **Bootstrap Framework:** Leverage the latest Bootstrap features for responsive layouts and modern components
+- **Bootstrap Framework:** Built on Bootstrap 6 (`6.0.0-alpha.1`) for responsive layouts and modern components
 - **Vite Build System:** Enjoy lightning-fast development with hot module replacement and optimized builds
 - **One-Page Design:** Present all your information elegantly on a single, scrollable page
 - **Portfolio Sections:** Pre-built areas for about, projects, skills, and contact information
@@ -19,7 +19,8 @@ Built with Bootstrap and Vite, this open-source solution offers a perfect balanc
 ## Technical Details
 
 - Modern vanilla JavaScript with no complex dependencies
-- SCSS custom [theme mapping](THEME.md)
+- SCSS custom [theme mapping](THEME.md) built on Bootstrap 6 token maps (requires `sass` ^1.105.1)
+- Imports only the Bootstrap JavaScript components the page uses (the root `bootstrap` entry also loads Datepicker, which needs the optional `vanilla-calendar-pro` peer dependency)
 - Optimized asset handling through Vite
 - Includes common portfolio components and layouts
 
