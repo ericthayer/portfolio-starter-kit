@@ -263,6 +263,17 @@ $button-tokens: (
   --btn-disabled-opacity: 1,
 );
 
+// v5 drew the close button inside a 2rem hit area.
+$btn-close-tokens: (
+  --btn-close-size: 1.75rem,
+);
+
+// v5 offcanvas panels were flush with the viewport edge; v6 floats them inset.
+$drawer-tokens: (
+  --drawer-inset: 0px, // needs a unit: it is used inside calc()
+  --drawer-border-radius: 0,
+);
+
 $accordion-tokens: (
   --accordion-active-bg: var(--primary-bg-subtle),
   --accordion-active-color: var(--primary-fg-emphasis),
