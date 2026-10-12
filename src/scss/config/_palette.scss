@@ -1,0 +1,131 @@
+// Site palette primitives + small Sass helpers.
+//
+// This file emits no CSS. It only holds the raw values that `_tokens.scss`
+// maps onto Bootstrap 6's theme keys, root tokens and component tokens.
+
+@use "sass:color";
+@use "sass:math";
+
+// ---------------------------------------------------------------------------
+// Helpers
+// ---------------------------------------------------------------------------
+
+// Mixing produces fractional channels (rgb(244.2, 205, 229.2)); snap to whole
+// numbers so the emitted colors stay tidy.
+@function -round-rgb($color) {
+  @return color.change(
+    $color,
+    $red: math.round(color.channel($color, "red", $space: rgb)),
+    $green: math.round(color.channel($color, "green", $space: rgb)),
+    $blue: math.round(color.channel($color, "blue", $space: rgb))
+  );
+}
+
+@function blend($a, $b, $weight: 50%) {
+  @return -round-rgb(color.mix($a, $b, $weight));
+}
+
+// Same recipe as v5's tint-color()/shade-color(): mix toward white / black.
+@function tint($color, $weight) {
+  @return -round-rgb(color.mix(#fff, $color, $weight));
+}
+
+@function shade($color, $weight) {
+  @return -round-rgb(color.mix(#000, $color, $weight));
+}
+
+// Replaces RFS (removed in v6). Type up to 1.25rem stays fixed; anything
+// larger gets a clamp() that scales from ~375px up to the full size at 1200px.
+@function fluid($size) {
+  @if $size <= 1.25 {
+    @return #{$size}rem;
+  }
+
+  $min: 1.25 + ($size - 1.25) * .4;
+  $vw-min: 23.4375; // 375px in rem
+  $vw-max: 75; // 1200px in rem
+  $slope: math.div($size - $min, $vw-max - $vw-min);
+  $intercept: $min - $slope * $vw-min;
+
+  @return clamp(
+    #{math.div(math.round($min * 1000), 1000)}rem,
+    calc(#{math.div(math.round($intercept * 1000), 1000)}rem + #{math.div(math.round($slope * 100000), 1000)}vw),
+    #{$size}rem
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Primitives (values carried over from the v5 theme)
+// ---------------------------------------------------------------------------
+
+$white: #fcfcfc;
+$black: #0c0e0f;
+$dark: #272c2f;
+
+// Neutral scale (cool grays). Emitted as --neutral-{step}.
+$neutral: (
+  "0": #fff,
+  "50": #f7f7f7,
+  "100": #f0f2f4,
+  "200": #e8eaee,
+  "300": #dce0e5,
+  "400": #c1c7cd,
+  "500": #babfc5,
+  "600": #9aa1a7,
+  "700": #838c96,
+  "800": #4e555c,
+  "900": #3f454b,
+);
+
+// Blue-gray scale. Emitted as --blue-gray-{step}.
+$blue-gray: (
+  "0": #f8fbfb,
+  "50": #eff4f6,
+  "100": #dfe8ec,
+  "200": #bed2da,
+  "300": #b0c8d2,
+  "400": #9ebbc7,
+  "500": #7da4b5,
+  "600": #4a7182,
+  "700": #385561,
+  "800": #253941,
+  "900": #090e10,
+);
+
+// Brand pink (the v5 "primary" scale). Emitted as --brand-{step}.
+$pink: #c9057e;
+$brand: (
+  "0": #fff5fb,
+  "50": #ffe8f6,
+  "100": #ffbfe7,
+  "200": #ff97d7,
+  "300": #ff6ec7,
+  "400": #ff45b8,
+  "500": #f21ba0,
+  "600": $pink,
+  "700": #a00063,
+  "800": #77004a,
+  "900": #4f0031,
+);
+
+$purple: #62009f;
+
+// State colors: base / dark (emphasis text) / light (subtle bg) / soft (border)
+$success: #1e6619;
+$success-dark: #10450d;
+$success-light: #d8f4d7;
+$success-soft: #a5c2a3;
+
+$info: #86cff9;
+$info-light: #e7f5fe;
+$info-soft: #cfecfd;
+
+$warning: #fce988;
+$warning-dark: #493204;
+$warning-light: #fff3cd;
+$warning-soft: #eaca81;
+
+$danger: #b01717;
+$danger-dark: #58151c;
+$danger-light: #f8d7da;
+$danger-soft: #f1aeb5;

@@ -1,0 +1,286 @@
+// Site configuration for Bootstrap 6.
+//
+// Every variable here is handed to `@use "bootstrap/scss/bootstrap" with (...)`
+// in styles.scss. Bootstrap's maps merge through `defaults()`, so only the
+// keys the site changes are listed. Emits no CSS.
+
+// Re-exported so styles.scss can pass them straight to Bootstrap's color config.
+@forward "palette" show $white, $black;
+
+@use "sass:map";
+@use "palette" as *;
+
+// ---------------------------------------------------------------------------
+// Base hues / config scalars
+// ---------------------------------------------------------------------------
+
+$radius: .375rem;
+
+// v5 radii were sm .25 / base .375 / lg .5 / xl 1 / xxl 2rem. Pinning them to
+// radius steps 3/5/7/8/9 means v5 `.rounded-{1..5}` becomes `.rounded-{3,5,7,8,9}`.
+$radii: (
+  3: .25rem,
+  7: .5rem,
+  8: 1rem,
+  9: 2rem,
+);
+
+// The site's v5 breakpoints, with `xxl` renamed to `2xl` (v6 naming). The v5
+// `xxs`/`xs` (325px) and `wide` (2000px) steps are dropped: nothing but a
+// removed carousel control used them, and each step adds ~500 responsive
+// utility classes.
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  2xl: 1400px,
+);
+
+$container-max-widths: (
+  xl: 1140px,
+  2xl: 1320px,
+);
+
+// ---------------------------------------------------------------------------
+// Color scales -> --neutral-*, --blue-gray-*, --brand-*
+// ---------------------------------------------------------------------------
+
+$-scale-tokens: ();
+@each $name, $scale in ("neutral": $neutral, "blue-gray": $blue-gray, "brand": $brand) {
+  @each $step, $value in $scale {
+    $-scale-tokens: map.set($-scale-tokens, --#{$name}-#{$step}, $value);
+  }
+}
+$color-tokens: $-scale-tokens;
+
+// ---------------------------------------------------------------------------
+// Theme colors
+// ---------------------------------------------------------------------------
+
+// Builds one theme-color map (the nine roles v6 expects) from a base color,
+// reusing the v5 recipe: subtle surfaces tint the base toward white in light
+// mode and shade it toward black in dark mode; text tints up in dark mode.
+@function theme-color(
+  $base,
+  $subtle: tint($base, 80%),
+  $emphasis: shade($base, 60%),
+  $border: tint($base, 60%),
+  $contrast: var(--white),
+  $fg: $base,
+  $bg-dark: $base
+) {
+  @return (
+    "base": $base,
+    "fg": light-dark($fg, tint($base, 40%)),
+    "fg-emphasis": light-dark($emphasis, tint($base, 60%)),
+    "bg": light-dark($base, $bg-dark),
+    "bg-subtle": light-dark($subtle, shade($base, 80%)),
+    "bg-muted": light-dark(blend($border, $subtle), shade($base, 65%)),
+    "border": light-dark($border, shade($base, 40%)),
+    "focus-ring": light-dark(
+      color-mix(in oklch, $base 50%, var(--bg-body)),
+      color-mix(in oklch, $base 75%, var(--bg-body))
+    ),
+    "contrast": $contrast
+  );
+}
+
+// Site palette -> v6 theme keys. v6's nested role maps merge one level deep,
+// so each key below is a complete sub-map.
+$theme-colors: (
+  // Brand pink (v5 $primary). In dark mode solid fills step down to brand-700.
+  "primary": theme-color(
+    $pink,
+    $emphasis: map.get($brand, "900"),
+    $bg-dark: map.get($brand, "700")
+  ),
+
+  // Purple (v5 $theme-accent)
+  "accent": theme-color($purple),
+
+  "success": theme-color(
+    $success,
+    $subtle: $success-light,
+    $emphasis: $success-dark,
+    $border: $success-soft
+  ),
+
+  "danger": theme-color(
+    $danger,
+    $subtle: $danger-light,
+    $emphasis: $danger-dark,
+    $border: $danger-soft
+  ),
+
+  // The v5 warning/info base colors are light, so they take dark contrast text
+  // and a darkened fg for text on subtle surfaces.
+  "warning": theme-color(
+    $warning,
+    $subtle: $warning-light,
+    $emphasis: $warning-dark,
+    $border: $warning-soft,
+    $contrast: var(--black),
+    $fg: shade($warning, 55%)
+  ),
+
+  "info": theme-color(
+    $info,
+    $subtle: $info-light,
+    $emphasis: shade($info, 60%),
+    $border: $info-soft,
+    $contrast: var(--black),
+    $fg: shade($info, 45%)
+  ),
+
+  // v5 "dark" (#272c2f). Inverts with the color mode like all v6 `inverse`s.
+  // For a surface that stays dark in both modes use `.bg-dark` (see $theme-bgs).
+  "inverse": (
+    "base": $dark,
+    "fg": light-dark($dark, map.get($neutral, "200")),
+    "fg-emphasis": light-dark(var(--black), var(--white)),
+    "bg": light-dark($dark, map.get($neutral, "50")),
+    "bg-subtle": light-dark(map.get($neutral, "300"), blend(map.get($neutral, "800"), #000)),
+    "bg-muted": light-dark(map.get($neutral, "400"), map.get($neutral, "900")),
+    "border": light-dark(map.get($neutral, "400"), map.get($neutral, "800")),
+    "focus-ring": color-mix(in oklch, light-dark($dark, map.get($neutral, "200")) 50%, var(--bg-body)),
+    "contrast": light-dark(var(--white), $dark)
+  ),
+
+  // v5 $secondary (neutral-300): the neutral buttons and tag badges.
+  "secondary": (
+    "base": map.get($neutral, "300"),
+    "fg": light-dark(map.get($neutral, "800"), map.get($neutral, "200")),
+    "fg-emphasis": light-dark(map.get($neutral, "900"), var(--white)),
+    "bg": light-dark(map.get($neutral, "300"), map.get($neutral, "800")),
+    "bg-subtle": light-dark(map.get($neutral, "200"), shade(map.get($neutral, "300"), 80%)),
+    "bg-muted": light-dark(map.get($neutral, "300"), shade(map.get($neutral, "300"), 65%)),
+    "border": light-dark(map.get($neutral, "400"), map.get($neutral, "700")),
+    "focus-ring": color-mix(in oklch, light-dark(map.get($neutral, "600"), map.get($neutral, "400")) 50%, var(--bg-body)),
+    "contrast": light-dark(var(--black), map.get($neutral, "100"))
+  ),
+);
+
+// ---------------------------------------------------------------------------
+// Neutral surfaces, text and borders (v5 body-bg / secondary-bg / tertiary-bg …)
+// ---------------------------------------------------------------------------
+
+$theme-bgs: (
+  "body": light-dark(var(--white), var(--neutral-900)),
+  "1": light-dark(var(--neutral-50), color-mix(in oklab, var(--neutral-800), var(--neutral-900))),
+  "2": light-dark(var(--neutral-100), var(--neutral-800)),
+  "3": light-dark(var(--neutral-200), color-mix(in oklab, var(--neutral-800), var(--neutral-700))),
+  "4": light-dark(var(--neutral-300), var(--neutral-700)),
+  // Stays dark in both modes (the footer). Generates `.bg-dark`.
+  "dark": $dark,
+);
+
+$theme-fgs: (
+  "body": light-dark(var(--neutral-900), var(--neutral-300)),
+  "1": light-dark(var(--neutral-800), var(--neutral-400)),
+  // v5 secondary / tertiary color were 75% / 50% of the body color
+  "2": color-mix(in oklab, var(--fg-body) 75%, transparent),
+  "3": color-mix(in oklab, var(--fg-body) 50%, transparent),
+  "4": color-mix(in oklab, var(--fg-body) 35%, transparent),
+);
+
+$theme-borders: (
+  "body": light-dark(var(--neutral-400), var(--neutral-700)),
+  "muted": light-dark(var(--neutral-200), var(--neutral-800)),
+  "subtle": light-dark(var(--neutral-300), color-mix(in oklab, var(--neutral-800), var(--neutral-900))),
+  "emphasized": light-dark(var(--neutral-500), var(--neutral-600)),
+);
+
+// ---------------------------------------------------------------------------
+// Typography
+// ---------------------------------------------------------------------------
+
+$font-weights: (
+  light: 325,
+  medium: 550,
+  semibold: 650,
+);
+
+// The v5 type scale (2.5 / 2 / 1.5 / 1.25 / 1 / .875 / .75rem) on v6's
+// t-shirt keys. Sizes above 1.25rem use fluid() in place of RFS.
+$font-sizes: (
+  "xs": ("font-size": .75rem, "line-height": 1.25),
+  "sm": ("font-size": .875rem, "line-height": 1.5),
+  "md": ("font-size": 1rem, "line-height": 1.5),
+  "lg": ("font-size": 1.25rem, "line-height": 1.5),
+  "xl": ("font-size": fluid(1.5), "line-height": 1.4),
+  "2xl": ("font-size": fluid(2), "line-height": 1.25),
+  "3xl": ("font-size": fluid(2.5), "line-height": 1.2),
+);
+
+// ---------------------------------------------------------------------------
+// Root tokens
+// ---------------------------------------------------------------------------
+
+$root-tokens: (
+  // Strings carry their own inner quotes (see Bootstrap's own font stacks).
+  --body-font-family: "'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
+  --font-mono: "'Roboto Mono', ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace",
+  --code-color: light-dark(var(--brand-600), color-mix(in oklab, var(--brand-600), var(--white) 40%)),
+
+  // Heading scale (v5 $h1…$h6, 1.25 ratio), used by theme-overrides.
+  --heading-1: #{fluid(3.25)},
+  --heading-2: #{fluid(2.781)},
+  --heading-3: #{fluid(2.25)},
+  --heading-4: #{fluid(1.875)},
+  --heading-5: #{fluid(1.531)},
+  --heading-6: #{fluid(1.25)},
+
+  --border-color: light-dark(var(--neutral-400), var(--neutral-700)),
+  --border-color-translucent: light-dark(
+    color-mix(in oklab, var(--black) 17.5%, transparent),
+    color-mix(in oklab, var(--white) 15%, transparent)
+  ),
+
+  // Buttons and form controls share these (v5 $input-btn-*).
+  --btn-input-padding-y: .5rem,
+  --btn-input-padding-x: 1rem,
+  --btn-input-line-height: 1.25,
+  --btn-input-min-height: 2.5rem,
+  --btn-input-sm-padding-y: .375rem,
+  --btn-input-sm-padding-x: .75rem,
+  --btn-input-lg-padding-y: .625rem,
+  --btn-input-lg-padding-x: 1.25rem,
+  --btn-input-lg-font-size: var(--font-size-lg),
+);
+
+$type-tokens: (
+  --heading-font-weight: var(--font-weight-semibold),
+);
+
+// ---------------------------------------------------------------------------
+// Component tokens
+// ---------------------------------------------------------------------------
+
+$button-tokens: (
+  --btn-border-width: .12rem,
+  --btn-disabled-opacity: 1,
+);
+
+// v5 drew the close button inside a 2rem hit area.
+$btn-close-tokens: (
+  --btn-close-size: 1.75rem,
+);
+
+// v5 offcanvas panels were flush with the viewport edge; v6 floats them inset.
+$drawer-tokens: (
+  --drawer-inset: 0px, // needs a unit: it is used inside calc()
+  --drawer-border-radius: 0,
+);
+
+$accordion-tokens: (
+  --accordion-active-bg: var(--primary-bg-subtle),
+  --accordion-active-color: var(--primary-fg-emphasis),
+);
+
+$carousel-tokens: (
+  --carousel-indicator-bg: light-dark(var(--brand-800), var(--brand-300)),
+  --carousel-indicator-width: 1.5rem,
+  --carousel-indicator-height: .5rem,
+);

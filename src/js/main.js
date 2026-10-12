@@ -1,8 +1,17 @@
 // Import our custom CSS
 import "../scss/styles.scss"
 
-// Import all of Bootstrap's JS
-import * as bootstrap from "bootstrap"
+// Import only the Bootstrap components the page uses. Each one registers its
+// own data-API handlers on import. The "bootstrap" root entry also pulls in
+// Datepicker, which needs the optional vanilla-calendar-pro peer dependency.
+import "bootstrap/js/dist/carousel.js"
+import "bootstrap/js/dist/collapse.js"
+import "bootstrap/js/dist/dialog.js"
+import "bootstrap/js/dist/drawer.js"
+import "bootstrap/js/dist/menu.js"
+import "bootstrap/js/dist/scrollspy.js"
+import "bootstrap/js/dist/tab.js"
+import Tooltip from "bootstrap/js/dist/tooltip.js"
 
 // BS color picker
 import "./bs-color-picker.js"
@@ -12,7 +21,7 @@ const tooltipTriggerList = document.querySelectorAll(
 )
 
 const tooltipList = [...tooltipTriggerList].map(
-  (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+  (tooltipTriggerEl) => new Tooltip(tooltipTriggerEl)
 )
 
 // function isMobile() {
