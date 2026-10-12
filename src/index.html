@@ -20,7 +20,7 @@
     />
     <meta
       name="description"
-      content="Kickstart your professional online presence with our lightweight, modern portfolio template. Built with Bootstrap 5.3 and Vite, this open-source solution offers a perfect balance of simplicity and customization for developers and creatives."
+      content="Kickstart your professional online presence with our lightweight, modern portfolio template. Built with Bootstrap 6 and Vite, this open-source solution offers a perfect balance of simplicity and customization for developers and creatives."
     />
     <title>Portfolio Starter Kit</title>
     <link
@@ -260,15 +260,15 @@
       class="app-layout flex-fill d-flex flex-column"
     >
       <!-- App Header -->
-      <header class="app-header bg-body-secondary position-sticky top-0 z-3">
+      <header class="app-header bg-3 position-sticky top-0 z-3">
         <div
-          class="container-fluid d-flex flex-wrap align-items-center gap-3 py-3 px-4 ps-lg-5 pe-lg-3"
+          class="container-fluid d-flex flex-wrap align-items-center gap-5 py-5 px-7 lg:ps-12 lg:pe-5"
         >
           <div
             class="brand d-flex align-items-center flex-grow-1 flex-shrink-1 gap-1"
           > 
             <!-- App Logo -->
-            <div class="app-logo d-flex align-items-center me-2 py-1">
+            <div class="app-logo d-flex align-items-center me-3 py-1">
               <a
                 class="d-flex"
                 href="#app"
@@ -283,16 +283,16 @@
             </div>
           </div>
           <div
-            class="d-flex align-items-center flex-lg-row-reverse gap-2 gap-lg-4"
+            class="d-flex align-items-center lg:flex-row-reverse gap-3 lg:gap-7"
           > 
             <!-- Color Mode Toggle -->
-            <div class="dropdown d-flex flex-column gap-3 ms-lg-2 bd-mode-toggle">
+            <div class="d-flex flex-column gap-5 lg:ms-3 bd-mode-toggle">
                <button
                 id="bd-theme"
                 aria-expanded="false"
                 aria-label="Toggle theme (light)"
-                class="btn btn-text d-flex align-items-center justify-content-center p-1"
-                data-bs-toggle="dropdown"
+                class="btn-text d-flex align-items-center justify-content-center p-1"
+                data-bs-toggle="menu"
                 type="button"
                 style="height: 44px; width: 44px;"
               >
@@ -309,112 +309,106 @@
                   >Toggle theme</span
                 >
               </button>
-              <ul
-                class="dropdown-menu shadow"
+              <div
+                class="menu shadow"
                 aria-labelledby="bd-theme-text"
               >
-                <li class="d-none">
-                  <button
-                    type="button"
-                    class="dropdown-item d-flex align-items-center gap-2 active"
-                    data-bs-theme-value="auto"
-                    aria-pressed="false"
-                    aria-label="Set to system color mode"
+                <button
+                  type="button"
+                  class="menu-item d-none align-items-center gap-3 active"
+                  data-bs-theme-value="auto"
+                  aria-pressed="false"
+                  aria-label="Set to system color mode"
+                >
+                  <svg
+                    class="opacity-50"
+                    width="1em"
+                    height="1em"
                   >
-                    <svg
-                      class="opacity-50"
-                      width="1em"
-                      height="1em"
-                    >
-                      <use href="#circle-half"></use>
-                    </svg>
-                    <span>Auto</span>
-                  </button>
-                </li>
-                <li>
-                  <button
-                    type="button"
-                    class="dropdown-item d-flex align-items-center gap-2"
-                    data-bs-theme-value="light"
-                    aria-pressed="true"
-                    aria-label="Set to light mode"
+                    <use href="#circle-half"></use>
+                  </svg>
+                  <span>Auto</span>
+                </button>
+                <button
+                  type="button"
+                  class="menu-item d-flex align-items-center gap-3"
+                  data-bs-theme-value="light"
+                  aria-pressed="true"
+                  aria-label="Set to light mode"
+                >
+                  <svg
+                    class="opacity-50"
+                    width="1em"
+                    height="1em"
                   >
-                    <svg
-                      class="opacity-50"
-                      width="1em"
-                      height="1em"
-                    >
-                      <use href="#sun-fill"></use>
-                    </svg>
-                    <span>Light</span>
-                  </button>
-                </li>
-                <li>
-                  <button
-                    type="button"
-                    class="dropdown-item d-flex align-items-center gap-2"
-                    data-bs-theme-value="dark"
-                    aria-pressed="false"
-                    aria-label="Set to dark mode"
+                    <use href="#sun-fill"></use>
+                  </svg>
+                  <span>Light</span>
+                </button>
+                <button
+                  type="button"
+                  class="menu-item d-flex align-items-center gap-3"
+                  data-bs-theme-value="dark"
+                  aria-pressed="false"
+                  aria-label="Set to dark mode"
+                >
+                  <svg
+                    class="opacity-50"
+                    width="1em"
+                    height="1em"
                   >
-                    <svg
-                      class="opacity-50"
-                      width="1em"
-                      height="1em"
-                    >
-                      <use href="#moon-stars-fill"></use>
-                    </svg>
-                    <span>Dark</span>
-                  </button>
-                </li>
-              </ul>
+                    <use href="#moon-stars-fill"></use>
+                  </svg>
+                  <span>Dark</span>
+                </button>
+              </div>
             </div>
             <!--  Mobile Nav  -->
-            <nav class="d-flex align-items-center d-lg-none mx-auto">
+            <nav class="d-flex align-items-center lg:d-none mx-auto">
               <button
-                class="navbar-toggle btn d-flex align-items-center fs-6 fw-medium text-uppercase"
+                class="navbar-toggle btn d-flex align-items-center fs-sm fw-medium text-uppercase"
                 type="button"
-                data-bs-toggle="offcanvas"
+                data-bs-toggle="drawer"
                 data-bs-target="#offcanvasNavbar"
                 aria-controls="offcanvasNavbar"
                 aria-label="Toggle navigation"
                 style="height: 44px; width: 72px; padding: 2px !important;"
               >
-                <span class="border rounded rounded-2 py-2 px-2 flex-grow-1 bg-body-secondary">Menu</span>
+                <span class="border rounded-5 py-3 px-3 flex-grow-1 bg-3">Menu</span>
               </button>
             </nav>
             <!-- Desktop -->
-            <nav class="navbar d-none d-lg-flex">
+            <nav class="d-none lg:d-flex flex-wrap align-items-center justify-content-between py-3">
               <ul
-                class="d-flex flex-wrap column-gap-5 row-gap-2 list-unstyled m-0 p-0"
+                class="d-flex flex-wrap column-gap-12 row-gap-3 list-unstyled m-0 p-0"
               >
                 <li>
                   <a
                     href="#about"
-                    class="link link-offset-1 link-offset-1-hover link-underline"
+                    class="link underline-offset-1 hover:underline-offset-1 underline-100"
                     >About</a
                   >
                 </li>
                 <li>
                   <a
                     href="#experience"
-                    class="link link-offset-1 link-offset-1-hover link-underline"
+                    class="link underline-offset-1 hover:underline-offset-1 underline-100"
                     >Experience</a
                   >
                 </li>
                 <li>
                   <a
                     href="#0"
-                    data-bs-toggle="modal"
+                    data-bs-toggle="dialog"
                     data-bs-target="#resumeModal"
-                    class="link link-offset-1 link-offset-1-hover link-underline"
+                    class="link underline-offset-1 hover:underline-offset-1 underline-100"
                     >Resume</a
                   >
                 </li>
                 <li>
                   <a
                     href="mailto:ethayer.design@gmail.com?subject=Hi%20Eric.%20Let's%20talk%20about...%20&body=(answering%20these%20items%20will%20help%20me%20better%20understand%20your%20goals)%0A%0AContact%20information%20(company%2C%20name%2C%20role%2C%20phone%20number%2C%20etc)%3A%0A%0AWhat%20can%20I%20help%20you%20with?%20(project%20type%2C%20concept %2C%20outline%2C%20etc)%3A%0A%0ATimeline%20(start%20date%2C%20end%20date)%3A%0A%0AProject%20budget%20(greater%20than%20%2450%2C000%20range%20%7C%20%2430%2C000%E2%80%93%2420%2C000%20range%20%7C%20%2420%2C000%E2%80%93%2410%2C000%20range%20%7C%20less%20than%20%245%2C000)%3A%0A%0ASincerely%2C"
-                    class="link link-offset-1 link-offset-1-hover link-underline"
+                    class="link underline-offset-1 hover:underline-offset-1 underline-100"
                     >Contact</a
                   >
                 </li>  
@@ -429,47 +423,47 @@
       >
         <div class="d-flex flex-column">
           <!-- Hero -->
-          <section class="billboard py-xl-5">
-            <div class="container-fluid py-4 px-4 py-sm-5 p-md-5">
-              <div class="headline d-flex flex-column gap-4 py-4 py-sm-5">
-                <div class="copy mb-2">
-                  <h1 class="display-3">
+          <section class="billboard xl:py-12">
+            <div class="container-fluid py-7 px-7 sm:py-12 md:p-12">
+              <div class="headline d-flex flex-column gap-7 py-7 sm:py-12">
+                <div class="copy mb-3">
+                  <h1 class="fs-5xl fw-light">
                     UX Engineer <small>&amp;</small> Systems Lead
                   </h1>
-                  <p class="lead mb-0">
+                  <p class="fs-lg fw-light mb-0">
                     I'm a skilled&mdash;Creative Strategist, Product Designer,
-                    and Front-end Developer.<br class="d-none d-lg-block" />
+                    and Front-end Developer.<br class="d-none lg:d-block" />
                     Please let me know how I can help your team or project
                     succeed.
                   </p>
                 </div>
-                <div class="actions d-flex flex-column gap-5 my-1">
-                  <div class="d-flex flex-wrap align-items-center gap-4">
+                <div class="actions d-flex flex-column gap-12 my-1">
+                  <div class="d-flex flex-wrap align-items-center gap-7">
                     <a
                       role="button"
-                      class="btn btn-lg btn-primary flex-fill flex-sm-grow-0 text-decoration-none"
+                      class="btn-lg btn-solid theme-primary flex-fill sm:flex-grow-0 text-decoration-none"
                       href="#experience"
-                      ><span class="fs-5">Work Experience</span></a
+                      ><span class="fs-md">Work Experience</span></a
                     >
                     <button
                       type="button"
-                      class="btn btn-lg btn-secondary flex-fill flex-sm-grow-0"
-                      data-bs-toggle="modal"
+                      class="btn-lg btn-solid theme-secondary flex-fill sm:flex-grow-0"
+                      data-bs-toggle="dialog"
                       data-bs-target="#resumeModal"
                     >
-                      <span class="fs-5">View Resume</span>
+                      <span class="fs-md">View Resume</span>
                     </button>
                   </div>
                   <nav
-                    class="nav d-flex justify-content-center justify-content-sm-start flex-grow-1"
+                    class="nav d-flex justify-content-center sm:justify-content-start flex-grow-1"
                   >
                     <ul
-                      class="d-flex flex-wrap justify-content-center align-items-sm-center justify-content-sm-start row-gap-4 column-gap-5 list-unstyled m-0 p-0 flex-grow-1"
+                      class="d-flex flex-wrap justify-content-center sm:align-items-center sm:justify-content-start row-gap-7 column-gap-12 list-unstyled m-0 p-0 flex-grow-1"
                     >
                       <li>
                         <a
                           href="https://www.linkedin.com/in/ethayerdesign/"
-                          class="fs-2 text-body-secondary d-flex align-items-center"
+                          class="fs-2xl fg-secondary d-flex align-items-center"
                           title="LinkedIn Profile"
                         >
                           <svg
@@ -490,7 +484,7 @@
                       <li>
                         <a
                           href="https://github.com/ericthayer/"
-                          class="fs-2 text-body-secondary d-flex align-items-center"
+                          class="fs-2xl fg-secondary d-flex align-items-center"
                           title="GitHub Profile"
                         >
                           <svg
@@ -512,7 +506,7 @@
                       <li>
                         <a
                           href="https://codepen.io/ericthayer/"
-                          class="fs-2 text-body-secondary d-flex align-items-center"
+                          class="fs-2xl fg-secondary d-flex align-items-center"
                           title="CodePen Profile"
                         >
                           <svg
@@ -536,7 +530,7 @@
                       <li>
                         <a
                           href="https://dribbble.com/ethayer/"
-                          class="fs-2 text-body-secondary d-flex align-items-center"
+                          class="fs-2xl fg-secondary d-flex align-items-center"
                           title="Dribbble Profile"
                         >
                           <svg
@@ -578,30 +572,30 @@
                     </ul>
                   </nav>
                   <!-- <ul
-                    class="row gap-4 gap-xl-5 g-0 list-unstyled m-0 py-0 px-1"
+                    class="row gap-7 xl:gap-12 g-0 list-unstyled m-0 py-0 px-1"
                   >
-                    <li class="col-6 col-sm-auto p-0">
+                    <li class="col-6 sm:col-auto p-0">
                       <a
                         href="//www.linkedin.com/in/ethayerdesign/"
                         class=""
                         >Linkedin</a
                       >
                     </li>
-                    <li class="col-6 col-sm-auto p-0">
+                    <li class="col-6 sm:col-auto p-0">
                       <a
                         href="//dribbble.com/ethayer/"
                         class=""
                         >Dribbble</a
                       >
                     </li>
-                    <li class="col-6 col-sm-auto p-0">
+                    <li class="col-6 sm:col-auto p-0">
                       <a
                         href="//github.com/ericthayer/"
                         class=""
                         >GitHub</a
                       >
                     </li>
-                    <li class="col-6 col-sm-auto p-0">
+                    <li class="col-6 sm:col-auto p-0">
                       <a
                         href="//codepen.io/ericthayer/"
                         class=""
@@ -616,35 +610,35 @@
           <!-- About -->
           <section
             id="about"
-            class="spotlight bg-dark-subtle d-flex flex-column py-5"
+            class="spotlight bg-4 d-flex flex-column py-12"
           >
-            <div class="container-fluid p-4 px-sm-5 p-md-5">
-              <div class="d-flex flex-column gap-5">
-                <div class="headline py-3">
+            <div class="container-fluid p-7 sm:px-12 md:p-12">
+              <div class="d-flex flex-column gap-12">
+                <div class="headline py-5">
                   <h2 class="text-uppercase h5 fw-semibold mb-0">
                     Skilled Communicator
                   </h2>
-                  <hr class="w-50 mb-5" />
-                  <p class="fs-4 mb-0">
+                  <hr class="w-50 mb-12" />
+                  <p class="fs-lg mb-0">
                     My ability to collaborate with cross-functional department
                     team leaders, identify and resolve issues,<br
-                      class="d-none d-xl-block"
+                      class="d-none xl:d-block"
                     />
                     prioritize projects, and provide a high level of service is
                     what makes me a valued contributor.
                   </p>
                 </div>
-                <div class="callouts mt-4">
-                  <h2 class="h5 fw-medium mt-1 mb-4 text-center">
+                <div class="callouts mt-7">
+                  <h2 class="h5 fw-medium mt-1 mb-7 text-center">
                     Core Strengths
                   </h2>
-                  <div class="cards row g-5">
-                    <div class="col-12 col-md-6 col-xl-4 position-relative">
+                  <div class="cards row g-12">
+                    <div class="col-12 md:col-6 xl:col-4 position-relative">
                       <div
-                        class="card bg-body-secondary rounded rounded-3 d-flex flex-column p-4"
+                        class="card bg-3 rounded-7 d-flex flex-column p-7"
                       >
                         <div class="copy m-1">
-                          <i class="d-block mb-4">
+                          <i class="d-block mb-7">
                             <svg
                               class="opacity-75"
                               width="1.75em"
@@ -654,7 +648,7 @@
                             </svg>
                           </i>
                           <h3 class="h6">Design Sprints</h3>
-                          <p class="mb-4">
+                          <p class="mb-7">
                             Google Ventures' Sprint methodology is a five-day
                             process for answering critical business questions
                             through design, prototyping, and testing ideas with
@@ -668,12 +662,12 @@
                         </div>
                       </div>
                     </div>
-                    <div class="col-12 col-md-6 col-xl-4 position-relative">
+                    <div class="col-12 md:col-6 xl:col-4 position-relative">
                       <div
-                        class="card bg-body-secondary rounded rounded-3 d-flex flex-column p-4"
+                        class="card bg-3 rounded-7 d-flex flex-column p-7"
                       >
                         <div class="copy m-1">
-                          <i class="d-block mb-4">
+                          <i class="d-block mb-7">
                             <svg
                               class="opacity-75"
                               width="1.75em"
@@ -683,7 +677,7 @@
                             </svg>
                           </i>
                           <h3 class="h6">Design Sprints</h3>
-                          <p class="mb-4">
+                          <p class="mb-7">
                             Google Ventures' Sprint methodology is a five-day
                             process for answering critical business questions
                             through design, prototyping, and testing ideas with
@@ -697,12 +691,12 @@
                         </div>
                       </div>
                     </div>
-                    <div class="col-12 col-xl-4 position-relative">
+                    <div class="col-12 xl:col-4 position-relative">
                       <div
-                        class="card bg-body-secondary rounded rounded-3 d-flex flex-column p-4"
+                        class="card bg-3 rounded-7 d-flex flex-column p-7"
                       >
                         <div class="copy m-1">
-                          <i class="d-block mb-4">
+                          <i class="d-block mb-7">
                             <svg
                               class="opacity-75"
                               width="1.75em"
@@ -712,7 +706,7 @@
                             </svg>
                           </i>
                           <h3 class="h6">Design Sprints</h3>
-                          <p class="mb-4">
+                          <p class="mb-7">
                             Google Ventures' Sprint methodology is a five-day
                             process for answering critical business questions
                             through design, prototyping, and testing ideas with
@@ -735,15 +729,15 @@
           <!-- Experience -->
           <section
             id="experience"
-            class="spotlight bg-body-secondary d-flex flex-column py-5"
+            class="spotlight bg-3 d-flex flex-column py-12"
           >
-            <div class="headline py-3 pb-5 pb-lg-4">
-              <div class="container-fluid p-4 px-sm-5 p-md-5">
+            <div class="headline py-5 pb-12 lg:pb-7">
+              <div class="container-fluid p-7 sm:px-12 md:p-12">
                 <h2 class="text-uppercase h5 fw-semibold mb-0">
                   Smooth Operator
                 </h2>
-                <hr class="w-50 mb-5" />
-                <p class="fs-4 mb-0">
+                <hr class="w-50 mb-12" />
+                <p class="fs-lg mb-0">
                   I can effectively communicate and work alongside designers,
                   developers, project managers, and stakeholders. My ability to
                   understand and integrate different perspectives allows me to
@@ -753,46 +747,46 @@
               </div>
             </div>
             <!-- Featured Project -->
-            <div class="marquee d-flex gap-5 pt-3 pb-lg-5">
-              <div class="container-fluid p-0 px-lg-5">
+            <div class="marquee d-flex gap-12 pt-5 lg:pb-12">
+              <div class="container-fluid p-0 lg:px-12">
                 <div
-                  class="work-sample row flex-column gx-0 gx-lg-5 flex-lg-row pb-lg-5 align-items-center"
+                  class="work-sample row flex-column gx-0 lg:gx-12 lg:flex-row lg:pb-12 align-items-center"
                 >
-                  <div class="col col-lg-7 media d-flex">
+                  <div class="col lg:col-7 media d-flex">
                     <a
-                      class="d-flex ratio ratio-16x9 card"
+                      class="d-flex ratio-16x9 card"
                       href="#0"
                       title="Project title"
-                      data-bs-toggle="offcanvas"
+                      data-bs-toggle="drawer"
                       data-bs-target="#offcanvasRight"
                       aria-controls="offcanvasRight"
                       aria-label="Project title"
                       ><img
                         loading="lazy"
                         src="./images/img-healthscholars-styleguide-demo-lores.webp"
-                        class="img-fluid object-fit-cover"
+                        class="img-fluid object-fit-cover w-100 h-100"
                         alt="Project title"
                         width="2500"
                         height="1407"
                     /></a>
                   </div>
                   <div
-                    class="col col-lg-5 description d-flex flex-column align-items-start gap- p-4 pt-sm-5 px-sm-5 p-md-5 py-lg-2 flex-grow-1"
+                    class="col lg:col-5 description d-flex flex-column align-items-start gap- p-7 sm:pt-12 sm:px-12 md:p-12 lg:py-3 flex-grow-1"
                   >
-                    <div class="d-flex flex-column gap-3">
+                    <div class="d-flex flex-column gap-5">
                       <div class="d-flex flex-column">
-                        <div class="d-flex align-items-center gap-3">
-                          <h3 class="mt-2 mb-1 mt-lg-0">
+                        <div class="d-flex align-items-center gap-5">
+                          <h3 class="mt-3 mb-1 lg:mt-0">
                             <a
-                              class="d-flex align-items-center gap-4"
+                              class="d-flex align-items-center gap-7"
                               href="#0"
-                              data-bs-toggle="offcanvas"
+                              data-bs-toggle="drawer"
                               data-bs-target="#offcanvasRight"
                               aria-controls="offcanvasRight"
                             >
                               Project name title
                               <svg
-                                class="d-none fs-3"
+                                class="d-none fs-xl"
                                 width="1em"
                                 height="1em"
                               >
@@ -802,7 +796,7 @@
                           </h3>
                         </div>
                         <time class="date pt-1 fw-medium">Nov 10, 2024</time>
-                        <hr class="mt-2 mb-0 w-50" />
+                        <hr class="mt-3 mb-0 w-50" />
                       </div>
                       <div
                         class="d-flex align-items-start justify-content-between"
@@ -816,21 +810,21 @@
                         </p>
                       </div>
                     </div>
-                    <div class="d-flex flex-column gap-2">
+                    <div class="d-flex flex-column gap-3">
                       <!-- <small class="flex-fill fw-medium">Tools used</small> -->
-                      <div class="tags d-flex d-none gap-3 fs-6 fw-semibold">
+                      <div class="tags d-flex d-none gap-5 fs-sm fw-semibold">
                         <span
-                          class="badge text-bg-secondary text-decoration-none lh-sm py-1 px-2 rounded"
+                          class="badge theme-secondary text-decoration-none lh-sm py-1 px-3 rounded-5"
                           title="User Interface Design"
                           >UI</span
                         >
                         <span
-                          class="badge text-bg-secondary text-decoration-none lh-sm py-1 px-2 rounded"
+                          class="badge theme-secondary text-decoration-none lh-sm py-1 px-3 rounded-5"
                           title="User Experience Design"
                           ><small>UX</small></span
                         >
                         <span
-                          class="badge text-bg-secondary text-decoration-none lh-sm py-1 px-2 rounded"
+                          class="badge theme-secondary text-decoration-none lh-sm py-1 px-3 rounded-5"
                           title="React JS"
                           ><small>React</small></span
                         >
@@ -841,18 +835,18 @@
               </div>
             </div>
             <!-- Work Categories -->
-            <div class="tabs categories container-fluid mt-4 px-4 px-sm-5">
+            <div class="tabs categories container-fluid mt-7 px-7 sm:px-12">
               <div
-                class="d-flex flex-column justify-content-center flex-md-row align-items-md-center justify-content-md-between border-bottom pb-3 gap-3"
+                class="d-flex flex-column justify-content-center md:flex-row md:align-items-center md:justify-content-between border-bottom pb-5 gap-5"
               >
                 <h2
-                  class="h4 fw-medium mt-1 mb-0 mb-md-0 text-center text-md-left"
+                  class="h4 fw-medium mt-1 mb-0 md:mb-0 text-center text-md-left"
                 >
                   Related Work
                 </h2>
                 <!-- Tab nav -->
                 <ul
-                  class="nav nav-pills p-0 justify-content-center justify-content-md-between"
+                  class="nav nav-pills p-0 justify-content-center md:justify-content-between"
                   id="relatedWorkTabs"
                   role="tablist"
                 >
@@ -936,27 +930,27 @@
                   aria-labelledby="ui-work-tab"
                   tabindex="0"
                 >
-                  <div class="callouts py-5">
-                    <div class="container-fluid px-0 pt-md-3">
-                      <h3 class="h5 fw-medium d-block mb-4 mt-md-1 text-center">
+                  <div class="callouts py-12">
+                    <div class="container-fluid px-0 md:pt-5">
+                      <h3 class="h5 fw-medium d-block mb-7 md:mt-1 text-center">
                         User Interface Design
                       </h3>
-                      <div class="cards row g-5 pt-2">
+                      <div class="cards row g-12 pt-3">
                         <div
-                          class="col-12 col-sm-10 col-md-6 col-xl-4 mx-auto mx-md-0 position-relative"
+                          class="col-12 sm:col-10 md:col-6 xl:col-4 mx-auto md:mx-0 position-relative"
                         >
                           <div
-                            class="card bg-body rounded rounded-3 d-flex flex-column overflow-hidden"
+                            class="card bg-body rounded-7 d-flex flex-column overflow-hidden"
                           >
-                            <div class="media d-flex ratio ratio-16x9">
+                            <div class="media d-flex ratio-16x9">
                               <img
                                 loading="lazy"
                                 src="https://assets.codepen.io/97621/cobank-design-tokens-demo-01.png"
-                                class="img-fluid object-fit-cover"
+                                class="img-fluid object-fit-cover w-100 h-100"
                                 alt=""
                               />
                             </div>
-                            <div class="copy m-1 p-4">
+                            <div class="copy m-1 p-7">
                               <h3 class="h6">Product Design</h3>
                               <p class="mb-0">
                                 Google Ventures' Sprint methodology is a
@@ -975,20 +969,20 @@
                           </div>
                         </div>
                         <div
-                          class="col-12 col-sm-10 col-md-6 col-xl-4 mx-auto mx-md-0 position-relative"
+                          class="col-12 sm:col-10 md:col-6 xl:col-4 mx-auto md:mx-0 position-relative"
                         >
                           <div
-                            class="card bg-body rounded rounded-3 d-flex flex-column overflow-hidden"
+                            class="card bg-body rounded-7 d-flex flex-column overflow-hidden"
                           >
-                            <div class="media d-flex ratio ratio-16x9">
+                            <div class="media d-flex ratio-16x9">
                               <img
                                 loading="lazy"
                                 src="https://assets.codepen.io/97621/cobank-design-tokens-demo-01.png"
-                                class="img-fluid object-fit-cover"
+                                class="img-fluid object-fit-cover w-100 h-100"
                                 alt=""
                               />
                             </div>
-                            <div class="copy m-1 p-4">
+                            <div class="copy m-1 p-7">
                               <h3 class="h6">Design Systems</h3>
                               <p class="mb-0">
                                 Google Ventures' Sprint methodology is a
@@ -1007,20 +1001,20 @@
                           </div>
                         </div>
                         <div
-                          class="col-12 col-sm-10 col-md-6 mx-md-auto col-xl-4 mx-auto mx-md-0 position-relative"
+                          class="col-12 sm:col-10 md:col-6 md:mx-auto xl:col-4 mx-auto md:mx-0 position-relative"
                         >
                           <div
-                            class="card bg-body rounded rounded-3 d-flex flex-column overflow-hidden"
+                            class="card bg-body rounded-7 d-flex flex-column overflow-hidden"
                           >
-                            <div class="media d-flex ratio ratio-16x9">
+                            <div class="media d-flex ratio-16x9">
                               <img
                                 loading="lazy"
                                 src="https://assets.codepen.io/97621/img-16x9-DPI-process-XL.jpg?format=avif&fit=cover"
-                                class="img-fluid object-fit-cover"
+                                class="img-fluid object-fit-cover w-100 h-100"
                                 alt=""
                               />
                             </div>
-                            <div class="copy m-1 p-4">
+                            <div class="copy m-1 p-7">
                               <h3 class="h6">Front-end Development</h3>
                               <p class="mb-0">
                                 Google Ventures' Sprint methodology is a
@@ -1050,27 +1044,27 @@
                   aria-labelledby="ux-work-tab"
                   tabindex="0"
                 >
-                  <div class="callouts py-5">
-                    <div class="container-fluid px-0 pt-md-3">
-                      <h3 class="h5 fw-medium d-block mb-4 mt-md-1 text-center">
+                  <div class="callouts py-12">
+                    <div class="container-fluid px-0 md:pt-5">
+                      <h3 class="h5 fw-medium d-block mb-7 md:mt-1 text-center">
                         User Experience Design
                       </h3>
-                      <div class="cards row g-5 pt-2">
+                      <div class="cards row g-12 pt-3">
                         <div
-                          class="col-12 col-sm-10 col-md-6 col-xl-4 mx-auto mx-md-0 position-relative"
+                          class="col-12 sm:col-10 md:col-6 xl:col-4 mx-auto md:mx-0 position-relative"
                         >
                           <div
-                            class="card bg-body rounded rounded-3 d-flex flex-column overflow-hidden"
+                            class="card bg-body rounded-7 d-flex flex-column overflow-hidden"
                           >
-                            <div class="media d-flex ratio ratio-16x9">
+                            <div class="media d-flex ratio-16x9">
                               <img
                                 loading="lazy"
                                 src="https://assets.codepen.io/97621/cobank-design-tokens-demo-01.png"
-                                class="img-fluid object-fit-cover"
+                                class="img-fluid object-fit-cover w-100 h-100"
                                 alt=""
                               />
                             </div>
-                            <div class="copy m-1 p-4">
+                            <div class="copy m-1 p-7">
                               <h3 class="h6">Product Design</h3>
                               <p class="mb-0">
                                 Google Ventures' Sprint methodology is a
@@ -1089,20 +1083,20 @@
                           </div>
                         </div>
                         <div
-                          class="col-12 col-sm-10 col-md-6 col-xl-4 mx-auto mx-md-0 position-relative"
+                          class="col-12 sm:col-10 md:col-6 xl:col-4 mx-auto md:mx-0 position-relative"
                         >
                           <div
-                            class="card bg-body rounded rounded-3 d-flex flex-column overflow-hidden"
+                            class="card bg-body rounded-7 d-flex flex-column overflow-hidden"
                           >
-                            <div class="media d-flex ratio ratio-16x9">
+                            <div class="media d-flex ratio-16x9">
                               <img
                                 loading="lazy"
                                 src="https://assets.codepen.io/97621/img-16x9-DPI-process-XL.jpg?format=avif&fit=cover"
-                                class="img-fluid object-fit-cover"
+                                class="img-fluid object-fit-cover w-100 h-100"
                                 alt=""
                               />
                             </div>
-                            <div class="copy m-1 p-4">
+                            <div class="copy m-1 p-7">
                               <h3 class="h6">Front-end Development</h3>
                               <p class="mb-0">
                                 Google Ventures' Sprint methodology is a
@@ -1121,20 +1115,20 @@
                           </div>
                         </div>
                         <div
-                          class="col-12 col-sm-10 col-md-6 mx-md-auto col-xl-4 mx-auto mx-md-0 position-relative"
+                          class="col-12 sm:col-10 md:col-6 md:mx-auto xl:col-4 mx-auto md:mx-0 position-relative"
                         >
                           <div
-                            class="card bg-body rounded rounded-3 d-flex flex-column overflow-hidden"
+                            class="card bg-body rounded-7 d-flex flex-column overflow-hidden"
                           >
-                            <div class="media d-flex ratio ratio-16x9">
+                            <div class="media d-flex ratio-16x9">
                               <img
                                 loading="lazy"
                                 src="https://assets.codepen.io/97621/cobank-design-tokens-demo-01.png?format=avif&fit=cover"
-                                class="img-fluid object-fit-cover"
+                                class="img-fluid object-fit-cover w-100 h-100"
                                 alt=""
                               />
                             </div>
-                            <div class="copy m-1 p-4">
+                            <div class="copy m-1 p-7">
                               <h3 class="h6">Design Systems</h3>
                               <p class="mb-0">
                                 Google Ventures' Sprint methodology is a
@@ -1164,27 +1158,27 @@
                   aria-labelledby="front-end-work-tab"
                   tabindex="0"
                 >
-                  <div class="callouts py-5">
-                    <div class="container-fluid px-0 pt-md-3">
-                      <h3 class="h5 fw-medium d-block mb-4 mt-md-1 text-center">
+                  <div class="callouts py-12">
+                    <div class="container-fluid px-0 md:pt-5">
+                      <h3 class="h5 fw-medium d-block mb-7 md:mt-1 text-center">
                         Front-end Development
                       </h3>
-                      <div class="cards row g-5 pt-2">
+                      <div class="cards row g-12 pt-3">
                         <div
-                          class="col-12 col-sm-10 col-md-6 col-xl-4 mx-auto mx-md-0 position-relative"
+                          class="col-12 sm:col-10 md:col-6 xl:col-4 mx-auto md:mx-0 position-relative"
                         >
                           <div
-                            class="card bg-body rounded rounded-3 d-flex flex-column overflow-hidden"
+                            class="card bg-body rounded-7 d-flex flex-column overflow-hidden"
                           >
-                            <div class="media d-flex ratio ratio-16x9">
+                            <div class="media d-flex ratio-16x9">
                               <img
                                 loading="lazy"
                                 src="https://assets.codepen.io/97621/img-16x9-DPI-process-XL.jpg?format=avif&fit=cover"
-                                class="img-fluid object-fit-cover"
+                                class="img-fluid object-fit-cover w-100 h-100"
                                 alt=""
                               />
                             </div>
-                            <div class="copy m-1 p-4">
+                            <div class="copy m-1 p-7">
                               <h3 class="h6">Front-end Development</h3>
                               <p class="mb-0">
                                 Google Ventures' Sprint methodology is a
@@ -1203,20 +1197,20 @@
                           </div>
                         </div>
                         <div
-                          class="col-12 col-sm-10 col-md-6 col-xl-4 mx-auto mx-md-0 position-relative"
+                          class="col-12 sm:col-10 md:col-6 xl:col-4 mx-auto md:mx-0 position-relative"
                         >
                           <div
-                            class="card bg-body rounded rounded-3 d-flex flex-column overflow-hidden"
+                            class="card bg-body rounded-7 d-flex flex-column overflow-hidden"
                           >
-                            <div class="media d-flex ratio ratio-16x9">
+                            <div class="media d-flex ratio-16x9">
                               <img
                                 loading="lazy"
                                 src="https://assets.codepen.io/97621/cobank-design-tokens-demo-01.png"
-                                class="img-fluid object-fit-cover"
+                                class="img-fluid object-fit-cover w-100 h-100"
                                 alt=""
                               />
                             </div>
-                            <div class="copy m-1 p-4">
+                            <div class="copy m-1 p-7">
                               <h3 class="h6">Product Design</h3>
                               <p class="mb-0">
                                 Google Ventures' Sprint methodology is a
@@ -1235,20 +1229,20 @@
                           </div>
                         </div>
                         <div
-                          class="col-12 col-sm-10 col-md-6 mx-md-auto col-xl-4 mx-auto mx-md-0 position-relative"
+                          class="col-12 sm:col-10 md:col-6 md:mx-auto xl:col-4 mx-auto md:mx-0 position-relative"
                         >
                           <div
-                            class="card bg-body rounded rounded-3 d-flex flex-column overflow-hidden"
+                            class="card bg-body rounded-7 d-flex flex-column overflow-hidden"
                           >
-                            <div class="media d-flex ratio ratio-16x9">
+                            <div class="media d-flex ratio-16x9">
                               <img
                                 loading="lazy"
                                 src="https://assets.codepen.io/97621/cobank-design-tokens-demo-01.png?format=avif&fit=cover"
-                                class="img-fluid object-fit-cover"
+                                class="img-fluid object-fit-cover w-100 h-100"
                                 alt=""
                               />
                             </div>
-                            <div class="copy m-1 p-4">
+                            <div class="copy m-1 p-7">
                               <h3 class="h6">Design Systems</h3>
                               <p class="mb-0">
                                 Google Ventures' Sprint methodology is a
@@ -1278,25 +1272,25 @@
                   aria-labelledby="design-system-work-tab"
                   tabindex="0"
                 >
-                  <div class="callouts py-5">
-                    <div class="container-fluid px-0 pt-md-3">
-                      <h3 class="h5 fw-medium d-block mb-4 mt-md-1 text-center">
+                  <div class="callouts py-12">
+                    <div class="container-fluid px-0 md:pt-5">
+                      <h3 class="h5 fw-medium d-block mb-7 md:mt-1 text-center">
                         System Design & Development
                       </h3>
-                      <div class="cards row g-5 pt-2">
-                        <div class="col-12 col-md-6 col-xl-4 position-relative">
+                      <div class="cards row g-12 pt-3">
+                        <div class="col-12 md:col-6 xl:col-4 position-relative">
                           <div
-                            class="card bg-body rounded rounded-3 d-flex flex-column overflow-hidden"
+                            class="card bg-body rounded-7 d-flex flex-column overflow-hidden"
                           >
-                            <div class="media d-flex ratio ratio-16x9">
+                            <div class="media d-flex ratio-16x9">
                               <img
                                 loading="lazy"
                                 src="https://assets.codepen.io/97621/cobank-design-tokens-demo-01.png"
-                                class="img-fluid object-fit-cover"
+                                class="img-fluid object-fit-cover w-100 h-100"
                                 alt=""
                               />
                             </div>
-                            <div class="copy m-1 p-4">
+                            <div class="copy m-1 p-7">
                               <h3 class="h6">Product Design</h3>
                               <p class="mb-0">
                                 Google Ventures' Sprint methodology is a
@@ -1314,19 +1308,19 @@
                             </div>
                           </div>
                         </div>
-                        <div class="col-12 col-md-6 col-xl-4 position-relative">
+                        <div class="col-12 md:col-6 xl:col-4 position-relative">
                           <div
-                            class="card bg-body rounded rounded-3 d-flex flex-column overflow-hidden"
+                            class="card bg-body rounded-7 d-flex flex-column overflow-hidden"
                           >
-                            <div class="media d-flex ratio ratio-16x9">
+                            <div class="media d-flex ratio-16x9">
                               <img
                                 loading="lazy"
                                 src="https://assets.codepen.io/97621/cobank-design-tokens-demo-01.png?format=avif&fit=cover"
-                                class="img-fluid object-fit-cover"
+                                class="img-fluid object-fit-cover w-100 h-100"
                                 alt=""
                               />
                             </div>
-                            <div class="copy m-1 p-4">
+                            <div class="copy m-1 p-7">
                               <h3 class="h6">Design Systems</h3>
                               <p class="mb-0">
                                 Google Ventures' Sprint methodology is a
@@ -1345,20 +1339,20 @@
                           </div>
                         </div>
                         <div
-                          class="col-12 col-sm-10 col-md-6 mx-md-auto col-xl-4 mx-auto mx-md-0 position-relative"
+                          class="col-12 sm:col-10 md:col-6 md:mx-auto xl:col-4 mx-auto md:mx-0 position-relative"
                         >
                           <div
-                            class="card bg-body rounded rounded-3 d-flex flex-column overflow-hidden"
+                            class="card bg-body rounded-7 d-flex flex-column overflow-hidden"
                           >
-                            <div class="media d-flex ratio ratio-16x9">
+                            <div class="media d-flex ratio-16x9">
                               <img
                                 loading="lazy"
                                 src="https://assets.codepen.io/97621/img-16x9-DPI-process-XL.jpg?format=avif&fit=cover"
-                                class="img-fluid object-fit-cover"
+                                class="img-fluid object-fit-cover w-100 h-100"
                                 alt=""
                               />
                             </div>
-                            <div class="copy m-1 p-4">
+                            <div class="copy m-1 p-7">
                               <h3 class="h6">Front-end Development</h3>
                               <p class="mb-0">
                                 Google Ventures' Sprint methodology is a
@@ -1384,54 +1378,30 @@
             </div>
           </section>
           <!-- Testimonials -->
-          <section class="testimonials pt-4 pb-0 overflow-hidden">
-            <div class="headline py-3">
-              <div class="container-fluid p-4 px-sm-5 p-md-5">
+          <section class="testimonials pt-7 pb-0 overflow-hidden">
+            <div class="headline py-5">
+              <div class="container-fluid p-7 sm:px-12 md:p-12">
                 <h2 class="text-uppercase h5 fw-semibold mb-0">
                   Word on the street
                 </h2>
-                <hr class="w-50 mb-5" />
-                <p class="fs-4 mb-0">
+                <hr class="w-50 mb-12" />
+                <p class="fs-lg mb-0">
                   I have had the privilege of working with a diverse group of
                   professionals across various industries.
-                  <br class="d-none d-lg-block" />Together, we have successfully
+                  <br class="d-none lg:d-block" />Together, we have successfully
                   delivered projects that meet and exceed client expectations.
                 </p>
               </div>
             </div>
-            <div class="container-fluid px-0 pt-4">
+            <div class="container-fluid px-0 pt-7">
               <!-- Carousel -->
               <div
                 id="testimonialsCaptions"
-                class="carousel slide carousel-fade"
+                class="carousel carousel-overlay carousel-fade"
               >
-                <div class="carousel-indicators gap-3 d-none d-md-flex">
-                  <button
-                    type="button"
-                    data-bs-target="#testimonialsCaptions"
-                    data-bs-slide-to="0"
-                    class="rounded rounded-sm p-1 active"
-                    aria-current="true"
-                    aria-label="Slide 1"
-                  ></button>
-                  <button
-                    type="button"
-                    class="rounded rounded-sm p-1"
-                    data-bs-target="#testimonialsCaptions"
-                    data-bs-slide-to="1"
-                    aria-label="Slide 2"
-                  ></button>
-                  <button
-                    type="button"
-                    class="rounded rounded-sm p-1"
-                    data-bs-target="#testimonialsCaptions"
-                    data-bs-slide-to="2"
-                    aria-label="Slide 3"
-                  ></button>
-                </div>
                 <div class="carousel-inner overflow-visible">
                   <div class="carousel-item shadow shadow-lg active">
-                    <div class="ratio ratio-16x9">
+                    <div class="ratio-16x9">
                       <a href="https://www.linkedin.com/in/ethayerdesign/">
                         <img
                           loading="lazy"
@@ -1443,17 +1413,17 @@
                       </a>
                     </div>
                     <div
-                      class="carousel-caption d-none d-sm-fle flex-column justify-content-end position-static mb-5"
+                      class="d-none d-sm-fle flex-column justify-content-end position-static mb-12"
                     >
                       <h5>First slide label</h5>
-                      <p class="mw-100">
+                      <p class="max-w-100">
                         Some representative placeholder content for the first
                         slide.
                       </p>
                     </div>
                   </div>
                   <div class="carousel-item shadow shadow-lg">
-                    <div class="ratio ratio-16x9">
+                    <div class="ratio-16x9">
                       <a href="#0">
                         <img
                           loading="lazy"
@@ -1465,17 +1435,17 @@
                       </a>
                     </div>
                     <div
-                      class="carousel-caption d-none d-md-fle flex-column justify-content-end position-static mb-5"
+                      class="d-none d-md-fle flex-column justify-content-end position-static mb-12"
                     >
                       <h5>Second slide label</h5>
-                      <p class="mw-100">
+                      <p class="max-w-100">
                         Some representative placeholder content for the second
                         slide.
                       </p>
                     </div>
                   </div>
                   <div class="carousel-item shadow shadow-lg">
-                    <div class="ratio ratio-16x9">
+                    <div class="ratio-16x9">
                       <a href="#0">
                         <img
                           loading="lazy"
@@ -1487,55 +1457,81 @@
                       </a>
                     </div>
                     <div
-                      class="carousel-caption d-none d-md-fle flex-column justify-content-end position-static mb-5"
+                      class="d-none d-md-fle flex-column justify-content-end position-static mb-12"
                     >
                       <h5>Third slide label</h5>
-                      <p class="mw-100">
+                      <p class="max-w-100">
                         Some representative placeholder content for the third
                         slide.
                       </p>
                     </div>
                   </div>
                 </div>
-                <button
-                  class="d-none d-xs-block carousel-control-prev"
-                  type="button"
-                  data-bs-target="#testimonialsCaptions"
-                  data-bs-slide="prev"
-                >
-                  <span
-                    class="carousel-control-prev-icon"
-                    aria-hidden="true"
-                  ></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button
-                  class="d-none d-xs-block carousel-control-next"
-                  type="button"
-                  data-bs-target="#testimonialsCaptions"
-                  data-bs-slide="next"
-                >
-                  <span
-                    class="carousel-control-next-icon"
-                    aria-hidden="true"
-                  ></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
+                <div class="carousel-overlay-controls">
+                  <button
+                    class="btn-icon d-none"
+                    type="button"
+                    data-bs-target="#testimonialsCaptions"
+                    data-bs-slide="prev"
+                  >
+                    <span
+                      class="carousel-icon-prev"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <div class="carousel-indicators flex-grow-1 gap-5 d-none md:d-flex">
+                    <button
+                      type="button"
+                      data-bs-target="#testimonialsCaptions"
+                      data-bs-slide-to="0"
+                      class="rounded-3 p-1 active"
+                      aria-current="true"
+                      aria-label="Slide 1"
+                    ></button>
+                    <button
+                      type="button"
+                      class="rounded-3 p-1"
+                      data-bs-target="#testimonialsCaptions"
+                      data-bs-slide-to="1"
+                      aria-label="Slide 2"
+                    ></button>
+                    <button
+                      type="button"
+                      class="rounded-3 p-1"
+                      data-bs-target="#testimonialsCaptions"
+                      data-bs-slide-to="2"
+                      aria-label="Slide 3"
+                    ></button>
+                  </div>
+                  <button
+                    class="btn-icon d-none"
+                    type="button"
+                    data-bs-target="#testimonialsCaptions"
+                    data-bs-slide="next"
+                  >
+                    <span
+                      class="carousel-icon-next"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
               </div>
             </div>
           </section>
           <!-- Trivia -->
           <section
             id="trivia"
-            class="d-flex bg-body-secondary flex-column py-5"
+            class="d-flex bg-3 flex-column py-12"
           >
-            <div class="headline py-3">
-              <div class="container-fluid p-4 px-sm-5 p-md-5">
+            <div class="headline py-5">
+              <div class="container-fluid p-7 sm:px-12 md:p-12">
                 <h2 class="text-uppercase h5 fw-semibold mb-0">
                   Let's Play a Game
                 </h2>
-                <hr class="w-50 mb-5" />
-                <!-- <p class="fs-4 mb-0">
+                <hr class="w-50 mb-12" />
+                <!-- <p class="fs-lg mb-0">
                   In my free time, I enjoy exploring new hobbies and interests.
                   Whether it's hiking in nature, experimenting with new recipes
                   in the kitchen, or diving into a good book, I always find ways
@@ -1543,7 +1539,7 @@
                   relaxation but also inspire creativity and fresh perspectives
                   in my professional work.
                 </p> -->
-                <p class="fs-4 mb-0">
+                <p class="fs-lg mb-0">
                   Below are three statements about my journey in tech and design
                   - two are absolutely true, and one is
                   <u
@@ -1552,21 +1548,21 @@
                     data-bs-title="Do I need this?"
                     >an exaggeration.</u
                   >
-                  <br class="d-none d-xl-block" />Can you spot the fib? This
+                  <br class="d-none xl:d-block" />Can you spot the fib? This
                   little game offers a glimpse into my background while
                   hopefully providing some entertainment.
                 </p>
               </div>
             </div>
             <div class="callouts">
-              <div class="container-fluid p-4 px-sm-5 pt-sm-2 pb-sm-5">
-                <div class="cards row g-5">
-                  <div class="col-12 col-md-6 col-xl-4 position-relative">
+              <div class="container-fluid p-7 sm:px-12 sm:pt-3 sm:pb-12">
+                <div class="cards row g-12">
+                  <div class="col-12 md:col-6 xl:col-4 position-relative">
                     <div
-                      class="card bg-body rounded rounded-3 d-flex flex-column p-4"
+                      class="card bg-body rounded-7 d-flex flex-column p-7"
                     >
                       <div class="copy m-1">
-                        <i class="d-block mb-4">
+                        <i class="d-block mb-7">
                           <svg
                             class="opacity-75"
                             width="1.75em"
@@ -1576,7 +1572,7 @@
                           </svg>
                         </i>
                         <h3 class="h6">Design Sprints</h3>
-                        <p class="mb-4">
+                        <p class="mb-7">
                           Google Ventures' Sprint methodology is a five-day
                           process for answering critical business questions
                           through design, prototyping, and testing ideas with
@@ -1590,12 +1586,12 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-12 col-md-6 col-xl-4 position-relative">
+                  <div class="col-12 md:col-6 xl:col-4 position-relative">
                     <div
-                      class="card bg-body rounded rounded-3 d-flex flex-column p-4"
+                      class="card bg-body rounded-7 d-flex flex-column p-7"
                     >
                       <div class="copy m-1">
-                        <i class="d-block mb-4">
+                        <i class="d-block mb-7">
                           <svg
                             class="opacity-75"
                             width="1.75em"
@@ -1605,7 +1601,7 @@
                           </svg>
                         </i>
                         <h3 class="h6">Design Sprints</h3>
-                        <p class="mb-4">
+                        <p class="mb-7">
                           Google Ventures' Sprint methodology is a five-day
                           process for answering critical business questions
                           through design, prototyping, and testing ideas with
@@ -1619,12 +1615,12 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-12 col-xl-4 position-relative">
+                  <div class="col-12 xl:col-4 position-relative">
                     <div
-                      class="card bg-body rounded rounded-3 d-flex flex-column p-4"
+                      class="card bg-body rounded-7 d-flex flex-column p-7"
                     >
                       <div class="copy m-1">
-                        <i class="d-block mb-4">
+                        <i class="d-block mb-7">
                           <svg
                             class="opacity-75"
                             width="1.75em"
@@ -1634,7 +1630,7 @@
                           </svg>
                         </i>
                         <h3 class="h6">Design Sprints</h3>
-                        <p class="mb-4">
+                        <p class="mb-7">
                           Google Ventures' Sprint methodology is a five-day
                           process for answering critical business questions
                           through design, prototyping, and testing ideas with
@@ -1655,20 +1651,20 @@
           <!-- Contact -->
           <section
             id="contact"
-            class="bg-dark-subtle d-flex flex-column py-5"
+            class="bg-4 d-flex flex-column py-12"
           >
-            <div class="container-fluid p-4 p-lg-5">
-              <div class="py-3 pt-lg-4 pb-lg-5">
-                <h2 class="h2 fw-medium my-4 text-center">Connect with Me</h2>
-                <div class="actions d-flex flex-column gap-5 my-1">
+            <div class="container-fluid p-7 lg:p-12">
+              <div class="py-5 lg:pt-7 lg:pb-12">
+                <h2 class="h2 fw-medium my-7 text-center">Connect with Me</h2>
+                <div class="actions d-flex flex-column gap-12 my-1">
                   <div
-                    class="d-flex flex-wrap align-items-center justify-content-center gap-4"
+                    class="d-flex flex-wrap align-items-center justify-content-center gap-7"
                   >
                     <a
                       href="mailto:ethayer.design@gmail.com?subject=Hi%20Eric.%20Let's%20talk%20about...%20&amp;body=Contact%20information%20(company%2C%20name%2C%20role%2C%20phone%20number%2C%20etc)%3A%0A%0AWhat%20can%20I%20help%20you%20with?%20(project%20type%2C%20concept %2C%20outline%2C%20etc)%3A%0A%0ATimeline%20(start%20date%2C%20end%20date)%3A%0A%0AProject%20budget%20(greater%20than%20%2450%2C000%20range%20%7C%20%2430%2C000%E2%80%93%2420%2C000%20range%20%7C%20%2420%2C000%E2%80%93%2410%2C000%20range%20%7C%20less%20than%20%245%2C000)%3A%0A%0A%0A(answering%20these%20items%20will%20help%20me%20better%20understand%20your%20goals)"
-                      class="btn btn-lg btn-primary flex-sm-grow-0 text-decoration-none"
+                      class="btn-lg btn-solid theme-primary sm:flex-grow-0 text-decoration-none"
                     >
-                      <span class="fs-5">Send Message</span>
+                      <span class="fs-md">Send Message</span>
                     </a>
                   </div>
                 </div>
@@ -1681,21 +1677,21 @@
         class="app-footer bg-dark"
         role="contentinfo"
       >
-        <div class="container-fluid pt-3 pb-2 px-3 px-lg-4">
+        <div class="container-fluid pt-5 pb-3 px-5 lg:px-7">
           <div
-            class="d-flex flex-column flex-sm-row align-items-sm-center justify-content-sm-between gap-3 py-2"
+            class="d-flex flex-column sm:flex-row sm:align-items-center sm:justify-content-between gap-5 py-3"
           >
             <nav
-              class="nav d-flex justify-content-center justify-content-sm-start"
+              class="nav d-flex justify-content-center sm:justify-content-start"
               style="min-width: 12rem"
             >
               <ul
-                class="d-flex flex-wrap justify-content-center align-items-sm-center justify-content-sm-start column-gap-4 row-gap-2 list-unstyled m-0 p-0 flex-grow-1"
+                class="d-flex flex-wrap justify-content-center sm:align-items-center sm:justify-content-start column-gap-7 row-gap-3 list-unstyled m-0 p-0 flex-grow-1"
               >
-                <li class="me-2">
+                <li class="me-3">
                   <a
                     href="https://www.linkedin.com/in/ethayerdesign/"
-                    class="fs-3 text-white-50 d-flex align-items-center"
+                    class="fs-xl fg-white fg-50 d-flex align-items-center"
                     title="LinkedIn Profile"
                   >
                     <svg
@@ -1713,10 +1709,10 @@
                     <span class="visually-hidden">Linkedin</span>
                   </a>
                 </li>
-                <li class="me-2">
+                <li class="me-3">
                   <a
                     href="https://github.com/ericthayer/"
-                    class="fs-3 text-white-50 d-flex align-items-center"
+                    class="fs-xl fg-white fg-50 d-flex align-items-center"
                     title="GitHub Profile"
                   >
                     <svg
@@ -1735,10 +1731,10 @@
                     <span class="visually-hidden">GitHub</span>
                   </a>
                 </li>
-                <li class="me-2">
+                <li class="me-3">
                   <a
                     href="https://codepen.io/ericthayer/"
-                    class="fs-3 text-white-50 d-flex align-items-center"
+                    class="fs-xl fg-white fg-50 d-flex align-items-center"
                     title="CodePen Profile"
                   >
                     <svg
@@ -1762,7 +1758,7 @@
                 <li>
                   <a
                     href="https://dribbble.com/ethayer/"
-                    class="fs-3 text-white-50 d-flex align-items-center"
+                    class="fs-xl fg-white fg-50 d-flex align-items-center"
                     title="Dribbble Profile"
                   >
                     <svg
@@ -1803,16 +1799,16 @@
                 </li>
               </ul>
             </nav>
-            <p class="fs-7 my-0 mx-auto text-center text-light flex-grow-1">
+            <p class="fs-xs my-0 mx-auto text-center fg-white flex-grow-1">
               &copy; 2010-2025
-              <span class="d-none d-md-inline-block">•</span>&nbsp;Eric Thayer
+              <span class="d-none md:d-inline-block">•</span>&nbsp;Eric Thayer
             </p>
             <div class="d-flex justify-content-center">
               <a
                 class="d-flex mx-auto"
                 href="lighthouse-audit.html"
                 title="lighthouse audit"
-                data-bs-toggle="modal"
+                data-bs-toggle="dialog"
                 data-bs-target="#lighthouseModal"
               >
                 <img
@@ -1829,39 +1825,31 @@
         </div>
       </footer>
     </div>
-    <!-- Offcanvas Nav -->
-    <div
-      class="offcanvas offcanvas-end"
-      tabindex="-1"
+    <!-- Drawer Nav -->
+    <dialog
+      class="drawer drawer-end"
       id="offcanvasNavbar"
       aria-labelledby="offcanvasNavbarLabel"
     >
-      <div class="offcanvas-header">
+      <div class="drawer-header">
         <button
           type="button"
-          class="btn-close d-flex align-items-center justify-content-center p-0 fs-2 bg-transparent"
-          data-bs-dismiss="offcanvas"
+          class="btn-close d-flex align-items-center justify-content-center p-0 fs-2xl"
+          data-bs-dismiss="drawer"
           aria-label="Close"
-        >
-          <svg
-            width="1em"
-            height="1em"
-          >
-            <use href="#close-mark"></use>
-          </svg>
-        </button>
+        ></button>
       </div>
-      <div class="offcanvas-body">
-        <ul class="navbar-nav justify-content-end flex-grow-1 px-3 fs-3 gap-4">
+      <div class="drawer-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 px-5 fs-xl gap-7">
           <li class="nav-item">
             <a
               href="#about"
-              class="nav-link link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
+              class="nav-link underline-offset-1 hover:underline-offset-1"
               aria-current="page"
             >
               <span
                 class="d-block"
-                data-bs-dismiss="offcanvas"
+                data-bs-dismiss="drawer"
                 >About</span
               ></a
             >
@@ -1869,11 +1857,11 @@
           <li class="nav-item">
             <a
               href="#experience"
-              class="nav-link link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
+              class="nav-link underline-offset-1 hover:underline-offset-1"
             >
               <span
                 class="d-block"
-                data-bs-dismiss="offcanvas"
+                data-bs-dismiss="drawer"
                 >Experience</span
               ></a
             >
@@ -1881,12 +1869,12 @@
           <li class="nav-item">
             <a
               href="#0"
-              class="nav-link link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
-              data-bs-toggle="modal"
+              class="nav-link underline-offset-1 hover:underline-offset-1"
+              data-bs-toggle="dialog"
               data-bs-target="#resumeModal"
               ><span
                 class="d-block"
-                data-bs-dismiss="offcanvas"
+                data-bs-dismiss="drawer"
                 >Resume</span
               ></a
             >
@@ -1894,28 +1882,27 @@
           <li class="nav-item">
             <a
               href="mailto:ethayer.design@gmail.com?subject=Hi%20Eric.%20Let's%20talk%20about...%20&amp;body=Contact%20information%20(company%2C%20name%2C%20role%2C%20phone%20number%2C%20etc)%3A%0A%0AWhat%20can%20I%20help%20you%20with?%20(project%20type%2C%20concept %2C%20outline%2C%20etc)%3A%0A%0ATimeline%20(start%20date%2C%20end%20date)%3A%0A%0AProject%20budget%20(greater%20than%20%2450%2C000%20range%20%7C%20%2430%2C000%E2%80%93%2420%2C000%20range%20%7C%20%2420%2C000%E2%80%93%2410%2C000%20range%20%7C%20less%20than%20%245%2C000)%3A%0A%0A%0A(answering%20these%20items%20will%20help%20me%20better%20understand%20your%20goals)"
-              class="nav-link link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
-              data-bs-dismiss="offcanvas"
+              class="nav-link underline-offset-1 hover:underline-offset-1"
+              data-bs-dismiss="drawer"
               ><span
                 class="d-block"
-                data-bs-dismiss="offcanvas"
+                data-bs-dismiss="drawer"
                 >Contact</span
               ></a
             >
           </li>
         </ul>
       </div>
-    </div>
+    </dialog>
     <!-- Project Details -->
-    <div
-      class="offcanvas offcanvas-end w-100"
-      tabindex="-1"
+    <dialog
+      class="drawer drawer-end w-100"
       id="offcanvasRight"
       aria-labelledby="offcanvasRightLabel"
     >
-      <div class="offcanvas-header bg-body-secondary">
+      <div class="drawer-header bg-3">
         <h5
-          class="offcanvas-title"
+          class="drawer-title"
           id="offcanvasRightLabel"
         >
           Project title
@@ -1923,979 +1910,946 @@
 
         <button
           type="button"
-          class="btn-close d-flex align-items-center justify-content-center p-0 fs-2 bg-transparent"
-          data-bs-dismiss="offcanvas"
+          class="btn-close d-flex align-items-center justify-content-center p-0 fs-2xl"
+          data-bs-dismiss="drawer"
           aria-label="Close"
-        >
-          <svg
-            width="1em"
-            height="1em"
-          >
-            <use href="#close-mark"></use>
-          </svg>
-        </button>
+        ></button>
       </div>
-      <div class="offcanvas-body">
+      <div class="drawer-body">
         <div class="">Project details here</div>
         <time class="date pt-1 fw-medium">Nov 10, 2024</time>
-        <hr class="mt-2 mb-0 w-50" />
+        <hr class="mt-3 mb-0 w-50" />
       </div>
-    </div>
+    </dialog>
     <!-- Lighthouse Audit -->
-    <div
-      class="modal fade"
+    <dialog
+      class="dialog dialog-xl dialog-scrollable lg-down:dialog-fullscreen border-0 shadow-lg"
       id="lighthouseModal"
-      tabindex="-1"
       aria-labelledby="lighthouseModalLabel"
-      aria-hidden="true"
     >
+      <!-- <div class="dialog-header border border-0">
+        <h2
+          class="dialog-title fs-md"
+          id="lighthouseModalLabel"
+        >
+          Lighthouse Audit
+        </h2>
+        <button
+          type="button"
+          class="btn-close d-flex align-items-center justify-content-center p-0 fs-2xl"
+          data-bs-dismiss="dialog"
+          aria-label="Close"
+        ></button>
+      </div> -->
       <div
-        class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-fullscreen-lg-down modal-xl"
+        class="dialog-header gap-7 align-items-start sm:align-items-center sm:px-7 bg-3 border-0"
       >
-        <div class="modal-content border-0 shadow-lg">
-          <!-- <div class="modal-header border border-0">
-            <h2
-              class="modal-title fs-5"
-              id="lighthouseModalLabel"
-            >
-              Lighthouse Audit
-            </h2>
-            <button
-              type="button"
-              class="btn-close d-flex align-items-center justify-content-center p-0 fs-2 bg-transparent"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            >
-              <svg
-                width="1em"
-                height="1em"
-              >
-                <use href="#close-mark"></use>
-              </svg>
-            </button>
-          </div> -->
-          <div
-            class="modal-header gap-4 align-items-start align-items-sm-center px-sm-4 bg-body-secondary border-0"
+        <div
+          class="d-flex flex-column sm:flex-row row-gap-1 sm:column-gap-5 sm:align-items-center sm:justify-content-between flex-grow-1 sm:pe-3"
+        >
+          <h2
+            class="dialog-title fs-md mb-0 flex-grow-1 d-flex flex-wrap align-items-center gap-5"
+            id="lighthouseModalLabel"
           >
-            <div
-              class="d-flex flex-column flex-sm-row row-gap-1 column-gap-sm-3 align-items-sm-center justify-content-sm-between flex-grow-1 pe-sm-2"
-            >
-              <h2
-                class="modal-title fs-5 mb-0 flex-grow-1 d-flex flex-wrap align-items-center gap-3"
-                id="lighthouseModalLabel"
-              >
-                <span>Lighthouse Audit</span>
-              </h2>
-            </div>
-            <button
-              type="button"
-              class="btn-close d-flex align-items-center justify-content-center p-0 fs-2 bg-transparent"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            >
-              <svg
-                width="1em"
-                height="1em"
-              >
-                <use href="#close-mark"></use>
-              </svg>
-            </button>
-          </div>
-          <div class="modal-body d-flex flex-column pt-0">
-            <div class="ratio ratio-1x1 h-100">
-              <iframe
-                loading="lazy"
-                src="./lighthouse/index.html"
-                class="embed-responsive-item object-fit-cover w-100 h-100"
-                allowfullscreen
-              ></iframe>
-            </div>
-          </div>
-          <div class="modal-footer border border-0">
-            <button
-              type="button"
-              class="btn btn-secondary d-none"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
-          </div>
+            <span>Lighthouse Audit</span>
+          </h2>
+        </div>
+        <button
+          type="button"
+          class="btn-close d-flex align-items-center justify-content-center p-0 fs-2xl"
+          data-bs-dismiss="dialog"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="dialog-body d-flex flex-column pt-0">
+        <div class="ratio-1x1 h-100">
+          <iframe
+            loading="lazy"
+            src="./lighthouse/index.html"
+            class="embed-responsive-item object-fit-cover w-100 h-100"
+            allowfullscreen
+          ></iframe>
         </div>
       </div>
-    </div>
+      <div class="dialog-footer border border-0">
+        <button
+          type="button"
+          class="btn-solid theme-secondary d-none"
+          data-bs-dismiss="dialog"
+        >
+          Close
+        </button>
+      </div>
+    </dialog>
     <!-- Resume Modal -->
-    <div
-      class="modal fade"
+    <dialog
+      class="dialog dialog-xl dialog-scrollable lg-down:dialog-fullscreen border-0 shadow-lg"
       id="resumeModal"
-      tabindex="-1"
       aria-labelledby="resumeModalLabel"
-      aria-hidden="true"
       data-bs-backdrop="static"
     >
+      <!-- Modal Header -->
       <div
-        class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-fullscreen-lg-down modal-xl"
+        class="dialog-header border-0 d-flex gap-7 align-items-start sm:align-items-center sm:py-3 sm:px-7 bg-3"
       >
-        <div class="modal-content border-0 shadow-lg">
-          <!-- Modal Header -->
-          <div
-            class="modal-header border-0 d-flex gap-4 align-items-start align-items-sm-center py-sm-2 px-sm-4 bg-body-secondary"
+        <div
+          class="d-flex flex-column sm:flex-row row-gap-1 sm:column-gap-5 sm:align-items-center sm:justify-content-between flex-grow-1 sm:pe-3"
+        >
+          <h2
+            class="dialog-title fs-xl mb-0 flex-grow-1 d-flex flex-wrap align-items-center gap-5"
+            id="resumeModalLabel"
           >
-            <div
-              class="d-flex flex-column flex-sm-row row-gap-1 column-gap-sm-3 align-items-sm-center justify-content-sm-between flex-grow-1 pe-sm-2"
+            <span
+              >Eric Thayer<span class="visually-hidden"
+                >'s Resume</span
+              ></span
             >
-              <h2
-                class="modal-title fs-3 mb-0 flex-grow-1 d-flex flex-wrap align-items-center gap-3"
-                id="resumeModalLabel"
+          </h2>
+          <address
+            class="d-flex flex-wrap row-gap-1 column-gap-7 mb-0 align-items-center"
+          >
+            <a
+              href="https://www.linkedin.com/in/ethayerdesign/"
+              class="fs-lg fg-body"
+              ><svg
+                width="0.9em"
+                height="0.9em"
+                viewBox="0 0 48 48"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <span
-                  >Eric Thayer<span class="visually-hidden"
-                    >'s Resume</span
-                  ></span
-                >
-              </h2>
-              <address
-                class="d-flex flex-wrap row-gap-1 column-gap-4 mb-0 align-items-center"
-              >
-                <a
-                  href="https://www.linkedin.com/in/ethayerdesign/"
-                  class="fs-4 text-body"
-                  ><svg
-                    width="0.9em"
-                    height="0.9em"
-                    viewBox="0 0 48 48"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M40.6731 40.6992H33.7093V29.7913C33.7093 27.1907 33.6623 23.8419 30.0864 23.8419C26.4596 23.8419 25.9034 26.6776 25.9034 29.5994V40.6992H18.9396V18.2685H25.6254V21.3353H25.7194C27.0824 19.0088 29.6203 17.6144 32.315 17.7124C39.3728 17.7124 40.6771 22.3536 40.6771 28.397L40.6731 40.6953V40.6992ZM11.0828 15.2018C10.0131 15.1967 8.98857 14.7697 8.23177 14.0136C7.47498 13.2576 7.04702 12.2335 7.04084 11.1637C7.04084 8.9469 8.866 7.12174 11.0828 7.12174C13.2997 7.12174 15.1209 8.9469 15.1248 11.1637C15.1248 13.3805 13.2997 15.2018 11.0828 15.2018ZM14.5647 40.6992H7.59309V18.2685H14.5647V40.6992ZM44.1394 0.651425H4.0916C3.18353 0.646151 2.31006 0.999458 1.66102 1.63457C1.01197 2.26968 0.639798 3.13527 0.625366 4.04325V44.2594C0.639798 45.1674 1.01197 46.033 1.66102 46.6681C2.31006 47.3032 3.18353 47.6565 4.0916 47.6513H44.1433C45.0535 47.6586 45.9298 47.3065 46.5817 46.6714C47.2337 46.0363 47.6087 45.1695 47.6252 44.2594V4.03933C47.6087 3.12999 47.2335 2.26402 46.5813 1.63015C45.9291 0.996282 45.0527 0.645891 44.1433 0.655342L44.1394 0.651425Z"
-                      fill="currentColor"
-                    />
-                  </svg>
-                  <span class="visually-hidden">Linkedin</span></a
-                >
-                <a
-                  href="mailto:ethayer.design@gmail.com"
-                  class="fs-5 link link-offset-1 link-offset-1-hover link-underline"
-                  >ethayer.design@gmail</a
-                >
-                <a
-                  href="tel:6199525081"
-                  class="fs-6 link link-offset-1 link-offset-1-hover link-underline"
-                  >(619) 952-5081</a
-                >
-              </address>
-            </div>
-            <button
-              type="button"
-              class="btn-close d-flex align-items-center justify-content-center p-0 fs-3 bg-transparent"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            >
-              <svg
-                width="1em"
-                height="1em"
-                fill="currentColor"
-              >
-                <use href="#close-mark"></use>
+                <path
+                  d="M40.6731 40.6992H33.7093V29.7913C33.7093 27.1907 33.6623 23.8419 30.0864 23.8419C26.4596 23.8419 25.9034 26.6776 25.9034 29.5994V40.6992H18.9396V18.2685H25.6254V21.3353H25.7194C27.0824 19.0088 29.6203 17.6144 32.315 17.7124C39.3728 17.7124 40.6771 22.3536 40.6771 28.397L40.6731 40.6953V40.6992ZM11.0828 15.2018C10.0131 15.1967 8.98857 14.7697 8.23177 14.0136C7.47498 13.2576 7.04702 12.2335 7.04084 11.1637C7.04084 8.9469 8.866 7.12174 11.0828 7.12174C13.2997 7.12174 15.1209 8.9469 15.1248 11.1637C15.1248 13.3805 13.2997 15.2018 11.0828 15.2018ZM14.5647 40.6992H7.59309V18.2685H14.5647V40.6992ZM44.1394 0.651425H4.0916C3.18353 0.646151 2.31006 0.999458 1.66102 1.63457C1.01197 2.26968 0.639798 3.13527 0.625366 4.04325V44.2594C0.639798 45.1674 1.01197 46.033 1.66102 46.6681C2.31006 47.3032 3.18353 47.6565 4.0916 47.6513H44.1433C45.0535 47.6586 45.9298 47.3065 46.5817 46.6714C47.2337 46.0363 47.6087 45.1695 47.6252 44.2594V4.03933C47.6087 3.12999 47.2335 2.26402 46.5813 1.63015C45.9291 0.996282 45.0527 0.645891 44.1433 0.655342L44.1394 0.651425Z"
+                  fill="currentColor"
+                />
               </svg>
-            </button>
-          </div>
-          <!-- Modal Body -->
-          <div class="modal-body px-4 pt-0 pb-4">
-            <article class="resume position-relative">
-              <div class="row gy-4 flex-md-row-reverse">
-                <div
-                  class="d-none d-md-fle position-sticky top-0 end-0 justify-content-end z-1 px-0 mt-0"
-                  style="height: 0"
-                >
-                  <button
-                    class="btn btn-text mt-n3 p-2 bg-body"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseExample"
-                    aria-expanded="false"
-                    aria-controls="collapseExample"
-                  >
-                    <!-- <abbr title="table of contents">TOC</abbr> -->
-                    <svg
-                      width="1em"
-                      height=".79em"
-                      viewBox="0 0 46 36"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M0.192383 2.93973C0.192383 1.75625 1.15178 0.796875 2.33524 0.796875H43.0495C44.233 0.796875 45.1924 1.75625 45.1924 2.93973C45.1924 4.12321 44.233 5.08259 43.0495 5.08259H2.33524C1.15178 5.08259 0.192383 4.12321 0.192383 2.93973Z"
-                        fill="black"
-                      />
-                      <path
-                        d="M0.192383 17.9393C0.192383 16.7558 1.15178 15.7962 2.33524 15.7962L25.9067 15.7969C27.0902 15.7969 28.0495 16.7562 28.0495 17.9397C28.0495 19.1232 27.0902 20.0826 25.9067 20.0826L2.33524 20.0822C1.15178 20.0822 0.192383 19.1226 0.192383 17.9393Z"
-                        fill="black"
-                      />
-                      <path
-                        d="M2.33524 30.7964C1.15178 30.7964 0.192383 31.7558 0.192383 32.9393C0.192383 34.1226 1.15178 35.0819 2.33524 35.0819H38.7638C39.9473 35.0819 40.9067 34.1226 40.9067 32.9393C40.9067 31.7558 39.9473 30.7964 38.7638 30.7964H2.33524Z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                  </button>
-                </div>
-                <!-- Table of Contents -->
-                <aside
-                  class="collapse py-2 col-12 col-md-3 bg-body position-sticky top-0 h-100 mt-n4"
-                  id="collapseExample"
-                >
-                  <!-- <h2 class="h6 fs-5">Table of Contents</h2> -->
-                  <nav class="bg-body position-sticky top-0">
-                    <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
-                      <li>
-                        <a href="#professional-experience"
-                          >Professional Experience</a
-                        >
-                      </li>
-                      <li>
-                        <a href="#education">Education</a>
-                      </li>
-                      <li>
-                        <a href="#skills">Skills</a>
-                      </li>
-                      <li>
-                        <a href="#certifications">Certifications</a>
-                      </li>
-                    </ul>
-                  </nav>
-                </aside>
-                <!-- Content -->
-                <main
-                  class="col-12 col-md-9 d-flex flex-column gap-3 flex-grow-1"
-                >
-                  <!-- Summary -->
-                  <section class="pt-4">
-                    <!-- <h2 class="h4">UX Engineer & Systems Lead</h2> -->
-                    <p class="fs-5 fw-normal">
-                      Team-focused UI/UX creative with professional experience
-                      in providing design and development services to support an
-                      organization's daily operations. Skilled in, design
-                      discovery, design engineering, design system management,
-                      and front-end development. Ability to collaborate with
-                      cross-functional department team leaders, identify and
-                      resolve issues, prioritize projects, and provide a high
-                      level of service.
-                    </p>
-                  </section>
-                  <!-- Experience -->
-                  <section>
-                    <div
-                      class="title bg-body mt-n1 py-3 position-sticky top-0 z-2"
-                    >
-                      <div class="container-fluid px-0">
-                        <h2
-                          id="professional-experience"
-                          class="text-uppercase fs-4 fw-semibold mb-0 text-center text-md-start"
-                        >
-                          Professional Experience
-                        </h2>
-                        <hr class="d-none w-50 mb-3" />
-                      </div>
-                    </div>
-
-                    <!-- Tab nav: Positions -->
-                    <ul
-                      class="nav nav-pills p-0 justify-content-center justify-content-md-between bg-body mt-n1 py-3 position-sticky z-2"
-                      id="resumeTabs"
-                      role="tablist"
-                      style="top: 40px"
-                    >
-                      <li
-                        class="nav-item"
-                        role="presentation"
-                      >
-                        <button
-                          class="nav-link active"
-                          id="current-role-tab"
-                          data-bs-toggle="tab"
-                          data-bs-target="#current-role"
-                          type="button"
-                          role="tab"
-                          aria-controls="current-role"
-                          aria-selected="true"
-                        >
-                          Current
-                        </button>
-                      </li>
-                      <li
-                        class="nav-item"
-                        role="presentation"
-                      >
-                        <button
-                          class="nav-link"
-                          id="recent-positions-tab"
-                          data-bs-toggle="tab"
-                          data-bs-target="#recent-positions"
-                          type="button"
-                          role="tab"
-                          aria-controls="recent-positions"
-                          aria-selected="false"
-                        >
-                          Recent
-                        </button>
-                      </li>
-                      <li
-                        class="nav-item"
-                        role="presentation"
-                      >
-                        <button
-                          class="nav-link"
-                          id="2010-2017-tab"
-                          data-bs-toggle="tab"
-                          data-bs-target="#2010-2017"
-                          type="button"
-                          role="tab"
-                          aria-controls="2010-2017"
-                          aria-selected="false"
-                        >
-                          2010-2017
-                        </button>
-                      </li>
-                      <li
-                        class="nav-item"
-                        role="presentation"
-                      >
-                        <button
-                          class="nav-link"
-                          id="2005-2010-tab"
-                          data-bs-toggle="tab"
-                          data-bs-target="#2005-2010"
-                          type="button"
-                          role="tab"
-                          aria-controls="2005-2010"
-                          aria-selected="false"
-                        >
-                          2005-2010
-                        </button>
-                      </li>
-                    </ul>
-
-                    <!-- Positions -->
-                    <div class="tab-content z-0">
-                      <!-- Current Role -->
-                      <div
-                        class="tab-pane active"
-                        id="current-role"
-                        role="tabpanel"
-                        aria-labelledby="current-role-tab"
-                        tabindex="0"
-                      >
-                        <div
-                          class="accordion pt-3"
-                          id="accordionResumeCurrentRole"
-                        >
-                          <!-- Position: CoBank -->
-                          <div class="accordion-item">
-                            <h2 class="accordion-header">
-                              <button
-                                class="accordion-button d-flex align-items-center justify-content-between gap-3 bg-body"
-                                type="button"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#accordionResume-cobank"
-                                aria-expanded="true"
-                                aria-controls="accordionResume-cobank"
-                              >
-                                <div class="d-flex flex-column flex-grow-1">
-                                  <span class="link h6 fw-medium mb-0"
-                                    >Senior UX Engineer
-                                  </span>
-                                  <a
-                                    href="https://cobank.com"
-                                    class="fs-5"
-                                    >CoBank</a
-                                  >
-                                </div>
-                                <div
-                                  class="badge rounded-pill text-bg-secondary py-1 px-2 fs-6 fw-medium d-none"
-                                >
-                                  <span class="px-1">Current Role</span>
-                                </div>
-                              </button>
-                            </h2>
-                            <div
-                              id="accordionResume-cobank"
-                              class="accordion-collapse collapse show"
-                            >
-                              <div class="accordion-body">
-                                <article class="mb-3">
-                                  <div
-                                    class="d-flex flex-wrap justify-content-between row-gap-1 column-gap-2 text-center text-md-start fs-6 fst-italic mb-3"
-                                  >
-                                    <span> Nov 2024 - Present </span>
-                                    <span>Greenwood Village, CO (hybrid)</span>
-                                  </div>
-                                  <p
-                                    class="fs-6 bg-body-secondary p-3 rounded mw-100"
-                                  >
-                                    Senior creative engineer, lead design system
-                                    manager responsible for employing a
-                                    user-centered design approach across all the
-                                    organization's software products. Creating
-                                    and maintaining a comprehensive design
-                                    system, working on front-end component
-                                    libraries, and providing both UI (User
-                                    Interface) and UX (User Experience) design
-                                    and development. This requires the design of
-                                    the structure and layout of interactive
-                                    elements, ensuring a smooth user journey
-                                    within the digital product line.
-                                  </p>
-                                  <ul class="fs-6">
-                                    <li>
-                                      Created Figma based design system
-                                      consisting of brand style guide, UI kit,
-                                      design tokens, component library, and
-                                      documentation standards.
-                                    </li>
-                                    <li>
-                                      Initial development of Storybook/React
-                                      component library and development pipeline
-                                      with Figma integration.
-                                    </li>
-                                    <li>
-                                      Established a web design tokens
-                                      development workflow that syncs Figma
-                                      variables to JSON based tokens.
-                                    </li>
-                                    <li>
-                                      Developed responsive prototyping templates
-                                      and front-end components for companywide
-                                      used product application development.
-                                    </li>
-                                  </ul>
-                                </article>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- Recent Positions -->
-                      <div
-                        class="tab-pane"
-                        id="recent-positions"
-                        role="tabpanel"
-                        aria-labelledby="recent-positions-tab"
-                        tabindex="0"
-                      >
-                        <div
-                          class="accordion pt-3"
-                          id="accordionResumeRecentPositions"
-                        >
-                          <!-- Position: Threecolts -->
-                          <div class="accordion-item">
-                            <h2 class="accordion-header">
-                              <button
-                                class="accordion-button d-flex align-items-center justify-content-between gap-3 bg-body"
-                                type="button"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#accordionResumeRecentPositions-threecolts"
-                                aria-expanded="true"
-                                aria-controls="accordionResumeRecentPositions-threecolts"
-                              >
-                                <div class="d-flex flex-column flex-grow-1">
-                                  <span class="link h6 fw-medium mb-0"
-                                    >UI/UX Developer
-                                  </span>
-                                  <a
-                                    href="https://threecolts.com"
-                                    class="fs-5"
-                                    >Threecolts</a
-                                  >
-                                </div>
-                              </button>
-                            </h2>
-                            <div
-                              id="accordionResumeRecentPositions-threecolts"
-                              class="accordion-collapse collapse show"
-                            >
-                              <div class="accordion-body">
-                                <article class="mb-3">
-                                  <div
-                                    class="d-flex flex-wrap justify-content-between gap-2"
-                                  >
-                                    <p class="fst-italic fs-5">
-                                      Nov 2024 - Present (hybrid)
-                                    </p>
-                                  </div>
-                                  <p
-                                    class="fs-6 bg-body-secondary p-3 rounded mw-100"
-                                  >
-                                    Principle UI/UX creative for
-                                    <a href="https://onsitesupport.io/"
-                                      >Onsite Support</a
-                                    >, assisting Amazon Sellers through their
-                                    onboarding life-cycle to create branded web
-                                    design themes with Figma and implement with
-                                    the front-end platform. Provide initial
-                                    support needed so that their brand can
-                                    continue to build out its own knowledge base
-                                    by setting up the different needed features:
-                                    live support, FAQS, articles, video media,
-                                    etc.
-                                  </p>
-                                  <ul class="fs-6">
-                                    <li>
-                                      Created CSS framework to help automate
-                                      layout and styling changes throughout the
-                                      platform.
-                                    </li>
-                                    <li>
-                                      Refactored HTML framework used to create
-                                      support landing pages to modify content
-                                      easier.
-                                    </li>
-                                    <li>
-                                      Created mobile layout solutions and
-                                      converted over 200 non-responsive sites to
-                                      mobile friendly layouts.
-                                    </li>
-                                    <li>
-                                      Developed front-end grid system for
-                                      multiple landing pages and support
-                                      articles.
-                                    </li>
-                                  </ul>
-                                </article>
-                              </div>
-                            </div>
-                          </div>
-                          <!-- Position: Health Scholars -->
-                          <div class="accordion-item">
-                            <h2 class="accordion-header">
-                              <button
-                                class="accordion-button d-flex align-items-center justify-content-between gap-3 bg-body"
-                                type="button"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#accordionResumeRecentPositions-healthscholars"
-                                aria-expanded="true"
-                                aria-controls="accordionResumeRecentPositions-healthscholars"
-                              >
-                                <div class="d-flex flex-column flex-grow-1">
-                                  <span class="link h6 fw-medium mb-0"
-                                    >UX Engineer
-                                  </span>
-                                  <a
-                                    href="https://healthscholars.com"
-                                    class="fs-5"
-                                    >Health Scholars</a
-                                  >
-                                </div>
-                                <div
-                                  class="badge rounded-pill text-bg-secondary py-1 px-2 fs-6 fw-medium d-none"
-                                >
-                                  <span class="px-1">Current Role</span>
-                                </div>
-                              </button>
-                            </h2>
-                            <div
-                              id="accordionResumeRecentPositions-healthscholars"
-                              class="accordion-collapse collapse show"
-                            >
-                              <div class="accordion-body">
-                                <article class="mb-3">
-                                  <div
-                                    class="d-flex flex-wrap justify-content-between gap-2"
-                                  >
-                                    <p class="fst-italic fs-5">
-                                      Dec 2015 - July 2024 (hybrid)
-                                    </p>
-                                  </div>
-                                  <p
-                                    class="fs-6 bg-body-secondary p-3 rounded mw-100"
-                                  >
-                                    Senior creative engineer, lead design system
-                                    manager responsible for employing a
-                                    user-centered design approach across all the
-                                    organization's software products. Creating
-                                    and maintaining a comprehensive design
-                                    system, working on front-end component
-                                    libraries, and providing both UI (User
-                                    Interface) and UX (User Experience) design
-                                    and development. This requires the design of
-                                    the structure and layout of interactive
-                                    elements, ensuring a smooth user journey
-                                    within the digital product line.
-                                  </p>
-                                  <ul class="fs-6">
-                                    <li>
-                                      Created Figma based design system
-                                      consisting of brand style guide, UI kit,
-                                      design tokens, component library, and
-                                      documentation standards.
-                                    </li>
-                                    <li>
-                                      Initial development of Storybook/React
-                                      component library and development pipeline
-                                      with Figma integration.
-                                    </li>
-                                    <li>
-                                      Established a web design tokens
-                                      development workflow that syncs Figma
-                                      variables to JSON based tokens.
-                                    </li>
-                                    <li>
-                                      Developed responsive prototyping templates
-                                      and front-end components for companywide
-                                      used product application development.
-                                    </li>
-                                  </ul>
-                                </article>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- 2010-2017 Positions -->
-                      <div
-                        class="tab-pane"
-                        id="2010-2017"
-                        role="tabpanel"
-                        aria-labelledby="2010-2017-tab"
-                        tabindex="0"
-                      >
-                        <div
-                          class="accordion pt-3"
-                          id="accordionResume2010_2017Positions"
-                        >
-                          <!-- Position: Kya Media -->
-                          <div class="accordion-item">
-                            <h2 class="accordion-header">
-                              <button
-                                class="accordion-button d-flex align-items-center justify-content-between gap-3 bg-body"
-                                type="button"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#accordionResume2010_2017Positions-kyamedia"
-                                aria-expanded="true"
-                                aria-controls="accordionResume2010_2017Positions-kyamedia"
-                              >
-                                <div class="d-flex flex-column flex-grow-1">
-                                  <span class="link h6 fw-medium mb-0"
-                                    >UX Developer
-                                  </span>
-                                  <a
-                                    href="https://cobank.com"
-                                    class="fs-5"
-                                    >KyaMedia</a
-                                  >
-                                </div>
-                                <div
-                                  class="badge rounded-pill text-bg-secondary py-1 px-2 fs-6 fw-medium d-none"
-                                >
-                                  <span class="px-1">Current Role</span>
-                                </div>
-                              </button>
-                            </h2>
-                            <div
-                              id="accordionResume2010_2017Positions-kyamedia"
-                              class="accordion-collapse collapse show"
-                            >
-                              <div class="accordion-body">
-                                <article class="mb-3">
-                                  <div
-                                    class="d-flex flex-wrap justify-content-between gap-2"
-                                  >
-                                    <p class="fst-italic fs-5">
-                                      July 2015 - Nov 2017
-                                    </p>
-                                  </div>
-                                  <p
-                                    class="fs-6 bg-body-secondary p-3 rounded mw-100"
-                                  >
-                                    Senior creative engineer, lead design system
-                                    manager responsible for employing a
-                                    user-centered design approach across all the
-                                    organization's software products. Creating
-                                    and maintaining a comprehensive design
-                                    system, working on front-end component
-                                    libraries, and providing both UI (User
-                                    Interface) and UX (User Experience) design
-                                    and development. This requires the design of
-                                    the structure and layout of interactive
-                                    elements, ensuring a smooth user journey
-                                    within the digital product line.
-                                  </p>
-                                  <ul class="fs-6">
-                                    <li>
-                                      Created Figma based design system
-                                      consisting of brand style guide, UI kit,
-                                      design tokens, component library, and
-                                      documentation standards.
-                                    </li>
-                                    <li>
-                                      Initial development of Storybook/React
-                                      component library and development pipeline
-                                      with Figma integration.
-                                    </li>
-                                    <li>
-                                      Established a web design tokens
-                                      development workflow that syncs Figma
-                                      variables to JSON based tokens.
-                                    </li>
-                                    <li>
-                                      Developed responsive prototyping templates
-                                      and front-end components for companywide
-                                      used product application development.
-                                    </li>
-                                  </ul>
-                                </article>
-                              </div>
-                            </div>
-                          </div>
-                          <!-- Position: The Navigators -->
-                          <div class="accordion-item">
-                            <h2 class="accordion-header">
-                              <button
-                                class="accordion-button d-flex align-items-center justify-content-between gap-3 bg-body"
-                                type="button"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#accordionResume2010_2017Positions-navigators"
-                                aria-expanded="true"
-                                aria-controls="accordionResume2010_2017Positions-navigators"
-                              >
-                                <div class="d-flex flex-column flex-grow-1">
-                                  <span class="link h6 fw-medium mb-0"
-                                    >UI Designer / Front-end Developer
-                                  </span>
-                                  <a
-                                    href="https://threecolts.com"
-                                    class="fs-5"
-                                    >The Navigators</a
-                                  >
-                                </div>
-                              </button>
-                            </h2>
-                            <div
-                              id="accordionResume2010_2017Positions-navigators"
-                              class="accordion-collapse collapse show"
-                            >
-                              <div class="accordion-body">
-                                <article class="mb-3">
-                                  <div
-                                    class="d-flex flex-wrap justify-content-between gap-2"
-                                  >
-                                    <p class="fst-italic fs-5">
-                                      Jan 2012 - July 2015 (hybrid)
-                                    </p>
-                                  </div>
-                                  <p
-                                    class="fs-6 bg-body-secondary p-3 rounded mw-100"
-                                  >
-                                    Principle UI/UX creative for
-                                    <a href="https://onsitesupport.io/"
-                                      >Onsite Support</a
-                                    >, assisting Amazon Sellers through their
-                                    onboarding life-cycle to create branded web
-                                    design themes with Figma and implement with
-                                    the front-end platform. Provide initial
-                                    support needed so that their brand can
-                                    continue to build out its own knowledge base
-                                    by setting up the different needed features:
-                                    live support, FAQS, articles, video media,
-                                    etc.
-                                  </p>
-                                  <ul class="fs-6">
-                                    <li>
-                                      Created CSS framework to help automate
-                                      layout and styling changes throughout the
-                                      platform.
-                                    </li>
-                                    <li>
-                                      Refactored HTML framework used to create
-                                      support landing pages to modify content
-                                      easier.
-                                    </li>
-                                    <li>
-                                      Created mobile layout solutions and
-                                      converted over 200 non-responsive sites to
-                                      mobile friendly layouts.
-                                    </li>
-                                    <li>
-                                      Developed front-end grid system for
-                                      multiple landing pages and support
-                                      articles.
-                                    </li>
-                                  </ul>
-                                </article>
-                              </div>
-                            </div>
-                          </div>
-                          <!-- Position: DLIFLC -->
-                          <div class="accordion-item">
-                            <h2 class="accordion-header">
-                              <button
-                                class="accordion-button d-flex align-items-center justify-content-between gap-3 bg-body"
-                                type="button"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#accordionResume2010_2017Positions-dliflc"
-                                aria-expanded="true"
-                                aria-controls="accordionResume2010_2017Positions-dliflc"
-                              >
-                                <div class="d-flex flex-column flex-grow-1">
-                                  <span class="link h6 fw-medium mb-0"
-                                    >Multimedia Specialist
-                                  </span>
-                                  <a
-                                    href="https://dliflc.edu"
-                                    class="fs-6"
-                                    >Defense Language Institute Foreign Language
-                                    Center</a
-                                  >
-                                </div>
-                              </button>
-                            </h2>
-                            <div
-                              id="accordionResume2010_2017Positions-dliflc"
-                              class="accordion-collapse collapse show"
-                            >
-                              <div class="accordion-body">
-                                <article class="mb-3">
-                                  <div
-                                    class="d-flex flex-wrap justify-content-between gap-2"
-                                  >
-                                    <p class="fst-italic fs-5">
-                                      Jul 2010 - Sept 2013 (hybrid)
-                                    </p>
-                                  </div>
-                                  <p
-                                    class="fs-6 bg-body-secondary p-3 rounded mw-100"
-                                  >
-                                    Principle UI/UX creative for
-                                    <a href="https://onsitesupport.io/"
-                                      >Onsite Support</a
-                                    >, assisting Amazon Sellers through their
-                                    onboarding life-cycle to create branded web
-                                    design themes with Figma and implement with
-                                    the front-end platform. Provide initial
-                                    support needed so that their brand can
-                                    continue to build out its own knowledge base
-                                    by setting up the different needed features:
-                                    live support, FAQS, articles, video media,
-                                    etc.
-                                  </p>
-                                  <ul class="fs-6">
-                                    <li>
-                                      Created CSS framework to help automate
-                                      layout and styling changes throughout the
-                                      platform.
-                                    </li>
-                                    <li>
-                                      Refactored HTML framework used to create
-                                      support landing pages to modify content
-                                      easier.
-                                    </li>
-                                    <li>
-                                      Created mobile layout solutions and
-                                      converted over 200 non-responsive sites to
-                                      mobile friendly layouts.
-                                    </li>
-                                    <li>
-                                      Developed front-end grid system for
-                                      multiple landing pages and support
-                                      articles.
-                                    </li>
-                                  </ul>
-                                </article>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </section>
-                  <!-- Education -->
-                  <section>
-                    <h2
-                      id="education"
-                      class="pt-2"
-                    >
-                      Education
-                    </h2>
-                    <div>
-                      <h3>Bachelor of Science in Computer Science</h3>
-                      <p>University of Colorado, 2016 - 2020</p>
-                    </div>
-                  </section>
-                  <!-- Skills -->
-                  <section>
-                    <h2
-                      id="skills"
-                      class="pt-2"
-                    >
-                      Skills
-                    </h2>
-                    <ul>
-                      <li>UX/UI Design</li>
-                      <li>Front-end Development</li>
-                      <li>Design Systems</li>
-                      <li>Prototyping</li>
-                    </ul>
-                  </section>
-                  <!-- Certifications -->
-                  <section>
-                    <h2
-                      id="certifications"
-                      class="pt-2"
-                    >
-                      Certifications
-                    </h2>
-                    <ul>
-                      <li>Certified UX Designer</li>
-                      <li>Certified Front-end Developer</li>
-                    </ul>
-                  </section>
-                </main>
-              </div>
-            </article>
-          </div>
-          <!-- Modal Footer -->
-          <div
-            class="modal-footer bg-body-secondary border-0 gap-2 position-relative z-1 flex-row flex-sm-row-reverse align-items-stretch align-items-sm-end justify-content-sm-start"
-          >
-            <!-- Download Resume -->
-            <div class="dropup-right dropup d-flex flex-grow-1 flex-sm-grow-0">
-              <button
-                type="button"
-                class="btn btn-primary dropdown-toggl flex-grow-1"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Download
-              </button>
-              <ul class="dropdown-menu">
-                <li>
-                  <a
-                    class="dropdown-item"
-                    href="./Eric-Thayer-Resume-UX-Engineer.docx"
-                    >MS Word</a
-                  >
-                </li>
-                <li>
-                  <a
-                    class="dropdown-item"
-                    href="./Eric-Thayer-Resume-UX-Engineer.pdf#page=1"
-                    target="_blank"
-                    rel="noopener"
-                    >PDF</a
-                  >
-                </li>
-              </ul>
-            </div>
-            <button
-              type="button"
-              class="btn btn-secondary flex-grow-1 flex-sm-grow-0"
-              data-bs-dismiss="modal"
+              <span class="visually-hidden">Linkedin</span></a
             >
-              Close
-            </button>
+            <a
+              href="mailto:ethayer.design@gmail.com"
+              class="fs-md link underline-offset-1 hover:underline-offset-1 underline-100"
+              >ethayer.design@gmail</a
+            >
+            <a
+              href="tel:6199525081"
+              class="fs-sm link underline-offset-1 hover:underline-offset-1 underline-100"
+              >(619) 952-5081</a
+            >
+          </address>
+        </div>
+        <button
+          type="button"
+          class="btn-close d-flex align-items-center justify-content-center p-0 fs-xl"
+          data-bs-dismiss="dialog"
+          aria-label="Close"
+        ></button>
+      </div>
+      <!-- Modal Body -->
+      <div class="dialog-body px-7 pt-0 pb-7">
+        <article class="resume position-relative">
+          <div class="row gy-7 md:flex-row-reverse">
+            <div
+              class="d-none d-md-fle position-sticky top-0 end-0 justify-content-end z-1 px-0 mt-0"
+              style="height: 0"
+            >
+              <button
+                class="btn-text p-3 bg-body"
+                style="margin-block-start: -1rem"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseExample"
+                aria-expanded="false"
+                aria-controls="collapseExample"
+              >
+                <!-- <abbr title="table of contents">TOC</abbr> -->
+                <svg
+                  width="1em"
+                  height=".79em"
+                  viewBox="0 0 46 36"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0.192383 2.93973C0.192383 1.75625 1.15178 0.796875 2.33524 0.796875H43.0495C44.233 0.796875 45.1924 1.75625 45.1924 2.93973C45.1924 4.12321 44.233 5.08259 43.0495 5.08259H2.33524C1.15178 5.08259 0.192383 4.12321 0.192383 2.93973Z"
+                    fill="black"
+                  />
+                  <path
+                    d="M0.192383 17.9393C0.192383 16.7558 1.15178 15.7962 2.33524 15.7962L25.9067 15.7969C27.0902 15.7969 28.0495 16.7562 28.0495 17.9397C28.0495 19.1232 27.0902 20.0826 25.9067 20.0826L2.33524 20.0822C1.15178 20.0822 0.192383 19.1226 0.192383 17.9393Z"
+                    fill="black"
+                  />
+                  <path
+                    d="M2.33524 30.7964C1.15178 30.7964 0.192383 31.7558 0.192383 32.9393C0.192383 34.1226 1.15178 35.0819 2.33524 35.0819H38.7638C39.9473 35.0819 40.9067 34.1226 40.9067 32.9393C40.9067 31.7558 39.9473 30.7964 38.7638 30.7964H2.33524Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </button>
+            </div>
+            <!-- Table of Contents -->
+            <aside
+              class="collapse py-3 col-12 md:col-3 bg-body position-sticky top-0 h-100"
+              style="margin-block-start: -1.5rem"
+              id="collapseExample"
+            >
+              <!-- <h2 class="h6 fs-md">Table of Contents</h2> -->
+              <nav class="bg-body position-sticky top-0">
+                <ul class="list-unstyled d-flex flex-column gap-3 mb-0">
+                  <li>
+                    <a href="#professional-experience"
+                      >Professional Experience</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#education">Education</a>
+                  </li>
+                  <li>
+                    <a href="#skills">Skills</a>
+                  </li>
+                  <li>
+                    <a href="#certifications">Certifications</a>
+                  </li>
+                </ul>
+              </nav>
+            </aside>
+            <!-- Content -->
+            <main
+              class="col-12 md:col-9 d-flex flex-column gap-5 flex-grow-1"
+            >
+              <!-- Summary -->
+              <section class="pt-7">
+                <!-- <h2 class="h4">UX Engineer & Systems Lead</h2> -->
+                <p class="fs-md fw-normal">
+                  Team-focused UI/UX creative with professional experience
+                  in providing design and development services to support an
+                  organization's daily operations. Skilled in, design
+                  discovery, design engineering, design system management,
+                  and front-end development. Ability to collaborate with
+                  cross-functional department team leaders, identify and
+                  resolve issues, prioritize projects, and provide a high
+                  level of service.
+                </p>
+              </section>
+              <!-- Experience -->
+              <section>
+                <div
+                  class="title bg-body py-5 position-sticky top-0 z-2"
+                  style="margin-block-start: -0.25rem"
+                >
+                  <div class="container-fluid px-0">
+                    <h2
+                      id="professional-experience"
+                      class="text-uppercase fs-lg fw-semibold mb-0 text-center md:text-start"
+                    >
+                      Professional Experience
+                    </h2>
+                    <hr class="d-none w-50 mb-5" />
+                  </div>
+                </div>
+
+                <!-- Tab nav: Positions -->
+                <ul
+                  class="nav nav-pills p-0 justify-content-center md:justify-content-between bg-body py-5 position-sticky z-2"
+                  id="resumeTabs"
+                  role="tablist"
+                  style="top: 40px; margin-block-start: -0.25rem"
+                >
+                  <li
+                    class="nav-item"
+                    role="presentation"
+                  >
+                    <button
+                      class="nav-link active"
+                      id="current-role-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#current-role"
+                      type="button"
+                      role="tab"
+                      aria-controls="current-role"
+                      aria-selected="true"
+                    >
+                      Current
+                    </button>
+                  </li>
+                  <li
+                    class="nav-item"
+                    role="presentation"
+                  >
+                    <button
+                      class="nav-link"
+                      id="recent-positions-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#recent-positions"
+                      type="button"
+                      role="tab"
+                      aria-controls="recent-positions"
+                      aria-selected="false"
+                    >
+                      Recent
+                    </button>
+                  </li>
+                  <li
+                    class="nav-item"
+                    role="presentation"
+                  >
+                    <button
+                      class="nav-link"
+                      id="2010-2017-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#2010-2017"
+                      type="button"
+                      role="tab"
+                      aria-controls="2010-2017"
+                      aria-selected="false"
+                    >
+                      2010-2017
+                    </button>
+                  </li>
+                  <li
+                    class="nav-item"
+                    role="presentation"
+                  >
+                    <button
+                      class="nav-link"
+                      id="2005-2010-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#2005-2010"
+                      type="button"
+                      role="tab"
+                      aria-controls="2005-2010"
+                      aria-selected="false"
+                    >
+                      2005-2010
+                    </button>
+                  </li>
+                </ul>
+
+                <!-- Positions -->
+                <div class="tab-content z-0">
+                  <!-- Current Role -->
+                  <div
+                    class="tab-pane active"
+                    id="current-role"
+                    role="tabpanel"
+                    aria-labelledby="current-role-tab"
+                    tabindex="0"
+                  >
+                    <div
+                      class="accordion pt-5"
+                      id="accordionResumeCurrentRole"
+                    >
+                      <!-- Position: CoBank -->
+                      <details
+                        class="accordion-item"
+                        id="accordionResume-cobank"
+                        open
+                      >
+                        <summary class="accordion-header d-flex align-items-center justify-content-between gap-5 bg-body">
+                          <div class="d-flex flex-column flex-grow-1">
+                            <span class="link h6 fw-medium mb-0"
+                              >Senior UX Engineer
+                            </span>
+                            <a
+                              href="https://cobank.com"
+                              class="fs-md"
+                              >CoBank</a
+                            >
+                          </div>
+                          <div
+                            class="badge rounded-pill theme-secondary py-1 px-3 fs-sm fw-medium d-none"
+                          >
+                            <span class="px-1">Current Role</span>
+                          </div>
+                          <svg
+                            class="accordion-icon"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 16 16"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                          >
+                            <path d="m2 5 6 6 6-6" />
+                          </svg>
+                        </summary>
+                        <div class="accordion-body">
+                          <article class="mb-5">
+                            <div
+                              class="d-flex flex-wrap justify-content-between row-gap-1 column-gap-3 text-center md:text-start fs-sm fst-italic mb-5"
+                            >
+                              <span> Nov 2024 - Present </span>
+                              <span>Greenwood Village, CO (hybrid)</span>
+                            </div>
+                            <p
+                              class="fs-sm bg-3 p-5 rounded-5 max-w-100"
+                            >
+                              Senior creative engineer, lead design system
+                              manager responsible for employing a
+                              user-centered design approach across all the
+                              organization's software products. Creating
+                              and maintaining a comprehensive design
+                              system, working on front-end component
+                              libraries, and providing both UI (User
+                              Interface) and UX (User Experience) design
+                              and development. This requires the design of
+                              the structure and layout of interactive
+                              elements, ensuring a smooth user journey
+                              within the digital product line.
+                            </p>
+                            <ul class="fs-sm">
+                              <li>
+                                Created Figma based design system
+                                consisting of brand style guide, UI kit,
+                                design tokens, component library, and
+                                documentation standards.
+                              </li>
+                              <li>
+                                Initial development of Storybook/React
+                                component library and development pipeline
+                                with Figma integration.
+                              </li>
+                              <li>
+                                Established a web design tokens
+                                development workflow that syncs Figma
+                                variables to JSON based tokens.
+                              </li>
+                              <li>
+                                Developed responsive prototyping templates
+                                and front-end components for companywide
+                                used product application development.
+                              </li>
+                            </ul>
+                          </article>
+                        </div>
+                      </details>
+                    </div>
+                  </div>
+                  <!-- Recent Positions -->
+                  <div
+                    class="tab-pane"
+                    id="recent-positions"
+                    role="tabpanel"
+                    aria-labelledby="recent-positions-tab"
+                    tabindex="0"
+                  >
+                    <div
+                      class="accordion pt-5"
+                      id="accordionResumeRecentPositions"
+                    >
+                      <!-- Position: Threecolts -->
+                      <details
+                        class="accordion-item"
+                        id="accordionResumeRecentPositions-threecolts"
+                        open
+                      >
+                        <summary class="accordion-header d-flex align-items-center justify-content-between gap-5 bg-body">
+                          <div class="d-flex flex-column flex-grow-1">
+                            <span class="link h6 fw-medium mb-0"
+                              >UI/UX Developer
+                            </span>
+                            <a
+                              href="https://threecolts.com"
+                              class="fs-md"
+                              >Threecolts</a
+                            >
+                          </div>
+                          <svg
+                            class="accordion-icon"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 16 16"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                          >
+                            <path d="m2 5 6 6 6-6" />
+                          </svg>
+                        </summary>
+                        <div class="accordion-body">
+                          <article class="mb-5">
+                            <div
+                              class="d-flex flex-wrap justify-content-between gap-3"
+                            >
+                              <p class="fst-italic fs-md">
+                                Nov 2024 - Present (hybrid)
+                              </p>
+                            </div>
+                            <p
+                              class="fs-sm bg-3 p-5 rounded-5 max-w-100"
+                            >
+                              Principle UI/UX creative for
+                              <a href="https://onsitesupport.io/"
+                                >Onsite Support</a
+                              >, assisting Amazon Sellers through their
+                              onboarding life-cycle to create branded web
+                              design themes with Figma and implement with
+                              the front-end platform. Provide initial
+                              support needed so that their brand can
+                              continue to build out its own knowledge base
+                              by setting up the different needed features:
+                              live support, FAQS, articles, video media,
+                              etc.
+                            </p>
+                            <ul class="fs-sm">
+                              <li>
+                                Created CSS framework to help automate
+                                layout and styling changes throughout the
+                                platform.
+                              </li>
+                              <li>
+                                Refactored HTML framework used to create
+                                support landing pages to modify content
+                                easier.
+                              </li>
+                              <li>
+                                Created mobile layout solutions and
+                                converted over 200 non-responsive sites to
+                                mobile friendly layouts.
+                              </li>
+                              <li>
+                                Developed front-end grid system for
+                                multiple landing pages and support
+                                articles.
+                              </li>
+                            </ul>
+                          </article>
+                        </div>
+                      </details>
+                      <!-- Position: Health Scholars -->
+                      <details
+                        class="accordion-item"
+                        id="accordionResumeRecentPositions-healthscholars"
+                        open
+                      >
+                        <summary class="accordion-header d-flex align-items-center justify-content-between gap-5 bg-body">
+                          <div class="d-flex flex-column flex-grow-1">
+                            <span class="link h6 fw-medium mb-0"
+                              >UX Engineer
+                            </span>
+                            <a
+                              href="https://healthscholars.com"
+                              class="fs-md"
+                              >Health Scholars</a
+                            >
+                          </div>
+                          <div
+                            class="badge rounded-pill theme-secondary py-1 px-3 fs-sm fw-medium d-none"
+                          >
+                            <span class="px-1">Current Role</span>
+                          </div>
+                          <svg
+                            class="accordion-icon"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 16 16"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                          >
+                            <path d="m2 5 6 6 6-6" />
+                          </svg>
+                        </summary>
+                        <div class="accordion-body">
+                          <article class="mb-5">
+                            <div
+                              class="d-flex flex-wrap justify-content-between gap-3"
+                            >
+                              <p class="fst-italic fs-md">
+                                Dec 2015 - July 2024 (hybrid)
+                              </p>
+                            </div>
+                            <p
+                              class="fs-sm bg-3 p-5 rounded-5 max-w-100"
+                            >
+                              Senior creative engineer, lead design system
+                              manager responsible for employing a
+                              user-centered design approach across all the
+                              organization's software products. Creating
+                              and maintaining a comprehensive design
+                              system, working on front-end component
+                              libraries, and providing both UI (User
+                              Interface) and UX (User Experience) design
+                              and development. This requires the design of
+                              the structure and layout of interactive
+                              elements, ensuring a smooth user journey
+                              within the digital product line.
+                            </p>
+                            <ul class="fs-sm">
+                              <li>
+                                Created Figma based design system
+                                consisting of brand style guide, UI kit,
+                                design tokens, component library, and
+                                documentation standards.
+                              </li>
+                              <li>
+                                Initial development of Storybook/React
+                                component library and development pipeline
+                                with Figma integration.
+                              </li>
+                              <li>
+                                Established a web design tokens
+                                development workflow that syncs Figma
+                                variables to JSON based tokens.
+                              </li>
+                              <li>
+                                Developed responsive prototyping templates
+                                and front-end components for companywide
+                                used product application development.
+                              </li>
+                            </ul>
+                          </article>
+                        </div>
+                      </details>
+                    </div>
+                  </div>
+                  <!-- 2010-2017 Positions -->
+                  <div
+                    class="tab-pane"
+                    id="2010-2017"
+                    role="tabpanel"
+                    aria-labelledby="2010-2017-tab"
+                    tabindex="0"
+                  >
+                    <div
+                      class="accordion pt-5"
+                      id="accordionResume2010_2017Positions"
+                    >
+                      <!-- Position: Kya Media -->
+                      <details
+                        class="accordion-item"
+                        id="accordionResume2010_2017Positions-kyamedia"
+                        open
+                      >
+                        <summary class="accordion-header d-flex align-items-center justify-content-between gap-5 bg-body">
+                          <div class="d-flex flex-column flex-grow-1">
+                            <span class="link h6 fw-medium mb-0"
+                              >UX Developer
+                            </span>
+                            <a
+                              href="https://cobank.com"
+                              class="fs-md"
+                              >KyaMedia</a
+                            >
+                          </div>
+                          <div
+                            class="badge rounded-pill theme-secondary py-1 px-3 fs-sm fw-medium d-none"
+                          >
+                            <span class="px-1">Current Role</span>
+                          </div>
+                          <svg
+                            class="accordion-icon"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 16 16"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                          >
+                            <path d="m2 5 6 6 6-6" />
+                          </svg>
+                        </summary>
+                        <div class="accordion-body">
+                          <article class="mb-5">
+                            <div
+                              class="d-flex flex-wrap justify-content-between gap-3"
+                            >
+                              <p class="fst-italic fs-md">
+                                July 2015 - Nov 2017
+                              </p>
+                            </div>
+                            <p
+                              class="fs-sm bg-3 p-5 rounded-5 max-w-100"
+                            >
+                              Senior creative engineer, lead design system
+                              manager responsible for employing a
+                              user-centered design approach across all the
+                              organization's software products. Creating
+                              and maintaining a comprehensive design
+                              system, working on front-end component
+                              libraries, and providing both UI (User
+                              Interface) and UX (User Experience) design
+                              and development. This requires the design of
+                              the structure and layout of interactive
+                              elements, ensuring a smooth user journey
+                              within the digital product line.
+                            </p>
+                            <ul class="fs-sm">
+                              <li>
+                                Created Figma based design system
+                                consisting of brand style guide, UI kit,
+                                design tokens, component library, and
+                                documentation standards.
+                              </li>
+                              <li>
+                                Initial development of Storybook/React
+                                component library and development pipeline
+                                with Figma integration.
+                              </li>
+                              <li>
+                                Established a web design tokens
+                                development workflow that syncs Figma
+                                variables to JSON based tokens.
+                              </li>
+                              <li>
+                                Developed responsive prototyping templates
+                                and front-end components for companywide
+                                used product application development.
+                              </li>
+                            </ul>
+                          </article>
+                        </div>
+                      </details>
+                      <!-- Position: The Navigators -->
+                      <details
+                        class="accordion-item"
+                        id="accordionResume2010_2017Positions-navigators"
+                        open
+                      >
+                        <summary class="accordion-header d-flex align-items-center justify-content-between gap-5 bg-body">
+                          <div class="d-flex flex-column flex-grow-1">
+                            <span class="link h6 fw-medium mb-0"
+                              >UI Designer / Front-end Developer
+                            </span>
+                            <a
+                              href="https://threecolts.com"
+                              class="fs-md"
+                              >The Navigators</a
+                            >
+                          </div>
+                          <svg
+                            class="accordion-icon"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 16 16"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                          >
+                            <path d="m2 5 6 6 6-6" />
+                          </svg>
+                        </summary>
+                        <div class="accordion-body">
+                          <article class="mb-5">
+                            <div
+                              class="d-flex flex-wrap justify-content-between gap-3"
+                            >
+                              <p class="fst-italic fs-md">
+                                Jan 2012 - July 2015 (hybrid)
+                              </p>
+                            </div>
+                            <p
+                              class="fs-sm bg-3 p-5 rounded-5 max-w-100"
+                            >
+                              Principle UI/UX creative for
+                              <a href="https://onsitesupport.io/"
+                                >Onsite Support</a
+                              >, assisting Amazon Sellers through their
+                              onboarding life-cycle to create branded web
+                              design themes with Figma and implement with
+                              the front-end platform. Provide initial
+                              support needed so that their brand can
+                              continue to build out its own knowledge base
+                              by setting up the different needed features:
+                              live support, FAQS, articles, video media,
+                              etc.
+                            </p>
+                            <ul class="fs-sm">
+                              <li>
+                                Created CSS framework to help automate
+                                layout and styling changes throughout the
+                                platform.
+                              </li>
+                              <li>
+                                Refactored HTML framework used to create
+                                support landing pages to modify content
+                                easier.
+                              </li>
+                              <li>
+                                Created mobile layout solutions and
+                                converted over 200 non-responsive sites to
+                                mobile friendly layouts.
+                              </li>
+                              <li>
+                                Developed front-end grid system for
+                                multiple landing pages and support
+                                articles.
+                              </li>
+                            </ul>
+                          </article>
+                        </div>
+                      </details>
+                      <!-- Position: DLIFLC -->
+                      <details
+                        class="accordion-item"
+                        id="accordionResume2010_2017Positions-dliflc"
+                        open
+                      >
+                        <summary class="accordion-header d-flex align-items-center justify-content-between gap-5 bg-body">
+                          <div class="d-flex flex-column flex-grow-1">
+                            <span class="link h6 fw-medium mb-0"
+                              >Multimedia Specialist
+                            </span>
+                            <a
+                              href="https://dliflc.edu"
+                              class="fs-sm"
+                              >Defense Language Institute Foreign Language
+                              Center</a
+                            >
+                          </div>
+                          <svg
+                            class="accordion-icon"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 16 16"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                          >
+                            <path d="m2 5 6 6 6-6" />
+                          </svg>
+                        </summary>
+                        <div class="accordion-body">
+                          <article class="mb-5">
+                            <div
+                              class="d-flex flex-wrap justify-content-between gap-3"
+                            >
+                              <p class="fst-italic fs-md">
+                                Jul 2010 - Sept 2013 (hybrid)
+                              </p>
+                            </div>
+                            <p
+                              class="fs-sm bg-3 p-5 rounded-5 max-w-100"
+                            >
+                              Principle UI/UX creative for
+                              <a href="https://onsitesupport.io/"
+                                >Onsite Support</a
+                              >, assisting Amazon Sellers through their
+                              onboarding life-cycle to create branded web
+                              design themes with Figma and implement with
+                              the front-end platform. Provide initial
+                              support needed so that their brand can
+                              continue to build out its own knowledge base
+                              by setting up the different needed features:
+                              live support, FAQS, articles, video media,
+                              etc.
+                            </p>
+                            <ul class="fs-sm">
+                              <li>
+                                Created CSS framework to help automate
+                                layout and styling changes throughout the
+                                platform.
+                              </li>
+                              <li>
+                                Refactored HTML framework used to create
+                                support landing pages to modify content
+                                easier.
+                              </li>
+                              <li>
+                                Created mobile layout solutions and
+                                converted over 200 non-responsive sites to
+                                mobile friendly layouts.
+                              </li>
+                              <li>
+                                Developed front-end grid system for
+                                multiple landing pages and support
+                                articles.
+                              </li>
+                            </ul>
+                          </article>
+                        </div>
+                      </details>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <!-- Education -->
+              <section>
+                <h2
+                  id="education"
+                  class="pt-3"
+                >
+                  Education
+                </h2>
+                <div>
+                  <h3>Bachelor of Science in Computer Science</h3>
+                  <p>University of Colorado, 2016 - 2020</p>
+                </div>
+              </section>
+              <!-- Skills -->
+              <section>
+                <h2
+                  id="skills"
+                  class="pt-3"
+                >
+                  Skills
+                </h2>
+                <ul>
+                  <li>UX/UI Design</li>
+                  <li>Front-end Development</li>
+                  <li>Design Systems</li>
+                  <li>Prototyping</li>
+                </ul>
+              </section>
+              <!-- Certifications -->
+              <section>
+                <h2
+                  id="certifications"
+                  class="pt-3"
+                >
+                  Certifications
+                </h2>
+                <ul>
+                  <li>Certified UX Designer</li>
+                  <li>Certified Front-end Developer</li>
+                </ul>
+              </section>
+            </main>
+          </div>
+        </article>
+      </div>
+      <!-- Modal Footer -->
+      <div
+        class="dialog-footer bg-3 border-0 gap-3 position-relative z-1 flex-row sm:flex-row-reverse align-items-stretch sm:align-items-end sm:justify-content-start"
+      >
+        <!-- Download Resume -->
+        <div class="dropup-right d-flex flex-grow-1 sm:flex-grow-0">
+          <button
+            type="button"
+            class="btn-solid theme-primary flex-grow-1"
+            data-bs-toggle="menu"
+            data-bs-placement="top-start"
+            aria-expanded="false"
+          >
+            Download
+          </button>
+          <div class="menu">
+            <a
+              class="menu-item"
+              href="./Eric-Thayer-Resume-UX-Engineer.docx"
+              >MS Word</a
+            >
+            <a
+              class="menu-item"
+              href="./Eric-Thayer-Resume-UX-Engineer.pdf#page=1"
+              target="_blank"
+              rel="noopener"
+              >PDF</a
+            >
           </div>
         </div>
+        <button
+          type="button"
+          class="btn-solid theme-secondary flex-grow-1 sm:flex-grow-0"
+          data-bs-dismiss="dialog"
+        >
+          Close
+        </button>
       </div>
-    </div>
+    </dialog>
   </body>
   <script
     type="module"
