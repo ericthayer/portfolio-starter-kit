@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Yofolio Ledger</title>
+  <meta name="description" content="Project dashboard for the Yofolio portfolio starter kit: commits, releases, Lighthouse scores, stack and roadmap.">
+  <meta name="theme-color" content="#000000">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..600&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <script type="module" src="./dashboard/dashboard.js"></script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18 18 6M8 6h10v10"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 2v20M2 12h20M4.9 4.9l14.2 14.2M19.1 4.9 4.9 19.1"/></symbol>
+  <symbol id="i-branch" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><circle cx="14" cy="10" r="4"/><circle cx="14" cy="38" r="4"/><circle cx="34" cy="18" r="4"/><path d="M14 14v20M34 22c0 8-20 6-20 12"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round"><path d="M6 24 24 6h18v18L24 42z"/><circle cx="34" cy="14" r="3"/></symbol>
+  <symbol id="i-gauge" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><path d="M8 34a16 16 0 1 1 32 0"/><path d="m24 34 8-12"/><circle cx="24" cy="34" r="2"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 9h16M4 15h16"/></symbol>
+</svg>
+
+<div class="wrap">
+  <nav class="island" aria-label="Site">
+    <a class="logo" href="./index.html"><svg width="18" height="18" aria-hidden="true"><use href="#i-star"/></svg>Yofolio</a>
+    <a class="tab hide-sm" href="./index.html">Site</a>
+    <a class="tab hide-sm" href="./patterns.html">Patterns</a>
+    <a class="tab hide-sm" href="./lighthouse/">Lighthouse</a>
+    <a class="tab" href="./dashboard.html" aria-current="page">Dashboard</a>
+  </nav>
+
+  <section class="intro">
+    <div>
+      <span class="eyebrow">Project ledger</span>
+      <h1>Yofolio, <em>by the numbers.</em></h1>
+    </div>
+    <p>An open-source portfolio starter kit on <b>Bootstrap 6</b> and Vite. Last commit <b id="last-commit"></b>.</p>
+  </section>
+
+  <main class="ledger">
+    <!-- Phone: latest state -->
+    <section class="blk b-phone reveal" aria-label="Latest release">
+      <div class="phone">
+        <h2>Release<br>Overview <svg width="24" height="24" aria-hidden="true"><use href="#i-menu"/></svg></h2>
+        <p class="meta">Latest<br>tag on<br>main</p>
+        <p class="num" id="phone-tag" style="font-size:clamp(2.2rem,1.4rem + 5cqw,3.2rem)"></p>
+        <div class="mini">
+          <div><span class="sq" aria-hidden="true"><svg width="16" height="16"><use href="#i-layers"/></svg></span><b>BS 6 alpha.1</b><span>Bootstrap version</span><small><span>Sass token maps</span><svg width="11" height="11"><use href="#i-arrow"/></svg></small></div>
+          <div><span class="sq" aria-hidden="true"><svg width="16" height="16"><use href="#i-gauge"/></svg></span><b><span id="phone-js"></span> JS parts</b><span>imported per page</span><small><span>tree-shaken</span><svg width="11" height="11"><use href="#i-arrow"/></svg></small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Commits -->
+    <section class="blk b-tokens reveal" aria-label="Commits">
+      <p class="num" style="font-size:var(--num-m)"><span data-count="0" id="commits"></span></p>
+      <p class="lab">Commits on main<br>since <b id="since"></b><span class="caret">^</span></p>
+      <div class="steps" id="steps" role="img" aria-label="Cumulative commits by active month"></div>
+    </section>
+
+    <!-- PRs -->
+    <section class="blk b-sess reveal">
+      <svg class="ico" aria-hidden="true" viewBox="0 0 48 48"><use href="#i-branch"/></svg>
+      <p class="num"><span data-count="0" id="prs"></span></p>
+      <p class="lab">Pull requests merged into main</p>
+      <span class="dots" aria-hidden="true"><i style="--k:0"></i><i style="--k:1"></i><i style="--k:2"></i></span>
+    </section>
+
+    <!-- Releases -->
+    <section class="blk b-turns reveal">
+      <svg class="ico" aria-hidden="true" viewBox="0 0 48 48"><use href="#i-tag"/></svg>
+      <p class="num"><span data-count="0" id="releases"></span></p>
+      <p class="lab">Tagged releases, latest <span id="latest-tag"></span></p>
+      <span class="dots" aria-hidden="true"><i style="--k:0"></i><i style="--k:1"></i><i style="--k:2"></i></span>
+    </section>
+
+    <!-- Lighthouse -->
+    <section class="blk b-limit reveal" aria-label="Lighthouse scores">
+      <svg class="ico" aria-hidden="true" viewBox="0 0 48 48"><use href="#i-gauge"/></svg>
+      <p class="num"><span id="perf"></span><span class="over">/100</span></p>
+      <p class="lab">Lighthouse performance. Average <span id="lh-avg"></span> across five categories<span class="caret">^</span></p>
+      <div class="limit-bars" id="limits"></div>
+      <div class="cmd-row"><a class="cta" href="./lighthouse/">Full report · <span id="lh-date"></span><span class="knob"><svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></span></a></div>
+    </section>
+
+    <!-- Peak month -->
+    <section class="blk b-peak reveal" aria-label="Busiest months">
+      <p class="lab">Busiest months — <span id="peak-months"></span><br>Commits in a single month, active <span id="active-months"></span></p>
+      <p class="num"><span data-count="0" id="peak"></span></p>
+      <div class="sil" id="sil" role="img"></div>
+    </section>
+
+    <!-- Vitals -->
+    <section class="blk b-vitals reveal" aria-labelledby="vit-h">
+      <span class="eyebrow">Core Web Vitals</span>
+      <p class="lab" id="vit-h">Fast first paint, no blocking, near-zero shift.</p>
+      <div class="vitals" id="vitals"></div>
+    </section>
+
+    <!-- Roadmap -->
+    <section class="blk b-road reveal" aria-labelledby="road-h">
+      <div class="pend-top">
+        <div><span class="eyebrow" style="color:var(--yellow)">Roadmap</span><h2 id="road-h" style="margin-top:12px">From the README,<br>quarter by quarter</h2></div>
+        <p class="num"><span data-open-count></span><small>still open</small></p>
+      </div>
+      <div class="meter" data-progress></div>
+      <ul class="road" id="road"></ul>
+    </section>
+
+    <!-- Migration -->
+    <section class="blk b-migr reveal" aria-labelledby="migr-h">
+      <span class="eyebrow">Shipped <span id="migr-date"></span></span>
+      <p class="lab" id="migr-h" style="font-family:var(--serif);font-size:clamp(1.8rem,1.2rem + 2vw,3rem);line-height:1;letter-spacing:-.025em">Bootstrap 6 migration</p>
+      <p style="font-size:var(--step--1)"><span id="migr-detail"></span><br><span id="migr-js"></span></p>
+      <div class="cmd-row"><a class="cta" id="migr-link" target="_blank" rel="noopener">PR #20<span class="knob"><svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></span></a></div>
+    </section>
+
+    <!-- Stack -->
+    <section class="blk b-stack reveal" aria-labelledby="stack-h">
+      <h2 id="stack-h">Stack</h2>
+      <ul class="stack-list" id="stack"></ul>
+      <div class="cmd-row" id="cmds"></div>
+      <a class="cta" href="https://github.com/ericthayer/portfolio-starter-kit" target="_blank" rel="noopener">Repository<span class="knob"><svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+    </section>
+
+    <!-- Ticker -->
+    <section class="blk b-ticker" aria-label="Releases and pages">
+      <div class="ticker" id="ticker"></div>
+      <button type="button" class="tick-ctl" id="tick-ctl" aria-pressed="false" aria-label="Pause ticker">II</button>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span>Collected <span id="collected"></span> from git history, the README roadmap and the Lighthouse report.</span>
+    <span>Data lives in <code>src/dashboard/data.js</code></span>
+  </footer>
+</div>
+</body>
+</html>

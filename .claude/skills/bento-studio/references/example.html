@@ -1,0 +1,727 @@
+<!-- Reference implementation of bento-studio: a Claude-usage dashboard.
+     It runs on the original project helper (window.Dash in shared/core.js) and data files
+     (data/activity.js, data/content.js). For new work use assets/bento-core.js (window.Bento),
+     whose helpers have the same names: countUp, reveal, spotlight, magnetic, generator,
+     checklist (Dash.pending here), timer, svg, arc. Copy markup and patterns, not data. -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claude Studio</title>
+<meta name="description" content="Direction 03: a tactile product-style dashboard with tabs, toggles, a gauge and a skills carousel.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/base.css">
+<style>
+:root {
+  --bg: #f4f4f2;
+  --panel: #ebebe9;
+  --tile: #ffffff;
+  --ink: #131313;
+  --ink-2: #5b5b58;
+  --line: #d9d9d5;
+  --violet: #6a4dff;
+  --violet-ink: #5a3cf0;
+  --lime: #d6f84c;
+  --orange: #e87722;
+  --flame: #efd347;
+  --focus: var(--violet);
+  --toast-bg: var(--ink); --toast-fg: #fff;
+  --r-lg: clamp(20px, 1.8vw, 28px);
+  --r-md: 18px;
+  --gap: clamp(10px, 1.1vw, 16px);
+  --pad: clamp(18px, 1.8vw, 28px);
+  --step--1: clamp(.8rem, .77rem + .12vw, .88rem);
+  --step-0: clamp(.94rem, .9rem + .18vw, 1.04rem);
+  --step-1: clamp(1.08rem, 1rem + .35vw, 1.3rem);
+  --step-2: clamp(1.3rem, 1.1rem + .8vw, 1.8rem);
+  --step-3: clamp(1.8rem, 1.3rem + 2vw, 3rem);
+  --step-4: clamp(2.4rem, 1.4rem + 4vw, 4.6rem);
+}
+body { background: var(--bg); color: var(--ink); font-family: "Plus Jakarta Sans", system-ui, sans-serif; font-size: var(--step-0); line-height: 1.5; }
+.wrap { width: min(1440px, 100% - 2 * clamp(16px, 2vw, 32px)); margin-inline: auto; padding-block: clamp(14px, 1.6vw, 24px) 64px; }
+
+/* ---------- nav ---------- */
+.nav { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 16px; padding: 10px 10px 10px 22px; background: var(--panel); border-radius: 999px; position: sticky; top: calc(12px + env(safe-area-inset-top, 0px)); z-index: 20; box-shadow: 0 10px 30px -22px rgb(0 0 0 / .4); }
+.logo { display: flex; align-items: center; gap: 10px; font-size: 1.35rem; font-weight: 600; letter-spacing: -.03em; text-decoration: none; }
+.logo-mark { width: 32px; height: 32px; border-radius: 50%; background: var(--ink); color: #fff; display: grid; place-items: center; transition: rotate .6s var(--ease-spring); }
+.logo:hover .logo-mark { rotate: -25deg; }
+.tabs { position: relative; display: flex; justify-self: center; gap: 4px; }
+.tabs button { position: relative; z-index: 1; padding: 0 clamp(14px, 2vw, 34px); min-height: 48px; border-radius: 999px; font-weight: 500; color: var(--ink-2); transition: color .3s; }
+.tabs button[aria-selected="true"] { color: var(--ink); }
+.tab-pill { position: absolute; top: 0; left: 0; height: 48px; border-radius: 999px; background: var(--tile); box-shadow: 0 2px 10px -4px rgb(0 0 0 / .18); transition: translate .5s var(--ease-spring), width .5s var(--ease-spring); }
+.me { position: relative; }
+.me > button { display: flex; align-items: center; gap: 10px; padding: 4px 14px 4px 4px; border-radius: 999px; min-height: 48px; font-weight: 500; transition: background .2s; }
+.me > button:hover { background: rgb(255 255 255 / .6); }
+.avatar { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; font-size: .82rem; font-weight: 700; color: var(--ink); padding: 3px; background: conic-gradient(from 200deg, var(--lime), var(--flame), var(--orange), var(--violet), var(--lime)); transition: rotate .6s var(--ease-spring); }
+.me > button:hover .avatar { rotate: 20deg; }
+.av-in { width: 100%; height: 100%; border-radius: 50%; background: #fff; display: grid; place-items: center; }
+.me > button:hover .av-in { rotate: -20deg; }
+.me svg.chev { transition: rotate .3s var(--ease-out); }
+.me > button[aria-expanded="true"] svg.chev { rotate: 180deg; }
+.pop { position: absolute; right: 0; top: calc(100% + 10px); width: 280px; padding: 18px; border-radius: var(--r-md); background: var(--tile); box-shadow: 0 30px 60px -20px rgb(0 0 0 / .3); transform-origin: top right; scale: .92; opacity: 0; visibility: hidden; transition: scale .35s var(--ease-spring), opacity .2s, visibility .2s; }
+.pop.is-open { scale: 1; opacity: 1; visibility: visible; }
+.pop h3 { font-size: 1rem; }
+.pop p { font-size: var(--step--1); color: var(--ink-2); }
+.pop .dirs { display: grid; gap: 4px; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line); }
+.pop .dirs a { padding: 8px 10px; border-radius: 10px; text-decoration: none; font-size: .9rem; display: flex; justify-content: space-between; }
+.pop .dirs a:hover { background: var(--panel); }
+.pop .dirs a[aria-current] { background: var(--ink); color: #fff; }
+@media (max-width: 860px) {
+  .nav { grid-template-columns: 1fr auto; border-radius: 28px; padding: 8px 8px 8px 16px; }
+  .tabs { grid-column: 1 / -1; grid-row: 2; justify-self: stretch; overflow-x: auto; scrollbar-width: none; }
+  .tabs button { flex: 1; padding: 0 12px; }
+  .me .name { display: none; }
+}
+
+.hello { display: flex; justify-content: space-between; align-items: end; gap: 20px; flex-wrap: wrap; margin: clamp(22px, 3vw, 40px) 4px clamp(16px, 2vw, 24px); }
+.hello h1 { font-size: var(--step-4); font-weight: 600; letter-spacing: -.045em; line-height: .98; }
+.hello h1 span { color: var(--violet-ink); }
+.hello p { color: var(--ink-2); max-width: 44ch; }
+.hello p b { color: var(--ink); font-weight: 600; }
+
+/* ---------- grid ---------- */
+.grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--gap); grid-auto-flow: dense; }
+.card { position: relative; background: var(--panel); border-radius: var(--r-lg); padding: var(--pad); container-type: inline-size; overflow: hidden; transition: opacity .4s, filter .4s, scale .4s var(--ease-out); }
+.grid.is-filtered > :not(.is-match) { display: none; }
+.card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.card-head h2 { font-size: var(--step-1); font-weight: 600; letter-spacing: -.02em; line-height: 1.2; }
+.card-head p { color: var(--ink-2); font-size: var(--step--1); margin-top: 2px; }
+.rule { height: 1px; background: var(--line); margin: 14px 0; }
+
+.s-hero { grid-column: span 8; min-height: clamp(380px, 36vw, 520px); padding: 0; background: #0d0d11; color: #fff; }
+.s-proj { grid-column: span 4; }
+.s-stats { grid-column: 1 / -1; background: none; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--gap); overflow: visible; }
+.s-skills { grid-column: span 4; }
+.s-gauge { grid-column: span 4; }
+.s-gen { grid-column: span 4; }
+.s-trend { grid-column: span 7; }
+.s-timer { grid-column: span 5; }
+.s-pend { grid-column: span 7; }
+.s-ship { grid-column: span 5; background: var(--ink); color: #fff; }
+.s-mix { grid-column: span 12; }
+@media (max-width: 1180px) {
+  .s-hero, .s-trend, .s-pend { grid-column: span 12; }
+  .s-proj, .s-skills, .s-gauge, .s-gen, .s-timer, .s-ship { grid-column: span 6; }
+  .s-stats { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 720px) {
+  .grid > * { grid-column: 1 / -1; }
+  .s-stats { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ---------- toggle switch ---------- */
+.switch { position: relative; flex: none; width: 52px; height: 30px; border-radius: 999px; background: #c9c9c5; transition: background .3s; }
+.switch::after { content: ""; position: absolute; top: 3px; left: 3px; width: 24px; height: 24px; border-radius: 50%; background: #fff; box-shadow: 0 2px 6px rgb(0 0 0 / .2); transition: translate .4s var(--ease-spring), width .2s; }
+.switch:active::after { width: 30px; }
+.switch[aria-checked="true"] { background: var(--ink); }
+.switch[aria-checked="true"]::after { translate: 22px; }
+.switch[aria-checked="true"]:active::after { translate: 16px; }
+.switch-wrap { display: flex; align-items: center; gap: 10px; font-size: .78rem; color: var(--ink-2); }
+
+/* ---------- buttons ---------- */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 22px; border-radius: 14px; font-weight: 500; font-size: .92rem; letter-spacing: .02em; text-transform: uppercase; text-decoration: none; transition: background .25s, scale .2s var(--ease-spring), box-shadow .3s; }
+.btn:active { scale: .97; }
+.btn-ink { background: var(--ink); color: #fff; }
+.btn-ink:hover { background: #2a2a2a; box-shadow: 0 10px 24px -12px rgb(0 0 0 / .6); }
+.btn-block { width: 100%; }
+.btn-ghost { background: var(--tile); color: var(--ink); }
+.btn-ghost:hover { background: #fafafa; }
+.btn svg { transition: rotate .5s var(--ease-spring), translate .3s var(--ease-out); }
+.btn:hover svg.plus { rotate: 90deg; }
+.btn:hover svg.arrow { translate: 3px 0; }
+.icon-btn { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; transition: background .2s, scale .2s var(--ease-spring); }
+.icon-btn:hover { background: rgb(0 0 0 / .06); }
+.icon-btn:active { scale: .9; }
+
+/* ---------- hero ---------- */
+#fiber { position: absolute; inset: 0; width: 100%; height: 100%; }
+.strand { fill: none; stroke: url(#strandGrad); stroke-width: 1.4; opacity: .85; }
+.pulse { fill: none; stroke-width: 3.5; stroke-linecap: round; stroke-dasharray: 110 890; stroke-dashoffset: calc(var(--o, 0) * -1); filter: url(#glow); animation: pulse var(--d, 5s) linear infinite; animation-delay: var(--dl, 0s); }
+.s-hero:hover .pulse { animation-duration: calc(var(--d, 5s) * .5); }
+.layer { transition: transform .8s var(--ease-out); }
+.hero-shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgb(13 13 17 / 0) 35%, rgb(13 13 17 / .85)); pointer-events: none; }
+.hero-tag { position: absolute; top: var(--pad); left: var(--pad); display: flex; gap: 8px; }
+.tag { padding: 7px 16px; border-radius: 999px; background: rgb(255 255 255 / .16); backdrop-filter: blur(10px); font-size: .86rem; font-weight: 500; }
+.tag.live::before { content: ""; display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--lime); margin-right: 8px; vertical-align: 1px; }
+.hero-body { position: absolute; left: var(--pad); right: var(--pad); bottom: var(--pad); display: flex; justify-content: space-between; align-items: end; gap: 18px; flex-wrap: wrap; }
+.hero-body h2 { font-size: var(--step-3); font-weight: 600; letter-spacing: -.04em; line-height: 1; text-shadow: 0 2px 18px rgb(0 0 0 / .4); }
+.hero-meta { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 12px; font-size: .9rem; color: rgb(255 255 255 / .88); }
+.hero-meta span { display: inline-flex; align-items: center; gap: 7px; }
+.hero-body .btn-ghost { flex: none; }
+
+/* ---------- projects ---------- */
+.plist { display: grid; gap: 6px; }
+.prow { display: grid; grid-template-columns: 44px 1fr auto; gap: 12px; align-items: center; padding: 10px 14px 10px 10px; border-radius: 16px; text-align: left; width: 100%; transition: background .35s var(--ease-out), color .35s, box-shadow .35s; min-height: 64px; }
+.prow:hover { background: rgb(255 255 255 / .55); }
+.prow .pi { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: var(--tile); color: var(--ink); transition: background .35s; }
+.prow b { font-weight: 500; display: block; line-height: 1.25; }
+.prow small { color: var(--ink-2); font-size: .8rem; }
+.prow svg.chev { transition: translate .3s var(--ease-out); }
+.prow:hover svg.chev { translate: 3px 0; }
+.prow[aria-pressed="true"] { background: var(--ink); color: #fff; box-shadow: 0 14px 26px -14px rgb(0 0 0 / .55); }
+.prow[aria-pressed="true"] small { color: rgb(255 255 255 / .75); }
+.prow[aria-pressed="true"] .pi { background: rgb(255 255 255 / .12); color: #fff; }
+.s-proj { display: flex; flex-direction: column; }
+.s-proj .btn { margin-top: auto; }
+.pdetail { font-size: .8rem; color: var(--ink-2); padding: 0 14px 10px 66px; margin-top: -2px; }
+
+/* ---------- stats strip ---------- */
+.stat { background: var(--tile); border-radius: var(--r-lg); padding: clamp(16px, 1.6vw, 24px); display: flex; flex-direction: column; gap: 6px; min-height: 150px; transition: translate .4s var(--ease-spring), box-shadow .4s; }
+.stat:hover { translate: 0 -4px; box-shadow: 0 18px 30px -20px rgb(0 0 0 / .35); }
+.stat .k { font-size: .8rem; color: var(--ink-2); display: flex; justify-content: space-between; align-items: center; }
+.stat .k i { width: 30px; height: 30px; border-radius: 50%; background: var(--panel); display: grid; place-items: center; font-style: normal; transition: background .3s, color .3s, rotate .5s var(--ease-spring); }
+.stat:hover .k i { background: var(--violet); color: #fff; rotate: -15deg; }
+.stat b { margin-top: auto; font-size: var(--step-3); font-weight: 600; letter-spacing: -.045em; line-height: 1; font-variant-numeric: tabular-nums; }
+.stat small { font-size: .8rem; color: var(--ink-2); }
+.stat.hi { background: var(--violet); color: #fff; }
+.stat.hi .k, .stat.hi small { color: #fff; }
+.stat.hi .k i { background: rgb(255 255 255 / .18); }
+
+/* ---------- skills carousel ---------- */
+.s-skills { display: flex; flex-direction: column; }
+.car { position: relative; flex: 1; display: grid; grid-template-columns: 44px 1fr 44px; align-items: center; min-height: 240px; }
+.car-stage { position: relative; height: 100%; display: grid; place-items: center; overflow: hidden; }
+.glyph { width: clamp(130px, 46cqw, 190px); aspect-ratio: 1; border-radius: 36px; display: grid; place-items: center; font-size: clamp(2.6rem, 14cqw, 4rem); font-weight: 700; letter-spacing: -.06em; color: var(--ink); background: var(--c, var(--lime)); box-shadow: inset 0 -10px 0 rgb(0 0 0 / .08), 0 30px 40px -24px rgb(0 0 0 / .45); rotate: -6deg; transition: rotate .5s var(--ease-spring); }
+.s-skills:hover .glyph { rotate: 4deg; }
+.glyph.enter { animation: slide-in .55s var(--ease-out) both; }
+.glyph.enter.rev { animation-name: slide-in-rev; }
+.car-copy h3 { font-size: var(--step-2); font-weight: 600; letter-spacing: -.035em; line-height: 1.1; font-family: "JetBrains Mono", monospace; font-size: clamp(1rem, .9rem + .6vw, 1.3rem); }
+.car-copy p { font-size: .88rem; color: var(--ink-2); margin-top: 6px; min-height: 2.8em; }
+.car-foot { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-top: 12px; font-size: .82rem; }
+.car-dots { display: flex; gap: 6px; }
+.car-dots button { width: 24px; height: 24px; display: grid; place-items: center; }
+.car-dots button::after { content: ""; width: 8px; height: 8px; border-radius: 99px; background: #bdbdb8; transition: width .35s var(--ease-spring), background .3s; }
+.car-dots button[aria-current="true"]::after { width: 20px; background: var(--ink); }
+.link-btn { display: inline-flex; align-items: center; gap: 6px; font-weight: 500; min-height: 44px; }
+.link-btn:hover { color: var(--violet-ink); }
+
+/* ---------- gauge ---------- */
+.s-gauge { display: flex; flex-direction: column; }
+.gauge { position: relative; flex: 1; display: grid; place-items: center; min-height: 230px; }
+.gauge svg { width: min(100%, 300px); overflow: visible; }
+.g-track { fill: none; stroke: var(--tile); stroke-width: 46; stroke-linecap: round; }
+.g-fill { fill: none; stroke: var(--ink); stroke-width: 46; stroke-linecap: round; stroke-dasharray: 100; stroke-dashoffset: 100; transition: stroke-dashoffset 1.3s var(--ease-out), stroke .4s; }
+.g-fill.warn { stroke: var(--violet); }
+.g-center { position: absolute; left: 50%; top: 56%; translate: -50% -50%; text-align: center; }
+.g-center b { font-size: var(--step-4); font-weight: 600; letter-spacing: -.05em; line-height: 1; font-variant-numeric: tabular-nums; }
+.g-center small { display: block; font-size: .8rem; color: var(--ink-2); }
+.g-scale { display: flex; justify-content: space-between; width: min(100%, 300px); margin: -8px auto 14px; font-size: .9rem; font-weight: 500; padding-inline: 8%; }
+
+/* ---------- generator ---------- */
+.s-gen { display: flex; flex-direction: column; gap: 12px; }
+.tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.tile { position: relative; background: var(--tile); border-radius: 16px; padding: 12px 10px; min-height: 150px; display: flex; flex-direction: column; text-align: center; transition: translate .35s var(--ease-spring), box-shadow .3s, outline-color .2s; outline: 2px solid transparent; outline-offset: -2px; }
+.tile:hover { translate: 0 -3px; box-shadow: 0 14px 24px -18px rgb(0 0 0 / .4); }
+.tile[aria-pressed="true"] { outline-color: var(--violet); }
+.tile .art { flex: 1; display: grid; place-items: center; min-height: 54px; }
+.tile .art svg { transition: rotate .6s var(--ease-spring); }
+.tile:hover .art svg, .is-spinning .tile .art svg { rotate: 20deg; }
+.tile b { font-size: .9rem; font-weight: 600; line-height: 1.2; }
+.tile [data-reel-value] { font-size: .78rem; color: var(--ink-2); line-height: 1.3; display: block; min-height: 3.9em; }
+.tile .lk { position: absolute; top: 8px; right: 8px; color: var(--violet-ink); opacity: 0; transition: opacity .2s; }
+.tile[aria-pressed="true"] .lk { opacity: 1; }
+.gen-rest { font-size: .85rem; color: var(--ink-2); line-height: 1.5; }
+.gen-rest .chipv { display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px; border-radius: 999px; background: var(--tile); color: var(--ink); font-weight: 500; margin: 2px 0; transition: background .2s, color .2s; min-height: 32px; }
+.gen-rest .chipv[aria-pressed="true"] { background: var(--violet); color: #fff; }
+.gen-row { display: grid; grid-template-columns: 1fr auto auto; gap: 8px; margin-top: auto; }
+.gen-row .icon-btn { width: 52px; height: 52px; border-radius: 14px; background: var(--tile); }
+.s-gen.is-spinning .btn-ink svg { animation: spin .8s var(--ease-out); }
+
+/* ---------- trend ---------- */
+.chart { position: relative; margin-top: 10px; }
+.chart svg { width: 100%; height: clamp(180px, 20vw, 240px); overflow: visible; }
+.area { fill: url(#areaGrad); }
+.line { fill: none; stroke: var(--ink); stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; stroke-dasharray: 2000; stroke-dashoffset: 2000; transition: stroke-dashoffset 1.6s var(--ease-out); }
+.s-trend.is-drawn .line { stroke-dashoffset: 0; }
+.gridl { stroke: var(--line); stroke-dasharray: 3 5; }
+.cursor { opacity: 0; transition: opacity .2s; pointer-events: none; }
+.chart:hover .cursor, .chart.is-kb .cursor { opacity: 1; }
+.tip { position: absolute; top: 0; translate: -50% -110%; padding: 8px 12px; border-radius: 12px; background: var(--ink); color: #fff; font-size: .78rem; white-space: nowrap; pointer-events: none; opacity: 0; transition: opacity .2s, left .15s var(--ease-out), top .15s var(--ease-out); }
+.chart:hover .tip, .chart.is-kb .tip { opacity: 1; }
+.axis { display: flex; justify-content: space-between; font-size: .76rem; color: var(--ink-2); margin-top: 6px; }
+.seg { display: inline-flex; padding: 4px; border-radius: 999px; background: var(--tile); }
+.seg button { padding: 0 14px; min-height: 36px; border-radius: 999px; font-size: .82rem; font-weight: 500; color: var(--ink-2); transition: background .3s, color .3s; }
+.seg button[aria-pressed="true"] { background: var(--ink); color: #fff; }
+.trend-foot { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 14px; font-size: .85rem; color: var(--ink-2); }
+.trend-foot b { color: var(--ink); font-weight: 600; }
+
+/* ---------- timer ---------- */
+.s-timer { display: flex; flex-direction: column; gap: 14px; }
+.knob { position: relative; width: min(100%, 220px); aspect-ratio: 1; margin: 6px auto; border-radius: 50%; background: conic-gradient(var(--ink) calc(var(--p, 0) * 360deg), var(--tile) 0); display: grid; place-items: center; transition: --p .3s linear; }
+.knob::before { content: ""; position: absolute; inset: 14px; border-radius: 50%; background: var(--panel); box-shadow: inset 0 4px 14px rgb(0 0 0 / .08); }
+.knob span { position: relative; font-size: var(--step-3); font-weight: 600; letter-spacing: -.04em; font-variant-numeric: tabular-nums; }
+.s-timer.is-running .knob { animation: glow 2.4s ease-in-out infinite; }
+.s-timer.is-done .knob { animation: pop .6s var(--ease-spring); }
+.presets { display: flex; gap: 6px; justify-content: center; }
+.presets button { min-height: 40px; padding: 0 16px; border-radius: 999px; background: var(--tile); font-size: .85rem; font-weight: 500; transition: background .2s, color .2s; }
+.presets button[aria-pressed="true"] { background: var(--ink); color: #fff; }
+
+/* ---------- pending ---------- */
+.todo { display: grid; gap: 6px; }
+.todo li { border-radius: 16px; background: rgb(255 255 255 / .55); transition: background .3s, opacity .3s; }
+.todo li:hover { background: var(--tile); }
+.todo label { display: grid; grid-template-columns: 40px 1fr auto; gap: 12px; align-items: center; padding: 10px 14px 10px 10px; cursor: pointer; min-height: 60px; }
+.todo .pi { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; background: var(--panel); }
+.todo .t { font-weight: 500; line-height: 1.3; display: block; }
+.todo .n { font-size: .8rem; color: var(--ink-2); display: block; }
+.todo .n a { color: var(--violet-ink); font-weight: 500; }
+.todo input { appearance: none; position: relative; width: 52px; height: 30px; margin: 0; border-radius: 999px; background: #c9c9c5; cursor: pointer; transition: background .3s; }
+.todo input::after { content: ""; position: absolute; top: 3px; left: 3px; width: 24px; height: 24px; border-radius: 50%; background: #fff; box-shadow: 0 2px 6px rgb(0 0 0 / .2); transition: translate .4s var(--ease-spring); }
+.todo input:checked { background: var(--violet); }
+.todo input:checked::after { translate: 22px; }
+.todo .is-done { opacity: .6; }
+.todo .is-done .t { text-decoration: line-through; }
+.todo .is-popping .pi { animation: pop .5s var(--ease-spring); background: var(--lime); }
+.pbar { height: 8px; border-radius: 99px; background: var(--tile); overflow: hidden; margin: 12px 0 14px; }
+.pbar::after { content: ""; display: block; height: 100%; border-radius: inherit; background: var(--violet); transform-origin: left; transform: scaleX(var(--p, 0)); transition: transform .8s var(--ease-out); }
+
+/* ---------- shipped ---------- */
+.s-ship .card-head p { color: rgb(255 255 255 / .75); }
+.ship { display: grid; gap: 8px; margin-top: 16px; }
+.ship li a, .ship li > div { display: grid; grid-template-columns: 48px 1fr auto; gap: 14px; align-items: center; padding: 10px; border-radius: 16px; background: rgb(255 255 255 / .06); text-decoration: none; transition: background .3s; }
+.ship li a:hover { background: rgb(255 255 255 / .14); }
+.ship .sw { width: 48px; height: 48px; border-radius: 12px; background: var(--c); }
+.ship b { display: block; font-weight: 500; line-height: 1.25; }
+.ship small { color: rgb(255 255 255 / .7); font-size: .8rem; }
+.ship time { font-size: .75rem; color: rgb(255 255 255 / .7); }
+
+/* ---------- mix ---------- */
+.s-mix { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: clamp(16px, 3vw, 40px); }
+.mix-col h3 { font-size: .9rem; font-weight: 600; margin-bottom: 10px; }
+.hbars { display: grid; gap: 8px; }
+.hbars li { display: grid; grid-template-columns: 7em 1fr 3em; align-items: center; gap: 10px; font-size: .85rem; }
+.hbars .tr { height: 26px; border-radius: 8px; background: var(--tile); overflow: hidden; }
+.hbars .tr i { display: block; height: 100%; border-radius: 8px; background: var(--ink); transform-origin: left; transform: scaleX(0); transition: transform 1s var(--ease-out) calc(var(--k) * 80ms); }
+.hbars li:first-child .tr i { background: var(--violet); }
+.s-mix.is-in .hbars .tr i { transform: scaleX(var(--w)); }
+.hbars b { text-align: right; font-weight: 600; font-variant-numeric: tabular-nums; }
+.hours { display: grid; grid-template-columns: repeat(24, 1fr); gap: 3px; align-items: end; height: 120px; }
+.hours i { display: block; border-radius: 4px; background: var(--ink); height: calc(max(var(--h), .03) * 100%); opacity: calc(.25 + var(--h) * .75); transition: background .2s; }
+.hours i.zero { background: #cfcfcb; opacity: 1; }
+.hours i:hover { background: var(--violet); opacity: 1; }
+.hours-ax { display: flex; justify-content: space-between; font-size: .72rem; color: var(--ink-2); margin-top: 6px; }
+@media (max-width: 900px) { .s-mix { grid-template-columns: 1fr; } }
+
+.foot { margin-top: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: .8rem; color: var(--ink-2); padding-inline: 4px; }
+.foot code { font-family: "JetBrains Mono", monospace; font-size: .76rem; background: var(--panel); padding: 3px 8px; border-radius: 6px; }
+
+@keyframes pulse { to { stroke-dashoffset: -1000; } }
+@keyframes blink { 50% { opacity: .3; } }
+@keyframes spin { to { rotate: 360deg; } }
+@keyframes pop { 40% { scale: 1.15; } }
+@keyframes glow { 50% { box-shadow: 0 0 0 10px rgb(106 77 255 / .12); } }
+@keyframes slide-in { from { opacity: 0; translate: 60px 0; rotate: 8deg; } }
+@keyframes slide-in-rev { from { opacity: 0; translate: -60px 0; rotate: -16deg; } }
+@property --p { syntax: "<number>"; inherits: true; initial-value: 0; }
+::view-transition-group(*) { animation-duration: .45s; animation-timing-function: cubic-bezier(.22, 1, .36, 1); }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v6M12 16.5v.5"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-spin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></symbol>
+  <symbol id="i-term" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4 17 6-5-6-5M12 19h8"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></symbol>
+  <symbol id="i-folder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3 6.5A1.5 1.5 0 0 1 4.5 5H9l2 2.5h8.5A1.5 1.5 0 0 1 21 9v9.5a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 18.5z"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4"/></symbol>
+  <symbol id="i-flag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4h11l-2 4 2 4H5"/></symbol>
+  <symbol id="i-share" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V3M7 8l5-5 5 5M5 13v7h14v-7"/></symbol>
+  <symbol id="i-gauge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 18a8 8 0 1 1 16 0"/><path d="m12 18 4-6"/></symbol>
+  <symbol id="i-hammer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m14 6 4 4-9.5 9.5a2 2 0 0 1-2.8-2.8z"/><path d="m13 3 8 8-2 2-8-8z"/></symbol>
+  <symbol id="i-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3c.6 4.6 2.4 6.4 7 7-4.6.6-6.4 2.4-7 7-.6-4.6-2.4-6.4-7-7 4.6-.6 6.4-2.4 7-7z"/></symbol>
+</svg>
+
+<div class="wrap">
+  <header class="nav">
+    <a class="logo" href="../index.html"><span class="logo-mark" aria-hidden="true"><svg width="16" height="16"><use href="#i-sparkle"/></svg></span>Studio</a>
+    <div class="tabs" role="tablist" aria-label="Dashboard sections" id="tabs">
+      <span class="tab-pill" aria-hidden="true"></span>
+      <button role="tab" aria-selected="true" data-tab="all">Overview</button>
+      <button role="tab" aria-selected="false" data-tab="work">Work</button>
+      <button role="tab" aria-selected="false" data-tab="create">Create</button>
+      <button role="tab" aria-selected="false" data-tab="usage">Usage</button>
+    </div>
+    <div class="me">
+      <button type="button" aria-expanded="false" aria-controls="pop" id="me-btn"><span class="avatar" aria-hidden="true"><span class="av-in">ET</span></span><span class="name" data-text="content.user.first"></span><svg class="chev" width="16" height="16"><use href="#i-down"/></svg></button>
+      <div class="pop" id="pop">
+        <h3><span data-text="content.user.plan"></span> plan</h3>
+        <p>5-hour <span data-text="d.five.pct"></span>% · weekly <span data-text="d.week.pct"></span>% · extra $<span data-text="content.planUsage.extra.spent"></span> of $<span data-text="content.planUsage.extra.limit"></span></p>
+        <nav class="dirs" aria-label="Design directions">
+          <a href="atlas.html">01 Atlas <span>→</span></a>
+          <a href="ledger.html">02 Ledger <span>→</span></a>
+          <a href="studio.html" aria-current="page">03 Studio <span>●</span></a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <section class="hello">
+    <h1><span data-text="d.greeting"></span>,<br><span data-text="content.user.first"></span>.</h1>
+    <p><b data-text="d.todayLabel"></b> — <span data-pending-open></span> open items. Next: <span data-next-action></span></p>
+  </section>
+
+  <main class="grid" id="grid">
+    <!-- Hero: latest project -->
+    <article class="card s-hero reveal" data-tabs="work" aria-labelledby="hero-h">
+      <svg id="fiber" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <linearGradient id="strandGrad" x1="0" x2="1"><stop offset="0" stop-color="#4a4a58"/><stop offset=".55" stop-color="#b9b9cc"/><stop offset="1" stop-color="#55556a"/></linearGradient>
+          <radialGradient id="heroGlow" cx=".75" cy=".35" r=".6"><stop offset="0" stop-color="#e87722" stop-opacity=".35"/><stop offset="1" stop-color="#e87722" stop-opacity="0"/></radialGradient>
+          <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+        <rect width="800" height="500" fill="url(#heroGlow)"/>
+        <g class="layer" id="strands-back"></g>
+        <g class="layer" id="strands-front"></g>
+      </svg>
+      <div class="hero-shade"></div>
+      <div class="hero-tag"><span class="tag live">Latest concept</span><span class="tag">Lit Fiber</span></div>
+      <div class="hero-body">
+        <div>
+          <h2 id="hero-h"><span data-text="content.resume.project"></span><br>Redesign</h2>
+          <div class="hero-meta">
+            <span><svg width="18" height="18"><use href="#i-layers"/></svg>4 concepts</span>
+            <span><svg width="18" height="18"><use href="#i-chat"/></svg><span id="hero-turns"></span> turns</span>
+            <span><svg width="18" height="18"><use href="#i-bolt"/></svg>DS v7</span>
+          </div>
+        </div>
+        <a class="btn btn-ghost" id="resume-link">Resume <svg class="arrow" width="16" height="16"><use href="#i-chev"/></svg></a>
+      </div>
+    </article>
+
+    <!-- Projects -->
+    <article class="card s-proj reveal" data-tabs="work" aria-labelledby="proj-h">
+      <div class="card-head"><h2 id="proj-h">Projects</h2><button class="icon-btn" type="button" aria-label="About this list" data-copy="Projects are your Claude Code workspaces, ranked by turns." data-copy-label="Workspaces, ranked by turns"><svg width="20" height="20"><use href="#i-info"/></svg></button></div>
+      <div class="rule"></div>
+      <div class="plist" id="plist"></div>
+      <a class="btn btn-ink btn-block" href="#gen-card" id="new-proj" style="margin-top:14px">New project <svg class="plus" width="18" height="18"><use href="#i-plus"/></svg></a>
+    </article>
+
+    <!-- Stats strip -->
+    <section class="s-stats" data-tabs="usage" aria-label="Key numbers">
+      <div class="stat hi reveal"><span class="k">Output tokens <i><svg width="15" height="15"><use href="#i-bolt"/></svg></i></span><b data-count="0" data-fmt="compact" id="st-tok"></b><small>since <span data-text="totals.firstDay" data-fmt="day"></span></small></div>
+      <div class="stat reveal"><span class="k">Sessions <i><svg width="15" height="15"><use href="#i-chat"/></svg></i></span><b data-count="0" id="st-sess"></b><small><span data-text="totals.turns"></span> turns</small></div>
+      <div class="stat reveal"><span class="k">Cache hits <i><svg width="15" height="15"><use href="#i-layers"/></svg></i></span><b data-count="0" data-fmt="pct" data-digits="1" id="st-cache"></b><small>of input reused</small></div>
+      <div class="stat reveal"><span class="k">Files written <i><svg width="15" height="15"><use href="#i-file"/></svg></i></span><b data-count="0" id="st-files"></b><small><span data-text="totals.toolCalls"></span> tool calls</small></div>
+      <div class="stat reveal"><span class="k">After 9pm <i><svg width="15" height="15"><use href="#i-moon"/></svg></i></span><b data-count="0" data-fmt="pct" id="st-night"></b><small>peak at <span data-text="rhythm.peakHour" data-fmt="hour"></span></small></div>
+    </section>
+
+    <!-- Skills carousel -->
+    <article class="card s-skills reveal" data-tabs="create" aria-labelledby="sk-h" aria-roledescription="carousel">
+      <div class="card-head">
+        <div><h2 id="sk-h">Untapped skills</h2><p><span data-text="content.toolkit.untapped.length"></span> installed, never run</p></div>
+        <span class="switch-wrap">Auto<button class="switch" role="switch" aria-checked="true" aria-label="Auto-rotate skills" id="auto"></button></span>
+      </div>
+      <div class="car">
+        <button class="icon-btn" type="button" aria-label="Previous skill" id="prev"><svg width="22" height="22"><use href="#i-left"/></svg></button>
+        <div class="car-stage" aria-live="polite"><div class="glyph" id="glyph" aria-hidden="true"></div></div>
+        <button class="icon-btn" type="button" aria-label="Next skill" id="next"><svg width="22" height="22"><use href="#i-chev"/></svg></button>
+      </div>
+      <div class="car-copy"><h3 id="sk-name"></h3><p id="sk-why"></p></div>
+      <div class="car-foot"><div class="car-dots" id="dots"></div><button type="button" class="link-btn" id="sk-copy"><svg width="15" height="15"><use href="#i-copy"/></svg>Copy</button></div>
+    </article>
+
+    <!-- Usage gauge -->
+    <article class="card s-gauge reveal" data-tabs="usage" aria-labelledby="g-h">
+      <div class="card-head">
+        <div><h2 id="g-h">Plan usage</h2><p id="g-sub">Weekly · all models</p></div>
+        <span class="switch-wrap">5-hr<button class="switch" role="switch" aria-checked="true" aria-label="Show weekly limit (off shows 5-hour)" id="g-switch"></button>Wk</span>
+      </div>
+      <div class="gauge">
+        <svg viewBox="0 0 300 180" aria-hidden="true"><path class="g-track" id="g-track"/><path class="g-fill" id="g-fill" pathLength="100"/></svg>
+        <div class="g-center" aria-live="polite"><b id="g-pct">0%</b><small>resets in <span id="g-reset"></span></small></div>
+      </div>
+      <div class="g-scale" aria-hidden="true"><span>0%</span><span>100%</span></div>
+      <button class="btn btn-ink btn-block" type="button" id="pace">Pace me</button>
+    </article>
+
+    <!-- Generator -->
+    <article class="card s-gen reveal" data-tabs="create" id="gen-card" aria-labelledby="gen-h">
+      <div class="card-head">
+        <div><h2 id="gen-h">Idea generator</h2><p>Tap a tile to lock it · press G</p></div>
+        <span class="switch-wrap">Lock all<button class="switch" role="switch" aria-checked="false" aria-label="Lock every reel" id="lock-all"></button></span>
+      </div>
+      <div class="tiles" aria-live="polite">
+        <button type="button" class="tile" data-reel="make" data-lock="make"><span class="lk"><svg width="13" height="13"><use href="#i-lock"/></svg></span><span class="art"><svg width="46" height="46" viewBox="0 0 48 48" fill="none" stroke="var(--ink)" stroke-width="2"><rect x="8" y="8" width="32" height="32" rx="6"/><path d="M8 20h32M20 20v20" stroke="var(--violet)"/></svg></span><b>Make</b><span data-reel-value></span></button>
+        <button type="button" class="tile" data-reel="about" data-lock="about"><span class="lk"><svg width="13" height="13"><use href="#i-lock"/></svg></span><span class="art"><svg width="46" height="46" viewBox="0 0 48 48" fill="none" stroke="var(--ink)" stroke-width="2"><circle cx="24" cy="24" r="16"/><path d="M8 24h32M24 8c6 5 6 27 0 32M24 8c-6 5-6 27 0 32" stroke="var(--orange)"/></svg></span><b>About</b><span data-reel-value></span></button>
+        <button type="button" class="tile" data-reel="twist" data-lock="twist"><span class="lk"><svg width="13" height="13"><use href="#i-lock"/></svg></span><span class="art"><svg width="46" height="46" viewBox="0 0 48 48" fill="none" stroke="var(--ink)" stroke-width="2"><path d="M10 34c8 0 8-20 16-20s6 14 12 14"/><circle cx="38" cy="28" r="3" fill="var(--lime)" stroke="var(--ink)"/></svg></span><b>Twist</b><span data-reel-value></span></button>
+      </div>
+      <p class="gen-rest">Rule <button type="button" class="chipv" data-reel="constraint" data-lock="constraint"><span data-reel-value></span></button> using <button type="button" class="chipv" data-reel="skill" data-lock="skill"><span data-reel-value></span></button></p>
+      <div class="gen-row">
+        <button type="button" class="btn btn-ink" data-spin><svg width="18" height="18"><use href="#i-spin"/></svg>Spin</button>
+        <button type="button" class="icon-btn" data-copy-prompt aria-label="Copy prompt"><svg width="20" height="20"><use href="#i-copy"/></svg></button>
+        <button type="button" class="icon-btn" data-copy-cli aria-label="Copy as CLI command"><svg width="20" height="20"><use href="#i-term"/></svg></button>
+      </div>
+    </article>
+
+    <!-- Trend -->
+    <article class="card s-trend reveal" data-tabs="usage" aria-labelledby="tr-h">
+      <div class="card-head">
+        <div><h2 id="tr-h">Activity trend</h2><p>Last 21 days · use ← → on the chart</p></div>
+        <div class="seg" role="group" aria-label="Metric"><button type="button" data-metric="turns" aria-pressed="true">Turns</button><button type="button" data-metric="outputTokens" aria-pressed="false">Tokens</button></div>
+      </div>
+      <div class="chart" id="chart" tabindex="0" aria-label="Activity chart; arrow keys move between days">
+        <svg viewBox="0 0 700 220" preserveAspectRatio="none" id="chart-svg">
+          <defs><linearGradient id="areaGrad" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#6a4dff" stop-opacity=".35"/><stop offset="1" stop-color="#6a4dff" stop-opacity="0"/></linearGradient></defs>
+          <line class="gridl" x1="0" x2="700" y1="55" y2="55"/><line class="gridl" x1="0" x2="700" y1="110" y2="110"/><line class="gridl" x1="0" x2="700" y1="165" y2="165"/>
+          <path class="area" id="area"/><path class="line" id="line" vector-effect="non-scaling-stroke"/>
+          <g class="cursor" id="cursor"><line x1="0" x2="0" y1="0" y2="220" stroke="#131313" stroke-dasharray="3 4" vector-effect="non-scaling-stroke"/></g>
+        </svg>
+        <div class="tip" id="tip"></div>
+      </div>
+      <div class="axis" aria-hidden="true"><span id="ax0"></span><span id="ax1"></span><span>Today</span></div>
+      <div class="trend-foot"><span>This week <b data-text="rhythm.thisWeek"></b></span><span>Last week <b data-text="rhythm.lastWeek"></b></span><span>Longest streak <b data-text="rhythm.longestStreak"></b> days</span><span>Active days <b data-text="totals.activeDays"></b></span></div>
+    </article>
+
+    <!-- Timer -->
+    <article class="card s-timer reveal" data-tabs="work" id="timer" aria-labelledby="t-h">
+      <div class="card-head"><div><h2 id="t-h">Focus block</h2><p>Protect one deep-work run</p></div></div>
+      <div class="knob" data-timer-progress><span data-timer-display role="timer"></span></div>
+      <div class="presets"><button type="button" data-timer-preset="25" aria-pressed="true">25 min</button><button type="button" data-timer-preset="50" aria-pressed="false">50 min</button><button type="button" data-timer-reset>Reset</button></div>
+      <button type="button" class="btn btn-ink btn-block" data-timer-toggle>Start focus</button>
+    </article>
+
+    <!-- Pending -->
+    <article class="card s-pend reveal" data-tabs="work" aria-labelledby="p-h">
+      <div class="card-head"><div><h2 id="p-h">Pending work</h2><p><span data-pending-open></span> open · <span data-pending-done></span> done · flip a switch when it ships</p></div></div>
+      <div class="pbar" data-pending-progress></div>
+      <ul class="todo" id="todo"></ul>
+    </article>
+
+    <!-- Shipped -->
+    <article class="card s-ship reveal" data-tabs="work create" aria-labelledby="sh-h">
+      <div class="card-head"><div><h2 id="sh-h">Recently shipped</h2><p>Things you made with Claude</p></div></div>
+      <ul class="ship" id="ship"></ul>
+    </article>
+
+    <!-- Mix -->
+    <article class="card s-mix reveal" data-tabs="usage" aria-label="How you use Claude">
+      <div class="mix-col"><h3>Models</h3><ul class="hbars" id="models"></ul></div>
+      <div class="mix-col"><h3>Tools</h3><ul class="hbars" id="tools"></ul></div>
+      <div class="mix-col"><h3>Hour of day</h3><div class="hours" id="hours"></div><div class="hours-ax"><span>12a</span><span>6a</span><span>12p</span><span>6p</span><span>11p</span></div></div>
+    </article>
+  </main>
+
+  <footer class="foot">
+    <span>From local Claude Code transcripts · <span data-text="generatedAt" data-fmt="stamp"></span> · plan limits are a snapshot.</span>
+    <span>Refresh: <code>python3 scripts/collect.py</code></span>
+  </footer>
+</div>
+
+<script src="../data/activity.js"></script>
+<script src="../data/content.js"></script>
+<script src="../shared/core.js"></script>
+<script>
+(() => {
+  const { A, C, derived: D, fmt, reduced, svg, arc, toast } = Dash;
+  const $ = (id) => document.getElementById(id);
+
+  // ----- tabs with sliding pill + view-transition filtering -----
+  const tabs = [...document.querySelectorAll("[data-tab]")], pill = document.querySelector(".tab-pill"), grid = $("grid");
+  const movePill = (b) => { pill.style.width = b.offsetWidth + "px"; pill.style.translate = b.offsetLeft + "px 0"; };
+  document.querySelectorAll(".grid > *").forEach((c, i) => (c.style.viewTransitionName = "card-" + i));
+  function selectTab(b) {
+    tabs.forEach((t) => { t.setAttribute("aria-selected", t === b); t.tabIndex = t === b ? 0 : -1; });
+    movePill(b);
+    const apply = () => {
+      const key = b.dataset.tab;
+      grid.classList.toggle("is-filtered", key !== "all");
+      grid.querySelectorAll(":scope > *").forEach((c) => c.classList.toggle("is-match", (c.dataset.tabs || "").split(" ").includes(key)));
+    };
+    document.startViewTransition && !reduced ? document.startViewTransition(apply) : apply();
+  }
+  tabs.forEach((b, i) => {
+    b.addEventListener("click", () => selectTab(b));
+    b.addEventListener("keydown", (e) => {
+      const d = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
+      if (!d) return;
+      const n = tabs[(i + d + tabs.length) % tabs.length]; n.focus(); selectTab(n);
+    });
+  });
+  requestAnimationFrame(() => movePill(tabs[0]));
+  addEventListener("resize", () => movePill(document.querySelector('[aria-selected="true"]')));
+
+  // ----- profile popover -----
+  const meBtn = $("me-btn"), pop = $("pop");
+  const setPop = (open) => { pop.classList.toggle("is-open", open); meBtn.setAttribute("aria-expanded", open); };
+  meBtn.addEventListener("click", (e) => { e.stopPropagation(); setPop(!pop.classList.contains("is-open")); });
+  document.addEventListener("click", (e) => { if (!pop.contains(e.target)) setPop(false); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") setPop(false); });
+
+  // ----- hero fiber strands -----
+  const back = $("strands-back"), front = $("strands-front");
+  const colors = ["#e87722", "#efd347", "#d6f84c", "#ffffff"];
+  for (let i = 0; i < 14; i++) {
+    const y0 = 470 - i * 9, y1 = 30 + i * 24, c1 = 140 + i * 28, c2 = 400 - i * 14;
+    const d = `M-20 ${y0} C ${c1} ${y0 - 60}, ${c2} ${y1 + 140}, 820 ${y1}`;
+    const g = i % 2 ? back : front;
+    g.append(svg("path", { d, class: "strand" }));
+    if (i % 3 !== 1) g.append(svg("path", { d, class: "pulse", stroke: colors[i % colors.length], style: `--d:${4 + (i % 5)}s;--dl:${-i * .7}s;--o:${(i * 137) % 1000}`, pathLength: 1000 }));
+  }
+  const hero = document.querySelector(".s-hero");
+  if (Dash.finePointer && !reduced) hero.addEventListener("pointermove", (e) => {
+    const b = hero.getBoundingClientRect(), x = (e.clientX - b.left) / b.width - .5, y = (e.clientY - b.top) / b.height - .5;
+    back.style.transform = `translate(${x * -10}px, ${y * -8}px)`; front.style.transform = `translate(${x * 18}px, ${y * 14}px)`;
+  });
+  $("resume-link").href = C.resume.link;
+  const resumeProj = A.projects.find((p) => p.name === C.resume.project);
+  $("hero-turns").textContent = resumeProj ? fmt.int(resumeProj.turns) : "—";
+
+  // ----- projects list -----
+  const icons = ["i-layers", "i-sparkle", "i-folder", "i-folder", "i-chat", "i-hammer"];
+  const plist = $("plist");
+  A.projects.slice(0, 4).forEach((p, i) => {
+    const b = document.createElement("button");
+    b.type = "button"; b.className = "prow"; b.setAttribute("aria-pressed", i === 0);
+    b.innerHTML = `<span class="pi"><svg width="20" height="20"><use href="#${icons[i]}"/></svg></span><span><b>${p.name}</b><small>${p.turns} turns · ${p.sessions} session${p.sessions > 1 ? "s" : ""}</small></span><svg class="chev" width="18" height="18"><use href="#i-chev"/></svg>`;
+    const detail = document.createElement("p");
+    detail.className = "pdetail"; detail.hidden = i !== 0;
+    detail.textContent = `${fmt.compact(p.out)} tokens · last active ${p.last ? fmt.ago(p.last) : "—"}`;
+    b.addEventListener("click", () => {
+      plist.querySelectorAll(".prow").forEach((x) => x.setAttribute("aria-pressed", x === b));
+      plist.querySelectorAll(".pdetail").forEach((x) => (x.hidden = x !== detail));
+    });
+    plist.append(b, detail);
+  });
+  $("new-proj").addEventListener("click", () => setTimeout(() => gen && gen.spin(), 450));
+
+  // ----- stats -----
+  $("st-tok").dataset.count = A.totals.outputTokens;
+  $("st-sess").dataset.count = A.totals.sessions;
+  $("st-cache").dataset.count = A.rhythm.cacheHitRate;
+  $("st-files").dataset.count = A.totals.filesWritten;
+  $("st-night").dataset.count = A.rhythm.nightShare;
+
+  // ----- skills carousel -----
+  const sk = C.toolkit.untapped, swatch = ["var(--lime)", "#c9bfff", "#ffc999", "var(--flame)", "#bfe7ff", "#ffd0e0"];
+  let si = 0, autoId = null;
+  const dots = $("dots");
+  sk.forEach((s, i) => { const d = document.createElement("button"); d.type = "button"; d.setAttribute("aria-label", `Show ${s.name}`); d.addEventListener("click", () => show(i, i < si ? -1 : 1)); dots.append(d); });
+  function show(i, dir = 1) {
+    si = (i + sk.length) % sk.length;
+    const g = $("glyph"); g.textContent = sk[si].glyph; g.style.setProperty("--c", swatch[si % swatch.length]);
+    g.classList.remove("enter", "rev"); void g.offsetWidth; g.classList.add("enter"); if (dir < 0) g.classList.add("rev");
+    $("sk-name").textContent = sk[si].name; $("sk-why").textContent = sk[si].why;
+    [...dots.children].forEach((d, k) => d.setAttribute("aria-current", k === si));
+  }
+  $("prev").addEventListener("click", () => { show(si - 1, -1); stopAuto(); });
+  $("next").addEventListener("click", () => { show(si + 1, 1); stopAuto(); });
+  $("sk-copy").addEventListener("click", () => Dash.copyText(sk[si].name, `${sk[si].name} copied`));
+  const autoSw = $("auto");
+  function startAuto() { if (reduced) return stopAuto(); autoId = setInterval(() => show(si + 1), 4200); autoSw.setAttribute("aria-checked", true); }
+  function stopAuto() { clearInterval(autoId); autoId = null; autoSw.setAttribute("aria-checked", false); }
+  autoSw.addEventListener("click", () => (autoId ? stopAuto() : startAuto()));
+  document.querySelector(".s-skills").addEventListener("focusin", () => clearInterval(autoId));
+  show(0); startAuto();
+
+  // ----- gauge -----
+  $("g-track").setAttribute("d", arc(150, 150, 110, -90, 90));
+  $("g-fill").setAttribute("d", arc(150, 150, 110, -90, 90));
+  let gWin = "week";
+  function paintGauge() {
+    const w = C.planUsage.windows.find((x) => x.id === gWin);
+    $("g-sub").textContent = w.label;
+    $("g-reset").dataset.reset = w.id; $("g-reset").textContent = fmt.until(w.resetsAt);
+    const f = $("g-fill"); f.style.strokeDashoffset = 100 - w.pct; f.classList.toggle("warn", w.pct >= 70);
+    const el = $("g-pct"), t0 = performance.now(), from = parseInt(el.textContent) || 0;
+    const tick = (now) => { const p = reduced ? 1 : Math.min(1, (now - t0) / 1100), e = 1 - Math.pow(1 - p, 3); el.textContent = Math.round(from + (w.pct - from) * e) + "%"; if (p < 1) requestAnimationFrame(tick); };
+    requestAnimationFrame(tick);
+  }
+  $("g-switch").addEventListener("click", (e) => { gWin = gWin === "week" ? "five" : "week"; e.currentTarget.setAttribute("aria-checked", gWin === "week"); paintGauge(); });
+  new IntersectionObserver(([e], io) => { if (e.isIntersecting) { paintGauge(); io.disconnect(); } }, { threshold: .4 }).observe($("g-fill"));
+  $("pace").addEventListener("click", () => {
+    const w = D.week, f = D.five;
+    const left = 100 - w.pct;
+    toast(left > 25
+      ? `${left}% of the week left, resets in ${fmt.until(w.resetsAt)}. Room for a big Opus run.`
+      : `${left}% of the week left. Use Sonnet for chores until ${fmt.until(w.resetsAt)} from now.`);
+  });
+
+  // ----- generator -----
+  const genCard = $("gen-card");
+  const gen = Dash.generator(genCard);
+  const lockAll = $("lock-all");
+  lockAll.addEventListener("click", () => {
+    const on = lockAll.getAttribute("aria-checked") !== "true";
+    genCard.querySelectorAll("[data-lock]").forEach((b) => { if ((b.getAttribute("aria-pressed") === "true") !== on) b.click(); });
+    lockAll.setAttribute("aria-checked", on);
+  });
+
+  // ----- trend chart -----
+  const W = 700, H = 220, padT = 18;
+  let metric = "turns", pts = [];
+  function drawChart() {
+    const vals = A.daily.map((d) => d[metric]), max = Math.max(1, ...vals);
+    pts = vals.map((v, i) => [i * (W / (vals.length - 1)), H - 6 - (v / max) * (H - padT - 6)]);
+    let d = `M${pts[0][0]} ${pts[0][1]}`;
+    for (let i = 1; i < pts.length; i++) {
+      const [x0, y0] = pts[i - 1], [x1, y1] = pts[i], cx = (x0 + x1) / 2;
+      d += ` C${cx} ${y0}, ${cx} ${y1}, ${x1} ${y1}`;
+    }
+    $("line").setAttribute("d", d);
+    $("area").setAttribute("d", d + ` L${W} ${H} L0 ${H} Z`);
+  }
+  $("ax0").textContent = fmt.day(A.daily[0].date); $("ax1").textContent = fmt.day(A.daily[10].date);
+  drawChart();
+  const chart = $("chart"), tip = $("tip"), cursor = $("cursor");
+  let ci = A.daily.length - 1;
+  function point(i) {
+    ci = Math.max(0, Math.min(A.daily.length - 1, i));
+    const [x, y] = pts[ci], d = A.daily[ci];
+    cursor.setAttribute("transform", `translate(${x} 0)`);
+    tip.style.left = (x / W) * 100 + "%"; tip.style.top = (y / H) * chart.querySelector("svg").clientHeight + "px";
+    tip.innerHTML = `<b>${fmt.weekday(d.date)} ${fmt.day(d.date)}</b> · ${fmt.int(d.turns)} turns · ${fmt.compact(d.outputTokens)} tok`;
+  }
+  chart.addEventListener("pointermove", (e) => { const b = chart.getBoundingClientRect(); point(Math.round(((e.clientX - b.left) / b.width) * (A.daily.length - 1))); });
+  chart.addEventListener("keydown", (e) => { if (e.key === "ArrowRight" || e.key === "ArrowLeft") { e.preventDefault(); chart.classList.add("is-kb"); point(ci + (e.key === "ArrowRight" ? 1 : -1)); } });
+  chart.addEventListener("focus", () => { chart.classList.add("is-kb"); point(ci); });
+  chart.addEventListener("blur", () => chart.classList.remove("is-kb"));
+  document.querySelectorAll("[data-metric]").forEach((b) => b.addEventListener("click", () => {
+    metric = b.dataset.metric;
+    document.querySelectorAll("[data-metric]").forEach((x) => x.setAttribute("aria-pressed", x === b));
+    const card = document.querySelector(".s-trend"); card.classList.remove("is-drawn"); drawChart();
+    requestAnimationFrame(() => requestAnimationFrame(() => card.classList.add("is-drawn")));
+    point(ci);
+  }));
+  new IntersectionObserver(([e], io) => { if (e.isIntersecting) { e.target.classList.add("is-drawn"); point(ci); io.disconnect(); } }, { threshold: .3 }).observe(document.querySelector(".s-trend"));
+
+  // ----- timer + pending -----
+  Dash.timer($("timer"));
+  const kindIcon = { Decision: "i-flag", Client: "i-chat", Build: "i-hammer", Perf: "i-gauge", Share: "i-share", Setup: "i-term", Review: "i-chat" };
+  Dash.pending($("todo"), (p) => {
+    const li = document.createElement("li");
+    li.innerHTML = `<label><span class="pi" aria-hidden="true"><svg width="18" height="18"><use href="#${kindIcon[p.kind] || "i-flag"}"/></svg></span><span><span class="t">${p.title}</span><span class="n">${p.kind} · ${p.project} · ${p.note}${p.href ? ` <a href="${p.href}" target="_blank" rel="noopener">Open ↗</a>` : ""}</span></span><input type="checkbox" role="switch" aria-label="Done"></label>`;
+    return li;
+  });
+
+  // ----- shipped -----
+  const sw = ["linear-gradient(135deg,#e87722,#efd347)", "linear-gradient(135deg,#6a4dff,#d6f84c)", "linear-gradient(135deg,#1c1c1c,#e87722)", "linear-gradient(135deg,#d6f84c,#bfe7ff)"];
+  $("ship").innerHTML = C.shipped.map((s, i) => {
+    const inner = `<span class="sw" style="--c:${sw[i % sw.length]}"></span><span><b>${s.title}</b><small>${s.meta}</small></span><time datetime="${s.date}">${fmt.ago(s.date)}</time>`;
+    return `<li>${s.href ? `<a href="${s.href}" target="_blank" rel="noopener">${inner}</a>` : `<div>${inner}</div>`}</li>`;
+  }).join("");
+
+  // ----- mix -----
+  $("models").innerHTML = D.models.map((m, k) => `<li><span>${m.name}</span><span class="tr"><i style="--w:${m.share};--k:${k}"></i></span><b>${fmt.pct(m.share)}</b></li>`).join("");
+  const maxC = A.tools[0].calls;
+  $("tools").innerHTML = A.tools.slice(0, 5).map((t, k) => `<li><span>${t.name}</span><span class="tr"><i style="--w:${t.calls / maxC};--k:${k}"></i></span><b>${t.calls}</b></li>`).join("");
+  $("hours").innerHTML = A.hours.map((n, h) => `<i class="${n ? "" : "zero"}" style="--h:${n / D.maxHour}" title="${fmt.hour(h)}: ${n} turns"></i>`).join("");
+
+  Dash.reveal(".reveal");
+  Dash.countUp();
+  Dash.magnetic(".btn-ghost", .15);
+})();
+</script>
+</body>
+</html>
