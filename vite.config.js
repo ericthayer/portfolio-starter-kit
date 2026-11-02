@@ -12,6 +12,7 @@ export default defineConfig({
       input: {
         main: path.resolve(__dirname, "src/index.html"),
         nested: path.resolve(__dirname, "src/lighthouse/index.html"),
+        dashboard: path.resolve(__dirname, "src/dashboard.html"),
       },
       output: {
         chunkFileNames: "assets/js/[name]-[hash].js",
