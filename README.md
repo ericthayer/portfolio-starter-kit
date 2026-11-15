@@ -60,5 +60,4 @@ Built with Bootstrap 6 (alpha) and Vite, this open-source solution offers a perf
 ### Q4 2025 (v1.0.0-beta)
 
 - **Multi-page Support:** create & deploy multiple templates
-<!-- - **Vue/React Support:** optional SPA support -->
-<!-- - **Visual Testing:** Chromatic integration -->
+- **Visual Testing:** Storybook/Chromatic integration
